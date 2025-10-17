@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <title>Contact | PREDICTOR by betbotX — Get in Touch</title>
+
+  <meta name="description" content="Contact the PREDICTOR by betbotX team — powered by ANFAtech. Send your inquiries, feedback, or collaboration requests using our secure form." />
+  <meta name="keywords" content="contact betbotX, AI football analytics, predictive system support, ANFAtech contact, football AI collaboration, predictor feedback, machine learning sports data" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="betbotX - ANFAtech" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#000;
+      --neon:#00ff6a;
+      --neon-2:#19ff8a;
+      --muted:rgba(0,255,106,0.65);
+    }
+
+    body {
+      margin:0;
+      background:radial-gradient(ellipse at center, #001100 0%, #000 60%);
+      color:var(--neon);
+      font-family:'Orbitron', monospace;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:40px 20px 80px;
+    }
+
+    nav {
+      text-align:center;
+      margin-bottom:40px;
+    }
+    nav a {
+      color:var(--neon-2);
+      text-decoration:none;
+      margin:0 14px;
+      font-weight:700;
+      letter-spacing:1px;
+      transition:all 0.25s ease;
+    }
+    nav a:hover {
+      color:var(--neon);
+      text-shadow:0 0 8px rgba(0,255,106,0.7);
+    }
+
+    h1 {
+      font-size:48px;
+      color:var(--neon);
+      text-shadow:0 0 20px rgba(0,255,106,0.9);
+      margin-bottom:30px;
+      text-align:center;
+      letter-spacing:3px;
+      font-weight:900;
+    }
+
+    section {
+      width:90%;
+      max-width:700px;
+      background:rgba(0,0,0,0.75);
+      border:1px solid rgba(0,255,106,0.25);
+      border-radius:16px;
+      padding:50px 40px;
+      box-shadow:0 0 25px rgba(0,255,106,0.08);
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    p.intro {
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:25px;
+      width:100%;
+    }
+
+    form {
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      width:100%;
+      max-width:500px;
+      align-items:center;
+    }
+
+    label {
+      font-size:14px;
+      color:var(--neon-2);
+      align-self:flex-start;
+      margin-left:5px;
+    }
+
+    input, textarea {
+      font-family:'Orbitron', monospace;
+      font-size:15px;
+      background:rgba(0,0,0,0.6);
+      border:1px solid rgba(0,255,106,0.25);
+      color:var(--neon);
+      border-radius:10px;
+      padding:12px 14px;
+      width:100%;
+      outline:none;
+      transition:0.25s ease;
+      box-sizing:border-box;
+    }
+
+    input:focus, textarea:focus {
+      border-color:rgba(0,255,106,0.5);
+      box-shadow:0 0 8px rgba(0,255,106,0.3);
+    }
+
+    textarea {
+      resize:vertical;
+      min-height:120px;
+    }
+
+    button {
+      padding:12px 30px;
+      border-radius:10px;
+      border:1px solid rgba(0,255,106,0.22);
+      background:rgba(0,255,106,0.06);
+      color:var(--neon);
+      font-weight:800;
+      cursor:pointer;
+      letter-spacing:1px;
+      transition:0.3s ease;
+      width:fit-content;
+      align-self:center;
+    }
+
+    button:hover {
+      background:rgba(0,255,106,0.15);
+      box-shadow:0 0 10px rgba(0,255,106,0.25);
+      transform:translateY(-1px);
+    }
+
+    .status {
+      margin-top:10px;
+      color:var(--muted);
+      font-size:13px;
+      min-height:20px;
+      text-align:center;
+    }
+
+    footer {
+      margin-top:60px;
+      text-align:center;
+      font-size:13px;
+      color:rgba(0,255,106,0.9);
+      text-shadow:0 0 6px rgba(0,255,106,0.5);
+      border-top:1px solid rgba(0,255,106,0.1);
+      padding-top:20px;
+      width:100%;
+      font-weight:600;
+    }
+
+    @media (max-width:768px){
+      h1 { font-size:34px; }
+      section { padding:35px 25px; }
+      form { width:100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="privacy.html">Privacy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <h1>Contact Us</h1>
+
+  <section>
+    <p class="intro">
+      Have a question, suggestion, or partnership inquiry?<br>
+      Fill out the form below — we’ll get back to you as soon as possible.
+    </p>
+
+    <form id="contactForm" action="https://formspree.io/f/xanpajld" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
+
+      <button type="submit">Send Message</button>
+      <div class="status" id="formStatus"></div>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const statusBox = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusBox.textContent = "Sending message...";
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          statusBox.textContent = "✅ Message sent successfully!";
+          form.reset();
+        } else {
+          statusBox.textContent = "⚠️ There was a problem sending your message.";
+        }
+      } catch {
+        statusBox.textContent = "⚠️ Connection error. Please try again.";
+      }
+    });
+  </script>
+
+</body>
+</html>
