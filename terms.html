@@ -82,12 +82,16 @@
       font-weight:400;
     }
 
-    a {
-      color:var(--neon);
-      text-decoration:none;
+    a, a:visited {
+      color: var(--neon);
+      text-decoration: none;
+      text-shadow: 0 0 6px rgba(0,255,106,0.7);
     }
+
     a:hover {
-      text-decoration:underline;
+      color: var(--neon-2);
+      text-shadow: 0 0 10px rgba(0,255,106,1);
+      text-decoration: none;
     }
 
     footer {
@@ -95,10 +99,12 @@
       text-align:center;
       font-size:13px;
       color:rgba(0,255,106,0.9);
-      text-shadow:0 0 6px rgba(0,255,106,0.5);
+      text-shadow:0 0 8px rgba(0,255,106,0.8);
       border-top:1px solid rgba(0,255,106,0.1);
       padding-top:20px;
       width:100%;
+      font-weight:600;
+      letter-spacing:1px;
     }
 
     @media (max-width:768px){
