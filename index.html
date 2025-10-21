@@ -256,18 +256,25 @@ const responseBox = document.getElementById("responseBox");
 const callBtn = document.getElementById("callBtn");
 
 async function callAgent() {
-  let match = matchInput.value.trim();
+  const match = matchInput.value.trim();
   if (!match) {
     alert("Please enter a match name first.");
     return;
   }
 
-  // Active clignotement pendant la requête
-  responseBox.classList.add("blinking");
-  responseBox.textContent = "Connecting to AI engine...";
   callBtn.disabled = true;
+  responseBox.classList.add("blinking");
+  responseBox.textContent = "Calling AI agent...";
+
+  // 🔹 Séquence d’attente immersive
+  setTimeout(() => { responseBox.textContent = "Connecting to prediction engine..."; }, 1500);
+  setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3000);
+  setTimeout(() => { responseBox.textContent = "Running match analysis — please wait..."; }, 4800);
 
   try {
+    // 🔹 Attend un peu avant la requête (effet plus réaliste)
+    await new Promise(resolve => setTimeout(resolve, 6000));
+
     const res = await fetch(webhookURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -276,12 +283,12 @@ async function callAgent() {
 
     let data = await res.text();
 
-    // Stoppe le clignotement
+    // Stop clignotement
     responseBox.classList.remove("blinking");
 
-    // Nettoie et reformate la réponse
+    // 🔹 Mise en forme du texte reçu
     data = data
-      .replace(/\s+/g, " ") // condense les espaces
+      .replace(/\s+/g, " ")
       .replace(/Match:/g, "<br><strong>Match:</strong> ")
       .replace(/Correct Score Prediction:/g, "<br><strong>Correct Score Prediction:</strong> ")
       .replace(/BTTS \(Both Teams To Score\):/g, "<br><strong>BTTS (Both Teams To Score):</strong> ")
@@ -289,7 +296,6 @@ async function callAgent() {
       .replace(/Safety:/g, "<br><strong>Safety:</strong> ")
       .replace(/Analysis:/g, "<br><br><strong>Analysis:</strong> ");
 
-    // Affiche la version HTML
     responseBox.innerHTML = data || "No data received.";
   } catch (err) {
     responseBox.classList.remove("blinking");
@@ -309,6 +315,7 @@ matchInput.addEventListener("keydown", (e) => {
 </script>
 </body>
 </html>
+
 
 
 
