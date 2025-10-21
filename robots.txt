@@ -1,0 +1,10 @@
+# robots.txt for PREDICTOR by betbotX
+User-agent: *
+Allow: /
+
+# Block admin or private folders if any
+Disallow: /admin/
+Disallow: /scripts/
+
+# Sitemap location
+Sitemap: https://www.betbotx.com/sitemap.xml
