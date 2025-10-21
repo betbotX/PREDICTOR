@@ -32,7 +32,6 @@
       line-height: 1.6;
     }
 
-    /* Navigation */
     nav {
       text-align: center;
       margin-bottom: 40px;
@@ -55,7 +54,6 @@
       text-shadow: 0 0 10px rgba(0,255,106,0.9);
     }
 
-    /* Ticker bar */
     .ticker {
       width: 100%;
       overflow: hidden;
@@ -145,6 +143,13 @@
       font-weight: 700;
       cursor: pointer;
       transition: 0.25s;
+      animation: neonPulse 1.5s infinite alternate;
+      text-shadow: 0 0 8px rgba(0,255,106,0.8), 0 0 20px rgba(0,255,106,0.4);
+    }
+
+    @keyframes neonPulse {
+      from { box-shadow: 0 0 5px var(--neon), 0 0 15px var(--neon-2); opacity: 1; }
+      to { box-shadow: 0 0 25px var(--neon), 0 0 50px var(--neon-2); opacity: 0.8; }
     }
 
     .call:hover {
@@ -172,8 +177,9 @@
     .disclaimer {
       font-size: 13px;
       color: rgba(0,255,106,0.6);
-      margin-top: 15px;
+      margin-top: 20px;
       text-align: center;
+      max-width: 700px;
     }
 
     footer {
@@ -218,6 +224,7 @@
 
   <h1>PREDICTOR</h1>
   <p class="subtitle">by betbotX</p>
+
   <p style="max-width:800px;text-align:center;margin-top:20px;color:rgba(0,255,106,0.85);">
     PREDICTOR by betbotX is an advanced AI-powered football analysis system built on verified data sources, xG analytics, and tactical intelligence. 
     It delivers realistic, transparent, and data-driven match insights for global and African leagues during the 2025/2026 season — helping fans and analysts understand true match dynamics beyond basic stats.
@@ -229,8 +236,9 @@
     <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
     <button id="callBtn" class="call">Call Agent</button>
     <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
-    <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind ⚠️</p>
   </section>
+
+  <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind ⚠️</p>
 
   <footer>
     Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
@@ -254,7 +262,6 @@
         return;
       }
 
-      // disable button and start blinking + first message
       callBtn.disabled = true;
       responseBox.classList.add("blinking");
       responseBox.textContent = "Calling analytical system...";
@@ -276,10 +283,8 @@
 
         let data = await res.text();
 
-        // Stop clignotement dès la réponse reçue
         responseBox.classList.remove("blinking");
 
-        // Mise en forme (garde la structure demandée)
         data = data
           .replace(/\s+/g, " ")
           .replace(/Match:/g, "<br><strong>Match:</strong> ")
@@ -291,11 +296,9 @@
 
         responseBox.innerHTML = data || "No data received.";
       } catch (err) {
-        // Stop clignotement et afficher l'erreur
         responseBox.classList.remove("blinking");
         responseBox.textContent = "⚠️ Error contacting AI agent: " + err.message;
       } finally {
-        // Toujours réactiver le bouton
         callBtn.disabled = false;
       }
     }
