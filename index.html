@@ -280,44 +280,53 @@ AI football engine, transparent football analysis, AI-powered predictor, accurat
   </footer>
 
   <script>
-    const webhookURL = "https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw";
-    const matchInput = document.getElementById("matchInput");
-    const responseBox = document.getElementById("responseBox");
-    const callBtn = document.getElementById("callBtn");
+const webhookURL = "https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw";
+const matchInput = document.getElementById("matchInput");
+const responseBox = document.getElementById("responseBox");
+const callBtn = document.getElementById("callBtn");
 
-    async function callAgent() {
-      let match = matchInput.value.trim();
-      if (!match) {
-        alert("Please enter a match name first.");
-        return;
-      }
+async function callAgent() {
+  let match = matchInput.value.trim();
+  if (!match) {
+    alert("Please enter a match name first.");
+    return;
+  }
 
-      responseBox.textContent = "Connecting to AI engine...";
-      callBtn.disabled = true;
+  // 🔹 Active le clignotement pendant la requête
+  responseBox.classList.add("blinking");
+  responseBox.textContent = "Connecting to AI engine...";
+  callBtn.disabled = true;
 
-      try {
-        const res = await fetch(webhookURL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ match })
-        });
-        const data = await res.text();
-        responseBox.textContent = data || "No data received.";
-      } catch (err) {
-        responseBox.textContent = "⚠️ Error contacting AI agent: " + err.message;
-      } finally {
-        callBtn.disabled = false;
-      }
-    }
-
-    callBtn.addEventListener("click", callAgent);
-    matchInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        callAgent();
-      }
+  try {
+    const res = await fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ match })
     });
-  </script>
+
+    const data = await res.text();
+
+    // 🔹 Stoppe le clignotement une fois la réponse reçue
+    responseBox.classList.remove("blinking");
+    responseBox.textContent = data || "No data received.";
+  } catch (err) {
+    responseBox.classList.remove("blinking");
+    responseBox.textContent = "⚠️ Error contacting AI agent: " + err.message;
+  } finally {
+    callBtn.disabled = false;
+  }
+}
+
+// 🔹 Gère clic ou touche Entrée
+callBtn.addEventListener("click", callAgent);
+matchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    callAgent();
+  }
+});
+</script>
 </body>
 </html>
+
 
