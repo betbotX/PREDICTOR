@@ -34,11 +34,11 @@
       padding:40px 20px 80px;
     }
 
-    /* ---- NAV UNIFORME ---- */
+    /* ---- NAV ---- */
     nav {
       text-align: center;
       margin-bottom: 40px;
-      font-size: 18px; /* Taille fixe uniforme sur toutes les pages */
+      font-size: 18px;
       letter-spacing: 1px;
     }
 
@@ -46,7 +46,7 @@
       display: inline-block;
       color: var(--neon-2);
       text-decoration: none;
-      margin: 0 12px; /* Espacement égal entre les liens */
+      margin: 0 12px;
       font-weight: 700;
       transition: all 0.25s ease;
       text-shadow: 0 0 6px rgba(0,255,106,0.6);
@@ -57,7 +57,7 @@
       text-shadow: 0 0 10px rgba(0,255,106,0.9);
     }
 
-    /* ---- TITRE PRINCIPAL (H1) ---- */
+    /* ---- TITRE ---- */
     h1 {
       font-size:48px;
       color:var(--neon);
@@ -68,7 +68,7 @@
       font-weight:900;
     }
 
-    /* ---- CONTENEUR ---- */
+    /* ---- CONTENU ---- */
     .container {
       max-width:880px;
       background:rgba(0,0,0,0.7);
@@ -92,24 +92,28 @@
       text-align:justify;
     }
 
-    /* ---- COPYRIGHT (DÉPLACÉ) ---- */
-    .copyright {
-      margin-top: 50px;
-      margin-bottom: 40px;
+    /* ---- FOOTER AVEC LIGNE + PHRASE APRÈS ---- */
+    footer {
+      margin-top: 60px;
+      border-top: 1px solid rgba(0,255,106,0.1);
+      padding-top: 15px; /* ligne un peu plus haute */
       text-align: center;
       font-size: 13px;
       color: rgba(0,255,106,0.9);
       text-shadow: 0 0 6px rgba(0,255,106,0.5);
       font-weight: 600;
       font-family: 'Orbitron', monospace;
+      width: 100%;
     }
 
-    /* ---- FOOTER (VIDE POUR ESPACEMENT BAS) ---- */
-    footer {
-      margin-top: auto;
-      padding-top: 20px;
-      border-top: 1px solid rgba(0,255,106,0.1);
-      width: 100%;
+    footer a {
+      color: rgba(0,255,106,0.9);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #00ff6a;
+      text-shadow: 0 0 8px rgba(0,255,106,0.7);
     }
 
     @media (max-width:768px) {
@@ -149,11 +153,9 @@
     <p>All predictions are provided solely for <strong>informational and entertainment purposes</strong>. They are not intended as betting or financial advice. Always enjoy football responsibly — unpredictability is what makes it beautiful.</p>
   </div>
 
-  <div class="copyright">
+  <footer>
     © 2025 PREDICTOR by betbotX — Powered by ANFAtech
-  </div>
-
-  <footer></footer>
+  </footer>
 
 </body>
 </html>
