@@ -166,7 +166,7 @@
 
     @keyframes blink {
       from { opacity: 1; }
-      to { opacity: 0.5; }
+      to { opacity: 0.3; }
     }
 
     .disclaimer {
@@ -210,7 +210,6 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- ✅ BARRE ANIMÉE FONCTIONNELLE -->
   <div class="ticker">
     <div class="ticker-text">
       Reliable AI football intelligence — built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights
@@ -239,6 +238,31 @@
     Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
     <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
   </footer>
+
+  <script>
+    const button = document.getElementById("callBtn");
+    const responseBox = document.getElementById("responseBox");
+    const input = document.getElementById("matchInput");
+
+    button.addEventListener("click", () => {
+      const match = input.value.trim();
+      if (match === "") {
+        responseBox.textContent = "⚠️ Please enter a match to analyze.";
+        return;
+      }
+
+      // Clignotement actif pendant le "chargement"
+      responseBox.classList.add("blinking");
+      responseBox.textContent = "Analyzing " + match + " ...";
+
+      setTimeout(() => {
+        // Simule une réponse reçue
+        responseBox.textContent = "✅ Analysis complete: " + match + " — AI suggests a balanced match with tactical edge to the home team.";
+        // Stop clignotement une fois la réponse reçue
+        responseBox.classList.remove("blinking");
+      }, 2500);
+    });
+  </script>
 
 </body>
 </html>
