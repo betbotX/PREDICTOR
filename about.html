@@ -36,30 +36,30 @@
 
     /* ---- NAV UNIFORME ---- */
     nav {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 18px; /* Taille fixe uniforme sur toutes les pages */
-  letter-spacing: 1px;
-}
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 18px; /* Taille fixe uniforme sur toutes les pages */
+      letter-spacing: 1px;
+    }
 
-nav a {
-  display: inline-block;
-  color: var(--neon-2);
-  text-decoration: none;
-  margin: 0 12px; /* Espacement égal entre les liens */
-  font-weight: 700;
-  transition: all 0.25s ease;
-  text-shadow: 0 0 6px rgba(0,255,106,0.6);
-}
+    nav a {
+      display: inline-block;
+      color: var(--neon-2);
+      text-decoration: none;
+      margin: 0 12px; /* Espacement égal entre les liens */
+      font-weight: 700;
+      transition: all 0.25s ease;
+      text-shadow: 0 0 6px rgba(0,255,106,0.6);
+    }
 
-nav a:hover {
-  color: var(--neon);
-  text-shadow: 0 0 10px rgba(0,255,106,0.9);
-}
+    nav a:hover {
+      color: var(--neon);
+      text-shadow: 0 0 10px rgba(0,255,106,0.9);
+    }
 
     /* ---- TITRE PRINCIPAL (H1) ---- */
     h1 {
-      font-size:48px; /* même taille que Privacy et Terms */
+      font-size:48px;
       color:var(--neon);
       text-shadow:0 0 20px rgba(0,255,106,0.9);
       margin-bottom:30px;
@@ -92,26 +92,24 @@ nav a:hover {
       text-align:justify;
     }
 
-    /* ---- FOOTER ---- */
+    /* ---- COPYRIGHT (DÉPLACÉ) ---- */
+    .copyright {
+      margin-top: 50px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(0,255,106,0.9);
+      text-shadow: 0 0 6px rgba(0,255,106,0.5);
+      font-weight: 600;
+      font-family: 'Orbitron', monospace;
+    }
+
+    /* ---- FOOTER (VIDE POUR ESPACEMENT BAS) ---- */
     footer {
-      margin-top:60px;
-      text-align:center;
-      font-size:13px;
-      color:rgba(0,255,106,0.9);
-      text-shadow:0 0 6px rgba(0,255,106,0.5);
-      border-top:1px solid rgba(0,255,106,0.1);
-      padding-top:20px;
-      width:100%;
-      font-weight:600;
-      font-family:'Orbitron', monospace;
-    }
-    footer a {
-      color:rgba(0,255,106,0.9);
-      text-decoration:none;
-    }
-    footer a:hover {
-      color:#00ff6a;
-      text-shadow:0 0 8px rgba(0,255,106,0.7);
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0,255,106,0.1);
+      width: 100%;
     }
 
     @media (max-width:768px) {
@@ -151,10 +149,11 @@ nav a:hover {
     <p>All predictions are provided solely for <strong>informational and entertainment purposes</strong>. They are not intended as betting or financial advice. Always enjoy football responsibly — unpredictability is what makes it beautiful.</p>
   </div>
 
-  <footer>
+  <div class="copyright">
     © 2025 PREDICTOR by betbotX — Powered by ANFAtech
-  </footer>
+  </div>
+
+  <footer></footer>
 
 </body>
 </html>
-
