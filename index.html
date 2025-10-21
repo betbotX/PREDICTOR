@@ -48,7 +48,7 @@ main {
 nav {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 18px; /* Taille fixe uniforme sur toutes les pages */
+  font-size: 18px;
   letter-spacing: 1px;
 }
 
@@ -56,7 +56,7 @@ nav a {
   display: inline-block;
   color: var(--neon-2);
   text-decoration: none;
-  margin: 0 12px; /* Espacement égal entre les liens */
+  margin: 0 12px;
   font-weight: 700;
   transition: all 0.25s ease;
   text-shadow: 0 0 6px rgba(0,255,106,0.6);
@@ -65,7 +65,6 @@ nav a {
 nav a:hover {
   color: var(--neon);
   text-shadow: 0 0 10px rgba(0,255,106,0.9);
-}
 }
 
 .ticker {
@@ -89,7 +88,7 @@ nav a:hover {
 }
 
 @keyframes scroll {
-  0%{transform:translateX(0);}
+  0%{transform:translateX(100%);}
   100%{transform:translateX(-100%);}
 }
 
@@ -256,8 +255,7 @@ footer a:hover {
 
   <div class="ticker">
     <div class="ticker-text">
-      Reliable AI football intelligence — built on verified data sources and advanced analytical engines 
-      to ensure accurate, transparent, and data-driven match insights
+      Reliable AI football intelligence — built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights
     </div>
   </div>
 </header>
@@ -300,29 +298,6 @@ footer a:hover {
   <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
 </footer>
 
-<style>
-  footer {
-    margin-top:60px;
-    text-align:center;
-    font-size:13px;
-    color:rgba(0,255,106,0.9);
-    text-shadow:0 0 6px rgba(0,255,106,0.5);
-    border-top:1px solid rgba(0,255,106,0.1);
-    padding-top:20px;
-    width:100%;
-    font-weight:600;
-    font-family:'Orbitron', monospace;
-  }
-  footer a {
-    color:rgba(0,255,106,0.9);
-    text-decoration:none;
-  }
-  footer a:hover {
-    color:#00ff6a;
-    text-shadow:0 0 8px rgba(0,255,106,0.7);
-  }
-</style>
-
 <script>
 const webhookURL = "https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw";
 const matchInput = document.getElementById("matchInput");
@@ -335,7 +310,7 @@ async function callAgent() {
     alert("Please enter a match name first.");
     return;
   }
-  if (!/^[a-zA-Z0-9\\s\\-éèêëáàâäíìîïóòôöúùûüç]+$/.test(match)) {
+  if (!/^[a-zA-Z0-9\s\-éèêëáàâäíìîïóòôöúùûüç]+$/.test(match)) {
     alert("Invalid match name. Please enter a valid format (letters, numbers, and dashes only).");
     return;
   }
@@ -386,5 +361,3 @@ matchInput.addEventListener("keydown", (e) => {
 </script>
 </body>
 </html>
-
-
