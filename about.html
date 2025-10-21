@@ -22,6 +22,7 @@
       --neon-2:#19ff8a;
       --muted: rgba(0,255,106,0.65);
     }
+
     html, body { height:100%; margin:0; }
     body {
       background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
@@ -30,9 +31,42 @@
       display:flex;
       flex-direction:column;
       align-items:center;
-      padding:40px 20px;
+      padding:40px 20px 80px;
     }
 
+    /* ---- NAV UNIFORME ---- */
+    nav {
+      text-align:center;
+      margin-bottom:40px;
+      font-size:18px;
+      letter-spacing:1px;
+    }
+    nav a {
+      display:inline-block;
+      color:var(--neon-2);
+      text-decoration:none;
+      margin:0 12px;
+      font-weight:700;
+      transition:all 0.25s ease;
+      text-shadow:0 0 6px rgba(0,255,106,0.6);
+    }
+    nav a:hover {
+      color:var(--neon);
+      text-shadow:0 0 10px rgba(0,255,106,0.9);
+    }
+
+    /* ---- TITRE PRINCIPAL (H1) ---- */
+    h1 {
+      font-size:48px; /* même taille que Privacy et Terms */
+      color:var(--neon);
+      text-shadow:0 0 20px rgba(0,255,106,0.9);
+      margin-bottom:30px;
+      text-align:center;
+      letter-spacing:3px;
+      font-weight:900;
+    }
+
+    /* ---- CONTENEUR ---- */
     .container {
       max-width:880px;
       background:rgba(0,0,0,0.7);
@@ -40,15 +74,6 @@
       border-radius:12px;
       padding:30px;
       box-shadow:0 0 20px rgba(0,255,106,0.15);
-    }
-
-    h1 {
-      text-align:center;
-      font-size:52px;
-      margin-top:0;
-      margin-bottom:20px;
-      color:var(--neon);
-      text-shadow:0 0 20px rgba(0,255,106,0.9);
     }
 
     h2 {
@@ -65,27 +90,7 @@
       text-align:justify;
     }
 
-    nav {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 18px; /* Taille fixe uniforme sur toutes les pages */
-  letter-spacing: 1px;
-}
-
-nav a {
-  display: inline-block;
-  color: var(--neon-2);
-  text-decoration: none;
-  margin: 0 12px; /* Espacement égal entre les liens */
-  font-weight: 700;
-  transition: all 0.25s ease;
-  text-shadow: 0 0 6px rgba(0,255,106,0.6);
-}
-
-nav a:hover {
-  color: var(--neon);
-  text-shadow: 0 0 10px rgba(0,255,106,0.9);
-}
+    /* ---- FOOTER ---- */
     footer {
       margin-top:60px;
       text-align:center;
@@ -108,11 +113,12 @@ nav a:hover {
     }
 
     @media (max-width:768px) {
-      h1 { font-size:36px; }
+      h1 { font-size:34px; }
     }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html">Home</a> |
     <a href="about.html">About</a> |
@@ -121,9 +127,9 @@ nav a:hover {
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="container">
-    <h1>About</h1>
+  <h1>About</h1>
 
+  <div class="container">
     <p><strong>PREDICTOR by betbotX</strong> is an advanced AI-powered football prediction and analysis platform designed to give fans reliable, data-backed insights — not random guesses. Using <strong>verified multi-source data</strong>, <strong>xG analytics</strong>, and <strong>intelligent reasoning</strong>, it produces transparent and realistic match insights for the <strong>2025/2026 football season</strong>.</p>
 
     <h2>🎯 Our Mission</h2>
@@ -146,6 +152,6 @@ nav a:hover {
   <footer>
     © 2025 PREDICTOR by betbotX — Powered by ANFAtech
   </footer>
+
 </body>
 </html>
-
