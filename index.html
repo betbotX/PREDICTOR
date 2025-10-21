@@ -99,7 +99,7 @@
       background: rgba(0,0,0,0.7);
       border: 1px solid rgba(0,255,106,0.18);
       border-radius: 14px;
-      padding: 30px;
+      padding: 30px 60px; /* ✅ élargi le cadre de chaque côté (~4cm) */
       box-shadow: 0 0 20px rgba(0,255,106,0.15);
       max-width: 700px;
       text-align: center;
@@ -118,9 +118,9 @@
     }
 
     .match {
-      margin-top: 10px;
-      width: 80%;
-      padding: 10px;
+      margin-top: 20px; /* ✅ espace avant le champ */
+      width: 100%;
+      padding: 12px;
       border-radius: 8px;
       border: none;
       background: #001900;
@@ -133,13 +133,13 @@
     }
 
     .call {
-      margin-top: 15px;
-      padding: 10px 25px;
+      margin-top: 25px; /* ✅ plus d’espace entre le champ et le bouton */
+      padding: 12px 35px;
       background: transparent;
       color: var(--neon);
       border: 1px solid var(--neon);
       border-radius: 10px;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
       cursor: pointer;
       transition: 0.25s;
@@ -159,7 +159,7 @@
     }
 
     .response-box {
-      margin-top: 20px;
+      margin-top: 30px; /* ✅ espace entre bouton et phrase */
       color: var(--neon-2);
       font-weight: 600;
       text-shadow: 0 0 8px rgba(0,255,106,0.5);
@@ -177,7 +177,7 @@
     .disclaimer {
       font-size: 13px;
       color: rgba(0,255,106,0.6);
-      margin-top: 20px;
+      margin-top: 30px;
       text-align: center;
       max-width: 700px;
     }
@@ -238,7 +238,10 @@
     <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
   </section>
 
-  <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind ⚠️</p>
+  <p class="disclaimer">
+    ⚠️ Our predictions are provided for informational and entertainment purposes only. 
+    We do not encourage or promote betting or gambling of any kind ⚠️
+  </p>
 
   <footer>
     Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
@@ -266,7 +269,6 @@
       responseBox.classList.add("blinking");
       responseBox.textContent = "Calling analytical system...";
 
-      // Séquence d’attente progressive
       await new Promise((resolve) => {
         setTimeout(() => { responseBox.textContent = "Activating PREDICTOR neural system..."; }, 1500);
         setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3200);
