@@ -262,7 +262,7 @@ async function callAgent() {
     return;
   }
 
-  // Active le clignotement pendant la requête
+  // Active clignotement pendant la requête
   responseBox.classList.add("blinking");
   responseBox.textContent = "Connecting to AI engine...";
   callBtn.disabled = true;
@@ -273,24 +273,24 @@ async function callAgent() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ match })
     });
-    const data = await res.text();
 
-    // Stoppe le clignotement après la réponse
+    let data = await res.text();
+
+    // Stoppe le clignotement
     responseBox.classList.remove("blinking");
 
-    // 🔹 Mise en forme structurée si le texte contient des champs connus
-    if (data.includes("Correct Score Prediction:")) {
-      const formatted = data
-        .replace(/Match:/, "<strong>Match:</strong>")
-        .replace(/Correct Score Prediction:/, "<br><strong>Correct Score Prediction:</strong>")
-        .replace(/BTTS \(Both Teams To Score\):/, "<br><strong>BTTS (Both Teams To Score):</strong>")
-        .replace(/Over\/Under 2\.5 Goals:/, "<br><strong>Over/Under 2.5 Goals:</strong>")
-        .replace(/Safety:/, "<br><strong>Safety:</strong>")
-        .replace(/Analysis:/, "<br><br><strong>Analysis:</strong>");
-      responseBox.innerHTML = formatted;
-    } else {
-      responseBox.textContent = data || "No data received.";
-    }
+    // Nettoie et reformate la réponse
+    data = data
+      .replace(/\s+/g, " ") // condense les espaces
+      .replace(/Match:/g, "<br><strong>Match:</strong> ")
+      .replace(/Correct Score Prediction:/g, "<br><strong>Correct Score Prediction:</strong> ")
+      .replace(/BTTS \(Both Teams To Score\):/g, "<br><strong>BTTS (Both Teams To Score):</strong> ")
+      .replace(/Over\/Under 2\.5 Goals:/g, "<br><strong>Over/Under 2.5 Goals:</strong> ")
+      .replace(/Safety:/g, "<br><strong>Safety:</strong> ")
+      .replace(/Analysis:/g, "<br><br><strong>Analysis:</strong> ");
+
+    // Affiche la version HTML
+    responseBox.innerHTML = data || "No data received.";
   } catch (err) {
     responseBox.classList.remove("blinking");
     responseBox.textContent = "⚠️ Error contacting AI agent: " + err.message;
@@ -309,6 +309,7 @@ matchInput.addEventListener("keydown", (e) => {
 </script>
 </body>
 </html>
+
 
 
 
