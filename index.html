@@ -81,23 +81,28 @@
     }
 
     h1 {
-  font-size: 58px; /* Tu peux ajuster entre 52–60 selon ton goût */
+  font-size: 60px; /* plus grand qu’avant */
   color: var(--neon);
-  text-shadow: 0 0 25px rgba(0,255,106,1);
+  text-shadow:
+    0 0 25px rgba(0,255,106,0.9),
+    0 0 50px rgba(0,255,106,0.5);
   text-align: center;
   letter-spacing: 3px;
-  margin: 0; /* ✅ Supprime tout espace inutile au-dessus et en dessous */
+  margin: 5px 0 0; /* réduit l’espace entre h1 et le texte suivant */
 }
 
 .subtitle {
-  color: var(--muted);
-  font-size: 20px;
-  margin-top: 5px; /* ✅ Petit espace contrôlé */
-  margin-bottom: 25px; /* Espacement normal vers le texte suivant */
-  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+  color: var(--neon-2);
+  font-size: 20px; /* légèrement plus grand */
+  font-weight: 700;
+  margin-top: 2px; /* rapproche du h1 */
+  margin-bottom: 25px; /* garde un espace équilibré avant le texte principal */
+  text-shadow:
+    0 0 10px rgba(0,255,106,0.6),
+    0 0 20px rgba(0,255,106,0.4);
+  text-align: center;
+  letter-spacing: 2px;
 }
-    }
-
     .panel {
       background: rgba(0,0,0,0.7);
       border: 1px solid rgba(0,255,106,0.18);
@@ -319,6 +324,7 @@
 
 </body>
 </html>
+
 
 
 
