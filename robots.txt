@@ -7,4 +7,4 @@ Disallow: /admin/
 Disallow: /scripts/
 
 # Sitemap location
-Sitemap: https://www.betbotx.com/sitemap.xml
+Sitemap: https://betbotx.github.io/PREDICTOR/sitemap.xml
