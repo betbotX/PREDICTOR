@@ -7,49 +7,49 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Home | PREDICTOR by betbotX — Realistic Football Predictions with Verified Data & Tactical Insights (2025/2026)</title>
 <meta name="description" content="PREDICTOR by betbotX is an AI-powered football predictor using real-time data, player morale, xG analytics, tactical intelligence, and verified multi-source reports to deliver realistic, transparent, and data-driven match probabilities for the 2025/2026 season." />
-<meta name="keywords" content=" AI, football predictions, realistic match predictions, verified football data, football analytics 2025 2026, football predictor, match probabilities, player morale data, xG analytics, tactical football insights, data transparency, betbotX AI, European football leagues, Ligue 1, Premier League, La Liga, Serie A, Bundesliga, Eredivisie, Champions League, Europa League, UEFA Conference League, CAF Champions League, CAF Confederation Cup, World Cup qualifiers, AFCON, Africa Cup of Nations, African leagues, Moroccan Botola Pro, Tunisian Ligue 1, Egyptian Premier League, South African PSL, Wydad AC, Raja Casablanca, FAR Rabat, Esperance de Tunis, Club Africain, Etoile du Sahel, Al Ahly, Zamalek SC, Mamelodi Sundowns, TP Mazembe, Simba SC, Kaizer Chiefs, Orlando Pirates, Young Africans, Nigerian Premier League, Ghana Premier League, Manchester City, Manchester United, Real Madrid, Barcelona, Atletico Madrid, PSG, Bayern Munich, Borussia Dortmund, AC Milan, Inter Milan, Juventus, Napoli, AS Roma, Chelsea, Arsenal, Liverpool, Tottenham, Benfica, Porto, Sporting CP, Ajax, PSV Eindhoven, Feyenoord, Celtic, Rangers, Galatasaray, Fenerbahce, Besiktas, football stats engine, AI predictive system, football machine learning, match analysis, AI data model, football results predictions, team performance insights, AI football engine, transparent football analysis, AI-powered predictor, accurate football forecasts, African cup, coupe d'afrique, CAN, 2026, Morocco, maroc, world cup, FIFA, UEFA, CAF " />
+<meta name="keywords" content="AI, football predictions, realistic match predictions, verified football data, football analytics 2025 2026, football predictor, match probabilities, player morale data, xG analytics, tactical football insights, data transparency, betbotX AI, European football leagues, Ligue 1, Premier League, La Liga, Serie A, Bundesliga, Eredivisie, Champions League, Europa League, UEFA Conference League, CAF Champions League, CAF Confederation Cup, World Cup qualifiers, AFCON, Africa Cup of Nations, African leagues, Moroccan Botola Pro, Tunisian Ligue 1, Egyptian Premier League, South African PSL, Wydad AC, Raja Casablanca, FAR Rabat, Esperance de Tunis, Club Africain, Etoile du Sahel, Al Ahly, Zamalek SC, Mamelodi Sundowns, TP Mazembe, Simba SC, Kaizer Chiefs, Orlando Pirates, Young Africans, Nigerian Premier League, Ghana Premier League, Manchester City, Manchester United, Real Madrid, Barcelona, Atletico Madrid, PSG, Bayern Munich, Borussia Dortmund, AC Milan, Inter Milan, Juventus, Napoli, AS Roma, Chelsea, Arsenal, Liverpool, Tottenham, Benfica, Porto, Sporting CP, Ajax, PSV Eindhoven, Feyenoord, Celtic, Rangers, Galatasaray, Fenerbahce, Besiktas, football stats engine, AI predictive system, football machine learning, match analysis, AI data model, football results predictions, team performance insights, AI football engine, transparent football analysis, AI-powered predictor, accurate football forecasts, African cup, coupe d'afrique, CAN, 2026, Morocco, maroc, world cup, FIFA, UEFA, CAF" />
 <meta name="author" content="betbotX - ANFAtech" />
 <meta name="robots" content="index, follow" />
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
 <style>
-@keyframes blinkText {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
+@keyframes blinkText { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
 .blinking { animation: blinkText 1.6s infinite ease-in-out; }
+
 :root {
   --bg:#000;
   --neon:#00ff6a;
   --neon-2:#19ff8a;
-  --muted: rgba(0,255,106,0.65);
+  --muted:rgba(0,255,106,0.65);
 }
+
 body {
-  margin: 0;
-  background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
-  color: var(--neon);
-  font-family: 'Orbitron', monospace;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* ✅ recentre verticalement */
-  min-height: 100vh;
-  padding: 40px 20px 100px;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  position: relative;
+  margin:0;
+  background:radial-gradient(ellipse at center,#001100 0%,#000 60%);
+  color:var(--neon);
+  font-family:'Orbitron',monospace;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
+  padding:40px 20px 100px;
+  box-sizing:border-box;
+  overflow-x:hidden;
+  position:relative;
 }
 
 main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
-}
+
 nav {
   text-align:center;
   margin-bottom:20px;
 }
+
 nav a {
   color:var(--neon-2);
   text-decoration:none;
@@ -58,45 +58,54 @@ nav a {
   letter-spacing:1px;
   transition:all 0.25s ease;
 }
+
 nav a:hover {
   color:var(--neon);
   text-shadow:0 0 8px rgba(0,255,106,0.7);
 }
+
 .ticker {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  border-top: 1px solid rgba(0,255,106,0.15);
-  border-bottom: 1px solid rgba(0,255,106,0.15);
-  margin-bottom: 40px;
-  height: 34px;
+  width:100%;
+  overflow:hidden;
+  white-space:nowrap;
+  border-top:1px solid rgba(0,255,106,0.15);
+  border-bottom:1px solid rgba(0,255,106,0.15);
+  margin-bottom:40px;
+  height:34px;
 }
+
 .ticker-text {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll 40s linear infinite;
-  color: var(--neon-2);
-  font-size: 15px;
-  text-shadow: 0 0 10px rgba(0,255,106,0.5);
+  display:inline-block;
+  padding-left:100%;
+  animation:scroll 40s linear infinite;
+  color:var(--neon-2);
+  font-size:15px;
+  text-shadow:0 0 10px rgba(0,255,106,0.5);
   line-height:34px;
 }
+
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-100%);}
 }
+
 h1 {
   font-size:72px;
   color:var(--neon);
   text-shadow:0 0 20px rgba(0,255,106,0.9);
   letter-spacing:3px;
   margin:0;
+  text-align:center;
 }
+
 .subtitle {
   font-size:20px;
   color:var(--neon-2);
   margin-bottom:40px;
   text-shadow:0 0 8px rgba(0,255,106,0.6);
+  text-align:center;
 }
+
 .panel {
   width:100%;
   max-width:880px;
@@ -110,6 +119,7 @@ h1 {
   flex-direction:column;
   align-items:center;
 }
+
 .info-strong {
   font-size:25px;
   font-weight:800;
@@ -117,32 +127,32 @@ h1 {
   text-shadow:0 0 10px rgba(0,255,106,0.6);
   text-align:center;
   margin-bottom:12px;
-  animation: glowPulse 2.5s infinite ease-in-out;
+  animation:glowPulse 2.5s infinite ease-in-out;
 }
+
 @keyframes glowPulse {
-  0%,100% {
-    text-shadow:0 0 10px rgba(0,255,106,0.4),0 0 20px rgba(0,255,106,0.4);
-  }
-  50% {
-    text-shadow:0 0 25px rgba(0,255,106,1),0 0 50px rgba(0,255,106,1);
-  }
+  0%,100%{text-shadow:0 0 10px rgba(0,255,106,0.4),0 0 20px rgba(0,255,106,0.4);}
+  50%{text-shadow:0 0 25px rgba(0,255,106,1),0 0 50px rgba(0,255,106,1);}
 }
+
 .info-strong::before {
   content:"🟢";
   margin-right:6px;
-  animation: blinkDot 1.8s infinite ease-in-out;
+  animation:blinkDot 1.8s infinite ease-in-out;
 }
+
 @keyframes blinkDot {
-  0%,100% { opacity:0.4; text-shadow:0 0 4px rgba(0,255,106,0.3); }
-  50% { opacity:1; text-shadow:0 0 18px rgba(0,255,106,1); }
+  0%,100%{opacity:0.4;text-shadow:0 0 4px rgba(0,255,106,0.3);}
+  50%{opacity:1;text-shadow:0 0 18px rgba(0,255,106,1);}
 }
+
 .info-light {
   font-size:13px;
   color:rgba(0,255,106,0.45);
   text-align:center;
-  font-weight:400;
   margin-bottom:10px;
 }
+
 input.match {
   width:100%;
   font-size:18px;
@@ -155,6 +165,7 @@ input.match {
   text-align:center;
   box-sizing:border-box;
 }
+
 button.call {
   display:block;
   margin:20px auto 10px;
@@ -167,22 +178,19 @@ button.call {
   cursor:pointer;
   letter-spacing:1px;
   transition:0.25s ease;
-  animation: buttonPulse 3s infinite ease-in-out;
+  animation:buttonPulse 3s infinite ease-in-out;
 }
+
 @keyframes buttonPulse {
-  0%,100% {
-    box-shadow:0 0 5px rgba(0,255,106,0.1);
-    background:rgba(0,255,106,0.05);
-  }
-  50% {
-    box-shadow:0 0 20px rgba(0,255,106,0.7);
-    background:rgba(0,255,106,0.15);
-  }
+  0%,100%{box-shadow:0 0 5px rgba(0,255,106,0.1);}
+  50%{box-shadow:0 0 20px rgba(0,255,106,0.7);}
 }
+
 button.call:hover {
   background:rgba(0,255,106,0.2);
   box-shadow:0 0 25px rgba(0,255,106,0.8);
 }
+
 .response-box {
   width:100%;
   min-height:150px;
@@ -195,6 +203,7 @@ button.call:hover {
   text-align:left;
   box-sizing:border-box;
 }
+
 .disclaimer {
   text-align:center;
   font-size:13px;
@@ -202,116 +211,92 @@ button.call:hover {
   margin-top:15px;
   text-shadow:0 0 8px rgba(0,255,106,0.7);
 }
+
 footer {
   text-align:center;
   font-size:12px;
   color:rgba(0,255,106,0.9);
-  position: relative;
-margin-top: 40px;
-  left:0;
-  right:0;
+  margin-top:40px;
   padding:10px;
 }
+
 footer a {
   color:var(--neon-2);
   text-decoration:none;
 }
+
 footer a:hover {
   color:var(--neon);
   text-shadow:0 0 6px rgba(0,255,106,0.6);
 }
+
 @media(max-width:768px){
-  h1 { font-size:44px; }
-  .ticker-text { font-size:13px; }
+  h1{font-size:44px;}
+  .ticker-text{font-size:13px;}
 }
 </style>
-<!-- ✅ SEO & Indexation Optimization -->
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<!-- SEO -->
 <link rel="canonical" href="https://betbotx.github.io/PREDICTOR/" />
-
-<!-- ✅ Meta Description & Keywords -->
-<meta name="description" content="PREDICTOR by betbotX delivers realistic, data-driven football predictions using verified stats, tactical insights, and player performance analysis.">
-<meta name="keywords" content="AI football predictions, realistic match analysis, verified football data, tactical insights, betbotX AI, football analytics 2025 2026, football predictor, data transparency, AI football model">
-
-<!-- ✅ Schema.org (Rich Snippet / Google Knowledge Graph) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "PREDICTOR by betbotX",
-  "url": "https://betbotx.github.io/PREDICTOR/",
-  "description": "AI-powered football predictor using verified data, tactical insights, and real-time analytics for realistic match analysis.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "betbotX",
-    "url": "https://betbotx.github.io/PREDICTOR/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://betbotx.github.io/PREDICTOR/assets/logo.png"
-    }
-  }
-}
-</script>  
 </head>
+
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a> | 
-      <a href="about.html">About</a> | 
-      <a href="privacy.html">Privacy</a> | 
-      <a href="terms.html">Terms</a> | 
-      <a href="contact.html">Contact</a>
-    </nav>
+<header>
+  <nav>
+    <a href="index.html">Home</a> | 
+    <a href="about.html">About</a> | 
+    <a href="privacy.html">Privacy</a> | 
+    <a href="terms.html">Terms</a> | 
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <div class="ticker">
-      <div class="ticker-text">
-        Reliable AI football intelligence — built on verified data sources and advanced analytical engines 
-        to ensure accurate, transparent, and data-driven match insights
-      </div>
+  <div class="ticker">
+    <div class="ticker-text">
+      Reliable AI football intelligence — built on verified data sources and advanced analytical engines 
+      to ensure accurate, transparent, and data-driven match insights
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <h1>PREDICTOR</h1>
-    <p class="subtitle">by betbotX</p>
+<main>
+  <h1>PREDICTOR</h1>
+  <p class="subtitle">by betbotX</p>
 
-    <p style="max-width:800px;text-align:center;margin-top:20px;color:rgba(0,255,106,0.85);">
-      PREDICTOR by betbotX is an advanced AI-powered football analysis system built on verified data sources, 
-      xG analytics, and tactical intelligence. It delivers realistic, transparent, and data-driven match insights 
-      for global and African leagues during the 2025/2026 season — helping fans and analysts understand true match 
-      dynamics beyond basic stats.
-    </p>  
+  <p style="max-width:800px;text-align:center;margin-top:20px;color:rgba(0,255,106,0.85);">
+    PREDICTOR by betbotX is an advanced AI-powered football analysis system built on verified data sources, 
+    xG analytics, and tactical intelligence. It delivers realistic, transparent, and data-driven match insights 
+    for global and African leagues during the 2025/2026 season — helping fans and analysts understand true match 
+    dynamics beyond basic stats.
+  </p>  
 
-    <section class="panel">
-      <p class="info-strong">ENGINE ACTIVE - READY 🟢</p>
-      <p class="info-light">Enter the match in the correct format and spelling</p>
+  <section class="panel">
+    <p class="info-strong">ENGINE ACTIVE - READY 🟢</p>
+    <p class="info-light">Enter the match in the correct format and spelling</p>
 
-      <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
-      <button id="callBtn" class="call">Call Agent</button>
+    <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
+    <button id="callBtn" class="call">Call Agent</button>
 
-      <div id="responseBox" class="response-box blinking">
-        Ready to analyze - type a match for realistic insights..
-      </div>
-
-      <p class="disclaimer">
-        ⚠️ Our predictions are provided for informational and entertainment purposes only. 
-        We do not encourage or promote betting or gambling of any kind ⚠️
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <div>
-      Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
-      Instagram: <a href="https://www.instagram.com/betbotX" target="_blank">@betbotX</a> |
-      Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
+    <div id="responseBox" class="response-box blinking">
+      Ready to analyze - type a match for realistic insights..
     </div>
 
-    <div style="margin-top:10px;">
-      © 2025 PREDICTOR by betbotX — Powered by ANFAtech
-    </div>
-  </footer>
-</body>
+    <p class="disclaimer">
+      ⚠️ Our predictions are provided for informational and entertainment purposes only. 
+      We do not encourage or promote betting or gambling of any kind ⚠️
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div>
+    Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
+    Instagram: <a href="https://www.instagram.com/betbotX" target="_blank">@betbotX</a> |
+    Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
+  </div>
+  <div style="margin-top:10px;">
+    © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+  </div>
+</footer>
 
 <script>
 const webhookURL = "https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw";
@@ -321,53 +306,42 @@ const callBtn = document.getElementById("callBtn");
 
 async function callAgent() {
   let match = matchInput.value.trim();
-
-  // ✅ Sécurité : empêche les caractères suspects
   if (!match) {
     alert("Please enter a match name first.");
     return;
   }
-  if (!/^[a-zA-Z0-9\s\-éèêëáàâäíìîïóòôöúùûüç]+$/.test(match)) {
+  if (!/^[a-zA-Z0-9\\s\\-éèêëáàâäíìîïóòôöúùûüç]+$/.test(match)) {
     alert("Invalid match name. Please enter a valid format (letters, numbers, and dashes only).");
     return;
   }
 
-  // Affichage du message de connexion
-  responseBox.textContent = "Calling system engine... Collecting match data...";
+  responseBox.textContent = "Calling analytical system...";
   callBtn.disabled = true;
   responseBox.classList.add("blinking");
-  responseBox.textContent = "Calling analytical system...";
 
-  // Séquence d’attente (messages progressifs)
   await new Promise((resolve) => {
-    setTimeout(() => { responseBox.textContent = "Activating PREDICTOR neural system..."; }, 1500);
-    setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3000);
-    setTimeout(() => { responseBox.textContent = "Running match analysis — please wait..."; }, 4800);
-    setTimeout(resolve, 6500); // attend ~6.5 secondes avant la requête
+    setTimeout(() => responseBox.textContent = "Activating PREDICTOR neural system...", 1500);
+    setTimeout(() => responseBox.textContent = "Collecting live data & tactical parameters...", 3000);
+    setTimeout(() => responseBox.textContent = "Running match analysis — please wait...", 4800);
+    setTimeout(resolve, 6500);
   });
 
   try {
     const res = await fetch(webhookURL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {"Content-Type":"application/json"},
       body: JSON.stringify({ match })
     });
 
     let data = await res.text();
-
-    // Stop clignotement
     responseBox.classList.remove("blinking");
-
-    // Mise en forme propre du texte
-    data = data
-      .replace(/\s+/g, " ")
-      .replace(/Match:/g, "<br><strong>Match:</strong> ")
-      .replace(/Correct Score Prediction:/g, "<br><strong>Correct Score Prediction:</strong> ")
-      .replace(/BTTS \(Both Teams To Score\):/g, "<br><strong>BTTS (Both Teams To Score):</strong> ")
-      .replace(/Over\/Under 2\.5 Goals:/g, "<br><strong>Over/Under 2.5 Goals:</strong> ")
-      .replace(/Safety:/g, "<br><strong>Safety:</strong> ")
-      .replace(/Analysis:/g, "<br><br><strong>Analysis:</strong> ");
-
+    data = data.replace(/\s+/g, " ")
+               .replace(/Match:/g, "<br><strong>Match:</strong> ")
+               .replace(/Correct Score Prediction:/g, "<br><strong>Correct Score Prediction:</strong> ")
+               .replace(/BTTS \(Both Teams To Score\):/g, "<br><strong>BTTS (Both Teams To Score):</strong> ")
+               .replace(/Over\/Under 2\.5 Goals:/g, "<br><strong>Over/Under 2.5 Goals:</strong> ")
+               .replace(/Safety:/g, "<br><strong>Safety:</strong> ")
+               .replace(/Analysis:/g, "<br><br><strong>Analysis:</strong> ");
     responseBox.innerHTML = data || "No data received.";
   } catch (err) {
     responseBox.classList.remove("blinking");
@@ -387,24 +361,3 @@ matchInput.addEventListener("keydown", (e) => {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
