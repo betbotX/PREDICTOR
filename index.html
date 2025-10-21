@@ -266,15 +266,15 @@ async function callAgent() {
   responseBox.classList.add("blinking");
   responseBox.textContent = "Calling AI agent...";
 
-  // 🔹 Séquence d’attente immersive
-  setTimeout(() => { responseBox.textContent = "Connecting to prediction engine..."; }, 1500);
-  setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3000);
-  setTimeout(() => { responseBox.textContent = "Running match analysis — please wait..."; }, 4800);
+  // Séquence d’attente (messages progressifs)
+  await new Promise((resolve) => {
+    setTimeout(() => { responseBox.textContent = "Connecting to prediction engine..."; }, 1500);
+    setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3000);
+    setTimeout(() => { responseBox.textContent = "Running match analysis — please wait..."; }, 4800);
+    setTimeout(resolve, 6500); // attend ~6.5 secondes avant la requête
+  });
 
   try {
-    // 🔹 Attend un peu avant la requête (effet plus réaliste)
-    await new Promise(resolve => setTimeout(resolve, 6000));
-
     const res = await fetch(webhookURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -286,7 +286,7 @@ async function callAgent() {
     // Stop clignotement
     responseBox.classList.remove("blinking");
 
-    // 🔹 Mise en forme du texte reçu
+    // Mise en forme propre du texte
     data = data
       .replace(/\s+/g, " ")
       .replace(/Match:/g, "<br><strong>Match:</strong> ")
@@ -315,6 +315,7 @@ matchInput.addEventListener("keydown", (e) => {
 </script>
 </body>
 </html>
+
 
 
 
