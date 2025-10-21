@@ -1,6 +1,15 @@
 # robots.txt for PREDICTOR by betbotX
+# -------------------------------
+# Purpose: Control crawler access and indicate sitemap location
+# Hosting: https://betbotx.github.io/PREDICTOR/
+# -------------------------------
+
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Optional: Block admin or internal folders if they ever exist
+Disallow: /admin/
+Disallow: /scripts/
+
+# Sitemap reference for search engines
 Sitemap: https://betbotx.github.io/PREDICTOR/sitemap.xml
