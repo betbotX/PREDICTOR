@@ -311,12 +311,20 @@ const responseBox = document.getElementById("responseBox");
 const callBtn = document.getElementById("callBtn");
 
 async function callAgent() {
-  const match = matchInput.value.trim();
+  let match = matchInput.value.trim();
+
+  // ✅ Sécurité : empêche les caractères suspects
   if (!match) {
     alert("Please enter a match name first.");
     return;
   }
+  if (!/^[a-zA-Z0-9\s\-éèêëáàâäíìîïóòôöúùûüç]+$/.test(match)) {
+    alert("Invalid match name. Please enter a valid format (letters, numbers, and dashes only).");
+    return;
+  }
 
+  // Affichage du message de connexion
+  responseBox.textContent = "Calling system engine... Collecting match data...";
   callBtn.disabled = true;
   responseBox.classList.add("blinking");
   responseBox.textContent = "Calling analytical system...";
@@ -370,6 +378,7 @@ matchInput.addEventListener("keydown", (e) => {
 </script>
 </body>
 </html>
+
 
 
 
