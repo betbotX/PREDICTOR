@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -19,168 +18,185 @@
 
   <style>
     :root {
-      --bg:#000;
-      --neon:#00ff6a;
-      --neon-2:#19ff8a;
-      --muted:rgba(0,255,106,0.65);
+      --bg: #000;
+      --neon: #00ff6a;
+      --neon-2: #19ff8a;
+      --muted: rgba(0,255,106,0.65);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
     }
 
     body {
-      margin:0;
-      background:radial-gradient(ellipse at center, #001100 0%, #000 60%);
-      color:var(--neon);
-      font-family:'Orbitron', monospace;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      padding:40px 20px 80px;
+      background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
+      color: var(--neon);
+      font-family: 'Orbitron', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 80px;
+      line-height: 1.6;
     }
 
+    /* ---- NAV ---- */
     nav {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 18px; /* Taille fixe uniforme sur toutes les pages */
-  letter-spacing: 1px;
-}
-
-nav a {
-  display: inline-block;
-  color: var(--neon-2);
-  text-decoration: none;
-  margin: 0 12px; /* Espacement égal entre les liens */
-  font-weight: 700;
-  transition: all 0.25s ease;
-  text-shadow: 0 0 6px rgba(0,255,106,0.6);
-}
-
-nav a:hover {
-  color: var(--neon);
-  text-shadow: 0 0 10px rgba(0,255,106,0.9);
-}
+      text-align: center;
+      margin-bottom: 40px; /* ✅ même espacement que les autres pages */
+      font-size: 18px;
+      letter-spacing: 1px;
     }
 
+    nav a {
+      display: inline-block;
+      color: var(--neon-2);
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 700;
+      transition: all 0.25s ease;
+      text-shadow: 0 0 6px rgba(0,255,106,0.6);
+    }
+
+    nav a:hover {
+      color: var(--neon);
+      text-shadow: 0 0 10px rgba(0,255,106,0.9);
+    }
+
+    /* ---- TITRE ---- */
     h1 {
-      font-size:48px;
-      color:var(--neon);
-      text-shadow:0 0 20px rgba(0,255,106,0.9);
-      margin-bottom:30px;
-      text-align:center;
-      letter-spacing:3px;
-      font-weight:900;
+      text-align: center;
+      font-size: 48px;
+      margin-top: 0;
+      margin-bottom: 30px;
+      color: var(--neon);
+      text-shadow: 0 0 20px rgba(0,255,106,0.9);
+      letter-spacing: 3px;
+      font-weight: 900;
     }
 
-    section {
-      width:90%;
-      max-width:700px;
-      background:rgba(0,0,0,0.75);
-      border:1px solid rgba(0,255,106,0.25);
-      border-radius:16px;
-      padding:50px 40px;
-      box-shadow:0 0 25px rgba(0,255,106,0.08);
-      margin:auto;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
+    /* ---- SECTION FORM ---- */
+    .container {
+      max-width: 880px;
+      background: rgba(0,0,0,0.7);
+      border: 1px solid rgba(0,255,106,0.18);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0,255,106,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     p.intro {
-      text-align:center;
-      color:var(--muted);
-      font-size:14px;
-      font-weight:600;
-      margin-bottom:25px;
-      width:100%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 30px;
     }
 
     form {
-      display:flex;
-      flex-direction:column;
-      gap:20px;
-      width:100%;
-      max-width:500px;
-      align-items:center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 500px;
+      align-items: center;
     }
 
     label {
-      font-size:14px;
-      color:var(--neon-2);
-      align-self:flex-start;
-      margin-left:5px;
+      font-size: 14px;
+      color: var(--neon-2);
+      align-self: flex-start;
+      margin-left: 5px;
     }
 
     input, textarea {
-      font-family:'Orbitron', monospace;
-      font-size:15px;
-      background:rgba(0,0,0,0.6);
-      border:1px solid rgba(0,255,106,0.25);
-      color:var(--neon);
-      border-radius:10px;
-      padding:12px 14px;
-      width:100%;
-      outline:none;
-      transition:0.25s ease;
-      box-sizing:border-box;
+      font-family: 'Orbitron', monospace;
+      font-size: 15px;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(0,255,106,0.25);
+      color: var(--neon);
+      border-radius: 10px;
+      padding: 12px 14px;
+      width: 100%;
+      outline: none;
+      transition: 0.25s ease;
+      box-sizing: border-box;
     }
 
     input:focus, textarea:focus {
-      border-color:rgba(0,255,106,0.5);
-      box-shadow:0 0 8px rgba(0,255,106,0.3);
+      border-color: rgba(0,255,106,0.5);
+      box-shadow: 0 0 8px rgba(0,255,106,0.3);
     }
 
     textarea {
-      resize:vertical;
-      min-height:120px;
+      resize: vertical;
+      min-height: 120px;
     }
 
     button {
-      padding:12px 30px;
-      border-radius:10px;
-      border:1px solid rgba(0,255,106,0.22);
-      background:rgba(0,255,106,0.06);
-      color:var(--neon);
-      font-weight:800;
-      cursor:pointer;
-      letter-spacing:1px;
-      transition:0.3s ease;
-      width:fit-content;
-      align-self:center;
+      padding: 12px 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,255,106,0.22);
+      background: rgba(0,255,106,0.06);
+      color: var(--neon);
+      font-weight: 800;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+      width: fit-content;
+      align-self: center;
     }
 
     button:hover {
-      background:rgba(0,255,106,0.15);
-      box-shadow:0 0 10px rgba(0,255,106,0.25);
-      transform:translateY(-1px);
+      background: rgba(0,255,106,0.15);
+      box-shadow: 0 0 10px rgba(0,255,106,0.25);
+      transform: translateY(-1px);
     }
 
     .status {
-      margin-top:10px;
-      color:var(--muted);
-      font-size:13px;
-      min-height:20px;
-      text-align:center;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 20px;
+      text-align: center;
     }
 
+    /* ---- FOOTER ---- */
     footer {
-      margin-top:60px;
-      text-align:center;
-      font-size:13px;
-      color:rgba(0,255,106,0.9);
-      text-shadow:0 0 6px rgba(0,255,106,0.5);
-      border-top:1px solid rgba(0,255,106,0.1);
-      padding-top:20px;
-      width:100%;
-      font-weight:600;
+      margin-top: 250px; /* ✅ comme About & Privacy */
+      border-top: 1px solid rgba(0,255,106,0.1);
+      padding-top: 15px;
+      padding-bottom: 20px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(0,255,106,0.9);
+      text-shadow: 0 0 6px rgba(0,255,106,0.5);
+      font-weight: 600;
+      font-family: 'Orbitron', monospace;
+      width: 100%;
     }
 
-    @media (max-width:768px){
-      h1 { font-size:34px; }
-      section { padding:35px 25px; }
-      form { width:100%; }
+    footer a {
+      color: rgba(0,255,106,0.9);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #00ff6a;
+      text-shadow: 0 0 8px rgba(0,255,106,0.7);
+    }
+
+    @media (max-width:768px) {
+      h1 { font-size: 34px; }
+      .container { padding: 30px; }
     }
   </style>
 </head>
-<body>
 
+<body>
   <nav>
     <a href="index.html">Home</a> |
     <a href="about.html">About</a> |
@@ -191,7 +207,7 @@ nav a:hover {
 
   <h1>Contact Us</h1>
 
-  <section>
+  <div class="container">
     <p class="intro">
       Have a question, suggestion, or partnership inquiry?<br>
       Fill out the form below — we’ll get back to you as soon as possible.
@@ -210,10 +226,16 @@ nav a:hover {
       <button type="submit">Send Message</button>
       <div class="status" id="formStatus"></div>
     </form>
-  </section>
+  </div>
 
   <footer>
-    © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+    Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
+    Instagram: <a href="https://www.instagram.com/betbotX" target="_blank">@betbotX</a> |
+    Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
+
+    <div style="margin-top:10px;">
+      © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+    </div>
   </footer>
 
   <script>
@@ -240,7 +262,5 @@ nav a:hover {
       }
     });
   </script>
-
 </body>
 </html>
-
