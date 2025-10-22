@@ -14,78 +14,86 @@
 
   <style>
     :root {
-      --bg:#000;
-      --neon:#00ff6a;
-      --neon-2:#19ff8a;
+      --bg: #000;
+      --neon: #00ff6a;
+      --neon-2: #19ff8a;
       --muted: rgba(0,255,106,0.65);
     }
 
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
     body {
-      margin:0;
       background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
-      color:var(--neon);
-      font-family:'Orbitron', monospace;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      padding:40px 20px 80px;
-      line-height:1.6;
+      color: var(--neon);
+      font-family: 'Orbitron', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 80px;
+      line-height: 1.6;
     }
 
+    /* ---- NAV ---- */
     nav {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 18px; /* Taille fixe uniforme sur toutes les pages */
-  letter-spacing: 1px;
-}
-
-nav a {
-  display: inline-block;
-  color: var(--neon-2);
-  text-decoration: none;
-  margin: 0 12px; /* Espacement égal entre les liens */
-  font-weight: 700;
-  transition: all 0.25s ease;
-  text-shadow: 0 0 6px rgba(0,255,106,0.6);
-}
-
-nav a:hover {
-  color: var(--neon);
-  text-shadow: 0 0 10px rgba(0,255,106,0.9);
-}
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 18px;
+      letter-spacing: 1px;
     }
 
+    nav a {
+      display: inline-block;
+      color: var(--neon-2);
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 700;
+      transition: all 0.25s ease;
+      text-shadow: 0 0 6px rgba(0,255,106,0.6);
+    }
+
+    nav a:hover {
+      color: var(--neon);
+      text-shadow: 0 0 10px rgba(0,255,106,0.9);
+    }
+
+    /* ---- TITRE ---- (identique à ABOUT & INDEX) */
     h1 {
-      font-size:48px;
-      color:var(--neon);
-      text-shadow:0 0 20px rgba(0,255,106,0.9);
-      margin-bottom:30px;
-      text-align:center;
-      letter-spacing:3px;
-      font-weight:900;
+      text-align: center;
+      font-size: 48px;
+      margin-top: 0;
+      margin-bottom: 30px;
+      color: var(--neon);
+      text-shadow: 0 0 20px rgba(0,255,106,0.9);
+      letter-spacing: 3px;
+      font-weight: 900;
     }
 
+    /* ---- CONTENU ---- */
     section {
-      max-width:900px;
-      background:rgba(0,0,0,0.7);
-      border:1px solid rgba(0,255,106,0.18);
-      border-radius:14px;
-      padding:30px;
+      max-width: 900px;
+      background: rgba(0,0,0,0.7);
+      border: 1px solid rgba(0,255,106,0.18);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0,255,106,0.15);
     }
 
     h2 {
-      color:var(--neon-2);
-      margin-top:20px;
-      font-size:20px;
-      text-shadow:0 0 8px rgba(0,255,106,0.5);
-      font-weight:700;
+      color: var(--neon-2);
+      margin-top: 25px;
+      font-size: 22px;
+      text-shadow: 0 0 10px rgba(0,255,106,0.5);
+      font-weight: 700;
     }
 
     p {
-      color:var(--muted);
-      font-size:15px;
-      text-align:justify;
-      font-weight:400;
+      color: var(--muted);
+      font-size: 16px;
+      text-align: justify;
+      font-weight: 400;
     }
 
     a, a:visited {
@@ -100,17 +108,29 @@ nav a:hover {
       text-decoration: none;
     }
 
+    /* ---- FOOTER (identique à ABOUT & INDEX) ---- */
     footer {
-      margin-top:60px;
-      text-align:center;
-      font-size:13px;
-      color:rgba(0,255,106,0.9);
-      text-shadow:0 0 8px rgba(0,255,106,0.8);
-      border-top:1px solid rgba(0,255,106,0.1);
-      padding-top:20px;
-      width:100%;
-      font-weight:600;
-      letter-spacing:1px;
+      margin-top: 250px; /* 🔽 descend la ligne et le texte */
+      border-top: 1px solid rgba(0,255,106,0.1); /* ✅ ligne fine */
+      padding-top: 15px; /* petit espace entre la ligne et le texte */
+      padding-bottom: 20px; /* espace modéré sous la phrase */
+      text-align: center;
+      font-size: 13px;
+      color: rgba(0,255,106,0.9);
+      text-shadow: 0 0 6px rgba(0,255,106,0.5);
+      font-weight: 600;
+      font-family: 'Orbitron', monospace;
+      width: 100%;
+    }
+
+    footer a {
+      color: rgba(0,255,106,0.9);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #00ff6a;
+      text-shadow: 0 0 8px rgba(0,255,106,0.7);
     }
 
     @media (max-width:768px){
@@ -118,6 +138,7 @@ nav a:hover {
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -131,58 +152,47 @@ nav a:hover {
   <h1>Terms of Use</h1>
 
   <section>
-
     <p><strong>Last updated:</strong> October 2025</p>
 
     <h2>1. Purpose of Service</h2>
-    <p>
-      <strong>PREDICTOR by betbotX</strong> provides AI-powered football match insights designed for data-driven analysis and entertainment.  
-      The platform does not offer betting advice or financial guidance. All outputs are algorithmic predictions meant for informational purposes only.
-    </p>
+    <p><strong>PREDICTOR by betbotX</strong> provides AI-powered football match insights designed for data-driven analysis and entertainment.  
+    The platform does not offer betting advice or financial guidance. All outputs are algorithmic predictions meant for informational purposes only.</p>
 
     <h2>2. Responsible Usage</h2>
-    <p>
-      Users agree to use this service ethically and in compliance with all applicable laws.  
-      betbotX and ANFAtech strictly prohibit any form of misuse, data scraping, or unauthorized redistribution of AI-generated content.
-    </p>
+    <p>Users agree to use this service ethically and in compliance with all applicable laws.  
+    betbotX and ANFAtech strictly prohibit any form of misuse, data scraping, or unauthorized redistribution of AI-generated content.</p>
 
     <h2>3. No Gambling or Betting Promotion</h2>
-    <p>
-      ⚠️ <strong>betbotX</strong> does not encourage, promote, or facilitate gambling activities.  
-      Users are fully responsible for how they interpret and use predictions or analytical insights.
-    </p>
+    <p>⚠️ <strong>betbotX</strong> does not encourage, promote, or facilitate gambling activities.  
+    Users are fully responsible for how they interpret and use predictions or analytical insights.</p>
 
     <h2>4. Accuracy and Limitations</h2>
-    <p>
-      While our AI system leverages verified datasets and machine learning models, results cannot be guaranteed.  
-      All insights are subject to change based on real-time data and match conditions.  
-      betbotX assumes no liability for any decision made based on predictions or analysis.
-    </p>
+    <p>While our AI system leverages verified datasets and machine learning models, results cannot be guaranteed.  
+    All insights are subject to change based on real-time data and match conditions.  
+    betbotX assumes no liability for any decision made based on predictions or analysis.</p>
 
     <h2>5. Intellectual Property</h2>
-    <p>
-      All text, models, code, design, and AI-generated results on this website are exclusive intellectual property of <strong>ANFAtech</strong> and <strong>betbotX</strong>.  
-      Reproduction, modification, or redistribution is strictly prohibited without written consent.
-    </p>
+    <p>All text, models, code, design, and AI-generated results on this website are exclusive intellectual property of <strong>ANFAtech</strong> and <strong>betbotX</strong>.  
+    Reproduction, modification, or redistribution is strictly prohibited without written consent.</p>
 
     <h2>6. Updates to Terms</h2>
-    <p>
-      These Terms of Use may be updated periodically to reflect service changes or regulatory requirements.  
-      Continued use of the site after updates signifies your acceptance of the new terms.
-    </p>
+    <p>These Terms of Use may be updated periodically to reflect service changes or regulatory requirements.  
+    Continued use of the site after updates signifies your acceptance of the new terms.</p>
 
     <h2>7. Contact Information</h2>
-    <p>
-      For any inquiries or legal requests, please reach out via  
-      <a href="mailto:predictor@betbotx.ai">predictor@betbotx.ai</a>.
-    </p>
-
+    <p>For any inquiries or legal requests, please reach out via  
+    <a href="mailto:predictor@betbotx.ai">predictor@betbotx.ai</a>.</p>
   </section>
 
   <footer>
-    © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+    Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
+    Instagram: <a href="https://www.instagram.com/betbotX" target="_blank">@betbotX</a> |
+    Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
+
+    <div style="margin-top:10px;">
+      © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+    </div>
   </footer>
 
 </body>
 </html>
-
