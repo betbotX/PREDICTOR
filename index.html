@@ -287,9 +287,19 @@
       console.error(err);
     }
   });
+  <!-- Disable right-click & common devtool shortcuts (petite dissuasion basique) -->
+<script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.onkeydown = e => {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key))) {
+      e.preventDefault();
+    }
+  };
+</script>
 </script>
 </body>
 </html>
+
 
 
 
