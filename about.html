@@ -31,7 +31,8 @@
       display:flex;
       flex-direction:column;
       align-items:center;
-      padding:40px 20px 80px;
+      min-height:100vh; /* ✅ nécessaire pour le footer */
+      padding:40px 20px 0;
     }
 
     /* ---- NAV ---- */
@@ -94,10 +95,10 @@
 
     /* ---- FOOTER ---- */
     footer {
-      margin-top: 250px; /* 🔽 descend la ligne et le texte */
-      border-top: 1px solid rgba(0,255,106,0.1); /* ✅ une seule ligne */
-      padding-top: 15px; /* petit espace entre la ligne et le texte */
-      padding-bottom: 20px; /* espace modéré sous la phrase */
+      margin-top: auto; /* ✅ pousse le footer en bas */
+      border-top: 1px solid rgba(0,255,106,0.1);
+      padding-top: 15px;
+      padding-bottom: 2cm; /* ✅ espace avec la bordure navigateur */
       text-align: center;
       font-size: 13px;
       color: rgba(0,255,106,0.9);
@@ -165,5 +166,3 @@
 
 </body>
 </html>
-
-
