@@ -4,14 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PREDICTOR by betbotX — Advanced AI Football Analysis (2025/2026)</title>
-
-  <meta name="description" content="PREDICTOR by betbotX delivers advanced AI-powered football analysis built on verified data, xG metrics, and tactical intelligence for realistic match insights." />
-  <meta name="keywords" content="AI football predictions, betbotX predictor, data-driven football analysis, xG analytics, ANFAtech AI, football insights 2025 2026, match predictor, African leagues analytics, soccer stats engine" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="betbotX - ANFAtech" />
-
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg: #000;
@@ -20,16 +13,22 @@
       --muted: rgba(0,255,106,0.65);
     }
 
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+      display: flex;
+      flex-direction: column;
       background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
-      color: var(--neon);
       font-family: 'Orbitron', monospace;
+      color: var(--neon);
+    }
+
+    main {
+      flex: 1; /* pousse le footer vers le bas */
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px 80px;
-      line-height: 1.6;
+      padding: 40px 20px 60px;
     }
 
     nav {
@@ -40,32 +39,28 @@
     }
 
     nav a {
-      display: inline-block;
       color: var(--neon-2);
       text-decoration: none;
       margin: 0 12px;
       font-weight: 700;
-      transition: all 0.25s ease;
       text-shadow: 0 0 6px rgba(0,255,106,0.6);
+      transition: 0.25s;
     }
-
     nav a:hover {
       color: var(--neon);
       text-shadow: 0 0 10px rgba(0,255,106,0.9);
     }
 
-    /* ✅ BARRE ANIMÉE ORIGINALE */
+    /* ✅ Barre animée */
     .ticker {
       width: 100%;
       overflow: hidden;
       white-space: nowrap;
-      box-sizing: border-box;
       border-top: 1px solid rgba(0,255,106,0.2);
       border-bottom: 1px solid rgba(0,255,106,0.2);
       padding: 10px 0;
       margin-bottom: 40px;
     }
-
     .ticker-text {
       display: inline-block;
       padding-left: 100%;
@@ -75,7 +70,6 @@
       font-size: 16px;
       font-weight: 600;
     }
-
     @keyframes ticker {
       0% { transform: translateX(0); }
       100% { transform: translateX(-100%); }
@@ -84,7 +78,7 @@
     h1 {
       font-size: 60px;
       color: var(--neon);
-      text-shadow: 0 0 25px rgba(0,255,106,0.9), 0 0 50px rgba(0,255,106,0.5);
+      text-shadow: 0 0 25px rgba(0,255,106,0.9);
       text-align: center;
       letter-spacing: 3px;
       margin: 5px 0 0;
@@ -116,7 +110,6 @@
       font-size: 18px;
       text-shadow: 0 0 8px rgba(0,255,106,0.6);
     }
-
     .info-light {
       color: var(--muted);
       font-size: 14px;
@@ -149,18 +142,11 @@
       cursor: pointer;
       transition: 0.25s;
       animation: neonPulse 1.5s infinite alternate;
-      text-shadow: 0 0 8px rgba(0,255,106,0.8), 0 0 20px rgba(0,255,106,0.4);
+      text-shadow: 0 0 8px rgba(0,255,106,0.8);
     }
-
     @keyframes neonPulse {
       from { box-shadow: 0 0 5px var(--neon), 0 0 15px var(--neon-2); opacity: 1; }
       to { box-shadow: 0 0 25px var(--neon), 0 0 50px var(--neon-2); opacity: 0.8; }
-    }
-
-    .call:hover {
-      background: var(--neon);
-      color: #000;
-      text-shadow: none;
     }
 
     .response-box {
@@ -168,15 +154,6 @@
       color: var(--neon-2);
       font-weight: 600;
       text-shadow: 0 0 8px rgba(0,255,106,0.5);
-    }
-
-    .blinking {
-      animation: blink 1.5s infinite alternate;
-    }
-
-    @keyframes blink {
-      from { opacity: 1; }
-      to { opacity: 0.3; }
     }
 
     .disclaimer {
@@ -187,139 +164,63 @@
       max-width: 700px;
     }
 
-    /* ✅ FOOTER IDENTIQUE À ABOUT */
+    /* ✅ FOOTER - réellement en bas, espacé du bord */
     footer {
-      margin-top: 250px; /* 🔽 descend la ligne et le texte */
-      border-top: 1px solid rgba(0,255,106,0.1); /* ✅ une seule ligne */
-      padding-top: 15px; /* petit espace entre la ligne et le texte */
-      padding-bottom: 20px; /* espace modéré sous la phrase */
+      border-top: 1px solid rgba(0,255,106,0.1);
       text-align: center;
       font-size: 13px;
       color: rgba(0,255,106,0.9);
       text-shadow: 0 0 6px rgba(0,255,106,0.5);
       font-weight: 600;
       font-family: 'Orbitron', monospace;
-      width: 100%;
+      padding-top: 15px;
+      padding-bottom: 25px; /* espace entre texte et bas */
+      margin-top: 60px; /* tire un peu plus vers le bas */
     }
-
     footer a {
       color: rgba(0,255,106,0.9);
       text-decoration: none;
     }
-
-    footer a:hover {
-      color: #00ff6a;
-      text-shadow: 0 0 8px rgba(0,255,106,0.7);
-    }
   </style>
 </head>
 <body>
+  <main>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="privacy.html">Privacy</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="privacy.html">Privacy</a> |
-    <a href="terms.html">Terms</a> |
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <div class="ticker">
-    <div class="ticker-text">
-      Reliable AI football intelligence — built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights
+    <div class="ticker">
+      <div class="ticker-text">
+        Reliable AI football intelligence — built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights
+      </div>
     </div>
-  </div>
 
-  <h1>PREDICTOR</h1>
-  <p class="subtitle">by betbotX</p>
+    <h1>PREDICTOR</h1>
+    <p class="subtitle">by betbotX</p>
 
-  <p style="max-width:800px;text-align:center;margin-top:20px;color:rgba(0,255,106,0.85);">
-    PREDICTOR by betbotX is an advanced AI-powered football analysis system built on verified data sources, xG analytics, and tactical intelligence. 
-    It delivers realistic, transparent, and data-driven match insights for global and African leagues during the 2025/2026 season — helping fans and analysts understand true match dynamics beyond basic stats.
-  </p>  
+    <section class="panel">
+      <p class="info-strong">ENGINE ACTIVE - READY 🟢</p>
+      <p class="info-light">Enter the match in the correct format and spelling</p>
+      <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
+      <button id="callBtn" class="call">Call Agent</button>
+      <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
+    </section>
 
-  <section class="panel">
-    <p class="info-strong">ENGINE ACTIVE - READY 🟢</p>
-    <p class="info-light">Enter the match in the correct format and spelling</p>
-    <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
-    <button id="callBtn" class="call">Call Agent</button>
-    <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
-  </section>
-
-  <p class="disclaimer">
-    ⚠️ Our predictions are provided for informational and entertainment purposes only. 
-    We do not encourage or promote betting or gambling of any kind ⚠️
-  </p>
+    <p class="disclaimer">
+      ⚠️ Our predictions are provided for informational and entertainment purposes only. 
+      We do not encourage or promote betting or gambling of any kind ⚠️
+    </p>
+  </main>
 
   <footer>
-    Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
-    Instagram: <a href="https://www.instagram.com/betbotX" target="_blank">@betbotX</a> |
-    Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
+    Threads: <a href="#">betbotX</a> |
+    Instagram: <a href="#">@betbotX</a> |
+    Telegram: <a href="#">betbotX VIP</a>
     <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
   </footer>
-
-  <script>
-    const webhookURL = "https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw";
-    const matchInput = document.getElementById("matchInput");
-    const responseBox = document.getElementById("responseBox");
-    const callBtn = document.getElementById("callBtn");
-
-    async function callAgent() {
-      const match = matchInput.value.trim();
-
-      if (!match) {
-        responseBox.classList.remove("blinking");
-        responseBox.textContent = "⚠️ Please enter a match to analyze.";
-        return;
-      }
-
-      callBtn.disabled = true;
-      responseBox.classList.add("blinking");
-      responseBox.textContent = "Calling analytical system...";
-
-      await new Promise((resolve) => {
-        setTimeout(() => { responseBox.textContent = "Activating PREDICTOR neural system..."; }, 1500);
-        setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3200);
-        setTimeout(() => { responseBox.textContent = "Running match analysis — please wait..."; }, 5200);
-        setTimeout(resolve, 7000);
-      });
-
-      try {
-        const res = await fetch(webhookURL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ match })
-        });
-
-        let data = await res.text();
-
-        responseBox.classList.remove("blinking");
-
-        data = data
-          .replace(/\s+/g, " ")
-          .replace(/Match:/g, "<br><strong>Match:</strong> ")
-          .replace(/Correct Score Prediction:/g, "<br><strong>Correct Score Prediction:</strong> ")
-          .replace(/BTTS \(Both Teams To Score\):/g, "<br><strong>BTTS (Both Teams To Score):</strong> ")
-          .replace(/Over\/Under 2\.5 Goals:/g, "<br><strong>Over/Under 2.5 Goals:</strong> ")
-          .replace(/Safety:/g, "<br><strong>Safety:</strong> ")
-          .replace(/Analysis:/g, "<br><br><strong>Analysis:</strong> ");
-
-        responseBox.innerHTML = data || "No data received.";
-      } catch (err) {
-        responseBox.classList.remove("blinking");
-        responseBox.textContent = "⚠️ Error contacting AI agent: " + err.message;
-      } finally {
-        callBtn.disabled = false;
-      }
-    }
-
-    callBtn.addEventListener("click", callAgent);
-    matchInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        callAgent();
-      }
-    });
-  </script>
-
 </body>
 </html>
