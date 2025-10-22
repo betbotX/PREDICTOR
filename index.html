@@ -20,22 +20,22 @@
       --muted: rgba(0,255,106,0.65);
     }
 
-    html, body { height: 100%; margin: 0; }
     body {
+      margin: 0;
       background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
       color: var(--neon);
       font-family: 'Orbitron', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px 0;
+      padding: 40px 20px 80px;
       line-height: 1.6;
     }
 
+    /* ---- NAV ---- */
     nav {
       text-align: center;
-      margin-bottom: 60px; /* ✅ espace sous la nav */
+      margin-bottom: 40px;
       font-size: 18px;
       letter-spacing: 1px;
     }
@@ -55,34 +55,32 @@
       text-shadow: 0 0 10px rgba(0,255,106,0.9);
     }
 
-    /* ---- BARRE ANIMÉE (corrigée) ---- */
-.ticker {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0,255,106,0.2);
-  border-bottom: 1px solid rgba(0,255,106,0.2);
-  padding: 8px 0; /* ✅ hauteur ajustée */
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
+    /* ---- BARRE ANIMÉE (ancienne version rétablie) ---- */
+    .ticker {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      border-top: 1px solid rgba(0,255,106,0.2);
+      border-bottom: 1px solid rgba(0,255,106,0.2);
+      padding: 10px 0;
+      margin-bottom: 40px;
+    }
 
-.ticker-text {
-  display: inline-block;
-  padding-left: 100%;
-  animation: ticker 45s linear infinite; /* ✅ vitesse fluide */
-  color: var(--neon);
-  text-shadow: 0 0 8px rgba(0,255,106,0.6);
-  font-size: 15px; /* ✅ taille équilibrée */
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
+    .ticker-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: ticker 40s linear infinite;
+      color: var(--neon);
+      text-shadow: 0 0 6px rgba(0,255,106,0.8);
+      font-size: 16px;
+      font-weight: 600;
+    }
 
-@keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
 
     /* ---- TITRE ---- */
     h1 {
@@ -106,7 +104,7 @@
       text-shadow: none;
     }
 
-    /* ---- PANEL CENTRAL ---- */
+    /* ---- PANEL ---- */
     .panel {
       background: rgba(0,0,0,0.7);
       border: 1px solid rgba(0,255,106,0.18);
@@ -129,6 +127,7 @@
       font-size: 14px;
     }
 
+    /* ---- INPUT ---- */
     .match {
       margin-top: 12px;
       width: 100%;
@@ -177,31 +176,34 @@
       text-shadow: 0 0 8px rgba(0,255,106,0.5);
     }
 
-    .blinking { animation: blink 1.5s infinite alternate; }
-    @keyframes blink { from { opacity: 1; } to { opacity: 0.3; } }
+    .blinking {
+      animation: blink 1.5s infinite alternate;
+    }
 
-    /* ---- DISCLAIMER ---- */
+    @keyframes blink {
+      from { opacity: 1; }
+      to { opacity: 0.3; }
+    }
+
     .disclaimer {
       font-size: 13px;
       color: rgba(0,255,106,0.6);
-      margin-top: 40px;
+      margin-top: 30px;
       text-align: center;
       max-width: 700px;
     }
 
-    /* ---- FOOTER ---- */
     footer {
-      margin-top: 250px; /* ✅ descend la ligne + le texte ensemble */
-      border-top: 1px solid rgba(0,255,106,0.1); /* ✅ une seule ligne */
-      padding-top: 15px;
-      padding-bottom: 20px; /* ✅ espace avant le bord bas */
+      margin-top: 60px;
       text-align: center;
       font-size: 13px;
       color: rgba(0,255,106,0.9);
       text-shadow: 0 0 6px rgba(0,255,106,0.5);
+      border-top: 1px solid rgba(0,255,106,0.1);
+      padding-top: 20px;
+      width: 100%;
       font-weight: 600;
       font-family: 'Orbitron', monospace;
-      width: 100%;
     }
 
     footer a {
@@ -212,10 +214,6 @@
     footer a:hover {
       color: #00ff6a;
       text-shadow: 0 0 8px rgba(0,255,106,0.7);
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 38px; }
     }
   </style>
 </head>
@@ -248,9 +246,7 @@
     <p class="info-light">Enter the match in the correct format and spelling</p>
     <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
     <button id="callBtn" class="call">Call Agent</button>
-    <div id="responseBox" class="response-box blinking">
-      Ready to analyze - type a match for realistic insights..
-    </div>
+    <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
   </section>
 
   <p class="disclaimer">
@@ -262,9 +258,7 @@
     Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
     Instagram: <a href="https://www.instagram.com/betbotX" target="_blank">@betbotX</a> |
     Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
-    <div style="margin-top:10px;">
-      © 2025 PREDICTOR by betbotX — Powered by ANFAtech
-    </div>
+    <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
   </footer>
 
   <script>
@@ -275,6 +269,7 @@
 
     async function callAgent() {
       const match = matchInput.value.trim();
+
       if (!match) {
         responseBox.classList.remove("blinking");
         responseBox.textContent = "⚠️ Please enter a match to analyze.";
@@ -300,7 +295,9 @@
         });
 
         let data = await res.text();
+
         responseBox.classList.remove("blinking");
+
         data = data
           .replace(/\s+/g, " ")
           .replace(/Match:/g, "<br><strong>Match:</strong> ")
@@ -309,6 +306,7 @@
           .replace(/Over\/Under 2\.5 Goals:/g, "<br><strong>Over/Under 2.5 Goals:</strong> ")
           .replace(/Safety:/g, "<br><strong>Safety:</strong> ")
           .replace(/Analysis:/g, "<br><br><strong>Analysis:</strong> ");
+
         responseBox.innerHTML = data || "No data received.";
       } catch (err) {
         responseBox.classList.remove("blinking");
@@ -326,7 +324,5 @@
       }
     });
   </script>
-
 </body>
 </html>
-
