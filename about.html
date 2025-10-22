@@ -23,6 +23,7 @@
   letter-spacing: 3px;
   font-weight: 900;
 }
+}
     :root {
       --bg: #000;
       --neon: #00ff6a;
@@ -47,12 +48,9 @@
 
     /* ---- NAV ---- */
     nav {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 18px;
-      letter-spacing: 1px;
-    }
-
+  text-align: center;
+  margin-bottom: 40px; /* ✅ même pour toutes les pages */
+}
     nav a {
       display: inline-block;
       color: var(--neon-2);
@@ -70,13 +68,16 @@
 
     /* ---- TITRE ---- */
     h1 {
-      font-size: 48px;
-      color: var(--neon);
-      text-shadow: 0 0 20px rgba(0,255,106,0.9);
-      margin-bottom: 30px;
-      text-align: center;
-      letter-spacing: 3px;
-      font-weight: 900;
+      h1 {
+  text-align: center;
+  font-size: 48px;
+  margin-top: 40px; /* ✅ espace depuis le haut */
+  margin-bottom: 30px;
+  color: var(--neon);
+  text-shadow: 0 0 20px rgba(0,255,106,0.9);
+  letter-spacing: 3px;
+  font-weight: 900;
+}
     }
 
     /* ---- CONTENU ---- */
@@ -87,6 +88,9 @@
       border-radius: 12px;
       padding: 30px;
       box-shadow: 0 0 20px rgba(0,255,106,0.15);
+      section, .container {
+  margin-top: 0;
+}
     }
 
     h2 {
@@ -145,7 +149,7 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <h1>About</h1>
+  <h1 class="page-title">About</h1>
 
   <div class="container">
     <p><strong>PREDICTOR by betbotX</strong> is an advanced AI-powered football prediction and analysis platform designed to give fans reliable, data-backed insights — not random guesses. Using <strong>verified multi-source data</strong>, <strong>xG analytics</strong>, and <strong>intelligent reasoning</strong>, it produces transparent and realistic match insights for the <strong>2025/2026 football season</strong>.</p>
@@ -177,4 +181,5 @@
   </footer>
 </body>
 </html>
+
 
