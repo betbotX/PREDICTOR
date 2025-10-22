@@ -1,35 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' https://www.google.com https://www.gstatic.com;
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  font-src 'self' https://fonts.gstatic.com;
-  img-src 'self' data:;
-  connect-src 'self' https://hook.eu2.make.com;
-  object-src 'none';
-  base-uri 'self';
-  form-action 'self';
-  frame-ancestors 'none';
-">
-<meta http-equiv="X-Frame-Options" content="DENY">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-<meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
-<meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' https://www.google.com https://www.gstatic.com;
-  style-src 'self' 'unsafe-inline';
-  img-src 'self' data:;
-  connect-src 'self' https://hook.eu2.make.com;
-  object-src 'none';
-  base-uri 'self';
-  form-action 'self';
-  frame-ancestors 'none';
-">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.google.com https://www.gstatic.com; img-src 'self' data:; style-src 'self' 'unsafe-inline';">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PREDICTOR by betbotX — Neural Football Predictor Engine 2025/2026</title>
@@ -144,24 +115,24 @@
     }
 
     .match {
-  margin-top: 12px;
-  width: 100%;
-  max-width: 500px; /* limite visuelle propre */
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: none;
-  background: #001900;
-  color: var(--neon);
-  font-family: 'Orbitron', monospace;
-  text-align: center;
-  outline: none;
-  font-size: 16px;
-  box-shadow: 0 0 10px rgba(0,255,106,0.2);
-  box-sizing: border-box; /* ✅ essentiel pour l'alignement parfait */
-  margin-left: auto; /* ✅ centrage horizontal */
-  margin-right: auto; /* ✅ centrage horizontal */
-  display: block;
-}
+      margin-top: 12px;
+      width: 100%;
+      max-width: 500px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: none;
+      background: #001900;
+      color: var(--neon);
+      font-family: 'Orbitron', monospace;
+      text-align: center;
+      outline: none;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(0,255,106,0.2);
+      box-sizing: border-box;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
 
     .call {
       margin-top: 43px;
@@ -256,7 +227,6 @@
     <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
   </footer>
 
-  <!-- ✅ Webhook + délai d’attente -->
   <script>
   const callBtn = document.getElementById('callBtn');
   const matchInput = document.getElementById('matchInput');
@@ -271,7 +241,6 @@
 
     responseBox.textContent = "Booting PREDICTOR intelligence core...";
 
-    // 🧠 Séquence d’attente réaliste
     await new Promise((resolve) => {
       setTimeout(() => { responseBox.textContent = "Activating PREDICTOR neural system..."; }, 1500);
       setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3200);
@@ -279,7 +248,6 @@
       setTimeout(resolve, 7000);
     });
 
-    // ✅ Envoi vers ton webhook Make
     try {
       const res = await fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
         method: "POST",
@@ -289,7 +257,6 @@
 
       const text = await res.text();
       if (res.ok) {
-        // ✅ Affiche uniquement le texte de ton webhook (sans "AI Response:")
         responseBox.textContent = text.trim();
       } else {
         responseBox.textContent = "❌ Error: " + text;
@@ -299,7 +266,6 @@
       console.error(err);
     }
   });
-</script>
+  </script>
 </body>
 </html>
-
