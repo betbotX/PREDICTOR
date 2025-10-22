@@ -153,7 +153,7 @@
       color: var(--neon-2);
       font-weight: 600;
       text-shadow: 0 0 8px rgba(0,255,106,0.5);
-      white-space: pre-line; /* ✅ Garde les sauts de ligne du texte reçu */
+      white-space: pre-line;
     }
 
     .disclaimer {
@@ -222,39 +222,49 @@
     <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
   </footer>
 
-  <!-- ✅ Webhook complet -->
+  <!-- ✅ Webhook + délai d’attente -->
   <script>
-    const callBtn = document.getElementById('callBtn');
-    const matchInput = document.getElementById('matchInput');
-    const responseBox = document.getElementById('responseBox');
+  const callBtn = document.getElementById('callBtn');
+  const matchInput = document.getElementById('matchInput');
+  const responseBox = document.getElementById('responseBox');
 
-    callBtn.addEventListener('click', async () => {
-      const match = matchInput.value.trim();
-      if (!match) {
-        responseBox.textContent = "⚠️ Please enter a match name first.";
-        return;
-      }
+  callBtn.addEventListener('click', async () => {
+    const match = matchInput.value.trim();
+    if (!match) {
+      responseBox.textContent = "⚠️ Please enter a match name first.";
+      return;
+    }
 
-      responseBox.textContent = "🔍 Sending request to the AI engine...";
+    responseBox.textContent = "🔍 Initializing AI core...";
 
-      try {
-        const res = await fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ match: match })
-        });
-
-        const text = await res.text(); // ✅ récupère le texte renvoyé par Make
-        if (res.ok) {
-          responseBox.textContent = "✅ AI Response:\n\n" + text;
-        } else {
-          responseBox.textContent = "❌ Error: " + text;
-        }
-      } catch (err) {
-        responseBox.textContent = "⚠️ Connection error. Please check your network or webhook.";
-        console.error(err);
-      }
+    // 🧠 Séquence d’attente réaliste
+    await new Promise((resolve) => {
+      setTimeout(() => { responseBox.textContent = "Activating PREDICTOR neural system..."; }, 1500);
+      setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3200);
+      setTimeout(() => { responseBox.textContent = "Running match analysis — please wait..."; }, 5200);
+      setTimeout(resolve, 7000);
     });
-  </script>
+
+    // ✅ Envoi vers ton webhook Make
+    try {
+      const res = await fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ match: match })
+      });
+
+      const text = await res.text();
+      if (res.ok) {
+        // ✅ Affiche uniquement le texte de ton webhook (sans "AI Response:")
+        responseBox.textContent = text.trim();
+      } else {
+        responseBox.textContent = "❌ Error: " + text;
+      }
+    } catch (err) {
+      responseBox.textContent = "⚠️ Connection error. Please check your network or webhook.";
+      console.error(err);
+    }
+  });
+</script>
 </body>
 </html>
