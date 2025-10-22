@@ -24,7 +24,7 @@
     }
 
     main {
-      flex: 1; /* pousse le footer vers le bas */
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -51,7 +51,6 @@
       text-shadow: 0 0 10px rgba(0,255,106,0.9);
     }
 
-    /* ✅ Barre animée */
     .ticker {
       width: 100%;
       overflow: hidden;
@@ -154,6 +153,7 @@
       color: var(--neon-2);
       font-weight: 600;
       text-shadow: 0 0 8px rgba(0,255,106,0.5);
+      white-space: pre-line; /* ✅ Garde les sauts de ligne du texte reçu */
     }
 
     .disclaimer {
@@ -164,7 +164,6 @@
       max-width: 700px;
     }
 
-    /* ✅ FOOTER - réellement en bas, espacé du bord */
     footer {
       border-top: 1px solid rgba(0,255,106,0.1);
       text-align: center;
@@ -174,8 +173,8 @@
       font-weight: 600;
       font-family: 'Orbitron', monospace;
       padding-top: 15px;
-      padding-bottom: 25px; /* espace entre texte et bas */
-      margin-top: 60px; /* tire un peu plus vers le bas */
+      padding-bottom: 25px;
+      margin-top: 60px;
     }
     footer a {
       color: rgba(0,255,106,0.9);
@@ -223,7 +222,7 @@
     <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
   </footer>
 
-  <!-- ✅ Webhook JS -->
+  <!-- ✅ Webhook complet -->
   <script>
     const callBtn = document.getElementById('callBtn');
     const matchInput = document.getElementById('matchInput');
@@ -231,7 +230,6 @@
 
     callBtn.addEventListener('click', async () => {
       const match = matchInput.value.trim();
-
       if (!match) {
         responseBox.textContent = "⚠️ Please enter a match name first.";
         return;
@@ -246,10 +244,11 @@
           body: JSON.stringify({ match: match })
         });
 
+        const text = await res.text(); // ✅ récupère le texte renvoyé par Make
         if (res.ok) {
-          responseBox.textContent = "✅ Request sent successfully! Awaiting analysis...";
+          responseBox.textContent = "✅ AI Response:\n\n" + text;
         } else {
-          responseBox.textContent = "❌ Error sending data to AI engine.";
+          responseBox.textContent = "❌ Error: " + text;
         }
       } catch (err) {
         responseBox.textContent = "⚠️ Connection error. Please check your network or webhook.";
