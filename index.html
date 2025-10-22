@@ -20,15 +20,16 @@
       --muted: rgba(0,255,106,0.65);
     }
 
+    html, body { height: 100%; margin: 0; }
     body {
-      margin: 0;
       background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
       color: var(--neon);
       font-family: 'Orbitron', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px 80px;
+      min-height: 100vh;
+      padding: 40px 20px 0;
       line-height: 1.6;
     }
 
@@ -54,6 +55,7 @@
       text-shadow: 0 0 10px rgba(0,255,106,0.9);
     }
 
+    /* ---- BARRE ANIMÉE ---- */
     .ticker {
       width: 100%;
       overflow: hidden;
@@ -68,7 +70,7 @@
     .ticker-text {
       display: inline-block;
       padding-left: 100%;
-      animation: ticker 40s linear infinite;
+      animation: ticker 60s linear infinite; /* ✅ plus lente */
       color: var(--neon);
       text-shadow: 0 0 6px rgba(0,255,106,0.8);
       font-size: 16px;
@@ -80,31 +82,34 @@
       100% { transform: translateX(-100%); }
     }
 
+    /* ---- TITRE ---- */
     h1 {
-  font-size: 60px; /* plus grand qu’avant */
-  color: var(--neon);
-  text-shadow:
-    0 0 25px rgba(0,255,106,0.9),
-    0 0 50px rgba(0,255,106,0.5);
-  text-align: center;
-  letter-spacing: 3px;
-  margin: 5px 0 0; /* réduit l’espace entre h1 et le texte suivant */
-}
+      font-size: 60px;
+      color: var(--neon);
+      text-shadow:
+        0 0 25px rgba(0,255,106,0.9),
+        0 0 50px rgba(0,255,106,0.5);
+      text-align: center;
+      letter-spacing: 3px;
+      margin: 5px 0 0;
+    }
 
-.subtitle {
-  color: #00ff88;          /* vert fluo clair, lisible */
-  font-size: 15px;         /* taille sobre */
-  font-weight: 400;        /* pas en gras */
-  margin-top: 6px;         /* petit espace sous PREDICTOR */
-  margin-bottom: 25px;     /* espace avant le texte suivant */
-  letter-spacing: 1px;
-  text-shadow: none;       /* pas d’effet néon */
-}
+    .subtitle {
+      color: #00ff88;
+      font-size: 15px;
+      font-weight: 400;
+      margin-top: 6px;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+      text-shadow: none;
+    }
+
+    /* ---- PANEL CENTRAL ---- */
     .panel {
       background: rgba(0,0,0,0.7);
       border: 1px solid rgba(0,255,106,0.18);
       border-radius: 14px;
-      padding: 30px 60px; /* ✅ élargi le cadre de chaque côté (~4cm) */
+      padding: 30px 60px;
       box-shadow: 0 0 20px rgba(0,255,106,0.15);
       max-width: 700px;
       text-align: center;
@@ -123,7 +128,7 @@
     }
 
     .match {
-      margin-top: 12px; /* ✅ espace avant le champ */
+      margin-top: 12px;
       width: 100%;
       padding: 12px;
       border-radius: 8px;
@@ -138,7 +143,7 @@
     }
 
     .call {
-      margin-top: 43px; /* ✅ plus d’espace entre le champ et le bouton */
+      margin-top: 43px;
       padding: 12px 35px;
       background: transparent;
       color: var(--neon);
@@ -164,21 +169,16 @@
     }
 
     .response-box {
-      margin-top: 30px; /* ✅ espace entre bouton et phrase */
+      margin-top: 30px;
       color: var(--neon-2);
       font-weight: 600;
       text-shadow: 0 0 8px rgba(0,255,106,0.5);
     }
 
-    .blinking {
-      animation: blink 1.5s infinite alternate;
-    }
+    .blinking { animation: blink 1.5s infinite alternate; }
+    @keyframes blink { from { opacity: 1; } to { opacity: 0.3; } }
 
-    @keyframes blink {
-      from { opacity: 1; }
-      to { opacity: 0.3; }
-    }
-
+    /* ---- DISCLAIMER ---- */
     .disclaimer {
       font-size: 13px;
       color: rgba(0,255,106,0.6);
@@ -187,17 +187,19 @@
       max-width: 700px;
     }
 
+    /* ---- FOOTER ---- */
     footer {
-      margin-top: 60px;
+      margin-top: auto; /* ✅ pousse le footer en bas */
+      border-top: 1px solid rgba(0,255,106,0.1);
+      padding-top: 15px;
+      padding-bottom: 2cm; /* ✅ espace avant le bord du navigateur */
       text-align: center;
       font-size: 13px;
       color: rgba(0,255,106,0.9);
       text-shadow: 0 0 6px rgba(0,255,106,0.5);
-      border-top: 1px solid rgba(0,255,106,0.1);
-      padding-top: 20px;
-      width: 100%;
       font-weight: 600;
       font-family: 'Orbitron', monospace;
+      width: 100%;
     }
 
     footer a {
@@ -208,6 +210,10 @@
     footer a:hover {
       color: #00ff6a;
       text-shadow: 0 0 8px rgba(0,255,106,0.7);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 38px; }
     }
   </style>
 </head>
@@ -240,7 +246,9 @@
     <p class="info-light">Enter the match in the correct format and spelling</p>
     <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
     <button id="callBtn" class="call">Call Agent</button>
-    <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
+    <div id="responseBox" class="response-box blinking">
+      Ready to analyze - type a match for realistic insights..
+    </div>
   </section>
 
   <p class="disclaimer">
@@ -248,27 +256,15 @@
     We do not encourage or promote betting or gambling of any kind ⚠️
   </p>
 
-    <footer style="
-  margin-top: 170px;                  /* 🔽 descend la ligne et le texte */
-  border-top: 1px solid rgba(0,255,106,0.1); /* ✅ une seule ligne */
-  padding-top: 15px;                 /* petit espace entre la ligne et le texte */
-  padding-bottom: 20px;              /* espace modéré sous la phrase */
-  text-align: center;
-  font-size: 13px;
-  color: rgba(0,255,106,0.9);
-  text-shadow: 0 0 6px rgba(0,255,106,0.5);
-  font-weight: 600;
-  font-family: 'Orbitron', monospace;
-  width: 100%;
-">
-  Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
-  Instagram: <a href="https://www.instagram.com/betbotX" target="_blank">@betbotX</a> |
-  Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
-  <div style="margin-top:10px;">
-    © 2025 PREDICTOR by betbotX — Powered by ANFAtech
-  </div>
-</footer>
-  
+  <footer>
+    Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
+    Instagram: <a href="https://www.instagram.com/betbotX" target="_blank">@betbotX</a> |
+    Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
+    <div style="margin-top:10px;">
+      © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+    </div>
+  </footer>
+
   <script>
     const webhookURL = "https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw";
     const matchInput = document.getElementById("matchInput");
@@ -277,7 +273,6 @@
 
     async function callAgent() {
       const match = matchInput.value.trim();
-
       if (!match) {
         responseBox.classList.remove("blinking");
         responseBox.textContent = "⚠️ Please enter a match to analyze.";
@@ -303,9 +298,7 @@
         });
 
         let data = await res.text();
-
         responseBox.classList.remove("blinking");
-
         data = data
           .replace(/\s+/g, " ")
           .replace(/Match:/g, "<br><strong>Match:</strong> ")
@@ -314,7 +307,6 @@
           .replace(/Over\/Under 2\.5 Goals:/g, "<br><strong>Over/Under 2.5 Goals:</strong> ")
           .replace(/Safety:/g, "<br><strong>Safety:</strong> ")
           .replace(/Analysis:/g, "<br><br><strong>Analysis:</strong> ");
-
         responseBox.innerHTML = data || "No data received.";
       } catch (err) {
         responseBox.classList.remove("blinking");
@@ -335,21 +327,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
