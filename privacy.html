@@ -14,21 +14,25 @@
 
   <style>
     :root {
-      --bg:#000;
-      --neon:#00ff6a;
-      --neon-2:#19ff8a;
+      --bg: #000;
+      --neon: #00ff6a;
+      --neon-2: #19ff8a;
       --muted: rgba(0,255,106,0.65);
     }
 
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+    }
+
+    body {
       background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
       color: var(--neon);
       font-family: 'Orbitron', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px 0; /* ✅ supprimé le padding bas inutile */
+      padding: 40px 20px 80px;
       line-height: 1.6;
     }
 
@@ -56,10 +60,10 @@
     }
 
     /* ---- TITRE ---- */
-    h1.page-title {
+    h1 {
       text-align: center;
       font-size: 48px;
-      margin-top: 20px;
+      margin-top: 0;
       margin-bottom: 30px;
       color: var(--neon);
       text-shadow: 0 0 20px rgba(0,255,106,0.9);
@@ -67,31 +71,31 @@
       font-weight: 900;
     }
 
-    /* ---- SECTION ---- */
-    section {
-      max-width: 900px;
+    /* ---- CONTENU ---- */
+    .container {
+      max-width: 880px;
       background: rgba(0,0,0,0.7);
       border: 1px solid rgba(0,255,106,0.18);
-      border-radius: 14px;
+      border-radius: 12px;
       padding: 30px;
       box-shadow: 0 0 20px rgba(0,255,106,0.15);
     }
 
     h2 {
       color: var(--neon-2);
-      margin-top: 20px;
-      font-size: 20px;
-      text-shadow: 0 0 8px rgba(0,255,106,0.5);
+      margin-top: 30px;
+      font-size: 22px;
+      text-shadow: 0 0 10px rgba(0,255,106,0.5);
     }
 
-    p {
+    p, ul {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
       text-align: justify;
+      line-height: 1.6;
     }
 
     ul {
-      color: var(--muted);
       margin-left: 20px;
     }
 
@@ -108,10 +112,10 @@
 
     /* ---- FOOTER ---- */
     footer {
-      margin-top: 100px; /* ✅ descend ligne + texte */
+      margin-top: 250px;
       border-top: 1px solid rgba(0,255,106,0.1);
       padding-top: 15px;
-      padding-bottom: 10px; /* ✅ léger espace bas */
+      padding-bottom: 20px;
       text-align: center;
       font-size: 13px;
       color: rgba(0,255,106,0.9);
@@ -131,8 +135,10 @@
       text-shadow: 0 0 8px rgba(0,255,106,0.7);
     }
 
-    @media (max-width:768px){
-      h1.page-title { font-size:36px; }
+    @media (max-width:768px) {
+      h1 {
+        font-size: 34px;
+      }
     }
   </style>
 </head>
@@ -148,14 +154,11 @@
 
   <h1 class="page-title">Privacy Policy</h1>
 
-  <section>
+  <div class="container">
     <p><strong>Last updated:</strong> October 2025</p>
 
     <h2>1. Introduction</h2>
-    <p>
-      Welcome to <strong>PREDICTOR by betbotX</strong>.  
-      Protecting your privacy is fundamental to how we operate. This Privacy Policy describes how we collect, use, and safeguard your data while using our AI-driven football prediction tools and website.
-    </p>
+    <p>Welcome to <strong>PREDICTOR by betbotX</strong>. Protecting your privacy is fundamental to how we operate. This Privacy Policy describes how we collect, use, and safeguard your data while using our AI-driven football prediction tools and website.</p>
 
     <h2>2. Data We Collect</h2>
     <p>We collect limited, non-sensitive data to ensure system security and optimize performance. This may include:</p>
@@ -174,50 +177,33 @@
     </ul>
 
     <h2>4. Cookies</h2>
-    <p>
-      Our site may use cookies to store preferences, enhance navigation, and analyze usage patterns.  
-      You can manage or disable cookies directly from your browser settings.
-    </p>
+    <p>Our site may use cookies to store preferences, enhance navigation, and analyze usage patterns. You can manage or disable cookies directly from your browser settings.</p>
 
     <h2>5. Third-Party Services</h2>
-    <p>
-      We may integrate third-party tools like <strong>Google Analytics</strong> or <strong>Google Ads</strong> for insights and ad optimization.  
-      These providers may collect anonymous usage data and follow their own privacy policies.
-    </p>
+    <p>We may integrate third-party tools like <strong>Google Analytics</strong> or <strong>Google Ads</strong> for insights and ad optimization. These providers may collect anonymous usage data and follow their own privacy policies.</p>
 
     <h2>6. Data Security</h2>
-    <p>
-      <strong>ANFAtech</strong> applies technical and organizational measures to protect your information from unauthorized access, misuse, or loss.  
-      Data transmission is secured through industry-standard encryption and infrastructure controls.
-    </p>
+    <p><strong>ANFAtech</strong> applies technical and organizational measures to protect your information from unauthorized access, misuse, or loss. Data transmission is secured through industry-standard encryption and infrastructure controls.</p>
 
     <h2>7. Your Rights</h2>
-    <p>
-      You have full control over your data. You may request access, correction, or deletion of your information by contacting:  
-      <a href="mailto:predictor@betbotx.ai">predictor@betbotx.ai</a>.
-    </p>
+    <p>You have full control over your data. You may request access, correction, or deletion of your information by contacting:  
+    <a href="mailto:predictor@betbotx.ai">predictor@betbotx.ai</a>.</p>
 
     <h2>8. Updates to This Policy</h2>
-    <p>
-      This Privacy Policy may evolve over time to reflect new features, tools, or legal updates.  
-      Continued use of our website after any modification signifies your acceptance of the revised terms.
-    </p>
+    <p>This Privacy Policy may evolve over time to reflect new features, tools, or legal updates. Continued use of our website after any modification signifies your acceptance of the revised terms.</p>
 
     <h2>9. Contact Information</h2>
-    <p>
-      For privacy concerns, please reach out via email at  
-      <a href="mailto:predictor@betbotx.ai">predictor@betbotx.ai</a>.
-    </p>
-  </section>
+    <p>For privacy concerns, please reach out via email at <a href="mailto:predictor@betbotx.ai">predictor@betbotx.ai</a>.</p>
+  </div>
 
   <footer>
     Threads: <a href="https://www.threads.net/@betbotX" target="_blank">betbotX</a> |
     Instagram: <a href="https://www.instagram.com/betbotX" target="_blank">@betbotX</a> |
     Telegram: <a href="https://t.me/betbotxvipaccess" target="_blank">betbotX VIP</a>
+
     <div style="margin-top:10px;">
       © 2025 PREDICTOR by betbotX — Powered by ANFAtech
     </div>
   </footer>
 </body>
 </html>
-
