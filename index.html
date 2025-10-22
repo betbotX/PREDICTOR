@@ -82,6 +82,18 @@
       padding: 10px 0;
       margin-bottom: 40px;
     }
+    .ball {
+  font-size: 0.9em;  /* Ajuste la taille de l'emoji */
+  color: var(--neon);  /* Applique la couleur néon verte */
+  text-shadow: 0 0 10px rgba(0, 255, 106, 0.9);  /* Ombre néon pour l'effet lumineux */
+  display: inline-block;
+  animation: rotateBall 3s linear infinite;  /* Animation de rotation */
+}
+
+@keyframes rotateBall {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
     .ticker-text {
       display: inline-block;
       padding-left: 100%;
@@ -225,7 +237,7 @@
       </div>
     </div>
 
-    <h1>PREDICTOR</h1>
+    <h1>PREDICT<span class="ball">⚽</span>R</h1>
     <p class="subtitle">by betbotX</p>
 
     <section class="panel">
@@ -291,3 +303,4 @@
   </script>
 </body>
 </html>
+
