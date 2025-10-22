@@ -222,5 +222,40 @@
     Telegram: <a href="#">betbotX VIP</a>
     <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
   </footer>
+
+  <!-- ✅ Webhook JS -->
+  <script>
+    const callBtn = document.getElementById('callBtn');
+    const matchInput = document.getElementById('matchInput');
+    const responseBox = document.getElementById('responseBox');
+
+    callBtn.addEventListener('click', async () => {
+      const match = matchInput.value.trim();
+
+      if (!match) {
+        responseBox.textContent = "⚠️ Please enter a match name first.";
+        return;
+      }
+
+      responseBox.textContent = "🔍 Sending request to the AI engine...";
+
+      try {
+        const res = await fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ match: match })
+        });
+
+        if (res.ok) {
+          responseBox.textContent = "✅ Request sent successfully! Awaiting analysis...";
+        } else {
+          responseBox.textContent = "❌ Error sending data to AI engine.";
+        }
+      } catch (err) {
+        responseBox.textContent = "⚠️ Connection error. Please check your network or webhook.";
+        console.error(err);
+      }
+    });
+  </script>
 </body>
 </html>
