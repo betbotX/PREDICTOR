@@ -115,19 +115,24 @@
     }
 
     .match {
-      margin-top: 12px;
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      background: #001900;
-      color: var(--neon);
-      font-family: 'Orbitron', monospace;
-      text-align: center;
-      outline: none;
-      font-size: 16px;
-      box-shadow: 0 0 10px rgba(0,255,106,0.2);
-    }
+  margin-top: 12px;
+  width: 100%;
+  max-width: 500px; /* limite visuelle propre */
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #001900;
+  color: var(--neon);
+  font-family: 'Orbitron', monospace;
+  text-align: center;
+  outline: none;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0,255,106,0.2);
+  box-sizing: border-box; /* ✅ essentiel pour l'alignement parfait */
+  margin-left: auto; /* ✅ centrage horizontal */
+  margin-right: auto; /* ✅ centrage horizontal */
+  display: block;
+}
 
     .call {
       margin-top: 43px;
@@ -268,3 +273,4 @@
 </script>
 </body>
 </html>
+
