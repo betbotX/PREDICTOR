@@ -307,15 +307,22 @@ display: none;
   <div class="commentbox"></div>
 </section>
 
-<!-- Intégration CommentBox.io -->
+<!-- ✅ CommentBox Integration -->
+<div class="commentbox"></div>
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
 commentBox('5761195906695168-proj', {
   className: 'commentbox',
-  defaultBoxId: 'my-comment-section',
-  backgroundColor: 'transparent',
+  defaultBoxId: 'predictor-comments',
+  backgroundColor: '#001900',
   textColor: '#00ff6a',
-  noLink: true // 🔥 ceci supprime le texte "commentbox.io"
+  sortOrder: 'newest',
+  noLink: true, // 🔥 enlève le lien “commentbox.io”
+  createBoxUrl: function(boxId, pageLocation) {
+    pageLocation.search = "";
+    pageLocation.hash = "";
+    return pageLocation.href;
+  }
 });
 </script>
     className: 'commentbox',
@@ -496,5 +503,6 @@ deleteCommentsBtn.addEventListener('click', () => {
 </script> <!-- ✅ ajoute cette ligne ici -->
 </body>
 </html>
+
 
 
