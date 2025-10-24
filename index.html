@@ -1,300 +1,480 @@
 <!doctype html>
 <html lang="en">
 <head>
-  
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PREDICTOR by betbotX — Neural Football Predictor Engine 2025/2026</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home | PREDICTOR by betbotX - Neural Football Predictor Engine 2025/2026</title>
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
-
-  <!-- ✅ Police Orbitron conservée -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #000;
-      --neon: #00ff6a;
-      --neon-2: #19ff8a;
-      --muted: rgba(0,255,106,0.65);
-    }
-
-    html, body {
-      height: 100%;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
-      font-family: 'Orbitron', monospace;
-      color: var(--neon);
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px 60px;
-    }
-
-    nav {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 18px;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      color: var(--neon-2);
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 700;
-      text-shadow: 0 0 6px rgba(0,255,106,0.6);
-      transition: 0.25s;
-    }
-    nav a:hover {
-      color: var(--neon);
-      text-shadow: 0 0 10px rgba(0,255,106,0.9);
-    }
-
-    .ticker {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      border-top: 1px solid rgba(0,255,106,0.2);
-      border-bottom: 1px solid rgba(0,255,106,0.2);
-      padding: 10px 0;
-      margin-bottom: 40px;
-    }
-    .ball {
-  font-size: 0.9em;  /* Ajuste la taille de l'emoji */
-  color: var(--neon);  /* Applique la couleur néon verte */
-  text-shadow: 0 0 10px rgba(0, 255, 106, 0.9);  /* Ombre néon pour l'effet lumineux */
-  display: inline-block;
-  animation: rotateBall 3s linear infinite;  /* Animation de rotation */
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+.blinking {
+    animation: blink 2.5s infinite;
+}
+        :root {
+            --bg: #000;
+            --neon: #00ff6a;
+            --neon-2: #19ff8a;
+            --muted: rgba(0,255,106,0.65);
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
+            font-family: 'Orbitron', monospace;
+            color: var(--neon);
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px 60px;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: var(--neon-2);
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 700;
+            text-shadow: 0 0 6px rgba(0,255,106,0.6);
+            transition: 0.25s;
+        }
+        nav a:hover {
+            color: var(--neon);
+            text-shadow: 0 0 10px rgba(0,255,106,0.9);
+        }
+        .ticker {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid rgba(0,255,106,0.2);
+            border-bottom: 1px solid rgba(0,255,106,0.2);
+            padding: 10px 0;
+            margin-bottom: 40px;
+        }
+        .ball {
+            font-size: 0.9em;
+            color: var(--neon);
+            text-shadow: 0 0 10px rgba(0, 255, 106, 0.9);
+            display: inline-block;
+            animation: rotateBall 3s linear infinite;
+        }
+        @keyframes rotateBall {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .ticker-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker 45s linear infinite;
+            color: var(--neon);
+            text-shadow: 0 0 6px rgba(0,255,106,0.8);
+            font-size: 16px;
+            font-weight: 600;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        h1 {
+            font-size: 60px;
+            color: var(--neon);
+            text-shadow: 0 0 25px rgba(0,255,106,0.9);
+            text-align: center;
+            letter-spacing: 3px;
+            margin: 5px 0 0;
+        }
+        .subtitle {
+            color: #00ff88;
+            font-size: 15px;
+            font-weight: 400;
+            margin-top: 6px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-shadow: none;
+        }
+        .panel {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(0,255,106,0.18);
+            border-radius: 14px;
+            padding: 30px 60px;
+            box-shadow: 0 0 20px rgba(0,255,106,0.15);
+            max-width: 700px;
+            text-align: center;
+        }
+        .info-strong {
+            color: var(--neon);
+            font-weight: 900;
+            font-size: 18px;
+            text-shadow: 0 0 8px rgba(0,255,106,0.6);
+        }
+        .info-light {
+            color: var(--muted);
+            font-size: 14px;
+        }
+        .match {
+            margin-top: 12px;
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: none;
+            background: #001900;
+            color: var(--neon);
+            font-family: 'Orbitron', monospace;
+            text-align: center;
+            outline: none;
+            font-size: 16px;
+            box-shadow: 0 0 10px rgba(0,255,106,0.2);
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .call {
+            margin-top: 43px;
+            padding: 12px 35px;
+            background: transparent;
+            color: var(--neon);
+            border: 1px solid var(--neon);
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+            animation: neonPulse 1.5s infinite alternate;
+            text-shadow: 0 0 8px rgba(0,255,106,0.8);
+        }
+        @keyframes neonPulse {
+            from { box-shadow: 0 0 5px var(--neon), 0 0 15px var(--neon-2); opacity: 1; }
+            to { box-shadow: 0 0 25px var(--neon), 0 0 50px var(--neon-2); opacity: 0.8; }
+        }
+        .response-box {
+            margin-top: 30px;
+            color: var(--neon-2);
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(0,255,106,0.5);
+            white-space: pre-line;
+        }
+        .disclaimer {
+            font-size: 13px;
+            color: rgba(0,255,106,0.6);
+            margin-top: 30px;
+            text-align: center;
+            max-width: 700px;
+        }
+        footer {
+            border-top: 1px solid rgba(0,255,106,0.1);
+            text-align: center;
+            font-size: 13px;
+            color: rgba(0,255,106,0.9);
+            text-shadow: 0 0 6px rgba(0,255,106,0.5);
+            font-weight: 600;
+            font-family: 'Orbitron', monospace;
+            padding-top: 15px;
+            padding-bottom: 25px;
+            margin-top: 60px;
+        }
+        footer a {
+            color: rgba(0,255,106,0.9);
+            text-decoration: none;
+        }
+        .comments-section {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(0,255,106,0.18);
+            border-radius: 14px;
+            padding: 30px 60px;
+            box-shadow: 0 0 20px rgba(0,255,106,0.15);
+            max-width: 500px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .comments-section input, .comments-section textarea {
+            width: 100%;
+            max-width: 500px;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 8px;
+            background: #001900;
+            color: var(--neon);
+            border: 1px solid rgba(0,255,106,0.2);
+            font-size: 16px;
+            font-family: 'Orbitron', monospace;
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            outline: none;
+        }
+        .comments-section button {
+            padding: 12px 35px;
+            background: transparent;
+            color: var(--neon);
+            border: 1px solid var(--neon);
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+            animation: neonPulse 1.5s infinite alternate;
+            text-shadow: 0 0 8px rgba(0,255,106,0.8);
+            margin-top: 20px;
+        }
+        .live {
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .admin-section {
+display: none;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .admin-section input, .admin-section button {
+            padding: 12px 35px;
+            font-size: 16px;
+            margin: 10px;
+        }
+/* Scroll néon vert quand beaucoup de commentaires */
+#commentsBox {
+  max-height: 350px; /* ou la hauteur que tu veux */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon) #000;
 }
 
-@keyframes rotateBall {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+#commentsBox::-webkit-scrollbar {
+  width: 8px;
 }
-    .ticker-text {
-      display: inline-block;
-      padding-left: 100%;
-      animation: ticker 45s linear infinite;
-      color: var(--neon);
-      text-shadow: 0 0 6px rgba(0,255,106,0.8);
-      font-size: 16px;
-      font-weight: 600;
-    }
-    @keyframes ticker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-
-    h1 {
-      font-size: 60px;
-      color: var(--neon);
-      text-shadow: 0 0 25px rgba(0,255,106,0.9);
-      text-align: center;
-      letter-spacing: 3px;
-      margin: 5px 0 0;
-    }
-
-    .subtitle {
-      color: #00ff88;
-      font-size: 15px;
-      font-weight: 400;
-      margin-top: 6px;
-      margin-bottom: 25px;
-      letter-spacing: 1px;
-      text-shadow: none;
-    }
-
-    .panel {
-      background: rgba(0,0,0,0.7);
-      border: 1px solid rgba(0,255,106,0.18);
-      border-radius: 14px;
-      padding: 30px 60px;
-      box-shadow: 0 0 20px rgba(0,255,106,0.15);
-      max-width: 700px;
-      text-align: center;
-    }
-
-    .info-strong {
-      color: var(--neon);
-      font-weight: 900;
-      font-size: 18px;
-      text-shadow: 0 0 8px rgba(0,255,106,0.6);
-    }
-    .info-light {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .match {
-      margin-top: 12px;
-      width: 100%;
-      max-width: 500px;
-      padding: 12px 16px;
-      border-radius: 8px;
-      border: none;
-      background: #001900;
-      color: var(--neon);
-      font-family: 'Orbitron', monospace;
-      text-align: center;
-      outline: none;
-      font-size: 16px;
-      box-shadow: 0 0 10px rgba(0,255,106,0.2);
-      box-sizing: border-box;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-    }
-
-    .call {
-      margin-top: 43px;
-      padding: 12px 35px;
-      background: transparent;
-      color: var(--neon);
-      border: 1px solid var(--neon);
-      border-radius: 10px;
-      font-size: 17px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.25s;
-      animation: neonPulse 1.5s infinite alternate;
-      text-shadow: 0 0 8px rgba(0,255,106,0.8);
-    }
-    @keyframes neonPulse {
-      from { box-shadow: 0 0 5px var(--neon), 0 0 15px var(--neon-2); opacity: 1; }
-      to { box-shadow: 0 0 25px var(--neon), 0 0 50px var(--neon-2); opacity: 0.8; }
-    }
-
-    .response-box {
-      margin-top: 30px;
-      color: var(--neon-2);
-      font-weight: 600;
-      text-shadow: 0 0 8px rgba(0,255,106,0.5);
-      white-space: pre-line;
-    }
-
-    .disclaimer {
-      font-size: 13px;
-      color: rgba(0,255,106,0.6);
-      margin-top: 30px;
-      text-align: center;
-      max-width: 700px;
-    }
-
-    footer {
-      border-top: 1px solid rgba(0,255,106,0.1);
-      text-align: center;
-      font-size: 13px;
-      color: rgba(0,255,106,0.9);
-      text-shadow: 0 0 6px rgba(0,255,106,0.5);
-      font-weight: 600;
-      font-family: 'Orbitron', monospace;
-      padding-top: 15px;
-      padding-bottom: 25px;
-      margin-top: 60px;
-    }
-    footer a {
-      color: rgba(0,255,106,0.9);
-      text-decoration: none;
-    }
-  </style>
+#commentsBox::-webkit-scrollbar-track {
+  background: #000;
+}
+#commentsBox::-webkit-scrollbar-thumb {
+  background-color: var(--neon);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--neon);
+}
+    </style>
 </head>
 <body>
-  <main>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="privacy.html">Privacy</a> |
-      <a href="terms.html">Terms</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
+    <main>
+        <nav>
+            <a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="contact.html">Contact</a>
+        </nav>
+        <div class="ticker">
+            <div class="ticker-text">Reliable AI football intelligence — built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights</div>
+        </div>
+        <h1>PREDICT<span class="ball">⚽</span>R</h1>
+        <p class="subtitle">by betbotX</p>
+        <section class="panel">
+            <p class="info-strong">ENGINE ACTIVE - READY 🟢</p>
+            <p class="info-light">Enter the match in the correct format and spelling</p>
+            <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
+            <button id="callBtn" class="call">Call Agent</button>
+            <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
+        </section>
+        <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind ⚠️</p>
+        <section class="comments-section">
+  <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
+  <div class="commentbox"></div>
+</section>
 
-    <div class="ticker">
-      <div class="ticker-text">
-        Reliable AI football intelligence — built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights
-      </div>
-    </div>
-
-    <h1>PREDICT<span class="ball">⚽</span>R</h1>
-    <p class="subtitle">by betbotX</p>
-
-    <section class="panel">
-      <p class="info-strong">ENGINE ACTIVE - READY 🟢</p>
-      <p class="info-light">Enter the match in the correct format and spelling</p>
-      <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
-      <button id="callBtn" class="call">Call Agent</button>
-      <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
-    </section>
-
-    <p class="disclaimer">
-      ⚠️ Our predictions are provided for informational and entertainment purposes only. 
-      We do not encourage or promote betting or gambling of any kind ⚠️
-    </p>
-  </main>
-
-  <footer>
-    Threads: <a href="#">betbotX</a> |
-    Instagram: <a href="#">@betbotX</a> |
-    Telegram: <a href="#">betbotX VIP</a>
-    <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
-  </footer>
-
-  <script>
-  const callBtn = document.getElementById('callBtn');
-  const matchInput = document.getElementById('matchInput');
-  const responseBox = document.getElementById('responseBox');
-
-  callBtn.addEventListener('click', async () => {
-    const match = matchInput.value.trim();
-    if (!match) {
-      responseBox.textContent = "⚠️ Please enter a match name first.";
-      return;
-    }
-
-    responseBox.textContent = "Booting PREDICTOR intelligence core...";
-
-    await new Promise((resolve) => {
-      setTimeout(() => { responseBox.textContent = "Activating PREDICTOR neural system..."; }, 1500);
-      setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3200);
-      setTimeout(() => { responseBox.textContent = "Running match analysis — please wait..."; }, 5200);
-      setTimeout(resolve, 7000);
-    });
-
-    try {
-      const res = await fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ match: match })
-      });
-
-      const text = await res.text();
-      if (res.ok) {
-        responseBox.textContent = text.trim();
-      } else {
-        responseBox.textContent = "❌ Error: " + text;
-      }
-    } catch (err) {
-      responseBox.textContent = "⚠️ Connection error. Please check your network or webhook.";
-      console.error(err);
+<!-- Intégration CommentBox.io -->
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>
+  commentBox('5761195906695168-proj', {
+    className: 'commentbox',
+    defaultBoxId: 'predictor-comments',
+    backgroundColor: '#001900',
+    textColor: '#00ff6a',
+    sortOrder: 'newest',
+    createBoxUrl(boxId, pageLocation) {
+      pageLocation.search = "";
+      pageLocation.hash = "";
+      return pageLocation.href;
     }
   });
-  </script>
+</script>
+        <section class="admin-section">
+            <h2>Admin Section</h2>
+            <input id="adminPassword" type="password" placeholder="Enter Admin Password" />
+            <button id="loginAdmin">Login</button>
+            <button id="deleteComments" style="display:none;">Delete Comments</button>
+        </section>
+    </main>
+    <footer>
+        Threads: <a href="#">betbotX</a> | Instagram: <a href="#">@betbotX</a> | Telegram: <a href="#">betbotX VIP</a>
+        <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
+    </footer>
+    
+    <!-- Admin Section Script -->
+    <script>
+        const callBtn = document.getElementById('callBtn');
+        const matchInput = document.getElementById('matchInput');
+        const responseBox = document.getElementById('responseBox');
+        const submitCommentBtn = document.getElementById('submitComment');
+        const commentName = document.getElementById('commentName');
+        const commentText = document.getElementById('commentText');
+        const commentsBox = document.getElementById('commentsBox');
+        const adminSection = document.querySelector('.admin-section');
+        const loginAdminBtn = document.getElementById('loginAdmin');
+        const deleteCommentsBtn = document.getElementById('deleteComments');
+        const adminPasswordInput = document.getElementById('adminPassword');
+        // ---------- SHA-256 helper (Web Crypto API) ----------
+async function sha256Hex(message) {
+  const enc = new TextEncoder();
+  const data = enc.encode(message);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+// Le hash SHA-256 du mot de passe choisi (ex. pour "admin123" fourni précédemment)
+const ADMIN_HASH = "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9";
+
+        // Call Agent Button functionality
+        callBtn.addEventListener('click', async () => {
+            const match = matchInput.value.trim();
+            if (!match) {
+responseBox.classList.add('blinking');
+                responseBox.textContent = "⚠️ Please enter a match name first.";
+                return;
+            }
+            responseBox.textContent = "Booting PREDICTOR intelligence core...";
+            await new Promise((resolve) => {
+                setTimeout(() => { responseBox.textContent = "Activating PREDICTOR neural system..."; }, 1500);
+                setTimeout(() => { responseBox.textContent = "Collecting live data & tactical parameters..."; }, 3200);
+                setTimeout(() => { responseBox.textContent = "Running match analysis - please wait..."; }, 5200);
+                setTimeout(resolve, 7000);
+            });
+            try {
+                const res = await fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ match: match })
+                });
+                const text = await res.text();
+                if (res.ok) {
+  responseBox.classList.remove('blinking'); // stoppe le clignotement
+  responseBox.textContent = text.trim();
+} else {
+  responseBox.classList.remove('blinking');
+  responseBox.textContent = "❌ Error: " + text;
+}
+
+            } catch (err) {
+                responseBox.textContent = "⚠️ Connection error. Please check your network or webhook.";
+                console.error(err);
+            }
+        });
+
+        // Submit Comment functionality
+        submitCommentBtn.addEventListener('click', () => {
+            const name = commentName.value.trim();
+            const text = commentText.value.trim();
+            if (!name || !text) {
+                alert("Please fill in both fields.");
+                return;
+            }
+            const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
+savedComments.push({ name, text, date: new Date().toISOString() });
+            localStorage.setItem('comments', JSON.stringify(savedComments));
+            commentName.value = '';
+            commentText.value = '';
+            loadComments();
+        });
+
+        // Load Comments from localStorage
+// Load Comments from localStorage
+function loadComments() {
+    const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
+    commentsBox.innerHTML = '';
+
+    savedComments.forEach((comment, index) => {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment-item');
+        commentDiv.innerHTML = `
+            <p><strong>${comment.name}</strong> — <small>${new Date(comment.date || Date.now()).toLocaleString()}</small></p>
+            <p>${comment.text}</p>
+        `;
+
+        // Si l’admin est connecté, on ajoute le bouton "Supprimer"
+        if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = '🗑️ Supprimer';
+            deleteBtn.style.marginTop = '8px';
+            deleteBtn.style.background = 'transparent';
+            deleteBtn.style.border = '1px solid #00ff6a';
+            deleteBtn.style.color = '#00ff6a';
+            deleteBtn.style.cursor = 'pointer';
+            deleteBtn.style.borderRadius = '8px';
+            deleteBtn.style.padding = '5px 10px';
+            deleteBtn.addEventListener('click', () => {
+                deleteComment(index);
+            });
+            commentDiv.appendChild(deleteBtn);
+        }
+
+        commentsBox.appendChild(commentDiv);
+    });
+}
+
+// Fonction pour supprimer un seul commentaire
+function deleteComment(index) {
+    const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
+    savedComments.splice(index, 1);
+    localStorage.setItem('comments', JSON.stringify(savedComments));
+    loadComments();
+}
+
+// Charger les commentaires au démarrage
+loadComments();
+
+// --- Connexion Admin ---
+loginAdminBtn.addEventListener('click', async () => {
+  const input = (adminPasswordInput.value || '').trim();
+  if (!input) { alert("Entrez le mot de passe"); return; }
+
+  try {
+    const hash = await sha256Hex(input);
+    if (hash === ADMIN_HASH) {
+      alert("✅ Admin connecté !");
+      sessionStorage.setItem('adminLoggedIn', 'true');
+      document.querySelector('.admin-section').style.display = 'block';
+      deleteCommentsBtn.style.display = 'inline-block';
+      loadComments(); // recharge avec les boutons Supprimer
+    } else {
+      alert("❌ Mot de passe incorrect !");
+    }
+  } catch (err) {
+    console.error('Hash error', err);
+    alert("Erreur lors de la vérification du mot de passe");
+  }
+});
+// Supprimer tous les commentaires
+deleteCommentsBtn.addEventListener('click', () => {
+    if (confirm("Supprimer TOUS les commentaires ?")) {
+        localStorage.removeItem('comments');
+        loadComments();
+    }
+});
+</script> <!-- ✅ ajoute cette ligne ici -->
 </body>
 </html>
-
-
-
-
-
-
-
-
