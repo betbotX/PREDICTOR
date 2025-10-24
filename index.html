@@ -307,7 +307,7 @@ display: none;
   <div class="commentbox"></div>
 </section>
 
-<!-- ✅ CommentBox Integration -->
+<!-- ✅ Zone des commentaires -->
 <div class="commentbox"></div>
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
@@ -317,7 +317,7 @@ commentBox('5761195906695168-proj', {
   backgroundColor: '#001900',
   textColor: '#00ff6a',
   sortOrder: 'newest',
-  noLink: true, // 🔥 enlève le lien “commentbox.io”
+  noLink: true, // 🔥 enlève le logo et lien "commentbox.io"
   createBoxUrl: function(boxId, pageLocation) {
     pageLocation.search = "";
     pageLocation.hash = "";
@@ -503,6 +503,7 @@ deleteCommentsBtn.addEventListener('click', () => {
 </script> <!-- ✅ ajoute cette ligne ici -->
 </body>
 </html>
+
 
 
 
