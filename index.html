@@ -272,6 +272,17 @@ display: none;
   box-shadow: 0 0 10px var(--neon);
 }
     </style>
+    <style>
+/* 🔒 Cache le logo/marque CommentBox */
+.commentbox .commentbox-footer {
+  display: none !important;
+}
+
+/* Optionnel : ajuste un peu la marge en bas */
+.commentbox {
+  margin-bottom: 0 !important;
+}
+</style>
 </head>
 <body>
     <main>
@@ -478,3 +489,4 @@ deleteCommentsBtn.addEventListener('click', () => {
 </script> <!-- ✅ ajoute cette ligne ici -->
 </body>
 </html>
+
