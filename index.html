@@ -13,6 +13,20 @@
 
 <style>
 .blinking { animation: blink 2.5s infinite; }
+@keyframes blink { 0%,100% {opacity:0.4;} 50%{opacity:1;} }
+
+.live {
+  color: red;
+  font-size: 12px;
+  font-weight: 800;
+  animation: liveBlink 0.8s infinite;
+  text-shadow: 0 0 8px rgba(255,0,0,0.9);
+}
+@keyframes liveBlink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
 :root {
   --bg: #000;
   --neon: #00ff6a;
@@ -221,7 +235,6 @@ footer a {
   <div class="commentbox"></div>
 </section>
 
-<!-- ✅ CommentBox intégré correctement -->
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
 commentBox('5761195906695168-proj', {
@@ -239,14 +252,39 @@ commentBox('5761195906695168-proj', {
 });
 </script>
 
-<section class="admin-section">
-  <h2>Admin Section</h2>
-  <input id="adminPassword" type="password" placeholder="Enter Admin Password" />
-  <button id="loginAdmin">Login</button>
-  <button id="deleteComments" style="display:none;">Delete Comments</button>
-</section>
-</main>
+<script>
+const callBtn = document.getElementById('callBtn');
+const matchInput = document.getElementById('matchInput');
+const responseBox = document.getElementById('responseBox');
 
+callBtn.addEventListener('click', async () => {
+  const match = matchInput.value.trim();
+  if (!match) {
+    responseBox.textContent = "⚠️ Please enter a match name first.";
+    return;
+  }
+
+  responseBox.classList.add('blinking');
+  responseBox.textContent = "Booting PREDICTOR intelligence core...";
+
+  try {
+    const res = await fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ match })
+    });
+    const text = await res.text();
+    responseBox.classList.remove('blinking');
+    responseBox.textContent = res.ok ? text.trim() : "❌ Error: " + text;
+  } catch (err) {
+    responseBox.classList.remove('blinking');
+    responseBox.textContent = "⚠️ Connection error. Please check your network or webhook.";
+    console.error(err);
+  }
+});
+</script>
+
+</main>
 <footer>
   Threads: <a href="#">betbotX</a> | Instagram: <a href="#">@betbotX</a> | Telegram: <a href="#">betbotX VIP</a>
   <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
