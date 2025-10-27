@@ -1,43 +1,29 @@
-# =====================================================
-# 🤖 robots.txt - PREDICTOR by betbotX
-# =====================================================
-# 🌐 English + French bilingual version
-# Project: AI Football Prediction Engine
-# Author: ANFAtech
-# Website: https://betbotx.github.io/PREDICTOR/
+# ==========================================
+# 🤖 robots.txt for PREDICTOR by betbotX
 # Last updated: 2025-10-27
-# =====================================================
+# ==========================================
 
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
 
-# 🧭 Sitemap (Plan du site)
+# 📄 Sitemap
 Sitemap: https://betbotx.github.io/PREDICTOR/sitemap-index.xml
 
+# ==========================================
+# 🔒 Security & privacy rules
+# ==========================================
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
 
-# =====================================================
-# 🧠 Notes EN:
-# - This file tells search engines which pages to crawl.
-# - All public pages are allowed for indexing.
-# - The sitemap helps Google understand site structure.
-# - Sensitive or temporary folders are excluded.
-# - Hosted securely via GitHub Pages (HTTPS enforced).
+# ==========================================
+# 🌍 General info
+# ==========================================
+# This robots.txt file allows all search engines to crawl
+# and index all pages of the site.
+# The sitemap-index.xml helps Google discover all pages
+# and sub-sitemaps efficiently.
 
-# 🧠 Notes FR :
-# - Ce fichier indique aux moteurs de recherche les pages à explorer.
-# - Toutes les pages publiques sont autorisées à être indexées.
-# - Le sitemap aide Google à comprendre la structure du site.
-# - Les dossiers sensibles ou temporaires sont exclus.
-# - Hébergement sécurisé via GitHub Pages (HTTPS activé).
-
-# =====================================================
-# 🔍 Additional Info / Informations supplémentaires
-# For SEO optimization, ensure the following:
-# - Each page has a unique <title> and meta description
-# - The canonical URL is https://betbotx.github.io/PREDICTOR/
-# - Structured data (JSON-LD) is included for organization schema
-# =====================================================
-
+# Website: https://betbotx.github.io/PREDICTOR/
+# Author: PREDICTOR by betbotX (ANFAtech)
+# Contact: support@tonsite.com
