@@ -237,20 +237,23 @@ footer a {
 .commentbox .commentbox-footer { display: none !important; }
 .commentbox { margin-bottom: 0 !important; }
   /* 🌌 Personnalisation du widget CommentBox.io pour le thème vert néon */
+/* 🌌 Forcer CommentBox.io à adopter le thème vert néon */
 .commentbox,
 .commentbox * {
   color: var(--neon) !important;
-  background-color: transparent !important;
-  border-color: rgba(0, 255, 106, 0.3) !important;
+  background: transparent !important;
+  border-color: rgba(0,255,106,0.25) !important;
   font-family: 'Orbitron', monospace !important;
+  text-shadow: 0 0 8px rgba(0,255,106,0.5);
 }
 
+/* Zone de saisie et texte */
 .commentbox input,
 .commentbox textarea {
   color: var(--neon) !important;
-  background-color: #001900 !important;
-  border: 1px solid rgba(0,255,106,0.3) !important;
-  box-shadow: 0 0 8px rgba(0,255,106,0.2);
+  background: rgba(0,25,0,0.9) !important;
+  border: 1px solid rgba(0,255,106,0.35) !important;
+  box-shadow: 0 0 10px rgba(0,255,106,0.2);
 }
 
 .commentbox input::placeholder,
@@ -258,28 +261,50 @@ footer a {
   color: rgba(0,255,106,0.5) !important;
 }
 
+/* Boutons */
 .commentbox button {
   background: transparent !important;
   color: var(--neon) !important;
   border: 1px solid var(--neon) !important;
-  text-shadow: 0 0 8px rgba(0,255,106,0.8);
-  transition: all 0.3s ease;
   border-radius: 8px !important;
+  text-shadow: 0 0 8px rgba(0,255,106,0.8);
+  box-shadow: 0 0 15px rgba(0,255,106,0.4);
+  transition: all 0.3s ease;
 }
 
 .commentbox button:hover {
   background: rgba(0,255,106,0.1) !important;
-  box-shadow: 0 0 10px rgba(0,255,106,0.4);
+  box-shadow: 0 0 25px rgba(0,255,106,0.6);
 }
 
-.commentbox a {
-  color: var(--neon-2) !important;
-  text-decoration: none;
-}
-
-.commentbox a:hover {
+/* Liens, labels et timestamps */
+.commentbox a,
+.commentbox label,
+.commentbox time,
+.commentbox .commentbox-header,
+.commentbox .commentbox-footer,
+.commentbox .commentbox-name,
+.commentbox .commentbox-date,
+.commentbox .commentbox-comment {
   color: var(--neon) !important;
-  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+  text-shadow: 0 0 8px rgba(0,255,106,0.4);
+}
+
+/* Supprimer tout fond blanc possible */
+.commentbox iframe {
+  background: transparent !important;
+}
+
+/* Lignes de séparation et contours */
+.commentbox hr,
+.commentbox .commentbox-divider {
+  border-color: rgba(0,255,106,0.2) !important;
+}
+
+/* Enlever les éventuelles icônes/avatars blancs */
+.commentbox svg,
+.commentbox img {
+  filter: hue-rotate(90deg) brightness(2) !important;
 }
 </style>
 </head>
@@ -545,4 +570,5 @@ deleteCommentsBtn.addEventListener('click', () => {
 </footer>
 </body>
 </html>
+
 
