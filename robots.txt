@@ -15,7 +15,8 @@ Disallow: /private/
 Disallow: /temp/
 
 # 🧭 Sitemap (Plan du site)
-Sitemap: https://betbotx.github.io/PREDICTOR/sitemap.xml
+Sitemap: https://betbotx.github.io/PREDICTOR/sitemap-index.xml
+
 
 # =====================================================
 # 🧠 Notes EN:
@@ -39,3 +40,4 @@ Sitemap: https://betbotx.github.io/PREDICTOR/sitemap.xml
 # - The canonical URL is https://betbotx.github.io/PREDICTOR/
 # - Structured data (JSON-LD) is included for organization schema
 # =====================================================
+
