@@ -195,16 +195,13 @@ h1 {
 }
 
 .response-box {
-    margin-top: 30px;
-    color: var(--neon-2);
-    font-weight: 600;
-    text-shadow: 0 0 8px rgba(0,255,106,0.5);
-    white-space: pre-line;
-    min-height: 80px;          /* ✅ garde la hauteur pour que rien ne bouge */
-    display: block;            /* ✅ garde la zone en dessous du bouton */
-    text-align: center;        /* ✅ centre le texte à l’intérieur */
-
+  margin-top: calc(30px + 1cm); /* décale de ~2cm en plus sans casser la mise en page */
+  color: var(--neon-2);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0,255,106,0.5);
+  white-space: pre-line;
 }
+
 .disclaimer {
   font-size: 13px;
   color: rgba(0,255,106,0.6);
@@ -504,10 +501,6 @@ deleteCommentsBtn.addEventListener('click', () => {
   }
 });
 </script>
-
-
-
-
 </main>
 <footer>
   Threads: <a href="#">betbotX</a> | Instagram: <a href="#">@betbotX</a> | Telegram: <a href="#">betbotX VIP</a>
