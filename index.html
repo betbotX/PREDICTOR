@@ -236,6 +236,51 @@ footer a {
 }
 .commentbox .commentbox-footer { display: none !important; }
 .commentbox { margin-bottom: 0 !important; }
+  /* 🌌 Personnalisation du widget CommentBox.io pour le thème vert néon */
+.commentbox,
+.commentbox * {
+  color: var(--neon) !important;
+  background-color: transparent !important;
+  border-color: rgba(0, 255, 106, 0.3) !important;
+  font-family: 'Orbitron', monospace !important;
+}
+
+.commentbox input,
+.commentbox textarea {
+  color: var(--neon) !important;
+  background-color: #001900 !important;
+  border: 1px solid rgba(0,255,106,0.3) !important;
+  box-shadow: 0 0 8px rgba(0,255,106,0.2);
+}
+
+.commentbox input::placeholder,
+.commentbox textarea::placeholder {
+  color: rgba(0,255,106,0.5) !important;
+}
+
+.commentbox button {
+  background: transparent !important;
+  color: var(--neon) !important;
+  border: 1px solid var(--neon) !important;
+  text-shadow: 0 0 8px rgba(0,255,106,0.8);
+  transition: all 0.3s ease;
+  border-radius: 8px !important;
+}
+
+.commentbox button:hover {
+  background: rgba(0,255,106,0.1) !important;
+  box-shadow: 0 0 10px rgba(0,255,106,0.4);
+}
+
+.commentbox a {
+  color: var(--neon-2) !important;
+  text-decoration: none;
+}
+
+.commentbox a:hover {
+  color: var(--neon) !important;
+  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+}
 </style>
 </head>
 
@@ -500,3 +545,4 @@ deleteCommentsBtn.addEventListener('click', () => {
 </footer>
 </body>
 </html>
+
