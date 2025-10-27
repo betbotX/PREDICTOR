@@ -1,10 +1,26 @@
-# robots.txt for BetBotX Predictor (GitHub Pages)
+# =====================================================
+# 🤖 robots.txt - PREDICTOR by betbotX (SEO optimized)
+# =====================================================
+
 User-agent: *
 Allow: /
-
-# Disallow admin or private folders (none currently)
 Disallow: /admin/
-Disallow: /scripts/
+Disallow: /private/
+Disallow: /temp/
 
-# Correct Sitemap location
+# 🧭 Sitemap location
 Sitemap: https://betbotx.github.io/PREDICTOR/sitemap.xml
+
+# =====================================================
+# 📌 SEO Information
+# Website: https://betbotx.github.io/PREDICTOR/
+# Author: ANFAtech
+# Project: PREDICTOR by betbotX – AI Football Prediction Engine
+# Last updated: 2025-10-27
+# =====================================================
+
+# 🧠 Notes:
+# - This robots.txt allows all crawlers to index public content.
+# - Sensitive or temporary folders are blocked.
+# - The sitemap helps search engines understand the website structure.
+# - GitHub Pages automatically uses HTTPS for secure crawling.
