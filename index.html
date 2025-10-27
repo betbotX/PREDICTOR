@@ -477,6 +477,81 @@ footer a {
 <script>
 const matchInput = document.getElementById('matchInput');
 const responseBox = document.getElementById('responseBox');
+const callBtn = document.getElementById('callBtn');
+
+// --- SYSTEME DE LIMITATION --- //
+function canSearch() {
+    const now = Date.now();
+    const history = JSON.parse(localStorage.getItem('predictorSearches')) || [];
+
+    // Supprimer les recherches de plus d'1 heure
+    const validHistory = history.filter(time => now - time < 3600000);
+
+    if (validHistory.length >= 3) {
+        return false;
+    }
+
+    // Ajouter cette recherche et sauvegarder
+    validHistory.push(now);
+    localStorage.setItem('predictorSearches', JSON.stringify(validHistory));
+    return true;
+}
+
+// --- BOUTON PRINCIPAL --- //
+callBtn.addEventListener('click', async () => {
+    const match = matchInput.value.trim();
+    if (!match) {
+        responseBox.classList.add('blinking');
+        responseBox.textContent = "⚠️ Please enter a match name first.";
+        return;
+    }
+
+    // Vérification de la limite d’utilisation
+    if (!canSearch()) {
+        responseBox.classList.remove('blinking');
+        responseBox.textContent = "Limit reached: You can only make 3 predictions per hour. Please try again later.";
+        return;
+    }
+
+    responseBox.classList.add('blinking');
+    responseBox.textContent = "Booting PREDICTOR intelligence core...";
+
+    const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    let serverResponse = "⚠️ Connection error. Please check your network or webhook.";
+    const fetchPromise = fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ match })
+    })
+    .then(async res => {
+        const text = await res.text();
+        if (res.ok) return text.trim();
+        else return "❌ Error: " + text;
+    })
+    .then(text => { serverResponse = text; })
+    .catch(err => {
+        console.error(err);
+        serverResponse = "⚠️ Connection error. Please check your network or webhook.";
+    });
+
+    await wait(1500);
+    responseBox.textContent = "Activating PREDICTOR neural system...";
+    await wait(1500);
+    responseBox.textContent = "Collecting live data & tactical parameters...";
+    await wait(1500);
+    responseBox.textContent = "Running match analysis - please wait...";
+    await wait(1500);
+
+    await fetchPromise;
+
+    responseBox.classList.remove('blinking');
+    responseBox.textContent = serverResponse;
+});
+</script>
+<script>
+const matchInput = document.getElementById('matchInput');
+const responseBox = document.getElementById('responseBox');
 
 // Call Agent Button functionality
 callBtn.addEventListener('click', async () => {
@@ -577,11 +652,3 @@ function googleTranslateElementInit() {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
