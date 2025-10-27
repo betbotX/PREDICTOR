@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- 🔥 PREDICTOR by betbotX - Sitemap SEO Optimisé 2025 -->
-  
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 🌐 Homepage -->
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/</loc>
     <lastmod>2025-10-27</lastmod>
-    <priority>1.0</priority>
     <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
+  <!-- 📄 About page -->
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/about.html</loc>
     <lastmod>2025-10-27</lastmod>
-    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
+  <!-- 📜 Privacy page -->
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/privacy.html</loc>
     <lastmod>2025-10-27</lastmod>
-    <priority>0.6</priority>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
+  <!-- ⚖️ Terms page -->
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/terms.html</loc>
     <lastmod>2025-10-27</lastmod>
-    <priority>0.6</priority>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
+  <!-- 📩 Contact page -->
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/contact.html</loc>
     <lastmod>2025-10-27</lastmod>
-    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
-  <!-- 🧠 Blog / Articles Evergreen -->
-  <url>
-    <loc>https://betbotx.github.io/PREDICTOR/blog.html</loc>
-    <lastmod>2025-10-27</lastmod>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-  </url>
 </urlset>
