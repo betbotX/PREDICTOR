@@ -1,6 +1,61 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- 💚 CURSEUR NEON FLUO -->
+<style>
+  html, body { cursor: none !important; }
+
+  .neon-cursor {
+    position: fixed;
+    width: 18px;
+    height: 18px;
+    background: #00ff6a;
+    border-radius: 50%;
+    box-shadow:
+      0 0 8px #00ff6a,
+      0 0 20px #00ff6a,
+      0 0 40px #00ff6a;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999999;
+    transition: transform 0.07s ease-out;
+    opacity: 0;
+  }
+
+  .cursor-halo {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(0,255,106,0.25) 0%, rgba(0,255,106,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999998;
+    transition: transform 0.12s ease-out;
+    opacity: 0;
+  }
+</style>
+<div class="cursor-halo"></div>
+<div class="neon-cursor"></div>
+
+<script>
+  const cursor = document.querySelector('.neon-cursor');
+  const halo = document.querySelector('.cursor-halo');
+  let visible = false;
+
+  document.addEventListener('mousemove', e => {
+    if (!visible) {
+      cursor.style.opacity = 1;
+      halo.style.opacity = 1;
+      visible = true;
+    }
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    halo.style.left = e.clientX + 'px';
+    halo.style.top = e.clientY + 'px';
+  });
+</script>
+
 <!-- 🌟 Favicons -->
 <link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
@@ -322,7 +377,7 @@ footer a {
   <a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="contact.html">Contact</a>
 </nav>
 <div class="ticker">
-  <div class="ticker-text">Reliable AI football intelligence — built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights | Global AI coverage - every major league, every match, everywhere.</div>
+  <div class="ticker-text">Reliable AI football intelligence : Built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights | Global AI coverage - Every major league, every match, everywhere.</div>
 </div>
 <h1>PREDICT<span class="ball">⚽</span>R</h1>
 <p class="subtitle">by betbotX</p>
@@ -516,5 +571,6 @@ function googleTranslateElementInit() {
 </script>
 </body>
 </html>
+
 
 
