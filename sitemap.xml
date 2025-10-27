@@ -1,56 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- 🌐 Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://betbotx.github.io/PREDICTOR/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://betbotx.github.io/PREDICTOR/index-fr.html" />
     <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- 📄 About page -->
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/about.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://betbotx.github.io/PREDICTOR/about.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://betbotx.github.io/PREDICTOR/about-fr.html" />
     <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- 📜 Privacy page -->
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/privacy.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://betbotx.github.io/PREDICTOR/privacy.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://betbotx.github.io/PREDICTOR/privacy-fr.html" />
     <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- ⚖️ Terms page -->
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/terms.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://betbotx.github.io/PREDICTOR/terms.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://betbotx.github.io/PREDICTOR/terms-fr.html" />
     <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- 📩 Contact page -->
   <url>
     <loc>https://betbotx.github.io/PREDICTOR/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://betbotx.github.io/PREDICTOR/contact.html" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://betbotx.github.io/PREDICTOR/contact-fr.html" />
     <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
 </urlset>
