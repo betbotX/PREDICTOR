@@ -344,8 +344,17 @@ footer a {
     textColor: '#00ff6a'
   });
 </script>
-
-
+<script>
+  commentBox('5761195906695168-proj', {
+    className: 'commentbox',
+    defaultBoxId: 'predictor-comments',
+    backgroundColor: 'transparent',
+    textColor: '#00ff6a', // 🟢 ton vert fluo
+    subtextColor: '#00ff6a',
+    singleSignOn: null
+  });
+</script>
+  
 <script>
 const matchInput = document.getElementById('matchInput');
 const responseBox = document.getElementById('responseBox');
@@ -570,5 +579,6 @@ deleteCommentsBtn.addEventListener('click', () => {
 </footer>
 </body>
 </html>
+
 
 
