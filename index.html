@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Home | PREDICTOR by betbotX - Neural Football Predictor Engine 2025/2026</title>
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-Frame-Options" content="DENY">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
 <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
@@ -268,23 +267,16 @@ footer a {
 
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
-commentBox('5761195906695168-proj', {
-  className: 'commentbox',
-  defaultBoxId: 'predictor-comments',
-  backgroundColor: '#001900',
-  textColor: '#00ff6a',
-  sortOrder: 'newest',
-  noLink: true,
-  createBoxUrl: function(boxId, pageLocation) {
-    pageLocation.search = "";
-    pageLocation.hash = "";
-    return pageLocation.href;
-  }
-});
+  commentBox('5761195906695168-proj', {
+    className: 'commentbox', // le conteneur à utiliser
+    defaultBoxId: 'predictor-comments',
+    backgroundColor: 'transparent',
+    textColor: '#00ff6a'
+  });
 </script>
 
+
 <script>
-const callBtn = document.getElementById('callBtn');
 const matchInput = document.getElementById('matchInput');
 const responseBox = document.getElementById('responseBox');
 
