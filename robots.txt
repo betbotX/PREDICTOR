@@ -26,5 +26,6 @@ Disallow: /tmp/
 
 # Website: https://betbotx.github.io/PREDICTOR/
 # Author: PREDICTOR by betbotX (ANFAtech)
-# Contact: support@tonsite.com
+# Contact: support@betbotx.ai
+
 
