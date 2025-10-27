@@ -1,5 +1,11 @@
 # =====================================================
-# 🤖 robots.txt - PREDICTOR by betbotX (SEO optimized)
+# 🤖 robots.txt - PREDICTOR by betbotX
+# =====================================================
+# 🌐 English + French bilingual version
+# Project: AI Football Prediction Engine
+# Author: ANFAtech
+# Website: https://betbotx.github.io/PREDICTOR/
+# Last updated: 2025-10-27
 # =====================================================
 
 User-agent: *
@@ -8,19 +14,28 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
 
-# 🧭 Sitemap location
+# 🧭 Sitemap (Plan du site)
 Sitemap: https://betbotx.github.io/PREDICTOR/sitemap.xml
 
 # =====================================================
-# 📌 SEO Information
-# Website: https://betbotx.github.io/PREDICTOR/
-# Author: ANFAtech
-# Project: PREDICTOR by betbotX – AI Football Prediction Engine
-# Last updated: 2025-10-27
-# =====================================================
+# 🧠 Notes EN:
+# - This file tells search engines which pages to crawl.
+# - All public pages are allowed for indexing.
+# - The sitemap helps Google understand site structure.
+# - Sensitive or temporary folders are excluded.
+# - Hosted securely via GitHub Pages (HTTPS enforced).
 
-# 🧠 Notes:
-# - This robots.txt allows all crawlers to index public content.
-# - Sensitive or temporary folders are blocked.
-# - The sitemap helps search engines understand the website structure.
-# - GitHub Pages automatically uses HTTPS for secure crawling.
+# 🧠 Notes FR :
+# - Ce fichier indique aux moteurs de recherche les pages à explorer.
+# - Toutes les pages publiques sont autorisées à être indexées.
+# - Le sitemap aide Google à comprendre la structure du site.
+# - Les dossiers sensibles ou temporaires sont exclus.
+# - Hébergement sécurisé via GitHub Pages (HTTPS activé).
+
+# =====================================================
+# 🔍 Additional Info / Informations supplémentaires
+# For SEO optimization, ensure the following:
+# - Each page has a unique <title> and meta description
+# - The canonical URL is https://betbotx.github.io/PREDICTOR/
+# - Structured data (JSON-LD) is included for organization schema
+# =====================================================
