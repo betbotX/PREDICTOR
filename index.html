@@ -762,25 +762,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const minUsers = 980;
   const maxUsers = 28000;
 
-  // 🔹 Garde la même valeur entre les refreshs
-  let currentUsers = parseInt(localStorage.getItem("liveCount")) || 
-                     Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers;
+  // 🔹 Valeur initiale (prise de localStorage sinon aléatoire)
+  let stored = localStorage.getItem("liveCount");
+  let currentUsers = stored ? parseFloat(stored) : Math.floor(Math.random() * (maxUsers - minUsers)) + minUsers;
 
-  // 🔹 Formate le texte (1.2k etc.)
+  // 🔹 Formate joliment
   const format = (n) => (n >= 1000 ? (n / 1000).toFixed(1) + "k" : n);
 
-  // 🔹 Affiche la valeur
+  // 🔹 Affiche
   const display = () => {
     el.innerHTML = `<span class="green-led"></span>${format(Math.round(currentUsers))} online`;
   };
 
   display();
 
-  // 🔹 Animation fluide (transition lente)
+  // 🔹 Transition lente et fluide (sur 60s)
   const smoothTransition = (target) => {
-    const steps = 180; // 180 petits mouvements
-    const totalDuration = 60000; // durée = 60s
-    const stepTime = totalDuration / steps;
+    const duration = 60000; // 60s
+    const stepTime = 2000; // toutes les 2s = 30 steps
+    const steps = duration / stepTime;
     const diff = target - currentUsers;
     const step = diff / steps;
     let i = 0;
@@ -797,29 +797,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }, stepTime);
   };
 
-  // 🔹 Nouvelle valeur toutes les 60 secondes
+  // 🔹 Calcul d’une nouvelle cible réaliste
   const updateTarget = () => {
-    // Variation réaliste (-10% à +10%)
-    const variation = Math.random() * 0.2 - 0.1;
+    const variation = Math.random() * 0.15 - 0.075; // ±7.5%
     let next = Math.round(currentUsers + currentUsers * variation);
 
-    // Rare pic (1 chance sur 10)
-    if (Math.random() < 0.1) {
+    // Rare changement plus large (1 chance sur 8)
+    if (Math.random() < 0.125) {
       next = Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers;
     }
 
-    // Garde dans les bornes
     next = Math.max(minUsers, Math.min(next, maxUsers));
-
     smoothTransition(next);
   };
 
-  // 🔹 Lance une première variation au bout de 10 secondes
-  setTimeout(updateTarget, 10000);
-  // 🔹 Puis toutes les minutes
+  // 🔹 Première mise à jour après 60s
   setInterval(updateTarget, 60000);
 });
 </script>
+
 </body>
 </html>
+
 
