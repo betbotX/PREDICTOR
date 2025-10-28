@@ -1,8 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta property="og:image" content="https://betbotx.github.io/PREDICTOR/banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:title" content="PREDICTOR by betbotX – AI Football Predictions 2025/2026">
+<meta property="og:description" content="Get accurate football predictions powered by our 2025/2026 AI engine. Smarter. Faster. Safer.">
+<meta property="og:url" content="https://betbotx.github.io/PREDICTOR/">
+<meta property="og:type" content="website">
   <!-- 💚 CURSEUR NEON FLUO -->
 <style>
+#liveUsers {
+  background: rgba(0, 255, 106, 0.08);
+  border: 1px solid rgba(0, 255, 106, 0.4);
+  border-radius: 10px;
+  padding: 5px 12px;
+  color: #00ff6a;
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,255,106,0.9);
+  box-shadow: 0 0 12px rgba(0,255,106,0.2);
+  
+  /* 🔹 Ajoute ceci pour descendre l'élément */
+  margin-top: 15px; /* = environ 1 cm */
+}
   html, body { cursor: none !important; }
 
   .neon-cursor {
@@ -80,8 +103,9 @@
 <title>Home | PREDICTOR by betbotX - Neural Football Predictor Engine 2025/2026 – AI Match Predictions & Global Insights</title>
 
 <!-- 🧠 DESCRIPTION BILINGUE ULTRA SEO (FR + EN) -->
-<meta name="description" content="FR : PREDICTOR by betbotX – l’IA la plus avancée pour les pronostics de football. Analysez les matchs avec l’intelligence artificielle, les statistiques en temps réel et des prédictions fiables. Couvre la Ligue des Champions, la Coupe du Monde 2026 (États-Unis, Canada, Mexique), l’Europe, l’Afrique, l’Amérique Latine et l’Asie. Suivez vos clubs préférés comme le Real Madrid, FC Barcelone, PSG, Manchester City, Al Ahly et Raja Casablanca, et les stars mondiales comme Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah et Vinícius Jr.
-EN : PREDICTOR by betbotX – the most powerful AI football prediction platform. Get real-time analytics, match forecasts and tactical insights powered by data science. Covers the Champions League, 2026 World Cup (USA, Canada, Mexico), and top leagues from Europe, Africa, Asia & Latin America. Follow elite clubs like Real Madrid, FC Barcelona, PSG, Manchester City, Al Ahly, and players such as Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah, and Vinícius Jr.">
+<meta name="description" content="
+PREDICTOR by betbotX – the most powerful AI football prediction platform. Get real-time analytics, match forecasts and tactical insights powered by data science. Covers the Champions League, 2026 World Cup (USA, Canada, Mexico), and top leagues from Europe, Africa, Asia & Latin America. Follow elite clubs like Real Madrid, FC Barcelona, PSG, Manchester City, Al Ahly, and players such as Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah, and Vinícius Jr.
+FR : PREDICTOR by betbotX – l’IA la plus avancée pour les pronostics de football. Analysez les matchs avec l’intelligence artificielle, les statistiques en temps réel et des prédictions fiables. Couvre la Ligue des Champions, la Coupe du Monde 2026 (États-Unis, Canada, Mexique), l’Europe, l’Afrique, l’Amérique Latine et l’Asie. Suivez vos clubs préférés comme le Real Madrid, FC Barcelone, PSG, Manchester City, Al Ahly et Raja Casablanca, et les stars mondiales comme Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah et Vinícius Jr.">
 
 <!-- 🔑 Mots-clés ultra complets -->
 <meta name="keywords" content="PREDICTOR, AI football predictions, pronostics IA, football analytics, neural predictor, match analysis, sports data engine, machine learning football, predictive algorithm,
@@ -380,6 +404,9 @@ footer a {
   <a href="privacy.html">Privacy</a> |
   <a href="terms.html">Terms</a> |
   <a href="contact.html">Contact</a>
+
+  <!-- 📸 Image juste en dessous de la nav -->
+  
 </nav>
 
 <div class="ticker">
@@ -649,6 +676,41 @@ function googleTranslateElementInit() {
     document.body.appendChild(script);
   }
 })();
+</script>
+<!-- 👥 Live Users Counter -->
+<div id="liveUsers" style="
+  position: fixed;
+  top: 18px;
+  right: 25px;
+  background: rgba(0, 255, 106, 0.08);
+  border: 1px solid rgba(0, 255, 106, 0.4);
+  border-radius: 10px;
+  padding: 6px 14px;
+  color: #00ff6a;
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,255,106,0.9);
+  box-shadow: 0 0 12px rgba(0,255,106,0.2);
+  z-index: 99999;
+">
+  👥 <span id="userCount">0</span> Online
+</div>
+
+<script>
+async function updateUserCount() {
+  try {
+    const namespace = "predictor_ai_live_users_v2";
+    const key = "active_visitors";
+    const res = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
+    const data = await res.json();
+    document.getElementById("userCount").textContent = data.value;
+  } catch (e) {
+    console.error("Error updating live users:", e);
+  }
+}
+updateUserCount();
+setInterval(updateUserCount, 10000); // mise à jour toutes les 10s
 </script>
 </body>
 </html>
