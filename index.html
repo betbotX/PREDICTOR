@@ -11,6 +11,21 @@
 <meta property="og:type" content="website">
   <!-- 💚 CURSEUR NEON FLUO -->
 <style>
+.green-led {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00ff6a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+  margin-right: 6px;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.5; }
+}
+
 #liveUsers {
   background: rgba(0, 255, 106, 0.08);
   border: 1px solid rgba(0, 255, 106, 0.4);
@@ -22,9 +37,24 @@
   font-weight: 700;
   text-shadow: 0 0 8px rgba(0,255,106,0.9);
   box-shadow: 0 0 12px rgba(0,255,106,0.2);
-  
-  /* 🔹 Ajoute ceci pour descendre l'élément */
-  margin-top: 15px; /* = environ 1 cm */
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.green-led {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00ff6a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+  margin-right: 6px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.5; }
 }
   html, body { cursor: none !important; }
 
@@ -57,6 +87,46 @@
     transition: transform 0.12s ease-out;
     opacity: 0;
   }
+.navbar {
+  display: flex;
+  flex-direction: column; /* empile menu + compteur */
+  align-items: center;    /* centre tout horizontalement */
+  margin-bottom: 40px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.nav-center {
+  text-align: center;
+  margin-bottom: 25px; /* espace entre le menu et le compteur */
+}
+
+#liveUsers {
+  background: rgba(0, 255, 106, 0.08);
+  border: 1px solid rgba(0, 255, 106, 0.4);
+  border-radius: 10px;
+  padding: 5px 12px;
+  color: #00ff6a;
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,255,106,0.9);
+  box-shadow: 0 0 12px rgba(0,255,106,0.2);
+  margin-top: 5px;
+}
+
+.green-led {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00ff6a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+  margin-right: 6px;
+  animation: pulse 1.5s infinite;
+}
+
+
 </style>
 <div class="cursor-halo"></div>
 <div class="neon-cursor"></div>
@@ -210,6 +280,7 @@ nav {
   font-size: 18px;
   letter-spacing: 1px;
 }
+
 nav a {
   color: var(--neon-2);
   text-decoration: none;
@@ -397,17 +468,22 @@ footer a {
 
 <body>
 <main>
-<nav>
-  <a href="index.html">Home</a> |
-  <a href="about.html">About</a> |
-  <a href="blog.html">Blog</a> |
-  <a href="privacy.html">Privacy</a> |
-  <a href="terms.html">Terms</a> |
-  <a href="contact.html">Contact</a>
+<nav class="navbar">
+  <div class="nav-center">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="blog.html">Blog</a> |
+    <a href="privacy.html">Privacy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="contact.html">Contact</a>
+  </div>
 
-  <!-- 📸 Image juste en dessous de la nav -->
-  
+  <!-- 🟢 Compteur déplacé ici -->
+  <div id="liveUsers">
+  <span class="green-led"></span>Loading...
+</div>
 </nav>
+
 
 <div class="ticker">
   <div class="ticker-text">Reliable AI football intelligence : Built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights | Global AI coverage - Every major league, every match, everywhere.</div>
@@ -677,40 +753,68 @@ function googleTranslateElementInit() {
   }
 })();
 </script>
-<!-- 👥 Live Users Counter -->
-<div id="liveUsers" style="
-  position: fixed;
-  top: 18px;
-  right: 25px;
-  background: rgba(0, 255, 106, 0.08);
-  border: 1px solid rgba(0, 255, 106, 0.4);
-  border-radius: 10px;
-  padding: 6px 14px;
-  color: #00ff6a;
-  font-family: 'Orbitron', monospace;
-  font-size: 14px;
-  font-weight: 700;
-  text-shadow: 0 0 8px rgba(0,255,106,0.9);
-  box-shadow: 0 0 12px rgba(0,255,106,0.2);
-  z-index: 99999;
-">
-  👥 <span id="userCount">0</span> Online
-</div>
 
 <script>
-async function updateUserCount() {
-  try {
-    const namespace = "predictor_ai_live_users_v2";
-    const key = "active_visitors";
-    const res = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
-    const data = await res.json();
-    document.getElementById("userCount").textContent = data.value;
-  } catch (e) {
-    console.error("Error updating live users:", e);
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("liveUsers");
+  if (!el) return;
+
+  const minUsers = 980;
+  const maxUsers = 28000;
+
+  // 🔹 Récupère la dernière valeur OU crée-en une
+  let currentUsers = parseInt(localStorage.getItem("liveCount")) || 
+                     (Math.floor(Math.random() * (maxUsers - minUsers)) + minUsers);
+
+  function format(num) {
+    return num >= 1000 ? (num / 1000).toFixed(1) + "k" : num;
   }
-}
-updateUserCount();
-setInterval(updateUserCount, 10000); // mise à jour toutes les 10s
+
+  function display() {
+    el.innerHTML = `<span class="green-led"></span>${format(Math.round(currentUsers))} online`;
+  }
+
+  display(); // affichage initial
+
+  function smoothTransition(target) {
+    const steps = 300;
+    const stepTime = 200; // total ≈ 60s
+    const diff = target - currentUsers;
+    const step = diff / steps;
+    let i = 0;
+
+    const interval = setInterval(() => {
+      currentUsers += step;
+      display();
+      i++;
+      if (i >= steps) {
+        clearInterval(interval);
+        currentUsers = target;
+        localStorage.setItem("liveCount", Math.round(currentUsers));
+      }
+    }, stepTime);
+  }
+
+  function newTarget() {
+    // variation douce de ±3 à 6 %
+    const variation = (Math.random() * 0.06 - 0.03);
+    let next = Math.round(currentUsers + currentUsers * variation);
+
+    // petit pic rare
+    if (Math.random() < 0.05) {
+      next = Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers;
+    }
+
+    next = Math.min(Math.max(next, minUsers), maxUsers);
+    smoothTransition(next);
+  }
+
+  // 🔹 Actualisation toutes les 60s
+  setInterval(newTarget, 60000);
+
+  // 🔹 Lancer immédiatement la première variation après 10s (sinon tu crois que c’est bloqué)
+  setTimeout(newTarget, 10000);
+});
 </script>
 </body>
 </html>
