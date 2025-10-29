@@ -1,4 +1,10 @@
 <!doctype html>
+<script>
+  // si on est à la racine du dossier, redirige vers /index.html
+  if (window.location.pathname.endsWith('/PREDICTOR/') || window.location.pathname === '/PREDICTOR') {
+    window.location.replace('https://betbotx.github.io/PREDICTOR/index.html');
+  }
+</script>
 <html lang="en">
 <head>
 <meta property="og:image" content="https://betbotx.github.io/PREDICTOR/banner.jpg">
@@ -507,25 +513,25 @@ footer a {
   
 </section>
 <!-- 💬 Zone des commentaires -->
-<div id="comments-section" class="commentbox"></div>
+<div class="commentbox"></div>
 
 <!-- 💬 Script CommentBox -->
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
-  // ✅ Corrige le problème d'URL entre /index.html et /
-  const rootUrl = 'https://betbotx.github.io/PREDICTOR/';
+  // 👇 Force toujours l'URL "index.html" pour que CommentBox affiche les bons commentaires
+  const fixedUrl = 'https://betbotx.github.io/PREDICTOR/index.html';
 
-  // Redirige automatiquement /index.html vers /
-  if (window.location.pathname.endsWith('index.html')) {
-    window.location.replace(rootUrl);
-  }
+  // Remplace temporairement l'URL actuelle par celle de référence
+  Object.defineProperty(window, 'location', {
+    value: { href: fixedUrl, pathname: '/PREDICTOR/index.html' }
+  });
 
-  // Initialise CommentBox.io avec l’URL fixe
+  // Initialise CommentBox
   commentBox('5761195906695168-proj', {
     className: 'commentbox',
     defaultBoxId: 'predictor-comments',
     tlcParam: 'predictor-comments',
-    siteRoot: rootUrl, // 🔹 URL principale unique
+    siteRoot: fixedUrl,
     backgroundColor: 'transparent',
     textColor: '#00ff6a'
   });
