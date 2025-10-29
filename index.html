@@ -507,19 +507,25 @@ footer a {
   
 </section>
 <!-- 💬 Zone des commentaires -->
-<div class="commentbox"></div>
+<div id="comments-section" class="commentbox"></div>
 
 <!-- 💬 Script CommentBox -->
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
-  // 🧠 Force toujours l'URL racine pour éviter la duplication entre /index.html et /
+  // ✅ Corrige le problème d'URL entre /index.html et /
   const rootUrl = 'https://betbotx.github.io/PREDICTOR/';
 
+  // Redirige automatiquement /index.html vers /
+  if (window.location.pathname.endsWith('index.html')) {
+    window.location.replace(rootUrl);
+  }
+
+  // Initialise CommentBox.io avec l’URL fixe
   commentBox('5761195906695168-proj', {
     className: 'commentbox',
     defaultBoxId: 'predictor-comments',
     tlcParam: 'predictor-comments',
-    siteRoot: rootUrl, // <== Forçage ici
+    siteRoot: rootUrl, // 🔹 URL principale unique
     backgroundColor: 'transparent',
     textColor: '#00ff6a'
   });
