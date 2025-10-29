@@ -613,7 +613,7 @@ callBtn.addEventListener('click', async () => {
     // Vérification de la limite d’utilisation
     if (!canSearch()) {
         responseBox.classList.remove('blinking');
-        responseBox.textContent = "Limit reached: You can only make 3 predictions per hour. Please try again later.";
+        responseBox.textContent = "Limit reached: You can only make 7 predictions per hour. Please try again later.";
         return;
     }
 
@@ -824,5 +824,6 @@ el.innerHTML = `<span class="green-led"></span>${format(Math.round(currentUsers)
 
 </body>
 </html>
+
 
 
