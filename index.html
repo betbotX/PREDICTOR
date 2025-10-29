@@ -620,7 +620,7 @@ function canSearch() {
     // Supprimer les recherches de plus d'1 heure
     const validHistory = history.filter(time => now - time < 3600000);
 
-    if (validHistory.length >= 100) {
+    if (validHistory.length >= 7) {
         return false;
     }
 
