@@ -506,16 +506,22 @@ footer a {
   <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
   
 </section>
+<!-- 💬 Zone des commentaires -->
 <div class="commentbox"></div>
+
+<!-- 💬 Script CommentBox -->
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
+  // 🧠 Force toujours l'URL racine pour éviter la duplication entre /index.html et /
+  const rootUrl = 'https://betbotx.github.io/PREDICTOR/';
+
   commentBox('5761195906695168-proj', {
-  className: 'commentbox',
-  defaultBoxId: 'predictor-comments',
-  backgroundColor: 'transparent',
-  textColor: '#00ff6a',
-  tlcParam: 'predictor-comments', // <--- ajoute ceci pour forcer la même thread
-  siteRoot: 'https://betbotx.github.io/PREDICTOR/' // <--- important
+    className: 'commentbox',
+    defaultBoxId: 'predictor-comments',
+    tlcParam: 'predictor-comments',
+    siteRoot: rootUrl, // <== Forçage ici
+    backgroundColor: 'transparent',
+    textColor: '#00ff6a'
   });
 </script>
 <script type="application/ld+json">
