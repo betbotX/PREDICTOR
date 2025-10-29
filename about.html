@@ -107,29 +107,36 @@
 
     /* ---- FOOTER ---- */
     footer {
-      margin-top: 250px; /* 🔽 descend la ligne et le texte */
-      border-top: 1px solid rgba(0,255,106,0.1); /* ✅ une seule ligne */
-      padding-top: 15px; /* petit espace entre la ligne et le texte */
-      padding-bottom: 20px; /* espace modéré sous la phrase */
-      text-align: center;
-      font-size: 13px;
-      color: rgba(0,255,106,0.9);
-      text-shadow: 0 0 6px rgba(0,255,106,0.5);
-      font-weight: 600;
-      font-family: 'Orbitron', monospace;
-      width: 100%;
-    }
+  margin-top: 250px;
+  border-top: 1px solid rgba(0,255,106,0.1);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,255,106,0.9);
+  text-shadow: 0 0 6px rgba(0,255,106,0.5);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  width: 100%;
+}
 
-    footer a {
-      color: rgba(0,255,106,0.9);
-      text-decoration: none;
-    }
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px; /* ✅ espace parfait entre les liens et le texte */
+}
 
-    footer a:hover {
-      color: #00ff6a;
-      text-shadow: 0 0 8px rgba(0,255,106,0.7);
-    }
+footer .social-links a {
+  color: rgba(0,255,106,0.9);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
 
+footer .social-links a:hover {
+  color: #00ff6a;
+  text-shadow: 0 0 8px rgba(0,255,106,0.7);
+}
     @media (max-width:768px) {
       h1 {
         font-size: 34px;
@@ -236,6 +243,7 @@
 </script>
 </body>
 </html>
+
 
 
 
