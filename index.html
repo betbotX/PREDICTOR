@@ -518,23 +518,37 @@ footer a {
 <!-- 💬 Script CommentBox -->
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
-  // 👇 Force toujours l'URL "index.html" pour que CommentBox affiche les bons commentaires
-  const fixedUrl = 'https://betbotx.github.io/PREDICTOR/index.html';
+  // ✅ Corrige le problème entre / et /index.html
+  // On trompe CommentBox pour qu'il pense qu'on est toujours sur /index.html
+  (function() {
+    const projectId = '5761195906695168-proj';
+    const baseUrl = 'https://betbotx.github.io/PREDICTOR/index.html';
 
-  // Remplace temporairement l'URL actuelle par celle de référence
-  Object.defineProperty(window, 'location', {
-    value: { href: fixedUrl, pathname: '/PREDICTOR/index.html' }
-  });
+    // Override temporaire de location.href pour CommentBox
+    const originalHref = window.location.href;
+    Object.defineProperty(window, 'location', {
+      value: { href: baseUrl },
+      configurable: true
+    });
 
-  // Initialise CommentBox
-  commentBox('5761195906695168-proj', {
-    className: 'commentbox',
-    defaultBoxId: 'predictor-comments',
-    tlcParam: 'predictor-comments',
-    siteRoot: fixedUrl,
-    backgroundColor: 'transparent',
-    textColor: '#00ff6a'
-  });
+    // Initialise CommentBox
+    commentBox(projectId, {
+      className: 'commentbox',
+      defaultBoxId: 'predictor-comments',
+      tlcParam: 'predictor-comments',
+      siteRoot: baseUrl,
+      backgroundColor: 'transparent',
+      textColor: '#00ff6a'
+    });
+
+    // Restaure la vraie location après initialisation
+    setTimeout(() => {
+      Object.defineProperty(window, 'location', {
+        value: { href: originalHref },
+        configurable: true
+      });
+    }, 1500);
+  })();
 </script>
 <script type="application/ld+json">
 {
@@ -849,3 +863,4 @@ if (window.location.hash === '#predictor-comments') {
 
 </body>
 </html>
+
