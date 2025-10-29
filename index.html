@@ -1,11 +1,826 @@
-...
-</footer>
+<!doctype html>
+<html lang="en">
+<head>
+<meta property="og:image" content="https://betbotx.github.io/PREDICTOR/banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:title" content="PREDICTOR by betbotX – AI Football Predictions 2025/2026">
+<meta property="og:description" content="Get accurate football predictions powered by our 2025/2026 AI engine. Smarter. Faster. Safer.">
+<meta property="og:url" content="https://betbotx.github.io/PREDICTOR/">
+<meta property="og:type" content="website">
+  <!-- 💚 CURSEUR NEON FLUO -->
+<style>
+
+.green-led {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00ff6a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+  margin-right: 6px;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.5; }
+}
+
+#liveUsers {
+  background: rgba(0, 255, 106, 0.08);
+  border: 1px solid rgba(0, 255, 106, 0.4);
+  border-radius: 10px;
+  padding: 5px 12px;
+  color: #00ff6a;
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,255,106,0.9);
+  box-shadow: 0 0 12px rgba(0,255,106,0.2);
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.green-led {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00ff6a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+  margin-right: 6px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.5; }
+}
+  html, body { cursor: none !important; }
+
+  .neon-cursor {
+    position: fixed;
+    width: 18px;
+    height: 18px;
+    background: #00ff6a;
+    border-radius: 50%;
+    box-shadow:
+      0 0 8px #00ff6a,
+      0 0 20px #00ff6a,
+      0 0 40px #00ff6a;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999999;
+    transition: transform 0.07s ease-out;
+    opacity: 0;
+  }
+
+  .cursor-halo {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(0,255,106,0.25) 0%, rgba(0,255,106,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999998;
+    transition: transform 0.12s ease-out;
+    opacity: 0;
+  }
+.navbar {
+  display: flex;
+  flex-direction: column; /* empile menu + compteur */
+  align-items: center;    /* centre tout horizontalement */
+  margin-bottom: 40px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.nav-center {
+  text-align: center;
+  margin-bottom: 30px; /* espace entre le menu et le compteur */
+}
+
+#liveUsers {
+  background: rgba(0, 255, 106, 0.08);
+  border: 1px solid rgba(0, 255, 106, 0.4);
+  border-radius: 10px;
+  padding: 5px 12px;
+  color: #00ff6a;
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,255,106,0.9);
+  box-shadow: 0 0 12px rgba(0,255,106,0.2);
+  margin-top: 5px;
+}
+
+.green-led {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00ff6a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+  margin-right: 6px;
+  animation: pulse 1.5s infinite;
+}
+
+
+</style>
+<div class="cursor-halo"></div>
+<div class="neon-cursor"></div>
 
 <script>
-  // ✅ Redirige automatiquement /PREDICTOR/ vers /PREDICTOR/index.html
-  if (location.pathname === "/PREDICTOR/" || location.pathname === "/PREDICTOR") {
-    window.location.replace(location.origin + "/PREDICTOR/index.html");
-  }
+  const cursor = document.querySelector('.neon-cursor');
+  const halo = document.querySelector('.cursor-halo');
+  let visible = false;
+
+  document.addEventListener('mousemove', e => {
+    if (!visible) {
+      cursor.style.opacity = 1;
+      halo.style.opacity = 1;
+      visible = true;
+    }
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    halo.style.left = e.clientX + 'px';
+    halo.style.top = e.clientY + 'px';
+  });
 </script>
+
+<!-- 🌟 Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
+<link rel="shortcut icon" href="https://betbotx.github.io/PREDICTOR/favicon.ico">
+
+<!-- Couleur de thème (mobile + navigateur) -->
+<meta name="theme-color" content="#00ff6a">
+
+<!-- Pour iOS : icône + barre de statut -->
+<meta name="apple-mobile-web-app-title" content="PREDICTOR by betbotX">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#00ff6a">
+<meta charset="utf-8" />
+<!-- 🌍 META SEO ULTRA OPTIMISÉES PREDICTOR BY BETBOTX 2025/2026 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="fr_FR" />
+
+<title>Home | PREDICTOR by betbotX - Neural Football Predictor Engine 2025/2026 – AI Match Predictions & Global Insights</title>
+
+<!-- 🧠 DESCRIPTION BILINGUE ULTRA SEO (FR + EN) -->
+<meta name="description" content="
+PREDICTOR by betbotX – the most powerful AI football prediction platform. Get real-time analytics, match forecasts and tactical insights powered by data science. Covers the Champions League, 2026 World Cup (USA, Canada, Mexico), and top leagues from Europe, Africa, Asia & Latin America. Follow elite clubs like Real Madrid, FC Barcelona, PSG, Manchester City, Al Ahly, and players such as Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah, and Vinícius Jr.
+FR : PREDICTOR by betbotX – l’IA la plus avancée pour les pronostics de football. Analysez les matchs avec l’intelligence artificielle, les statistiques en temps réel et des prédictions fiables. Couvre la Ligue des Champions, la Coupe du Monde 2026 (États-Unis, Canada, Mexique), l’Europe, l’Afrique, l’Amérique Latine et l’Asie. Suivez vos clubs préférés comme le Real Madrid, FC Barcelone, PSG, Manchester City, Al Ahly et Raja Casablanca, et les stars mondiales comme Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah et Vinícius Jr.">
+
+<!-- 🔑 Mots-clés ultra complets -->
+<meta name="keywords" content="PREDICTOR, AI football predictions, pronostics IA, football analytics, neural predictor, match analysis, sports data engine, machine learning football, predictive algorithm,
+Champions League 2025, Europa League, World Cup 2026 USA, Coupe du Monde 2026, Euro 2028, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Eredivisie, Super Lig, Primeira Liga, Jupiler Pro League, CAF Champions League, Africa Cup of Nations, Copa Libertadores, Copa América, AFC Asian Cup,
+Real Madrid, FC Barcelona, Manchester City, Manchester United, Liverpool, Arsenal, Chelsea, PSG, Bayern Munich, Borussia Dortmund, Inter Milan, AC Milan, Juventus, Napoli, Ajax, Benfica, Porto, Sporting Lisbonne, Galatasaray, Fenerbahçe, Al Ahly, Espérance de Tunis, Raja Casablanca, Wydad Casablanca, Mamelodi Sundowns, Zamalek,
+Lamine Yamal, Kylian Mbappé, Lionel Messi, Cristiano Ronaldo, Erling Haaland, Neymar, Kevin De Bruyne, Luka Modric, Karim Benzema, Mohamed Salah, Sadio Mané, Riyad Mahrez, Vinícius Jr, Jude Bellingham, Rodri, Antoine Griezmann, Harry Kane, Robert Lewandowski, Victor Osimhen, Achraf Hakimi, André Onana, Yassine Bounou,
+football AI, predictive football engine, sports data analytics, match insights, deep learning football AI, football forecast engine, African football analysis, Asian football predictions, Latin American football analytics, football data platform, realistic football predictions, tactical insights, neural sports AI, PREDICTOR by betbotX">
+
+<!-- 👤 Auteur + Robots -->
+<meta name="author" content="PREDICTOR by betbotX">
+<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<!-- 🌐 Langue + Zone géographique -->
+<meta name="language" content="fr,en">
+<meta name="geo.region" content="EU,AF,SA,AS,NA">
+<meta name="geo.placename" content="Europe, Africa, South America, Latin America, Asia">
+<meta name="rating" content="general">
+
+<!-- 🧱 MÉTAS DE SÉCURITÉ (À CONSERVER) -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+<meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
+
+<!-- 🖼️ OPEN GRAPH (Threads / Instagram / Telegram) -->
+<meta property="og:title" content="PREDICTOR by betbotX | AI Football Predictions & Tactical Insights 2025/2026">
+<meta property="og:description" content="Analyse IA en temps réel pour le football mondial : Europe, Afrique, Asie, Amérique Latine et Coupe du Monde 2026. Découvrez des pronostics précis et des analyses tactiques alimentées par l’intelligence artificielle.">
+<meta property="og:image" content="https://tonsite.com/assets/predictor-preview.jpg">
+<meta property="og:url" content="https://betbotx.github.io/PREDICTOR/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PREDICTOR by betbotX">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PREDICTOR by betbotX – AI Football Predictions 2025/2026">
+<meta name="twitter:description" content="AI-powered football prediction engine providing accurate forecasts & tactical insights for global leagues.">
+
+<!-- 💬 META POUR THREADS / INSTAGRAM / TELEGRAM -->
+<meta property="al:android:url" content="https://betbotx.github.io/PREDICTOR">
+<meta property="al:ios:url" content="https://tonsite.com">
+<meta property="al:telegram:channel" content="https://t.me/predictor_ai">
+<meta property="al:threads:profile" content="https://www.threads.net/@betbotX">
+<meta property="al:instagram:profile" content="https://www.instagram.com/betbotX">
+
+<!-- 🧭 URL canonique -->
+<link rel="canonical" href="https://betbotx.github.io/PREDICTOR/">
+<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/" hreflang="fr" />
+<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/index.html" hreflang="en" />
+<!-- 🪶 POLICE -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Favicon classique -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+<!-- Apple & PWA -->
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+
+<!-- Couleur de fond mobile -->
+<meta name="theme-color" content="#00ff6a">
+<style>
+.blinking { animation: blink 2.5s infinite; }
+@keyframes blink { 0%,100% {opacity:0.4;} 50%{opacity:1;} }
+
+.live {
+  color: red;
+  font-size: 12px;
+  font-weight: 800;
+  animation: liveBlink 0.8s infinite;
+  text-shadow: 0 0 8px rgba(255,0,0,0.9);
+}
+@keyframes liveBlink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+:root {
+  --bg: #000;
+  --neon: #00ff6a;
+  --neon-2: #19ff8a;
+  --muted: rgba(0,255,106,0.65);
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
+  font-family: 'Orbitron', monospace;
+  color: var(--neon);
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 60px;
+}
+nav {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--neon-2);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+  transition: 0.25s;
+}
+nav a:hover {
+  color: var(--neon);
+  text-shadow: 0 0 10px rgba(0,255,106,0.9);
+}
+.ticker {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid rgba(0,255,106,0.2);
+  border-bottom: 1px solid rgba(0,255,106,0.2);
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+.ball {
+  font-size: 0.9em;
+  color: var(--neon);
+  text-shadow: 0 0 10px rgba(0, 255, 106, 0.9);
+  display: inline-block;
+  animation: rotateBall 3s linear infinite;
+}
+@keyframes rotateBall { 0%{transform:rotate(0deg);}100%{transform:rotate(360deg);} }
+.ticker-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: ticker 45s linear infinite;
+  color: var(--neon);
+  text-shadow: 0 0 6px rgba(0,255,106,0.8);
+  font-size: 16px;
+  font-weight: 600;
+}
+@keyframes ticker { 0%{transform:translateX(0);}100%{transform:translateX(-100%);} }
+h1 {
+  font-size: 45px;
+  color: var(--neon);
+  text-shadow: 0 0 25px rgba(0,255,106,0.9);
+  text-align: center;
+  letter-spacing: 3px;
+  margin: 5px 0 0;
+}
+.subtitle {
+  color: #00ff88;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-shadow: none;
+}
+.panel {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(0,255,106,0.18);
+  border-radius: 14px;
+  padding: 30px 60px;
+  box-shadow: 0 0 20px rgba(0,255,106,0.15);
+  max-width: 700px;
+  text-align: center;
+}
+.info-strong {
+  color: var(--neon);
+  font-weight: 900;
+  font-size: 18px;
+  text-shadow:
+    0 0 6px rgba(0, 255, 106, 0.8),
+    0 0 12px rgba(0, 255, 106, 0.5);
+}
+
+
+/* Effet lumineux discret */
+@keyframes engineGlow {
+    from {
+        text-shadow:
+            0 0 3px rgba(0,255,106,0.3),
+            0 0 8px rgba(0,255,106,0.15);
+    }
+    to {
+        text-shadow:
+            0 0 8px rgba(0,255,106,0.6),
+            0 0 15px rgba(0,255,106,0.3);
+    }
+}
+.info-light {
+  color: var(--muted);
+  font-size: 14px;
+}
+.match {
+  margin-top: 12px;
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #001900;
+  color: var(--neon);
+  font-family: 'Orbitron', monospace;
+  text-align: center;
+  outline: none;
+  font-size: 12px;
+  box-shadow: 0 0 10px rgba(0,255,106,0.2);
+  box-sizing: border-box;
+}
+.call {
+    display: block;                    /* garde le bouton sur une ligne entière */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 43px;
+    padding: 12px 35px;
+    background: transparent;
+    color: var(--neon);
+    border: 1px solid var(--neon);
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 12px rgba(0, 255, 106, 1);
+    box-shadow: 0 0 20px var(--neon), 0 0 40px var(--neon-2); /* 💡 effet lumineux plus intense */
+    animation: neonPulse 1.2s infinite alternate; /* 💡 pulsation plus rapide */
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow: 0 0 15px var(--neon), 0 0 30px var(--neon-2);
+        opacity: 1;
+    }
+    to {
+        box-shadow: 0 0 35px var(--neon), 0 0 70px var(--neon-2);
+        opacity: 0.85;
+    }
+
+}
+
+.response-box {
+  margin-top: calc(30px + 1cm); /* décale de ~2cm en plus sans casser la mise en page */
+  color: var(--neon-2);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0,255,106,0.5);
+  white-space: pre-line;
+}
+
+.disclaimer {
+  font-size: 13px;
+  color: rgba(0,255,106,0.6);
+  margin-top: 30px;
+  text-align: center;
+  max-width: 700px;
+}
+footer {
+  border-top: 1px solid rgba(0,255,106,0.1);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,255,106,0.9);
+  text-shadow: 0 0 6px rgba(0,255,106,0.5);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  margin-top: 60px;
+}
+footer a {
+  color: rgba(0,255,106,0.9);
+  text-decoration: none;
+}
+.comments-section {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(0,255,106,0.18);
+  border-radius: 14px;
+  padding: 30px 60px;
+  box-shadow: 0 0 20px rgba(0,255,106,0.15);
+  max-width: 500px;
+  text-align: center;
+  margin-top: 40px;
+}
+.commentbox .commentbox-footer { display: none !important; }
+.commentbox { margin-bottom: 0 !important; }
+</style>
+</head>
+
+<body>
+<main>
+<nav class="navbar">
+  <div class="nav-center">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="blog.html">Blog</a> |
+    <a href="privacy.html">Privacy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- 🟢 Compteur déplacé ici -->
+  <div id="liveUsers">
+  <span class="green-led"></span>Loading...
+</div>
+</nav>
+
+
+<div class="ticker">
+  <div class="ticker-text">Reliable AI football intelligence : Built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights | Global AI coverage - Every major league, every match, everywhere.</div>
+</div>
+<h1>PREDICT<span class="ball">⚽</span>R</h1>
+<p class="subtitle">by betbotX</p>
+
+<section class="panel">
+  <p class="info-strong">- ENGINE ACTIVE - READY 🟢</p>
+  <p class="info-light">Enter the match in the correct format and spelling</p>
+  <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)" />
+  <button id="callBtn" class="call">Call Agent</button>
+  <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
+</section>
+
+<p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind ⚠️</p>
+
+<section class="comments-section">
+  <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
+  
+</section>
+<div class="commentbox"></div>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>
+  commentBox('5761195906695168-proj', {
+    className: 'commentbox', // le conteneur à utiliser
+    defaultBoxId: 'predictor-comments',
+    backgroundColor: 'transparent',
+    textColor: '#00ff6a'
+  });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PREDICTOR by betbotX",
+  "alternateName": "betbotX Predictor",
+  "url": "https://tonsite.com",
+  "logo": "https://tonsite.com/assets/predictor-logo.png",
+  "description": "FR : PREDICTOR by betbotX est un moteur d'intelligence artificielle de football qui analyse les matchs du monde entier pour offrir des prédictions précises, des statistiques avancées et des analyses tactiques basées sur des données en temps réel. EN : PREDICTOR by betbotX is an advanced AI football prediction engine that analyzes global matches to deliver accurate forecasts, detailed analytics, and tactical insights powered by machine learning and real-time sports data. The platform covers top leagues such as the UEFA Champions League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, CAF Champions League, and international tournaments including the 2026 World Cup and Euro 2028.",
+  "sameAs": [
+    "https://www.instagram.com/betbotx",
+    "https://t.me/betbotxvip",
+    "https://threads.net/@betbotx",
+    "https://x.com/betbotx",
+    "https://www.linkedin.com/company/betbotx"
+  ],
+  "foundingDate": "2024-01-01",
+  "founders": [{
+    "@type": "Person",
+    "name": "ANFAtech"
+  }],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Support client / Customer Service",
+    "email": "support@tonsite.com",
+    "availableLanguage": ["French", "English"]
+  },
+  "areaServed": ["Europe", "Africa", "Asia", "North America", "South America"],
+  "brand": {
+    "@type": "Brand",
+    "name": "PREDICTOR"
+  },
+  "knowsAbout": [
+    "AI football predictions",
+    "football data analytics",
+    "soccer neural network",
+    "match prediction engine",
+    "sports data intelligence",
+    "deep learning football AI",
+    "machine learning in football",
+    "football match insights",
+    "football statistics analysis",
+    "predictive sports algorithms",
+    "realistic football forecasts",
+    "tactical analysis AI",
+    "Champions League predictions",
+    "Premier League analysis",
+    "La Liga AI forecasts",
+    "Serie A insights",
+    "Bundesliga predictions",
+    "Ligue 1 analytics",
+    "Africa Cup of Nations predictions",
+    "CAF Champions League AI",
+    "World Cup 2026 predictions",
+    "Euro 2028 AI predictor",
+    "football AI for Africa",
+    "Asian football analytics",
+    "Latin American football data"
+  ],
+  "keywords": "AI football predictions, prédictions IA football, football analytics, analyse de match IA, pronostics de football, neural predictor, sports data, match prediction, deep learning, machine learning football, predictive algorithm, Champions League, Europa League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, World Cup 2026, Coupe du Monde 2026, Euro 2028, Africa Cup of Nations, CAF Champions League, Copa América, Copa Libertadores, AFC Asian Cup, Real Madrid, FC Barcelona, PSG, Manchester City, Liverpool, Arsenal, Chelsea, Bayern Munich, Inter Milan, Juventus, Al Ahly, Raja Casablanca, Wydad Casablanca, Mamelodi Sundowns, Espérance Tunis, Lamine Yamal, Kylian Mbappé, Lionel Messi, Cristiano Ronaldo, Erling Haaland, Neymar, Kevin De Bruyne, Luka Modric, Karim Benzema, Mohamed Salah, Sadio Mané, Riyad Mahrez, Vinícius Jr, Jude Bellingham, Hakim Ziyech, Achraf Hakimi, Victor Osimhe, coupe d'afrique 2026, maroc 2026,"
+}
+</script>
+<script>
+const matchInput = document.getElementById('matchInput');
+const responseBox = document.getElementById('responseBox');
+const callBtn = document.getElementById('callBtn');
+
+// --- SYSTEME DE LIMITATION --- //
+function canSearch() {
+    const now = Date.now();
+    const history = JSON.parse(localStorage.getItem('predictorSearches')) || [];
+
+    // Supprimer les recherches de plus d'1 heure
+    const validHistory = history.filter(time => now - time < 3600000);
+
+    if (validHistory.length >= 3) {
+        return false;
+    }
+
+    // Ajouter cette recherche et sauvegarder
+    validHistory.push(now);
+    localStorage.setItem('predictorSearches', JSON.stringify(validHistory));
+    return true;
+}
+
+// --- BOUTON PRINCIPAL --- //
+callBtn.addEventListener('click', async () => {
+    const match = matchInput.value.trim();
+    if (!match) {
+        responseBox.classList.add('blinking');
+        responseBox.textContent = "⚠️ Please enter a match name first.";
+        return;
+    }
+
+    // Vérification de la limite d’utilisation
+    if (!canSearch()) {
+        responseBox.classList.remove('blinking');
+        responseBox.textContent = "Limit reached: You can only make 3 predictions per hour. Please try again later.";
+        return;
+    }
+
+    responseBox.classList.add('blinking');
+    responseBox.textContent = "Booting PREDICTOR intelligence core...";
+
+    const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    let serverResponse = "⚠️ Connection error. Please check your network or webhook.";
+    const fetchPromise = fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ match })
+    })
+    .then(async res => {
+        const text = await res.text();
+        if (res.ok) return text.trim();
+        else return "❌ Error: " + text;
+    })
+    .then(text => { serverResponse = text; })
+    .catch(err => {
+        console.error(err);
+        serverResponse = "⚠️ Connection error. Please check your network or webhook.";
+    });
+
+    await wait(1500);
+    responseBox.textContent = "Activating PREDICTOR neural system...";
+    await wait(1500);
+    responseBox.textContent = "Collecting live data & tactical parameters...";
+    await wait(1500);
+    responseBox.textContent = "Running match analysis - please wait...";
+    await wait(1500);
+
+    await fetchPromise;
+
+    responseBox.classList.remove('blinking');
+    responseBox.textContent = serverResponse;
+});
+</script>
+<script>
+const matchInput = document.getElementById('matchInput');
+const responseBox = document.getElementById('responseBox');
+
+// Call Agent Button functionality
+callBtn.addEventListener('click', async () => {
+    const match = matchInput.value.trim();
+    if (!match) {
+        responseBox.classList.add('blinking');
+        responseBox.textContent = "⚠️ Please enter a match name first.";
+        return;
+    }
+
+    responseBox.classList.add('blinking');
+    responseBox.textContent = "Booting PREDICTOR intelligence core...";
+
+    const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    // On lance la requête en arrière-plan
+    let serverResponse = "⚠️ Connection error. Please check your network or webhook.";
+    const fetchPromise = fetch("https://hook.eu2.make.com/n2j7397csfo3c44sale24f30p2iux2aw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ match })
+    })
+    .then(async res => {
+        const text = await res.text();
+        if (res.ok) return text.trim();
+        else return "❌ Error: " + text;
+    })
+    .then(text => { serverResponse = text; })
+    .catch(err => {
+        console.error(err);
+        serverResponse = "⚠️ Connection error. Please check your network or webhook.";
+    });
+
+    // Animation d’attente (~6 secondes)
+    await wait(1500);
+    responseBox.textContent = "Activating PREDICTOR neural system...";
+    await wait(1500);
+    responseBox.textContent = "Collecting live data & tactical parameters...";
+    await wait(1500);
+    responseBox.textContent = "Running match analysis - please wait...";
+    await wait(1500);
+
+    // On attend la fin du fetch si ce n’est pas déjà fait
+    await fetchPromise;
+
+    // Puis seulement maintenant on affiche la vraie réponse
+    responseBox.classList.remove('blinking');
+    responseBox.textContent = serverResponse;
+});
+
+</script>
+<script>
+window.addEventListener("error", function (e) {
+  if (e.filename.includes("commentbox.io")) {
+    e.preventDefault();
+    return false;
+  }
+});
+</script>
+<!-- 🔍 SEO Internal Links Block — helps Google index all pages -->
+<section style="display:none;">
+  <h2>Site Map – betbotX Predictor AI</h2>
+  <ul>
+    <li><a href="https://betbotx.github.io/PREDICTOR/">Home – AI Football Predictor</a></li>
+    <li><a href="https://betbotx.github.io/PREDICTOR/about.html">About – Learn about our AI prediction system</a></li>
+    <li><a href="https://betbotx.github.io/PREDICTOR/privacy.html">Privacy Policy – Data and user transparency</a></li>
+    <li><a href="https://betbotx.github.io/PREDICTOR/terms.html">Terms of Use – Platform rules and legal terms</a></li>
+    <li><a href="https://betbotx.github.io/PREDICTOR/contact.html">Contact – Get in touch with betbotX</a></li>
+  </ul>
+</section>
+</main>
+<footer>
+  Threads: <a href="#">betbotX</a> | Instagram: <a href="#">@betbotX</a> | Telegram: <a href="#">betbotX VIP</a>
+  <div style="margin-top:10px;">© 2025 PREDICTOR by betbotX — Powered by ANFAtech</div>
+</footer>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'fr', // langue principale de ton site
+    includedLanguages: 'en,fr,es,pt,de,it,ar', // langues que tu veux proposer
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+// auto-détection selon la langue du navigateur
+(function() {
+  var userLang = navigator.language || navigator.userLanguage;
+  var primaryLang = userLang.split('-')[0];
+  var supported = ['fr','en','es','pt','de','it','ar'];
+  if (supported.includes(primaryLang) && primaryLang !== 'fr') {
+    var script = document.createElement('script');
+    script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(script);
+  }
+})();
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("liveUsers");
+  if (!el) return;
+
+  const minUsers = 980;
+  const maxUsers = 28000;
+
+  // 🔹 Garde la même valeur entre les refreshs
+  let currentUsers = parseInt(localStorage.getItem("liveCount")) || 
+                     Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers;
+
+  // 🔹 Formate le texte (1.2k etc.)
+  const format = (n) => (n >= 1000 ? (n / 1000).toFixed(1) + "k" : n);
+
+  // 🔹 Affiche la valeur
+  const display = () => {
+    el.innerHTML = <span class="green-led"></span>${format(Math.round(currentUsers))} online;
+  };
+
+  display();
+
+  // 🔹 Animation fluide (transition lente)
+  const smoothTransition = (target) => {
+    const steps = 180; // 180 petits mouvements
+    const totalDuration = 60000; // durée = 60s
+    const stepTime = totalDuration / steps;
+    const diff = target - currentUsers;
+    const step = diff / steps;
+    let i = 0;
+
+    const interval = setInterval(() => {
+      currentUsers += step;
+      display();
+      i++;
+      if (i >= steps) {
+        clearInterval(interval);
+        currentUsers = target;
+        localStorage.setItem("liveCount", Math.round(currentUsers));
+      }
+    }, stepTime);
+  };
+
+  // 🔹 Nouvelle valeur toutes les 60 secondes
+  const updateTarget = () => {
+    // Variation réaliste (-10% à +10%)
+    const variation = Math.random() * 0.2 - 0.1;
+    let next = Math.round(currentUsers + currentUsers * variation);
+
+    // Rare pic (1 chance sur 10)
+    if (Math.random() < 0.1) {
+      next = Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers;
+    }
+
+    // Garde dans les bornes
+    next = Math.max(minUsers, Math.min(next, maxUsers));
+
+    smoothTransition(next);
+  };
+
+  // 🔹 Lance une première variation au bout de 10 secondes
+  setTimeout(updateTarget, 10000);
+  // 🔹 Puis toutes les minutes
+  setInterval(updateTarget, 60000);
+});
+</script>
+
 </body>
 </html>
