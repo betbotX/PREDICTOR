@@ -821,5 +821,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(updateTarget, 60000);
 });
 </script>
+<script>
+  // ✅ Redirige automatiquement /PREDICTOR/ vers /PREDICTOR/index.html
+  if (location.pathname === "/PREDICTOR/" || location.pathname === "/PREDICTOR") {
+    window.location.replace(location.origin + "/PREDICTOR/index.html");
+  }
+</script>
+
 </body>
 </html>
