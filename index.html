@@ -43,6 +43,10 @@
   position: relative;
   left: -20px; /* décale de 2 cm environ vers la gauche */
 }
+  .commentbox {
+  max-height: 600px;   /* ou 500, 700… selon ton design */
+  overflow-y: auto;    /* ajoute une barre de défilement interne */
+}
 .green-led {
   display: inline-block;
   width: 10px;
@@ -53,7 +57,6 @@
   margin-right: 6px;
   animation: pulse 1.5s infinite;
 }
-
 @keyframes pulse {
   0%, 100% { opacity: 0.9; }
   50% { opacity: 0.5; }
@@ -76,7 +79,6 @@
     transition: transform 0.07s ease-out;
     opacity: 0;
   }
-
   .cursor-halo {
     position: fixed;
     width: 40px;
@@ -97,12 +99,10 @@
   font-size: 18px;
   letter-spacing: 1px;
 }
-
 .nav-center {
   text-align: center;
   margin-bottom: 30px; /* espace entre le menu et le compteur */
 }
-
 #liveUsers {
   background: rgba(0, 255, 106, 0.08);
   border: 1px solid rgba(0, 255, 106, 0.4);
@@ -116,7 +116,6 @@
   box-shadow: 0 0 12px rgba(0,255,106,0.2);
   margin-top: 5px;
 }
-
 .green-led {
   display: inline-block;
   width: 10px;
@@ -127,17 +126,13 @@
   margin-right: 6px;
   animation: pulse 1.5s infinite;
 }
-
-
 </style>
 <div class="cursor-halo"></div>
 <div class="neon-cursor"></div>
-
 <script>
   const cursor = document.querySelector('.neon-cursor');
   const halo = document.querySelector('.cursor-halo');
   let visible = false;
-
   document.addEventListener('mousemove', e => {
     if (!visible) {
       cursor.style.opacity = 1;
@@ -151,35 +146,34 @@
   });
 </script>
 
-<!-- 🌟 Favicons -->
+  <!-- 🌟 Favicons -->
 <link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
 <link rel="shortcut icon" href="https://betbotx.github.io/PREDICTOR/favicon.ico">
-
 <!-- Couleur de thème (mobile + navigateur) -->
 <meta name="theme-color" content="#00ff6a">
 
-<!-- Pour iOS : icône + barre de statut -->
+  <!-- Pour iOS : icône + barre de statut -->
 <meta name="apple-mobile-web-app-title" content="PREDICTOR by betbotX">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#00ff6a">
 <meta charset="utf-8" />
-<!-- 🌍 META SEO ULTRA OPTIMISÉES PREDICTOR BY BETBOTX 2025/2026 -->
+
+  <!-- 🌍 META SEO ULTRA OPTIMISÉES PREDICTOR BY BETBOTX 2025/2026 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="fr_FR" />
-
 <title>Home | PREDICTOR by betbotX - Neural Football Predictor Engine 2025/2026 – AI Match Predictions & Global Insights</title>
 
-<!-- 🧠 DESCRIPTION BILINGUE ULTRA SEO (FR + EN) -->
+  <!-- 🧠 DESCRIPTION BILINGUE ULTRA SEO (FR + EN) -->
 <meta name="description" content="
 PREDICTOR by betbotX – the most powerful AI football prediction platform. Get real-time analytics, match forecasts and tactical insights powered by data science. Covers the Champions League, 2026 World Cup (USA, Canada, Mexico), and top leagues from Europe, Africa, Asia & Latin America. Follow elite clubs like Real Madrid, FC Barcelona, PSG, Manchester City, Al Ahly, and players such as Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah, and Vinícius Jr.
 FR : PREDICTOR by betbotX – l’IA la plus avancée pour les pronostics de football. Analysez les matchs avec l’intelligence artificielle, les statistiques en temps réel et des prédictions fiables. Couvre la Ligue des Champions, la Coupe du Monde 2026 (États-Unis, Canada, Mexique), l’Europe, l’Afrique, l’Amérique Latine et l’Asie. Suivez vos clubs préférés comme le Real Madrid, FC Barcelone, PSG, Manchester City, Al Ahly et Raja Casablanca, et les stars mondiales comme Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah et Vinícius Jr.">
 
-<!-- 🔑 Mots-clés ultra complets -->
+  <!-- 🔑 Mots-clés ultra complets -->
 <meta name="keywords" content="PREDICTOR, AI football predictions, pronostics IA, football analytics, neural predictor, match analysis, sports data engine, machine learning football, predictive algorithm,
 Champions League 2025, Europa League, World Cup 2026 USA, Coupe du Monde 2026, Euro 2028, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Eredivisie, Super Lig, Primeira Liga, Jupiler Pro League, CAF Champions League, Africa Cup of Nations, Copa Libertadores, Copa América, AFC Asian Cup,
 Real Madrid, FC Barcelona, Manchester City, Manchester United, Liverpool, Arsenal, Chelsea, PSG, Bayern Munich, Borussia Dortmund, Inter Milan, AC Milan, Juventus, Napoli, Ajax, Benfica, Porto, Sporting Lisbonne, Galatasaray, Fenerbahçe, Al Ahly, Espérance de Tunis, Raja Casablanca, Wydad Casablanca, Mamelodi Sundowns, Zamalek,
@@ -825,6 +819,7 @@ el.innerHTML = `<span class="green-led"></span>${format(Math.round(currentUsers)
 
 </body>
 </html>
+
 
 
 
