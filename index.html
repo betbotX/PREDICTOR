@@ -850,6 +850,13 @@ el.innerHTML = `<span class="green-led"></span>${format(Math.round(currentUsers)
   setInterval(updateTarget, 60000);
 });
 </script>
+  <script>
+  // Redirige vers index.html si l'utilisateur arrive sur /
+  if (location.pathname === "/PREDICTOR/" || location.pathname === "/PREDICTOR") {
+    window.location.replace("https://betbotx.github.io/PREDICTOR/index.html");
+  }
+</script>
 </body>
 </html>
+
 
