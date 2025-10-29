@@ -591,7 +591,7 @@ function canSearch() {
     // Supprimer les recherches de plus d'1 heure
     const validHistory = history.filter(time => now - time < 3600000);
 
-    if (validHistory.length >= 3) {
+    if (validHistory.length >= 7) {
         return false;
     }
 
@@ -824,4 +824,5 @@ el.innerHTML = `<span class="green-led"></span>${format(Math.round(currentUsers)
 
 </body>
 </html>
+
 
