@@ -11,6 +11,7 @@
 <meta property="og:type" content="website">
   <!-- 💚 CURSEUR NEON FLUO -->
 <style>
+
 .green-led {
   display: inline-block;
   width: 10px;
@@ -98,7 +99,7 @@
 
 .nav-center {
   text-align: center;
-  margin-bottom: 32px; /* espace entre le menu et le compteur */
+  margin-bottom: 30px; /* espace entre le menu et le compteur */
 }
 
 #liveUsers {
@@ -503,16 +504,18 @@ footer a {
 
 <section class="comments-section">
   <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
-  <div class="commentbox"></div>
+  
 </section>
-
+<div class="commentbox"></div>
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
   commentBox('5761195906695168-proj', {
-    className: 'commentbox', // le conteneur à utiliser
-    defaultBoxId: 'predictor-comments',
-    backgroundColor: 'transparent',
-    textColor: '#00ff6a'
+  className: 'commentbox',
+  defaultBoxId: 'predictor-comments',
+  backgroundColor: 'transparent',
+  textColor: '#00ff6a',
+  tlcParam: 'predictor-comments', // <--- ajoute ceci pour forcer la même thread
+  siteRoot: 'https://betbotx.github.io/PREDICTOR/' // <--- important
   });
 </script>
 <script type="application/ld+json">
@@ -762,25 +765,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const minUsers = 980;
   const maxUsers = 28000;
 
-  // 🔹 Valeur initiale (prise de localStorage sinon aléatoire)
-  let stored = localStorage.getItem("liveCount");
-  let currentUsers = stored ? parseFloat(stored) : Math.floor(Math.random() * (maxUsers - minUsers)) + minUsers;
+  // 🔹 Garde la même valeur entre les refreshs
+  let currentUsers = parseInt(localStorage.getItem("liveCount")) || 
+                     Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers;
 
-  // 🔹 Formate joliment
+  // 🔹 Formate le texte (1.2k etc.)
   const format = (n) => (n >= 1000 ? (n / 1000).toFixed(1) + "k" : n);
 
-  // 🔹 Affiche
+  // 🔹 Affiche la valeur
   const display = () => {
     el.innerHTML = `<span class="green-led"></span>${format(Math.round(currentUsers))} online`;
   };
 
   display();
 
-  // 🔹 Transition lente et fluide (sur 60s)
+  // 🔹 Animation fluide (transition lente)
   const smoothTransition = (target) => {
-    const duration = 60000; // 60s
-    const stepTime = 2000; // toutes les 2s = 30 steps
-    const steps = duration / stepTime;
+    const steps = 180; // 180 petits mouvements
+    const totalDuration = 60000; // durée = 60s
+    const stepTime = totalDuration / steps;
     const diff = target - currentUsers;
     const step = diff / steps;
     let i = 0;
@@ -797,26 +800,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }, stepTime);
   };
 
-  // 🔹 Calcul d’une nouvelle cible réaliste
+  // 🔹 Nouvelle valeur toutes les 60 secondes
   const updateTarget = () => {
-    const variation = Math.random() * 0.15 - 0.075; // ±7.5%
+    // Variation réaliste (-10% à +10%)
+    const variation = Math.random() * 0.2 - 0.1;
     let next = Math.round(currentUsers + currentUsers * variation);
 
-    // Rare changement plus large (1 chance sur 8)
-    if (Math.random() < 0.125) {
+    // Rare pic (1 chance sur 10)
+    if (Math.random() < 0.1) {
       next = Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers;
     }
 
+    // Garde dans les bornes
     next = Math.max(minUsers, Math.min(next, maxUsers));
+
     smoothTransition(next);
   };
 
-  // 🔹 Première mise à jour après 60s
+  // 🔹 Lance une première variation au bout de 10 secondes
+  setTimeout(updateTarget, 10000);
+  // 🔹 Puis toutes les minutes
   setInterval(updateTarget, 60000);
 });
+</script>
+<script>
+if (window.location.hash === '#predictor-comments') {
+  history.replaceState(null, '', window.location.pathname);
+}
 </script>
 
 </body>
 </html>
-
-
