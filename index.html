@@ -159,7 +159,7 @@
   /* --- FOOTER ALIGNMENT FIX --- */
   footer {
     margin-top: 100px; /* espace au-dessus du footer */
-    padding-bottom: 10px; /* espace en bas du footer */
+    padding-bottom: 40px; /* espace en bas du footer */
     text-align: center;
   }
 
@@ -304,11 +304,11 @@ html, body {
   color: var(--neon);
 }
 main {
+  padding: 40px 20px 20px; /* réduit l'espace bas du contenu */
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px 60px;
 }
 nav {
   text-align: center;
@@ -457,12 +457,14 @@ h1 {
 }
 
 .response-box {
-  margin-top: calc(30px + 1cm); /* décale de ~2cm en plus sans casser la mise en page */
+  margin-top: 16px;       /* réduit fortement l'espacement au-dessus */
+  margin-bottom: 8px;
   color: var(--neon-2);
   font-weight: 600;
   text-shadow: 0 0 8px rgba(0,255,106,0.5);
   white-space: pre-line;
 }
+
 
 .disclaimer {
   font-size: 13px;
@@ -471,17 +473,18 @@ h1 {
   text-align: center;
   max-width: 700px;
 }
+/* Footer compact — remplacer toutes les autres règles footer */
 footer {
-  border-top: 1px solid rgba(0,255,106,0.1);
+  border-top: 1px solid rgba(0,255,106,0.08);
   text-align: center;
   font-size: 13px;
   color: rgba(0,255,106,0.9);
-  text-shadow: 0 0 6px rgba(0,255,106,0.5);
+  text-shadow: 0 0 6px rgba(0,255,106,0.45);
   font-weight: 600;
   font-family: 'Orbitron', monospace;
-  padding-top: 15px;
-  padding-bottom: 25px;
-  margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  margin-top: 18px;   /* réduit l'espace au-dessus du footer */
 }
 footer a {
   color: rgba(0,255,106,0.9);
@@ -502,7 +505,38 @@ footer a {
 /* ✅ Uniformise l’espacement du footer avec about.html */
 footer {
   margin-top: 80px !important; /* ajuste ici la hauteur exacte si besoin */
-  padding-bottom: 40px !important; /* espace identique en bas de page */
+  padding-bottom: 7px !important; /* espace identique en bas de page */
+}
+/* --- Fix pied de page compact --- */
+.response-box {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: var(--neon-2);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0,255,106,0.5);
+  white-space: pre-line;
+}
+
+main {
+  padding: 40px 20px 20px; /* moins d'espace en bas */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer compact - unique règle finale */
+footer {
+  border-top: 1px solid rgba(0,255,106,0.08);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,255,106,0.9);
+  text-shadow: 0 0 6px rgba(0,255,106,0.45);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  margin-top: 18px;
 }
 </style>
 </head>
@@ -871,10 +905,3 @@ el.innerHTML = `<span class="green-led"></span>${format(Math.round(currentUsers)
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
