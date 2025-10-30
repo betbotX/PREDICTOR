@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Terms of Use | PREDICTOR by betbotX — Legal Conditions & User Agreement</title>
+
   <meta name="description" content="Review the official Terms of Use for PREDICTOR by betbotX — outlining user rights, limitations, and legal conditions. Our AI-driven system provides transparent, responsible, and compliant football insights, powered by ANFAtech." />
   <meta name="keywords" content="PREDICTOR by betbotX terms, AI prediction terms of use, user agreement, AI football policy, betbotX legal, responsible AI analytics, ANFAtech terms, football analytics disclaimer, no gambling site, fair use, transparency, privacy and terms, 2025 2026" />
   <meta name="robots" content="index, follow" />
@@ -23,20 +24,24 @@
     }
 
     html, body {
-      height: 100%;
-      margin: 0;
-    }
+  height: 100%;
+  margin: 0;
+}
 
-    body {
-      background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
-      color: var(--neon);
-      font-family: 'Orbitron', monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px 80px;
-      line-height: 1.6;
-    }
+body {
+  background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
+  color: var(--neon);
+  font-family: 'Orbitron', monospace;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 🔥 garantit que le footer colle au bas */
+  padding: 40px 20px 0;
+  line-height: 1.6;
+}
+
+section {
+  flex-grow: 1; /* 🔥 pousse le footer en bas même si peu de contenu */
+}
 
     /* ---- NAV ---- */
     nav {
@@ -112,7 +117,7 @@
 
     /* ---- FOOTER (identique à ABOUT & INDEX) ---- */
     footer {
-      margin-top: 500px; /* 🔽 descend la ligne et le texte */
+      margin-top: 80px; /* 🔽 descend la ligne et le texte */
       border-top: 1px solid rgba(0,255,106,0.1); /* ✅ ligne fine */
       padding-top: 5px; /* petit espace entre la ligne et le texte */
       padding-bottom: 10px; /* espace modéré sous la phrase */
