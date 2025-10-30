@@ -36,7 +36,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 40px 20px 80px;
+        padding: 40px 20px 10px;
         line-height: 1.6;
         overflow-y: auto;
       }
@@ -143,20 +143,20 @@
       .post a:hover { color: var(--neon-2); text-shadow: 0 0 8px rgba(0,255,106,0.6); }
 
       /* ---- FOOTER (same as About) ---- */
-      footer {
-        margin-top: 250px;
-        border-top: 1px solid rgba(0,255,106,0.1);
-        padding-top: 15px;
-        padding-bottom: 20px;
-        text-align: center;
-        font-size: 13px;
-        color: rgba(0,255,106,0.9);
-        text-shadow: 0 0 6px rgba(0,255,106,0.5);
-        font-weight: 600;
-        font-family: 'Orbitron', monospace;
-        width: 100%;
-      }
-
+     footer {
+  margin-top: 250px;
+  border-top: 1px solid rgba(0,255,106,0.1);
+  padding-top: 5px;
+  padding-bottom: 0; /* ✅ remplace 10px par 0 pour supprimer l’espace */
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,255,106,0.9);
+  text-shadow: 0 0 6px rgba(0,255,106,0.5);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  width: 100%;
+  margin-bottom: 0;
+}
       footer a {
         color: rgba(0,255,106,0.9);
         text-decoration: none;
@@ -186,6 +186,8 @@
     </nav>
 
     <h1>Inside the Mind of Football AI: Where Data Learns the Game</h1>
+<p class="subtitle"></p>
+
     <div class="container">
       <!-- Article 1 -->
       <div class="post" id="article-1">
@@ -358,12 +360,5 @@
     halo.style.top = e.clientY + 'px';
   });
 </script>
-
-
   </body>
 </html>
-
-
-
-
-
