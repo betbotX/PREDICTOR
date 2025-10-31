@@ -1,6 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
+<style>
+.vertical-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4px; /* épaisseur de la barre */
+  height: 100vh;
+  background: #00ff6a;
+  box-shadow: 0 0 15px #00ff6a, 0 0 35px #00ff6a, 0 0 60px #00ff6a;
+  z-index: 9999;
+  animation: glowBar 2s ease-in-out infinite alternate;
+}
+@keyframes glowBar {
+  from {
+    opacity: 0.7;
+    box-shadow: 0 0 10px #00ff6a, 0 0 25px #00ff6a;
+  }
+  to {
+    opacity: 1;
+    box-shadow: 0 0 25px #00ff6a, 0 0 60px #00ff6a;
+  }
+}
+</style>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Privacy Policy | PREDICTOR by betbotX — Data Protection & Transparency (2025/2026)</title>
@@ -175,6 +199,8 @@
 </head>
 
 <body>
+<div class="vertical-bar"></div>
+
   <nav>
   <a href="index.html">Home</a> |
   <a href="about.html">About</a> |
