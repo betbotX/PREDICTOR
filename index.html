@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- 🌟 Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
+<link rel="shortcut icon" href="https://betbotx.github.io/PREDICTOR/favicon.ico">
   <!-- 💚 CURSEUR NEON FLUO -->
 <style>
 
@@ -10,7 +15,7 @@
   height: 10px;
   background-color: #00ff6a;
   border-radius: 50%;
-  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+  box-shadow: none;
   margin-right: 6px;
   animation: pulse 1.5s infinite;
 }
@@ -174,34 +179,7 @@
     box-shadow: 0 0 25px #00ff6a, 0 0 60px #00ff6a;
   }
 }
-/* --- SCROLLBAR NEON --- */
-::-webkit-scrollbar {
-  width: 10px;
-}
 
-::-webkit-scrollbar-track {
-  background: #000;
-  box-shadow: inset 0 0 8px rgba(0,255,106,0.15);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #00ff6a;
-  border-radius: 10px;
-  box-shadow: 0 0 12px #00ff6a, 0 0 25px #00ff6a;
-  transition: all 0.3s ease-in-out;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #19ff8a;
-  box-shadow: 0 0 18px #19ff8a, 0 0 40px #19ff8a;
-}
-
-/* Pour Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #00ff6a #000;
-}
 </style>
 <div class="cursor-halo"></div>
 <div class="neon-cursor"></div>
@@ -224,11 +202,6 @@
   });
 </script>
 
-<!-- 🌟 Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
-<link rel="shortcut icon" href="https://betbotx.github.io/PREDICTOR/favicon.ico">
 
 
 <!-- Couleur de thème (mobile + navigateur) -->
@@ -306,7 +279,7 @@ football AI, predictive football engine, sports data analytics, match insights, 
 <link rel="alternate" href="https://betbotx.github.io/PREDICTOR/index.html" hreflang="en" />
 <!-- 🪶 POLICE -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-
+<!-- Favicon classique -->
 
 
 <!-- Apple & PWA -->
@@ -719,7 +692,7 @@ function canSearch() {
     // Supprimer les recherches de plus d'1 heure
     const validHistory = history.filter(time => now - time < 3600000);
 
-    if (validHistory.length >= 7) {
+    if (validHistory.length >= 100) {
         return false;
     }
 
@@ -778,7 +751,27 @@ callBtn.addEventListener('click', async () => {
     await fetchPromise;
 
     responseBox.classList.remove('blinking');
-    responseBox.textContent = serverResponse;
+
+// 🧠 Mise en forme automatique si la réponse suit le format clé: valeur
+if (serverResponse.includes(':')) {
+  const lines = serverResponse
+    .split('\n') // coupe chaque ligne
+    .map(line => {
+      const parts = line.split(':');
+      if (parts.length >= 2) {
+        const key = parts[0].trim();
+        const value = parts.slice(1).join(':').trim();
+        return `<div><span style="font-weight:normal;">${key}:</span> <span style="font-weight:bold;">${value}</span></div>`;
+      }
+      return line;
+    })
+    .join('');
+  responseBox.innerHTML = lines;
+} else {
+  // si c’est un texte normal, on affiche sans mise en forme spéciale
+  responseBox.textContent = serverResponse;
+}
+
 });
 </script>
 <script>
@@ -910,6 +903,3 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
-
-
-
