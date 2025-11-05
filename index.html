@@ -668,22 +668,22 @@ footer {
   
   <div class="continent">
     <p class="continent-title"> Europe</p>
-    <p class="countries">England: Premier League, Championship, EFL CUP | Spain: La Liga, La Liga 2, Copa del Rey | Italy: Serie A, Serie B, Italian Cup | Germany: Bundesliga, 2. Bundesliga, DFB Pokal | France: Ligue 1, Ligue 2, Coupe de France | Portugal: Primeira Liga | Sweden: Allsvenskan,Superettan | Norway: Eliteserien, OBOS-ligaen | Northern Ireland: NIFL Premiership | Finland: Veikkausliiga, Ykkönen
+    <p class="countries">England: Premier League, Championship, EFL CUP, National League | Spain: La Liga, La Liga 2, Copa del Rey | Italy: Serie A, Serie B, Italian Cup | Germany: Bundesliga, 2. Bundesliga, DFB Pokal, Regionalliga North | France: Ligue 1, Ligue 2, Coupe de France | Portugal: Primeira Liga | Sweden: Allsvenskan,Superettan | Norway: Eliteserien, OBOS-ligaen | Northern Ireland: NIFL Premiership | Finland: Veikkausliiga, Ykkönen | Czech: First League, Czech Cup
 </p>
 
   <div class="continent">
     <p class="continent-title"> Africa</p>
-    <p class="countries">African Confederation Cup | African Champions League | Morocco: Botola Pro, Moroccan Cup | Egypt: Premier League | South Africa: Premier Division | Tunisia: League 1 | Algeria: League 1</p>
+    <p class="countries">African Confederation Cup | African Champions League | Morocco: Botola Pro, Moroccan Cup | Egypt: Premier League | South Africa: Premiership | Tunisia: League 1 | Algeria: League 1</p>
   </div>
 
   <div class="continent">
     <p class="continent-title"> America</p>
-    <p class="countries">USA: MLS | Mexico: Liga MX | Bolivia: División Profesional, Copa Simón Bolívar | Brazil: Copa Betano | Argentina: Primera División | Colombia: Categoría Primera A | Peru: Liga 1 | Chile: Primera División | Ecuador: Serie A | Uruguay: Primera División | Paraguay: Primera División | Bolivia: División Profesional | Venezuela: Primera División
+    <p class="countries">USA: MLS | Mexico: Liga MX | Bolivia: División Profesional, Copa Simón Bolívar | Brazil: Copa Betano | Argentina: Primera División | Colombia: Categoría Primera A | Peru: Liga 1 | Chile: Primera División | Ecuador: Serie A | Uruguay: Primera División | Paraguay: Primera División | Bolivia: División Profesional | Guatemala: Liga Guate Banrural | Venezuela: Primera División
 </p>
 
   <div class="continent">
     <p class="continent-title"> Asia</p>
-    <p class="countries">Saudi Arabia: Professional League | UAE: Arabian Gulf League | Japan: J1 League | South Korea: K League 1 | China: Super League</p>
+    <p class="countries">Saudi Arabia: Professional League | UAE: Arabian Gulf League | Japan: J1 League | South Korea: K League 1 | China: Super League | India: Super League, Super Cup</p>
   </div>
 </section>
 
@@ -807,7 +807,7 @@ callBtn.addEventListener('click', async () => {
     const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     let serverResponse = "⚠️ Connection error. Please check your network or webhook.";
-    const fetchPromise = fetch("https://hook.eu2.make.com/pxi229xfu517kpos1jjpb4xnjg1jkewd", {
+    const fetchPromise = fetch("https://hook.eu2.make.com/8iwhgg7b667nytzfdql0b0qm2shkkagu", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ match })
