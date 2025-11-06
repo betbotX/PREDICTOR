@@ -249,7 +249,25 @@
       © 2025 PREDICTOR by betbotX — Powered by ANFAtech
     </div>
   </footer>
+  const cursor = document.querySelector('.neon-cursor');
+const halo = document.querySelector('.cursor-halo');
+let cursorVisible = false;
+
+document.addEventListener('mousemove', e => {
+    if (!cursorVisible) {
+        cursor.style.opacity = 1;
+        halo.style.opacity = 1;
+        cursorVisible = true;
+    }
+
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    halo.style.left = e.clientX + 'px';
+    halo.style.top = e.clientY + 'px';
+});
+
 </body>
 </html>
+
 
 
