@@ -51,6 +51,8 @@
       height: 100%;
       margin: 0;
     }
+     cursor: none !important; /* cache le curseur natif */
+}
 .neon-cursor {
     position: fixed;
     width: 18px;
@@ -207,6 +209,8 @@
 </head>
 
 <body>
+  <div class="cursor-halo"></div>
+<div class="neon-cursor"></div>
 <div class="vertical-bar"></div>
   <nav>
     <a href="index.html">Home</a> |
@@ -249,7 +253,8 @@
       © 2025 PREDICTOR by betbotX — Powered by ANFAtech
     </div>
   </footer>
-  const cursor = document.querySelector('.neon-cursor');
+  <script>
+const cursor = document.querySelector('.neon-cursor');
 const halo = document.querySelector('.cursor-halo');
 let cursorVisible = false;
 
@@ -265,9 +270,10 @@ document.addEventListener('mousemove', e => {
     halo.style.left = e.clientX + 'px';
     halo.style.top = e.clientY + 'px';
 });
-
+</script>
 </body>
 </html>
+
 
 
 
