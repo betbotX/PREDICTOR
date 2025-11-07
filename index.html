@@ -246,6 +246,12 @@ html, body {
   gtag('js', new Date());
 
   gtag('config', 'G-M31TPY4N88');
+  // Désactiver le curseur neon sur mobile
+if (window.matchMedia("(hover: none)").matches || window.matchMedia("(pointer: coarse)").matches) {
+    document.querySelectorAll('.cursor, .cursor2').forEach(el => {
+        el.style.display = "none";
+    });
+}
 </script>
 <script>
   const cursor = document.querySelector('.neon-cursor');
@@ -1072,5 +1078,6 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
 
 
