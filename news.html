@@ -42,24 +42,27 @@ body {
     line-height: 1.6;
 }
 .vertical-bar {
-  position: fixed;
-  left: 0;          /* barre à gauche */
-  top: 0;
-  width: 4px;
-  height: 100vh;    /* barre fixe */
-  background: linear-gradient(to bottom, #00ff6a 0%, #001100 100%);
-  box-shadow: 0 0 10px #00ff6a, 0 0 25px #00ff6a; /* glow plus subtil */
-  z-index: 9999;
-  border-radius: 2px;
-  transition: none; /* pas de transition pour la barre fixe */
+  position: fixed;     /* position fixe par rapport à l'écran */
+  left: 0;             /* alignée à gauche */
+  top: 0;              /* en haut de l'écran */
+  width: 4px;          /* épaisseur de la barre */
+  height: 100vh;       /* hauteur = 100% de la fenêtre */
+  background: #00ff6a; /* couleur néon verte */
+  box-shadow: 0 0 15px #00ff6a, 0 0 35px #00ff6a, 0 0 60px #00ff6a; /* glow */
+  z-index: 9999;       /* au-dessus de tout le reste */
+  animation: glowBar 2s ease-in-out infinite alternate; /* animation de glow */
 }
 
-@keyframes scrollBar {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(50%); }
+@keyframes glowBar {
+  from {
+    opacity: 0.7;
+    box-shadow: 0 0 10px #00ff6a, 0 0 25px #00ff6a;
+  }
+  to {
+    opacity: 1;
+    box-shadow: 0 0 25px #00ff6a, 0 0 60px #00ff6a;
+  }
 }
-
-
 
 .scroll-bar:hover {
   background: #19ff8a;
@@ -337,6 +340,5 @@ items.forEach(item => {
 
 loadRSS();
 </script>
-
 </body>
 </html>
