@@ -259,6 +259,9 @@ if (window.matchMedia("(hover: none)").matches || window.matchMedia("(pointer: c
         el.style.display = "none";
     });
 }
+  if (window.matchMedia("(hover: none), (pointer: coarse)").matches) {
+    document.querySelectorAll('.neon-cursor, .cursor-halo').forEach(el => el.style.display = 'none');
+}
 </script>
 <script>
   const cursor = document.querySelector('.neon-cursor');
@@ -1085,6 +1088,7 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
 
 
 
