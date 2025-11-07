@@ -9,15 +9,15 @@
 <style>
 .vertical-bar {
   position: fixed;
-  right: 0;          /* à droite */
+  left: 0;
   top: 0;
-  width: 4px;        /* épaisseur */
-  height: 0%;        /* start à 0, puis augmente avec le scroll */
-  background: #00ff6a;
-  box-shadow: 0 0 12px #00ff6a, 0 0 25px #00ff6a;
+  width: 4px;
+  height: 100vh;
+  background: linear-gradient(to bottom, #00ff6a 0%, #001100 100%);
+  box-shadow: 0 0 10px #00ff6a, 0 0 25px #00ff6a;
   z-index: 9999;
   border-radius: 2px;
-  transition: height 0.1s linear;
+  transition: none;
 }
 @keyframes glowBar {
   from {
