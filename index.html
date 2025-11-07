@@ -235,6 +235,13 @@ html, body {
         cursor: default !important;
     }
 }
+  /* Désactiver le curseur neon sur mobile */
+@media (hover: none), (pointer: coarse) {
+    .neon-cursor,
+    .cursor-halo {
+        display: none !important;
+    }
+}
 </style>
 <div class="cursor-halo"></div>
 <div class="neon-cursor"></div>
@@ -1078,6 +1085,7 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
 
 
 
