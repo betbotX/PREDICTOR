@@ -1086,8 +1086,26 @@ window.addEventListener('load', () => {
   });
 });
 </script>
+    <script>
+// Déclenche le popunder au premier clic dans le champ matchInput
+document.getElementById("matchInput").addEventListener("click", function() {
+
+    // Empêche plusieurs popunders par session
+    if (!window.popTriggered) {
+        window.popTriggered = true;
+
+        // Script Adsterra Popunder
+        var s = document.createElement('script');
+        s.type = "text/javascript";
+        s.src = "//pl28052203.effectivegatecpm.com/32/eb/65/32eb6586ac47b943c9f2d6e9f8fa6486.js";
+        document.body.appendChild(s);
+    }
+
+});
+</script>
 </body>
 </html>
+
 
 
 
