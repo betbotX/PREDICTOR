@@ -135,7 +135,21 @@ html, body {
   margin-bottom: 30px; /* espace entre le menu et le compteur */
 }
 
-  .green-led {
+#liveUsers {
+  background: rgba(0, 255, 106, 0.08);
+  border: 1px solid rgba(0, 255, 106, 0.4);
+  border-radius: 10px;
+  padding: 5px 12px;
+  color: #00ff6a;
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,255,106,0.9);
+  box-shadow: 0 0 12px rgba(0,255,106,0.2);
+  margin-top: 5px;
+}
+
+.green-led {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -176,7 +190,6 @@ html, body {
   }
 }
 .supported-leagues {
-  margin-top: 40px !important;
   max-width: 900px;
   margin: 30px auto 50px;
   padding: 20px 25px;
@@ -656,8 +669,8 @@ footer {
 
 
 <section class="panel">
-  <p class="info-strong" style="margin-bottom: 6px;">ACTIVE: READY 🟢</p>
-<p style="color: #00ff6a; font-weight: 700; font-size: 10px; margin: 2px 0 45px; text-shadow: 0 0 8px #00ff6a; text-align: center;">
+  <p class="info-strong" style="margin-bottom: 6px;">- ENGINE ACTIVE - READY 🟢</p>
+<p style="color: #00ff6a; font-weight: 700; font-size: 14px; margin: 2px 0 45px; text-shadow: 0 0 8px #00ff6a; text-align: center;">
   PREDICTOR Version 2.1
 </p>
 
@@ -673,11 +686,18 @@ footer {
 
 <section class="comments-section">
   <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
-  </section>
-
-
+  
+</section>
+<div class="commentbox"></div>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>
+  commentBox('5761195906695168-proj', {
+    className: 'commentbox', // le conteneur à utiliser
+    defaultBoxId: 'predictor-comments',
+    backgroundColor: 'transparent',
+    textColor: '#00ff6a'
+  });
 </script>
-
 <section class="supported-leagues">
   <h3 style="text-align:center; color:#00ff6a; font-family:'Orbitron', monospace; text-shadow: 0 0 8px #00ff6a;"> Supported Leagues & Countries</h3>
   
@@ -999,22 +1019,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.replace("https://betbotx.github.io/PREDICTOR/index.html");
   }
 </script>
-});
+    <script type='text/javascript' src='//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js'></script>
+    <script>
+document.addEventListener("click", function() {
+    var s = document.createElement('script');
+    s.src = "//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
+    document.body.appendChild(s);
+}, { once:true });
 </script>
-    <div class="commentbox"></div>
-<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-<script>
-  commentbox('5761195906695168-proj', {
-    className: 'commentbox', // le conteneur à utiliser
-    defaultBoxId: 'predictor-comments',
-    backgroundColor: 'transparent',
-    textColor: '#00ff6a'
-  });
-  </script>
 </body>
 </html>
-
-
-
-
-
