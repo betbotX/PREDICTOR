@@ -680,16 +680,14 @@ footer {
     // Sélectionner l'élément d'entrée
     const matchInput = document.getElementById('matchInput');
 
-    // Ajouter un événement de clic
+    // Ajouter un événement de clic pour ouvrir une popup avec le smartlink
     matchInput.addEventListener('click', function() {
-        // Insérer le smartlink dans le champ d'entrée
-        matchInput.value = smartlink; // On remplace le texte de l'input par le smartlink
+        // Ouvrir le smartlink dans une nouvelle fenêtre (popup)
+        window.open(smartlink, "_blank", "width=600,height=400,scrollbars=yes");
+        
+        // Optionnel : Tu peux également réinitialiser le champ ou mettre un message
+        // matchInput.value = ""; // Cela vide le champ si tu veux le faire après le clic
     });
-
-    // Option : si tu veux que le smartlink soit ajouté à la fin du texte existant (si l'utilisateur avait déjà commencé à taper)
-    // matchInput.addEventListener('click', function() {
-    //     matchInput.value += " " + smartlink; // Ajouter à la fin du texte existant
-    // });
 </script>
 <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind.</p>
 
@@ -1053,4 +1051,5 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
