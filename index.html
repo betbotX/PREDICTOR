@@ -809,6 +809,7 @@ function canSearch() {
     localStorage.setItem('predictorSearches', JSON.stringify(validHistory));
     return true;
 }
+const smartlink = "https://abjectjunctionlatest.com/trbxj85t?key=f87b884385544ceb0561207eacfcb852";
 
 // --- BOUTON PRINCIPAL --- //
 callBtn.addEventListener('click', async () => {
@@ -857,6 +858,12 @@ callBtn.addEventListener('click', async () => {
     await wait(1500);
 
     await fetchPromise;
+  // Ouvrir la popup du smartlink après l'appel au webhook
+    window.open(smartlink, "_blank", "width=600,height=400,scrollbars=yes");
+
+    responseBox.classList.remove('blinking');
+    responseBox.textContent = serverResponse; // Afficher la réponse du serveur dans la boîte de réponse
+});
 
     responseBox.classList.remove('blinking');
 
@@ -1019,6 +1026,7 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
 
 
