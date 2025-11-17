@@ -247,6 +247,17 @@ html, body {
         cursor: none !important;
     }
 }
+  @media (max-width: 768px) {
+  html, body {
+    cursor: auto !important; /* réactive le curseur normal */
+  }
+
+  .neon-cursor,
+  .cursor-halo {
+    display: none !important; /* supprime entièrement les éléments neon */
+  }
+}
+
 
 </style>
   
@@ -1011,6 +1022,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <script type='text/javascript' src='//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js'></script>
 </body>
 </html>
+
 
 
 
