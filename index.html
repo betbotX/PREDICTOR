@@ -812,8 +812,6 @@ function canSearch() {
 
 // --- BOUTON PRINCIPAL --- //
 callBtn.addEventListener('click', async () => {
-    console.log('Button "Call Agent" clicked'); // Ajout d'un log pour vérifier le clic
-
     const match = matchInput.value.trim();
     if (!match) {
         responseBox.classList.add('blinking');
@@ -859,10 +857,6 @@ callBtn.addEventListener('click', async () => {
     await wait(1500);
 
     await fetchPromise;
-
-    responseBox.classList.remove('blinking');
-    responseBox.textContent = serverResponse; // Afficher la réponse du serveur dans la boîte de réponse
-});
 
     responseBox.classList.remove('blinking');
 
@@ -1025,13 +1019,3 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
