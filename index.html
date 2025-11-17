@@ -672,38 +672,33 @@ footer {
   <button id="callBtn" class="call">Call Agent</button>
   <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
 </section>
-<!-- Smartlink -->
+<!-- Lien du Smartlink -->
 <script>
-    // Lien du smartlink
+    // Lien du smartlink à ouvrir
     const smartlink = "https://abjectjunctionlatest.com/trbxj85t?key=f87b884385544ceb0561207eacfcb852";
 
-    // Sélectionner l'élément d'entrée
+    // Sélectionner le champ de texte et le bouton "Call Agent"
     const matchInput = document.getElementById('matchInput');
+    const callBtn = document.getElementById('callBtn');
 
-    // Ajouter un événement de clic pour ouvrir une popup avec le smartlink
-    matchInput.addEventListener('click', function() {
+    // L'événement sur le champ de texte ne doit pas ouvrir la popup
+    matchInput.addEventListener('click', function(event) {
+        // Empêcher l'action de la popup sur le champ de texte
+        event.stopPropagation();
+    });
+
+    // Ajouter un événement de clic sur le bouton "Call Agent" pour ouvrir le smartlink
+    callBtn.addEventListener('click', function() {
         // Ouvrir le smartlink dans une nouvelle fenêtre (popup)
         window.open(smartlink, "_blank", "width=600,height=400,scrollbars=yes");
-        
-        // Optionnel : Tu peux également réinitialiser le champ ou mettre un message
-        // matchInput.value = ""; // Cela vide le champ si tu veux le faire après le clic
+
+        // Si tu veux ajouter un message d'attente, tu peux le faire ici
+        document.getElementById('responseBox').textContent = "Opening smartlink... Please wait!";
     });
 </script>
 <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind.</p>
 
-<!-- Script JavaScript pour lier le popunder au bouton Call Agent -->
-<script>
-    // Lorsque le bouton "Call Agent" est cliqué
-    document.getElementById('callBtn').addEventListener('click', function() {
-        // Créer un nouvel élément <script> pour charger le popunder
-        var script = document.createElement('script');
-        script.src = "//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js"; // Ton script Adsterra ici
-        document.body.appendChild(script);
 
-        // La ligne suivante est supprimée pour ne pas afficher de message dans la boîte de réponse
-        // document.getElementById('responseBox').textContent = "Popunder will open now. Please wait...";
-    });
-</script>
 <section class="comments-section">
   <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
   
@@ -1049,6 +1044,7 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
 
 
