@@ -672,68 +672,9 @@ footer {
   <button id="callBtn" class="call">Call Agent</button>
   <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
 </section>
-<!-- Button "Call Agent" -->
-<button id="callBtn" class="call">Call Agent</button>
-
-<!-- Box de réponse pour l'UI -->
-<div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
-
-<!-- Lien du Smartlink -->
-<script>
-    // Lien du smartlink à ouvrir
-    const smartlink = "https://abjectjunctionlatest.com/trbxj85t?key=f87b884385544ceb0561207eacfcb852";
-
-    // Sélectionner le champ de texte et le bouton "Call Agent"
-    const matchInput = document.getElementById('matchInput');
-    const callBtn = document.getElementById('callBtn');
-
-    // Ajouter un événement de clic sur le bouton "Call Agent"
-    callBtn.addEventListener('click', function() {
-        // Récupérer la valeur du champ de texte (match saisi)
-        const matchValue = matchInput.value;
-
-        // 1. Appel du webhook pour obtenir la prédiction ou la réponse
-        fetch('https://ton-webhook-url.com', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                match: matchValue, // Le match saisi par l'utilisateur
-                user_action: 'call_agent', // Action à effectuer (si nécessaire)
-            })
-        })
-        .then(response => {
-            // Vérifier si la réponse est correcte (status 200)
-            if (response.ok) {
-                return response.json(); // Si la réponse est OK, on la transforme en JSON
-            } else {
-                throw new Error('Erreur dans la réponse du webhook');
-            }
-        })
-        .then(data => {
-            // Si on a la réponse du webhook, traiter la réponse ici
-            console.log('Prédiction reçue:', data);
-
-            // Optionnel : Afficher la prédiction dans la zone de réponse
-            // Tu peux afficher ici les données reçues du webhook dans la réponse de l'utilisateur
-            document.getElementById('responseBox').textContent = `Prediction: ${data.prediction || 'No prediction available'}`;
-
-            // 2. Ouvrir le smartlink dans une nouvelle fenêtre (popup)
-            window.open(smartlink, "_blank", "width=600,height=400,scrollbars=yes");
-        })
-        .catch(error => {
-            console.error('Erreur lors de l\'appel du webhook:', error);
-
-            // Optionnel : Afficher un message d'erreur si l'appel échoue
-            document.getElementById('responseBox').textContent = 'Error fetching prediction, please try again.';
-        });
-    });
-</script>
 <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind.</p>
 
-
-<section class="comments-section">
+  <section class="comments-section">
   <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
   
 </section>
@@ -1078,6 +1019,7 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
 
 
