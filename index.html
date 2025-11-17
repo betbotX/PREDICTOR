@@ -842,10 +842,8 @@ callBtn.addEventListener('click', async () => {
     const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     let serverResponse = "⚠️ Connection error. Please check your network or webhook.";
-  // Réactiver le bouton une fois la réponse reçue
-callBtn.disabled = false;
-  await fetchPromise;
-    const fetchPromise = fetch("https://hook.eu2.make.com/pxi229xfu517kpos1jjpb4xnjg1jkewd", {
+callBtn.disabled = true; // Désactiver le bouton pour éviter un double clic
+  const fetchPromise = fetch("https://hook.eu2.make.com/pxi229xfu517kpos1jjpb4xnjg1jkewd", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ match })
@@ -872,6 +870,9 @@ callBtn.disabled = false;
     await fetchPromise;
 
     responseBox.classList.remove('blinking');
+  // Réactiver le bouton une fois la réponse reçue
+  callBtn.disabled = false;
+
 
 // 🧠 Mise en forme automatique si la réponse suit le format clé: valeur
 if (serverResponse.includes(':')) {
@@ -1032,6 +1033,7 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
 
 
