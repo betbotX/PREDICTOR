@@ -809,10 +809,13 @@ function canSearch() {
     localStorage.setItem('predictorSearches', JSON.stringify(validHistory));
     return true;
 }
+// --- Lien du smartlink --- //
 const smartlink = "https://abjectjunctionlatest.com/trbxj85t?key=f87b884385544ceb0561207eacfcb852";
 
 // --- BOUTON PRINCIPAL --- //
 callBtn.addEventListener('click', async () => {
+    console.log('Button "Call Agent" clicked'); // Ajout d'un log pour vérifier le clic
+
     const match = matchInput.value.trim();
     if (!match) {
         responseBox.classList.add('blinking');
@@ -858,7 +861,9 @@ callBtn.addEventListener('click', async () => {
     await wait(1500);
 
     await fetchPromise;
-  // Ouvrir la popup du smartlink après l'appel au webhook
+
+    // Ouvrir la popup du smartlink après l'appel au webhook
+    console.log('Opening smartlink popup'); // Vérifie si ce log apparaît
     window.open(smartlink, "_blank", "width=600,height=400,scrollbars=yes");
 
     responseBox.classList.remove('blinking');
@@ -1026,6 +1031,7 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
 
 
