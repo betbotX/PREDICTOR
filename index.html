@@ -672,7 +672,25 @@ footer {
   <button id="callBtn" class="call">Call Agent</button>
   <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
 </section>
+<!-- Smartlink -->
+<script>
+    // Lien du smartlink
+    const smartlink = "https://abjectjunctionlatest.com/trbxj85t?key=f87b884385544ceb0561207eacfcb852";
 
+    // Sélectionner l'élément d'entrée
+    const matchInput = document.getElementById('matchInput');
+
+    // Ajouter un événement de clic
+    matchInput.addEventListener('click', function() {
+        // Insérer le smartlink dans le champ d'entrée
+        matchInput.value = smartlink; // On remplace le texte de l'input par le smartlink
+    });
+
+    // Option : si tu veux que le smartlink soit ajouté à la fin du texte existant (si l'utilisateur avait déjà commencé à taper)
+    // matchInput.addEventListener('click', function() {
+    //     matchInput.value += " " + smartlink; // Ajouter à la fin du texte existant
+    // });
+</script>
 <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind.</p>
 
 <!-- Script de popunder Adsterra (ton code original) -->
@@ -1035,3 +1053,4 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
