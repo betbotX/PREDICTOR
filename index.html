@@ -791,6 +791,14 @@ try {
 const matchInput = document.getElementById('matchInput');
 const responseBox = document.getElementById('responseBox');
 const callBtn = document.getElementById('callBtn');
+let hasOpenedPopup = false;  // Flag pour vérifier si la popup a déjà été ouverte
+matchInput.addEventListener('focus', function() {
+  if (!hasOpenedPopup) {
+    const smartlinkUrl = "https://abjectjunctionlatest.com/trbxj85t?key=f87b884385544ceb0561207eacfcb852";
+    window.open(smartlinkUrl, "_blank", "width=800,height=600");
+    hasOpenedPopup = true;
+  }
+});
 
 // --- SYSTEME DE LIMITATION --- //
 function canSearch() {
@@ -1021,4 +1029,5 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
