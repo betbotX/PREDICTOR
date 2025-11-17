@@ -691,19 +691,17 @@ footer {
 </script>
 <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind.</p>
 
-<!-- Script de popunder Adsterra (ton code original) -->
-<script type='text/javascript' src='//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js'></script>
-
 <!-- Script JavaScript pour lier le popunder au bouton Call Agent -->
 <script>
+    // Lorsque le bouton "Call Agent" est cliqué
     document.getElementById('callBtn').addEventListener('click', function() {
-        // Crée un nouvel élément <script> pour charger le popunder au clic
+        // Créer un nouvel élément <script> pour charger le popunder
         var script = document.createElement('script');
         script.src = "//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js"; // Ton script Adsterra ici
         document.body.appendChild(script);
 
-        // Affiche un message dans la zone de réponse
-        document.getElementById('responseBox').textContent = "Popunder will open now. Please wait...";
+        // La ligne suivante est supprimée pour ne pas afficher de message dans la boîte de réponse
+        // document.getElementById('responseBox').textContent = "Popunder will open now. Please wait...";
     });
 </script>
 <section class="comments-section">
@@ -1051,5 +1049,6 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
 
