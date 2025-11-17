@@ -675,15 +675,7 @@ footer {
   <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
   </section>
 
-<div class="commentbox"></div>
-<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-<script>
-  commentbox('5761195906695168-proj', {
-    className: 'commentbox', // le conteneur à utiliser
-    defaultBoxId: 'predictor-comments',
-    backgroundColor: 'transparent',
-    textColor: '#00ff6a'
-  });
+
 </script>
 
 <section class="supported-leagues">
@@ -1009,8 +1001,19 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 });
 </script>
+    <div class="commentbox"></div>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>
+  commentbox('5761195906695168-proj', {
+    className: 'commentbox', // le conteneur à utiliser
+    defaultBoxId: 'predictor-comments',
+    backgroundColor: 'transparent',
+    textColor: '#00ff6a'
+  });
+  </script>
 </body>
 </html>
+
 
 
 
