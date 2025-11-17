@@ -135,21 +135,7 @@ html, body {
   margin-bottom: 30px; /* espace entre le menu et le compteur */
 }
 
-#liveUsers {
-  background: rgba(0, 255, 106, 0.08);
-  border: 1px solid rgba(0, 255, 106, 0.4);
-  border-radius: 10px;
-  padding: 5px 12px;
-  color: #00ff6a;
-  font-family: 'Orbitron', monospace;
-  font-size: 14px;
-  font-weight: 700;
-  text-shadow: 0 0 8px rgba(0,255,106,0.9);
-  box-shadow: 0 0 12px rgba(0,255,106,0.2);
-  margin-top: 5px;
-}
-
-.green-led {
+  .green-led {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -1023,7 +1009,20 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 });
 </script>
+    <!-- ADSTERRA POPUNDER RESET -->
+<script>
+document.addEventListener("click", function startPopunder() {
+    var ad = document.createElement("script");
+    ad.type = "text/javascript";
+    ad.src = "//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
+    document.body.appendChild(ad);
+
+    // Empêche le déclenchement plusieurs fois
+    document.removeEventListener("click", startPopunder);
+});
+</script>
 </body>
 </html>
+
 
 
