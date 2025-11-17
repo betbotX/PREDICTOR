@@ -689,27 +689,45 @@ footer {
 
     // Ajouter un événement de clic sur le bouton "Call Agent"
     callBtn.addEventListener('click', function() {
-        // 1. Appel du webhook ou de l'API
+        // Récupérer la valeur du champ de texte (match saisi)
+        const matchValue = matchInput.value;
+
+        // 1. Appel du webhook pour obtenir la prédiction ou la réponse
         fetch('https://ton-webhook-url.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                match: matchInput.value, // Transmettre le match saisi dans le champ
-                user_action: 'call_agent', // Action (à adapter à ce que tu veux transmettre)
+                match: matchValue, // Le match saisi par l'utilisateur
+                user_action: 'call_agent', // Action à effectuer (si nécessaire)
             })
         })
-        .then(response => response.json()) // Traiter la réponse (si besoin)
+        .then(response => {
+            // Vérifier si la réponse est correcte (status 200)
+            if (response.ok) {
+                return response.json(); // Si la réponse est OK, on la transforme en JSON
+            } else {
+                throw new Error('Erreur dans la réponse du webhook');
+            }
+        })
         .then(data => {
-            console.log('Webhook appelé avec succès:', data); // Log dans la console si nécessaire
+            // Si on a la réponse du webhook, traiter la réponse ici
+            console.log('Prédiction reçue:', data);
+
+            // Optionnel : Afficher la prédiction dans la zone de réponse
+            // Tu peux afficher ici les données reçues du webhook dans la réponse de l'utilisateur
+            document.getElementById('responseBox').textContent = `Prediction: ${data.prediction || 'No prediction available'}`;
+
+            // 2. Ouvrir le smartlink dans une nouvelle fenêtre (popup)
+            window.open(smartlink, "_blank", "width=600,height=400,scrollbars=yes");
         })
         .catch(error => {
-            console.error('Erreur lors de l\'appel du webhook:', error); // Log d'erreur
-        });
+            console.error('Erreur lors de l\'appel du webhook:', error);
 
-        // 2. Ouvrir le smartlink dans une nouvelle fenêtre (popup)
-        window.open(smartlink, "_blank", "width=600,height=400,scrollbars=yes");
+            // Optionnel : Afficher un message d'erreur si l'appel échoue
+            document.getElementById('responseBox').textContent = 'Error fetching prediction, please try again.';
+        });
     });
 </script>
 <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind.</p>
@@ -1060,6 +1078,7 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
 
 
