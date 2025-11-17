@@ -225,8 +225,19 @@ html, body {
   text-align: center;
   color: rgba(0,255,106,0.85);
 }
+/* Désactiver le curseur neon + le curseur normal sur mobile */
+@media (max-width: 768px) {
+    #cursor {
+        display: none !important; /* masque ton rond néon */
+    }
+
+    html, body, * {
+        cursor: none !important; /* masque le curseur normal */
+    }
+}
 
 </style>
+  
 <div class="cursor-halo"></div>
 <div class="neon-cursor"></div>
 
@@ -987,5 +998,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <script type='text/javascript' src='//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js'></script>
 </body>
 </html>
+
 
 
