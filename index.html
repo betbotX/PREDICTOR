@@ -235,6 +235,18 @@ html, body {
         cursor: none !important; /* masque le curseur normal */
     }
 }
+/* Mobile : supprimer tout curseur */
+@media only screen and (max-width: 900px), (pointer: coarse) {
+    #cursor {
+        opacity: 0 !important;
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    html, body, * {
+        cursor: none !important;
+    }
+}
 
 </style>
   
@@ -998,6 +1010,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <script type='text/javascript' src='//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js'></script>
 </body>
 </html>
+
 
 
 
