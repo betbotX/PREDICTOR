@@ -628,30 +628,82 @@ footer {
   margin-top: 18px;
 }
 </style>
- <script>
-// Empêcher l'exécution auto
-let adLoaded = false;
+<script>
+/*
+  SESSION MODE:
+  - session starts on first click
+  - session duration = SESSION_MS (20 seconds)
+  - max POPS_PER_SESSION per session (2)
+  - no cookies, in-memory only
+*/
 
-// URL du script Adsterra
-const adsterraURL = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
+const AD_URL = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
 
-// Charger Adsterra uniquement au clic
-function loadAdOnClick() {
-    if (adLoaded) return; // Charger qu'une seule fois
-    adLoaded = true;
+const SESSION_MS = 20000;     // 20 secondes par session
+const POPS_PER_SESSION = 2;   // 2 pops max par session
 
-    const s = document.createElement("script");
-    s.src = adsterraURL;
-    s.async = false; // IMPORTANT : éviter le blocage Chrome mobile
+let sessionActive = false;
+let sessionExpiresAt = 0;
+let popsThisSession = 0;
+let adLoading = false; // empêche double load sur un même clic
 
-    document.body.appendChild(s);
-
-    // Optionnel : retirer l'écouteur après le premier clic
-    document.removeEventListener("click", loadAdOnClick);
+function startSession() {
+  sessionActive = true;
+  sessionExpiresAt = Date.now() + SESSION_MS;
+  popsThisSession = 0;
+  // Timer pour expirer la session automatiquement
+  setTimeout(() => {
+    sessionActive = false;
+  }, SESSION_MS);
 }
 
-// Attacher l’écouteur global
-document.addEventListener("click", loadAdOnClick);
+function canTriggerPop() {
+  const now = Date.now();
+
+  // Si session inactive, démarrer une nouvelle session (sur premier clic)
+  if (!sessionActive || now > sessionExpiresAt) {
+    startSession();
+  }
+
+  // Re-check now after possible restart
+  if (Date.now() > sessionExpiresAt) return false;
+
+  // Vérifier quota de pops
+  return popsThisSession < POPS_PER_SESSION;
+}
+
+function triggerAdsterra() {
+  if (adLoading) return; // Déjà en train de charger -> protection
+  adLoading = true;
+
+  const s = document.createElement("script");
+  s.src = AD_URL;
+  s.async = false; // charger de manière synchrone dans l'événement click trusted
+  s.onload = () => { adLoading = false; };
+  s.onerror = () => { adLoading = false; };
+  document.body.appendChild(s);
+}
+
+function onUserClickOnce(e) {
+  // Si la session a expiré entre temps, canTriggerPop() redémarre une session
+  if (!canTriggerPop()) {
+    // Optionnel: log pour debug
+    // console.log("Session inactive ou quota atteint.");
+    return;
+  }
+
+  // Autoriser le pop et incrémenter
+  popsThisSession++;
+  triggerAdsterra();
+
+  // Si on a atteint le max, on ne fait rien d'autre jusqu'à expiration
+  if (popsThisSession >= POPS_PER_SESSION) {
+    // nothing else, wait for session timeout to reset
+  }
+}
+
+// Attacher l'écouteur global de clic (n'importe où sur la page)
+document.addEventListener("click", onUserClickOnce, { passive: true });
 </script>
 
 </head>
@@ -1051,3 +1103,4 @@ document.addEventListener("DOMContentLoaded", () => {
 <script type='text/javascript' src='//abjectjunctionlatest.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 </body>
 </html>
+
