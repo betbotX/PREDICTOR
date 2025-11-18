@@ -1024,40 +1024,40 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <script>
 // === CONFIG ===
-const MAX_POP_PER_SESSION = 2;  
-const SESSION_TIME = 20000;     
-const POP_SCRIPT_URL = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
+const MAX_POP_PER_SESSION = 2;
+const SESSION_TIME = 20000;
+const POP_JS = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
 
-// === VARIABLES ===
 let popCount = 0;
 let sessionActive = true;
 
-// Session timer
+// Timer session
 setTimeout(() => sessionActive = false, SESSION_TIME);
 
-// Fonction pour charger Adsterra dans un IFRAME isolé
-function triggerPopunder() {
-    const iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    iframe.setAttribute("sandbox", "allow-scripts");
-    document.body.appendChild(iframe);
+// Ouvre le pop + charge Adsterra dedans
+function openPop() {
+    // Chrome autorise : ouverture immédiate sur clic
+    const win = window.open("", "_blank");
 
-    const doc = iframe.contentDocument;
-    const scr = doc.createElement("script");
-    scr.src = POP_SCRIPT_URL + "?t=" + Date.now();
-    doc.body.appendChild(scr);
+    if (!win) {
+        console.warn("Popunder bloqué par Chrome");
+        return;
+    }
+
+    // Injecte le script Adsterra DANS la nouvelle fenêtre
+    win.document.write(`<script src="${POP_JS}?t=${Date.now()}"></script>`);
+    win.document.close();
 }
 
-// Déclenchement au clic sans bloquer scroll
-document.addEventListener("click", () => {
+// Déclenchement sur clic utilisateur
+document.addEventListener("click", function () {
     if (!sessionActive) return;
     if (popCount >= MAX_POP_PER_SESSION) return;
 
     popCount++;
-    triggerPopunder();
+    openPop();
 }, { passive: true });
 </script>
-
-
 </body>
 </html>
+
