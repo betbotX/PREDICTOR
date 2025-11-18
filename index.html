@@ -628,6 +628,51 @@ footer {
   margin-top: 18px;
 }
 </style>
+  <script>
+// Compteurs de session
+let adClicks = 0;
+let lastClickTime = 0;
+let listenerAttached = false;
+
+// Fonction qui charge la pub
+function triggerAdScript() {
+
+    const now = Date.now();
+
+    // Cooldown 20 s
+    if (now - lastClickTime < 20000) {
+        console.log("Patientez 20 secondes avant une nouvelle activation.");
+        return;
+    }
+
+    // Limite 2 fois par session
+    if (adClicks >= 2) {
+        console.log("Limite de 2 activations atteinte pour cette session.");
+        return;
+    }
+
+    adClicks++;
+    lastClickTime = now;
+
+    // Injection du script, sans freeze
+    const s = document.createElement("script");
+    s.src = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
+    s.async = true;
+
+    document.body.appendChild(s);
+}
+
+// Attacher l’écouteur au premier chargement
+document.addEventListener("DOMContentLoaded", () => {
+    if (!listenerAttached) {
+        listenerAttached = true;
+
+        // Le clic utilisateur n’importe où déclenche le script
+        document.addEventListener("click", triggerAdScript);
+    }
+});
+</script>
+
 </head>
 
 <body>
@@ -1024,5 +1069,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
