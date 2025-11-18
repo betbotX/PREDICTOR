@@ -1022,8 +1022,39 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.replace("https://betbotx.github.io/PREDICTOR/index.html");
   }
 </script>
-<script async src="//abjectjunctionlatest.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js"></script>
+<script>
+// === CONFIG ===
+const MAX_POP_PER_SESSION = 2;  // 2 popunder par session
+const SESSION_TIME = 20000;      // durée session = 20s
+const POP_SCRIPT_URL = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
+
+// === VARIABLES SESSION ===
+let popCount = 0;
+let sessionActive = true;
+
+// Démarre une session de 20s
+setTimeout(() => {
+    sessionActive = false;
+}, SESSION_TIME);
+
+// Fonction pour charger le script Adsterra seulement quand nécessaire
+function loadPopScript() {
+    const s = document.createElement("script");
+    s.src = POP_SCRIPT_URL;
+    document.body.appendChild(s);
+}
+
+// Déclenche un popunder sur chaque clic, avec limite
+document.addEventListener("click", () => {
+    if (!sessionActive) return;           // session expirée
+    if (popCount >= MAX_POP_PER_SESSION) return; // déjà 2 pop
+
+    popCount++;
+    loadPopScript();
+});
+</script>
 </body>
 </html>
+
 
 
