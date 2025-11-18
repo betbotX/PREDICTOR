@@ -1042,36 +1042,11 @@ document.addEventListener("click", function() {
     document.body.appendChild(s);
 }, { once: true });
 </script>
-    <!-- Anti-Adblock -->
-<script>
-function detectAdBlock(callback) {
-    var ad = document.createElement('div');
-    ad.innerHTML = '&nbsp;';
-    ad.className = 'adsbox';
-    ad.style.position = 'absolute';
-    ad.style.left = '-999px';
-    document.body.appendChild(ad);
-
-    window.setTimeout(function() {
-        var blocked = false;
-        if (ad.offsetHeight === 0 || ad.clientHeight === 0) {
-            blocked = true;
-        }
-        document.body.removeChild(ad);
-        callback(blocked);
-    }, 500);
-}
-
-detectAdBlock(function(blocked) {
-    if (blocked) {
-        window.location.href = "https://betbotx.github.io/PREDICTOR/blog.html";
-    }
-});
-</script>
-    <!-- Social Bar en haut -->
+       <!-- Social Bar en haut -->
     <script type='text/javascript' src='//abjectjunctionlatest.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js' async></script>
 </body>
 </html>
+
 
 
 
