@@ -1022,13 +1022,39 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.replace("https://betbotx.github.io/PREDICTOR/index.html");
   }
 </script>
-    <script type='text/javascript' src='//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js'></script>
     <script>
-document.addEventListener("click", function() {
-    var s = document.createElement('script');
-    s.src = "//pl28071272.effectivegatecpm.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
-    document.body.appendChild(s);
-}, { once:true });
+(function(){
+  const SRC = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
+  const KEY = 'bbx_pop_loaded';
+
+  // Si déjà ouvert cette session, on ne fait rien
+  if (sessionStorage.getItem(KEY)) return;
+
+  // Handler du premier clic
+  function onFirstClick(e) {
+    // Retirer l'écouteur immédiatement
+    document.removeEventListener('click', onFirstClick, true);
+
+    // Injection synchrone d'une balise script liée à une action utilisateur
+    try {
+      const s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = SRC;
+      s.async = true; // n'empêche pas le rendu, chargé asynchrone
+      // insertion dans head si existant sinon body
+      (document.head || document.body).appendChild(s);
+      // Marquer pour cette session
+      try { sessionStorage.setItem(KEY, '1'); } catch(e) {}
+    } catch(err) {
+      // Silence en cas d'erreur; ne pas empêcher le scroll ni autres interactions
+      try { sessionStorage.setItem(KEY, '1'); } catch(e) {}
+    }
+  }
+
+  // Attacher en capture pour attraper n'importe quel clic (même sur éléments interactifs)
+  document.addEventListener('click', onFirstClick, { capture: true, passive: true });
+})();
 </script>
 </body>
 </html>
+
