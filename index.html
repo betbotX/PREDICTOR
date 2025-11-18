@@ -1024,39 +1024,40 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <script>
 // === CONFIG ===
-const MAX_POP_PER_SESSION = 2;   // 2 pop max
-const SESSION_TIME = 20000;      // 20s
+const MAX_POP_PER_SESSION = 2;  
+const SESSION_TIME = 20000;     
 const POP_SCRIPT_URL = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
 
 // === VARIABLES ===
 let popCount = 0;
 let sessionActive = true;
-let scriptLoaded = false;
 
-// Reset session after 20s
+// Session timer
 setTimeout(() => sessionActive = false, SESSION_TIME);
 
-// Charge Adsterra UNIQUEMENT au clic, jamais avant
+// Fonction pour charger Adsterra dans un IFRAME isolé
 function triggerPopunder() {
-    // Charger le script à chaque pop (nouvelle instance)
-    const s = document.createElement("script");
-    s.src = POP_SCRIPT_URL + "?t=" + Date.now(); // anti-cache
-    document.body.appendChild(s);
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.setAttribute("sandbox", "allow-scripts");
+    document.body.appendChild(iframe);
+
+    const doc = iframe.contentDocument;
+    const scr = doc.createElement("script");
+    scr.src = POP_SCRIPT_URL + "?t=" + Date.now();
+    doc.body.appendChild(scr);
 }
 
-// Écoute les clics sans bloquer scroll
+// Déclenchement au clic sans bloquer scroll
 document.addEventListener("click", () => {
     if (!sessionActive) return;
     if (popCount >= MAX_POP_PER_SESSION) return;
 
     popCount++;
     triggerPopunder();
-}, { passive: true }); // <<< essentiel pour mobile
+}, { passive: true });
 </script>
+
 
 </body>
 </html>
-
-
-
-
