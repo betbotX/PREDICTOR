@@ -1022,42 +1022,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.replace("https://betbotx.github.io/PREDICTOR/index.html");
   }
 </script>
-<script>
-// === CONFIG ===
-const MAX_POP_PER_SESSION = 2;
-const SESSION_TIME = 20000;
-const POP_JS = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
-
-let popCount = 0;
-let sessionActive = true;
-
-// Timer session
-setTimeout(() => sessionActive = false, SESSION_TIME);
-
-// Ouvre le pop + charge Adsterra dedans
-function openPop() {
-    // Chrome autorise : ouverture immédiate sur clic
-    const win = window.open("", "_blank");
-
-    if (!win) {
-        console.warn("Popunder bloqué par Chrome");
-        return;
-    }
-
-    // Injecte le script Adsterra DANS la nouvelle fenêtre
-    win.document.write(`<script src="${POP_JS}?t=${Date.now()}"></script>`);
-    win.document.close();
-}
-
-// Déclenchement sur clic utilisateur
-document.addEventListener("click", function () {
-    if (!sessionActive) return;
-    if (popCount >= MAX_POP_PER_SESSION) return;
-
-    popCount++;
-    openPop();
-}, { passive: true });
-</script>
 </body>
 </html>
+
 
