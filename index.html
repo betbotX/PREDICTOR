@@ -1022,42 +1022,80 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.replace("https://betbotx.github.io/PREDICTOR/index.html");
   }
 </script>
-    <script>
+   <script>
 (function(){
-  const SRC = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
-  const KEY = 'bbx_pop_loaded';
+  const AD_SRC = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js"; // ton script
+  const KEY = 'bbx_ad_count';           // clé de stockage
+  const MAX_PER_SESSION = 2;            // mettre 1 ou 2 selon souhait
 
-  // Si déjà ouvert cette session, on ne fait rien
-  if (sessionStorage.getItem(KEY)) return;
+  // helper : safe set/get
+  function getCount(){
+    try { return parseInt(sessionStorage.getItem(KEY) || '0', 10); } catch(e){ return 0; }
+  }
+  function setCount(v){
+    try { sessionStorage.setItem(KEY, String(v)); } catch(e){}
+  }
 
-  // Handler du premier clic
-  function onFirstClick(e) {
-    // Retirer l'écouteur immédiatement
-    document.removeEventListener('click', onFirstClick, true);
-
-    // Injection synchrone d'une balise script liée à une action utilisateur
+  // injection non bloquante du script (exécutée dans le handler utilisateur)
+  function injectAdScript(){
     try {
       const s = document.createElement('script');
       s.type = 'text/javascript';
-      s.src = SRC;
-      s.async = true; // n'empêche pas le rendu, chargé asynchrone
-      // insertion dans head si existant sinon body
+      s.src = AD_SRC;
+      s.async = true;
       (document.head || document.body).appendChild(s);
-      // Marquer pour cette session
-      try { sessionStorage.setItem(KEY, '1'); } catch(e) {}
-    } catch(err) {
-      // Silence en cas d'erreur; ne pas empêcher le scroll ni autres interactions
-      try { sessionStorage.setItem(KEY, '1'); } catch(e) {}
+      return true;
+    } catch(e){
+      return false;
     }
   }
 
-  // Attacher en capture pour attraper n'importe quel clic (même sur éléments interactifs)
-  document.addEventListener('click', onFirstClick, { capture: true, passive: true });
+  // tentative d'ouverture directe (meilleure chance d'être autorisée si dans handler utilisateur)
+  function tryWindowOpen(url){
+    try {
+      const w = window.open(url, '_blank', 'noopener,noreferrer');
+      if (w) { try { w.blur && w.blur(); window.focus && window.focus(); } catch(e){} }
+      return !!w;
+    } catch(e){ return false; }
+  }
+
+  // handler déclenché sur clic utilisateur
+  function onFirstClicks(e){
+    // on retire l'écouteur immédiat pour ne pas faire de blocage
+    document.removeEventListener('click', onFirstClicks, true);
+
+    let count = getCount();
+    if (count >= MAX_PER_SESSION) return;
+
+    // 1) tenter window.open pour maximiser chance d'autorisation (si tu veux)
+    const opened = tryWindowOpen(AD_SRC.replace(/^\/\//,'https://'));
+
+    // 2) si ouverture bloquée, injecter le script publicitaire (fallback)
+    if (!opened) {
+      injectAdScript();
+    }
+
+    // incrémenter compteur
+    setCount(count + 1);
+
+    // si on veut plusieurs ouvertures par session, on réattache l'écouteur tant que limite non atteinte
+    if (getCount() < MAX_PER_SESSION) {
+      // légère temporisation pour éviter triggers accidentels immédiats
+      setTimeout(() => {
+        document.addEventListener('click', onFirstClicks, { capture: true, passive: true });
+      }, 300);
+    }
+  }
+
+  // attach once (capture + passive évite freeze scrolling)
+  document.addEventListener('click', onFirstClicks, { capture: true, passive: true });
 })();
 </script>
+
 <script async src="//abjectjunctionlatest.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js"></script>
 </body>
 </html>
+
 
 
 
