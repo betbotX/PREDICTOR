@@ -632,8 +632,39 @@ footer {
 </head>
 
 <body>
-<script async="async" data-cfasync="false" src="//abjectjunctionlatest.com/c26b8548e470ed13603a3fecdaa7c587/invoke.js"></script>
-<div id="container-c26b8548e470ed13603a3fecdaa7c587"></div>
+<!-- CONTAINER FIX POUR LA NATIVE BANNER -->
+<div id="nativebar" style="
+    width:100%;
+    max-width:728px;
+    margin:0 auto;
+    overflow:hidden;
+    padding:0;
+    text-align:center;
+">
+
+    <style>
+        /* On force la bannière Adsterra à NE PAS dépasser les limites */
+        #nativebar iframe, 
+        #nativebar div > div {
+            max-width: 728px !important;
+            width: 100% !important;
+            height: 90px !important;
+        }
+
+        /* MOBILE : on force une bannière horizontale fine */
+        @media (max-width: 600px) {
+            #nativebar iframe, 
+            #nativebar div > div {
+                height: 60px !important;
+            }
+        }
+    </style>
+
+    <script async="async" data-cfasync="false" src="//abjectjunctionlatest.com/c26b8548e470ed13603a3fecdaa7c587/invoke.js"></script>
+    <div id="container-c26b8548e470ed13603a3fecdaa7c587"></div>
+
+</div>
+
 
 <div class="vertical-bar"></div>
 <main>
@@ -1036,6 +1067,7 @@ document.addEventListener("click", function() {
 </script>
 </body>
 </html>
+
 
 
 
