@@ -628,7 +628,32 @@ footer {
   margin-top: 18px;
 }
 </style>
- <script type='text/javascript' src='//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js'></script>
+ <script>
+// Empêcher l'exécution auto
+let adLoaded = false;
+
+// URL du script Adsterra
+const adsterraURL = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
+
+// Charger Adsterra uniquement au clic
+function loadAdOnClick() {
+    if (adLoaded) return; // Charger qu'une seule fois
+    adLoaded = true;
+
+    const s = document.createElement("script");
+    s.src = adsterraURL;
+    s.async = false; // IMPORTANT : éviter le blocage Chrome mobile
+
+    document.body.appendChild(s);
+
+    // Optionnel : retirer l'écouteur après le premier clic
+    document.removeEventListener("click", loadAdOnClick);
+}
+
+// Attacher l’écouteur global
+document.addEventListener("click", loadAdOnClick);
+</script>
+
 </head>
 
 <body>
@@ -1026,8 +1051,3 @@ document.addEventListener("DOMContentLoaded", () => {
 <script type='text/javascript' src='//abjectjunctionlatest.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 </body>
 </html>
-
-
-
-
-
