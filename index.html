@@ -1092,9 +1092,63 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 </script>
 
-<script async src="//abjectjunctionlatest.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js"></script>
+<script>
+(function(){
+  // --- CONFIG CSS/HTML de la social bar (robuste) ---
+  const CSS_ID = 'bbx-social-style';
+  if (!document.getElementById(CSS_ID)) {
+    const css = `
+      #bbx-social-bar{position:fixed !important; right:14px !important; bottom:14px !important; z-index:999999 !important;
+        display:flex; flex-direction:column; gap:10px; align-items:center; transition:transform .28s ease,opacity .28s ease;}
+      #bbx-social-bar.bbx-hidden{transform:translateY(60px); opacity:0;}
+      .bbx-social-btn{width:46px;height:46px;border-radius:12px;background:rgba(0,0,0,0.6);
+        display:flex;align-items:center;justify-content:center;color:#00ff6a;text-decoration:none;border:1px solid rgba(0,255,106,0.12);}
+      .bbx-social-close{width:30px;height:30px;margin-top:6px;border-radius:8px;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer}
+      @media (max-width:520px){#bbx-social-bar{right:10px;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);} .bbx-social-btn{width:40px;height:40px}}
+    `;
+    const s = document.createElement('style'); s.id = CSS_ID; s.appendChild(document.createTextNode(css)); document.head.appendChild(s);
+  }
+
+  // --- Fonction de création (idempotente) ---
+  function createSocialBar() {
+    if (document.getElementById('bbx-social-bar')) return;
+    const bar = document.createElement('div');
+    bar.id = 'bbx-social-bar';
+    // Boutons — remplace hrefs par vos comptes
+    bar.innerHTML = `
+      <a class="bbx-social-btn" href="https://t.me/predictor_ai" target="_blank" rel="noopener noreferrer" title="Telegram">TG</a>
+      <a class="bbx-social-btn" href="https://www.instagram.com/betbotX" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+      <a class="bbx-social-btn" href="https://www.threads.net/@betbotX" target="_blank" rel="noopener noreferrer" title="Threads">TH</a>
+      <div class="bbx-social-close" title="Fermer">✕</div>
+    `;
+    // Attacher au body (important: pas à un conteneur transformé)
+    document.body.appendChild(bar);
+
+    // Handler fermeture (persistant si souhaité)
+    bar.querySelector('.bbx-social-close').addEventListener('click', () => {
+      try { bar.remove(); localStorage.setItem('bbx_social_hidden','1'); } catch(e){}
+    });
+
+    // Masquer si l'utilisateur a déjà fermé précédemment
+    if (localStorage.getItem('bbx_social_hidden')) { bar.remove(); }
+  }
+
+  // --- Créer immédiatement pour s'assurer qu'elle "remonte" au chargement ---
+  try { createSocialBar(); } catch(e){}
+
+  // --- Si pour une raison la barre a été supprimée par d'autres scripts, recréer au premier clic ---
+  document.addEventListener('click', function ensureBar(e){
+    if (!document.getElementById('bbx-social-bar') && !localStorage.getItem('bbx_social_hidden')) {
+      try { createSocialBar(); } catch(e){}
+    }
+    // Ne pas retirer d'autres handlers — on laisse ceci passif
+  }, { capture: true, passive: true });
+
+})();
+</script>
 </body>
 </html>
+
 
 
 
