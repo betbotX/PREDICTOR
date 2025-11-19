@@ -8,6 +8,39 @@
 <link rel="shortcut icon" href="https://betbotx.github.io/PREDICTOR/favicon.ico">
   <!-- 💚 CURSEUR NEON FLUO -->
 <style>
+#google_translate_element {
+  position: fixed;
+  top: 5px; /* tout en haut */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(0,255,106,0.4);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  color: #00ff6a;
+  text-shadow: 0 0 6px rgba(0,255,106,0.8);
+  box-shadow: 0 0 12px rgba(0,255,106,0.3);
+}
+
+.goog-te-gadget {
+  color: #00ff6a !important;
+  font-weight: 700;
+}
+
+.goog-te-gadget-simple {
+  background: transparent !important;
+  border: none !important;
+  color: #00ff6a !important;
+  font-size: 11px !important;
+  text-shadow: 0 0 6px rgba(0,255,106,0.8);
+}
+
+.goog-te-menu-value span {
+  color: #00ff6a !important;
+}
 
 .green-led {
   display: inline-block;
@@ -15,10 +48,9 @@
   height: 10px;
   background-color: #00ff6a;
   border-radius: 50%;
+  box-shadow: none;
   margin-right: 6px;
   animation: pulse 1.5s infinite;
-  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
-
 }
 @keyframes pulse {
   0%, 100% { opacity: 0.9; }
@@ -45,7 +77,13 @@
   max-height: 600px;   /* ou 500, 700… selon ton design */
   overflow-y: auto;    /* ajoute une barre de défilement interne */
 }
-
+.green-led {
+  width: 10px; height: 10px;
+  background-color: #00ff6a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+  animation: pulse 1.5s infinite;
+}
 .commentbox {
   max-height: 600px;
   overflow-y: auto;
@@ -129,6 +167,19 @@ html, body {
   text-align: center;
   margin-bottom: 30px; /* espace entre le menu et le compteur */
 }
+
+
+.green-led {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00ff6a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+  margin-right: 6px;
+  animation: pulse 1.5s infinite;
+}
+
 /* --- BARRE VERTICALE FLUO --- */
 .vertical-bar {
   position: fixed;
@@ -286,7 +337,7 @@ football AI, predictive football engine, sports data analytics, match insights, 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
 <!-- 🌐 Langue + Zone géographique -->
-<meta name="language" content="fr,en">
+<meta name="language" content="en">
 <meta name="geo.region" content="EU,AF,SA,AS,NA">
 <meta name="geo.placename" content="Europe, Africa, South America, Latin America, Asia">
 <meta name="rating" content="general">
@@ -369,7 +420,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  }
 nav {
   text-align: center;
   margin-bottom: 20px;
@@ -525,7 +576,7 @@ h1 {
   font-weight: 600;
   text-shadow: 0 0 8px rgba(0,255,106,0.5);
   white-space: pre-line;
-  top: 20px; /* descend le texte d’environ 8 mm */
+top: 20; /* descend le texte d’environ 8 mm */
   transform: translateY(4mm);
 
 }
@@ -538,7 +589,19 @@ h1 {
   text-align: center;
   max-width: 700px;
 }
-
+/* Footer compact — remplacer toutes les autres règles footer */
+footer {
+  border-top: 1px solid rgba(0,255,106,0.08);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,255,106,0.9);
+  text-shadow: 0 0 6px rgba(0,255,106,0.45);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-top: 18px;   /* réduit l'espace au-dessus du footer */
+}
 footer a {
   color: rgba(0,255,106,0.9);
   text-decoration: none;
@@ -556,30 +619,11 @@ footer a {
 .commentbox .commentbox-footer { display: none !important; }
 .commentbox { margin-bottom: 0 !important; }
 
-main {
-  padding: 40px 20px 20px; /* moins d'espace en bas */
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-/* Footer compact - unique règle finale */
-footer {
-  border-top: 1px solid rgba(0,255,106,0.08);
-  text-align: center;
-  font-size: 13px;
-  color: rgba(0,255,106,0.9);
-  text-shadow: 0 0 6px rgba(0,255,106,0.45);
-  font-weight: 600;
-  font-family: 'Orbitron', monospace;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-top: 18px;
 
-}
+
 </style>
-</head>
+
 
 <body>
   <script>
@@ -594,8 +638,12 @@ document.addEventListener("click", function () {
     document.body.appendChild(s);
 }, { passive: true });
 </script>
+
+
 </head>
+
 <div class="vertical-bar"></div>
+
 <main>
 <nav class="navbar">
   <div class="nav-center">
@@ -656,7 +704,7 @@ document.addEventListener("click", function () {
   
   <div class="continent">
     <p class="continent-title"> Europe</p>
-    <p class="countries">England: Premier League, Championship, EFL CUP, National League | Spain: La Liga, La Liga 2, Copa del Rey | Italy: Serie A, Serie B, Italian Cup | Germany: Bundesliga, 2. Bundesliga, DFB Pokal, Regionalliga North | France: Ligue 1, Ligue 2, Coupe de France | Portugal: Primeira Liga | Sweden: Allsvenskan,Superettan | Norway: Eliteserien, OBOS-ligaen | Northern Ireland: NIFL Premiership | Finland: Veikkausliiga, Ykkönen | Czech: First League, Czech Cup
+    <p class="countries">England: Premier League, Championship, EFL CUP, National League | Spain: La Liga, La Liga 2, Copa del Rey | Italy: Serie A, Serie B, Italian Cup | Germany: Bundesliga, 2. Bundesliga, DFB Pokal, Regionalliga North | France: Ligue 1, Ligue 2, Coupe de France | Portugal: Primeira Liga | Sweden: Allsvenskan,Superettan | Norway: Eliteserien, OBOS-ligaen | Northern Ireland: NIFL Premiership | Finland: Veikkausliiga, Ykkönen | Czech: First League, Czech Cup | Russia: Russian Premier League, Russian CUP
 </p>
 </div>
   <div class="continent">
@@ -701,7 +749,7 @@ FR : PREDICTOR by betbotX est un moteur d'intelligence artificielle de football 
     "@type": "ContactPoint",
     "contactType": "Support client / Customer Service",
     "email": "support@bbxpredictor.com",
-    "availableLanguage": ["French", "English"]
+    "availableLanguage": ["English"]
   },
   "areaServed": ["Europe", "Africa", "Asia", "North America", "South America"],
   "brand": {
@@ -771,7 +819,7 @@ function canSearch() {
     // Supprimer les recherches de plus d'1 heure
     const validHistory = history.filter(time => now - time < 3600000);
 
-    if (validHistory.length >= 100) {
+    if (validHistory.length >= 7) {
         return false;
     }
 
@@ -788,7 +836,7 @@ callBtn.addEventListener('click', async () => {
         responseBox.classList.add('blinking');
         responseBox.textContent = "⚠️ Please enter a match name first.";
         return;
-    }   
+    }
 
     // Vérification de la limite d’utilisation
     if (!canSearch()) {
@@ -887,28 +935,8 @@ window.addEventListener("error", function (e) {
   </div>
   <p>© 2025 PREDICTOR by betbotX - Powered by ANFAtech</p>
 </footer>
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'fr', // langue principale de ton site
-    includedLanguages: 'en,fr,es,pt,de,it,ar', // langues que tu veux proposer
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, 'google_translate_element');
-}
-// auto-détection selon la langue du navigateur
-(function() {
-  var userLang = navigator.language || navigator.userLanguage;
-  var primaryLang = userLang.split('-')[0];
-  var supported = ['fr','en','es','pt','de','it','ar'];
-  if (supported.includes(primaryLang) && primaryLang !== 'fr') {
-    var script = document.createElement('script');
-script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    document.body.appendChild(script);
-  }
-})();
-</script>
+</body>
+</html>
 <script>
 // === COMPTEUR D'UTILISATEURS FLUIDE & RÉALISTE ===
 document.addEventListener("DOMContentLoaded", () => {
