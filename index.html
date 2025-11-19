@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,9 +15,10 @@
   height: 10px;
   background-color: #00ff6a;
   border-radius: 50%;
-  box-shadow: none;
   margin-right: 6px;
   animation: pulse 1.5s infinite;
+  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
+
 }
 @keyframes pulse {
   0%, 100% { opacity: 0.9; }
@@ -45,13 +45,7 @@
   max-height: 600px;   /* ou 500, 700… selon ton design */
   overflow-y: auto;    /* ajoute une barre de défilement interne */
 }
-.green-led {
-  width: 10px; height: 10px;
-  background-color: #00ff6a;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
-  animation: pulse 1.5s infinite;
-}
+
 .commentbox {
   max-height: 600px;
   overflow-y: auto;
@@ -135,19 +129,6 @@ html, body {
   text-align: center;
   margin-bottom: 30px; /* espace entre le menu et le compteur */
 }
-
-
-.green-led {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #00ff6a;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
-  margin-right: 6px;
-  animation: pulse 1.5s infinite;
-}
-
 /* --- BARRE VERTICALE FLUO --- */
 .vertical-bar {
   position: fixed;
@@ -305,7 +286,7 @@ football AI, predictive football engine, sports data analytics, match insights, 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
 <!-- 🌐 Langue + Zone géographique -->
-<meta name="language" content="en">
+<meta name="language" content="fr,en">
 <meta name="geo.region" content="EU,AF,SA,AS,NA">
 <meta name="geo.placename" content="Europe, Africa, South America, Latin America, Asia">
 <meta name="rating" content="general">
@@ -338,6 +319,7 @@ football AI, predictive football engine, sports data analytics, match insights, 
 
 <!-- 🧭 URL canonique -->
 <link rel="canonical" href="https://betbotx.github.io/PREDICTOR/">
+<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/" hreflang="fr" />
 <link rel="alternate" href="https://betbotx.github.io/PREDICTOR/index.html" hreflang="en" />
 <!-- 🪶 POLICE -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -543,7 +525,7 @@ h1 {
   font-weight: 600;
   text-shadow: 0 0 8px rgba(0,255,106,0.5);
   white-space: pre-line;
-top: 20px; /* descend le texte d’environ 8 mm */
+  top: 20px; /* descend le texte d’environ 8 mm */
   transform: translateY(4mm);
 
 }
@@ -556,19 +538,7 @@ top: 20px; /* descend le texte d’environ 8 mm */
   text-align: center;
   max-width: 700px;
 }
-/* Footer compact — remplacer toutes les autres règles footer */
-footer {
-  border-top: 1px solid rgba(0,255,106,0.08);
-  text-align: center;
-  font-size: 13px;
-  color: rgba(0,255,106,0.9);
-  text-shadow: 0 0 6px rgba(0,255,106,0.45);
-  font-weight: 600;
-  font-family: 'Orbitron', monospace;
-  margin-top: 18px; /* espace au-dessus du footer */
-  padding-top: 10px;
-  padding-bottom: 5px; /* espace en bas du footer */
-}
+
 footer a {
   color: rgba(0,255,106,0.9);
   text-decoration: none;
@@ -586,16 +556,6 @@ footer a {
 .commentbox .commentbox-footer { display: none !important; }
 .commentbox { margin-bottom: 0 !important; }
 
-/* --- Fix pied de page compact --- */
-.response-box {
-  margin-top: 16px;
-  margin-bottom: 8px;
-  color: var(--neon-2);
-  font-weight: 600;
-  text-shadow: 0 0 8px rgba(0,255,106,0.5);
-  white-space: pre-line;
-}
-
 main {
   padding: 40px 20px 20px; /* moins d'espace en bas */
   flex: 1;
@@ -604,17 +564,24 @@ main {
   align-items: center;
 }
 
+/* Footer compact - unique règle finale */
+footer {
+  border-top: 1px solid rgba(0,255,106,0.08);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,255,106,0.9);
+  text-shadow: 0 0 6px rgba(0,255,106,0.45);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 18px;
 
+}
 </style>
-
 </head>
+
 <body>
-
-<!-- GOOGLE TRANSLATE TOP-LEFT -->
-<div id="google_translate_container">
-    <div id="google_translate_element"></div>
-</div>
-
   <script>
 // URL du script Adsterra
 const AD_URL = "//abjectjunctionlatest.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
@@ -627,7 +594,7 @@ document.addEventListener("click", function () {
     document.body.appendChild(s);
 }, { passive: true });
 </script>
-
+</head>
 <div class="vertical-bar"></div>
 <main>
 <nav class="navbar">
@@ -702,7 +669,6 @@ document.addEventListener("click", function () {
     <p class="countries">USA: MLS | Mexico: Liga MX | Bolivia: División Profesional, Copa Simón Bolívar | Brazil: Copa Betano | Argentina: Primera División | Colombia: Categoría Primera A | Peru: Liga 1 | Chile: Primera División | Ecuador: Serie A | Uruguay: Primera División | Paraguay: Primera División | Bolivia: División Profesional | Guatemala: Liga Guate Banrural | Venezuela: Primera División
 </p>
 </div>
-
   <div class="continent">
     <p class="continent-title"> Asia</p>
     <p class="countries">Saudi Arabia: Professional League | UAE: Arabian Gulf League | Japan: J1 League | South Korea: K League 1 | China: Super League | India: Super League, Super Cup</p>
@@ -735,7 +701,7 @@ FR : PREDICTOR by betbotX est un moteur d'intelligence artificielle de football 
     "@type": "ContactPoint",
     "contactType": "Support client / Customer Service",
     "email": "support@bbxpredictor.com",
-    "availableLanguage": ["English"]
+    "availableLanguage": ["French", "English"]
   },
   "areaServed": ["Europe", "Africa", "Asia", "North America", "South America"],
   "brand": {
@@ -805,7 +771,7 @@ function canSearch() {
     // Supprimer les recherches de plus d'1 heure
     const validHistory = history.filter(time => now - time < 3600000);
 
-    if (validHistory.length >= 7) {
+    if (validHistory.length >= 100) {
         return false;
     }
 
@@ -822,8 +788,8 @@ callBtn.addEventListener('click', async () => {
         responseBox.classList.add('blinking');
         responseBox.textContent = "⚠️ Please enter a match name first.";
         return;
-    }  
-<script>
+    }   
+
     // Vérification de la limite d’utilisation
     if (!canSearch()) {
         responseBox.classList.remove('blinking');
@@ -907,9 +873,6 @@ window.addEventListener("error", function (e) {
   <ul>
     <li><a href="https://betbotx.github.io/PREDICTOR/">Home – AI Football Predictor</a></li>
     <li><a href="https://betbotx.github.io/PREDICTOR/about.html">About – Learn about our AI prediction system</a></li>
-    <li><a href="https://betbotx.github.io/PREDICTOR/blog.html">Blog</a></li>
-    <li><a href="https://betbotx.github.io/PREDICTOR/news.html">News</a></li>
-
     <li><a href="https://betbotx.github.io/PREDICTOR/privacy.html">Privacy Policy – Data and user transparency</a></li>
     <li><a href="https://betbotx.github.io/PREDICTOR/terms.html">Terms of Use – Platform rules and legal terms</a></li>
     <li><a href="https://betbotx.github.io/PREDICTOR/contact.html">Contact – Get in touch with betbotX</a></li>
@@ -924,14 +887,28 @@ window.addEventListener("error", function (e) {
   </div>
   <p>© 2025 PREDICTOR by betbotX - Powered by ANFAtech</p>
 </footer>
-<style>
-<!-- BOUTON GOOGLE TRANSLATE -->
-  .goog-te-banner-frame.skiptranslate { display: none !important; }
-  body { top: 0px !important; }
-</style>
-
-
-
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'fr', // langue principale de ton site
+    includedLanguages: 'en,fr,es,pt,de,it,ar', // langues que tu veux proposer
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+// auto-détection selon la langue du navigateur
+(function() {
+  var userLang = navigator.language || navigator.userLanguage;
+  var primaryLang = userLang.split('-')[0];
+  var supported = ['fr','en','es','pt','de','it','ar'];
+  if (supported.includes(primaryLang) && primaryLang !== 'fr') {
+    var script = document.createElement('script');
+script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(script);
+  }
+})();
+</script>
 <script>
 // === COMPTEUR D'UTILISATEURS FLUIDE & RÉALISTE ===
 document.addEventListener("DOMContentLoaded", () => {
@@ -1009,166 +986,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.replace("https://betbotx.github.io/PREDICTOR/index.html");
   }
 </script>
-
 <script type='text/javascript' src='//abjectjunctionlatest.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
-
-<!-- GOOGLE TRANSLATE (SCRIPTS) -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'fr,es,pt',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-}
-</script>
-
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<style>
-/* Style du menu Google Translate */
-#google_translate_element select {
-    background: transparent !important;
-    color: #00ff00 !important; /* Vert fluo */
-    border: 1px solid #00ff00 !important;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Options dans la liste déroulante */
-.goog-te-menu-frame * {
-    color: #00ff00 !important;
-}
-  /* Supprimer la barre Google */
-  .goog-te-banner-frame.skiptranslate {
-    display: none !important;
-  }
-  body {
-    top: 0 !important;
-  }
-
-
-  #google_translate_container {
-     position: fixed;
-    top: 0;                  /* collé tout en haut */
-    left: 50%;               /* positionne au milieu horizontal */
-    transform: translateX(-50%); /* recentre parfaitement */
-    z-index: 9999;
-  }
-
-  /* Style sombre cohérent avec ton design */
-  .goog-te-gadget-simple {
-    background-color: #111 !important;
-    border: 1px solid #333 !important;
-    padding: 6px 10px !important;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #fff !important;
-    cursor: pointer;
-    transform: scale(0.75); /* 75% de la taille */
-
-  }
-/* Réduit encore le select interne */
-#google_translate_element select {
-    font-size: 10px !important;
-    padding: 1px 4px !important;
-    height: 20px !important;
-    line-height: 14px !important;
-
-}
-
-/* Optionnel : réduire l’espace autour */
-#google_translate_element {
-    margin: 5px !important;
-    padding: 0 !important;
-}
-  .goog-te-gadget-simple span {
-    color: #fff !important;
-  }
-
-  .goog-te-gadget-icon {
-    display: none !important;  /* Supprime le logo Google moche */
-  }
-
-  .goog-te-combo {
-    background-color: #111 !important;
-    color: #fff !important;
-    border: 1px solid #333 !important;
-    padding: 6px 8px !important;
-    border-radius: 6px !important;
-  }
-</style>
-<script>
-// Fonction qui injecte du CSS dans l'iframe Google Translate
-function styleGoogleTranslateMenu() {
-    const iframe = document.querySelector("iframe.goog-te-menu-frame");
-
-    if (!iframe) {
-        // Réessaye jusqu'à ce que l'iframe soit chargée
-        setTimeout(styleGoogleTranslateMenu, 300);
-        return;
-    }
-
-    const css = `
-        * {
-            color: #00ff00 !important; /* vert fluo */
-            background: #000 !important; /* fond noir */
-        }
-        .goog-te-menu2-item div,
-        .goog-te-menu2-item-selected div {
-            color: #00ff00 !important;
-        }
-    `;
-
-    const styleTag = iframe.contentDocument.createElement("style");
-    styleTag.innerHTML = css;
-    iframe.contentDocument.head.appendChild(styleTag);
-}
-
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,fr,es,pt,ru,de,cn,ko',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-
-    // stylise le menu une fois ouvert
-    setTimeout(styleGoogleTranslateMenu, 1500);
-}
-</script>
-
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<style>
-/* Réduction du sélecteur Google Translate */
-#google_translate_element select {
-    font-size: 11px !important;     /* texte plus petit */
-    padding: 2px 6px !important;    /* réduit la hauteur */
-    height: auto !important;
-    line-height: 14px !important;
-
-    /* Style vert fluo */
-    color: #00ff00 !important;
-    border: 1px solid #00ff00 !important;
-    background: #000 !important;
-    border-radius: 4px !important;
-}
-</style>
-<script>
-function forceEnglishLabel() {
-  const select = document.querySelector("#google_translate_element select");
-  if (select && select.options.length > 0) {
-    select.options[0].text = "Select Language"; // force en anglais
-  } else {
-    // réessaye si le menu n'est pas encore prêt
-    setTimeout(forceEnglishLabel, 500);
-  }
-}
-document.addEventListener("DOMContentLoaded", forceEnglishLabel);
-</script>
 </body>
 </html>
-
-
