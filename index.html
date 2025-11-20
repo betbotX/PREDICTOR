@@ -117,44 +117,15 @@
   scrollbar-width: thin;
   scrollbar-color: #00ff6a #000;
 }
-  html, body { cursor: none !important; }
 html, body {
   height: 100%;
   margin: 0;
   scroll-behavior: smooth;
   overflow-y: auto; /* ✅ permet le scroll vertical */
 }
+html, body { cursor: default !important; }
 
-  .neon-cursor {
-    position: fixed;
-    width: 18px;
-    height: 18px;
-    background: #00ff6a;
-    border-radius: 50%;
-    box-shadow:
-      0 0 8px #00ff6a,
-      0 0 20px #00ff6a,
-      0 0 40px #00ff6a;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999999;
-    transition: transform 0.07s ease-out;
-    opacity: 0;
-  }
-
-  .cursor-halo {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background: radial-gradient(circle, rgba(0,255,106,0.25) 0%, rgba(0,255,106,0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999998;
-    transition: transform 0.12s ease-out;
-    opacity: 0;
-  }
-.navbar {
+ .navbar {
   display: flex;
   flex-direction: column; /* empile menu + compteur */
   align-items: center;    /* centre tout horizontalement */
@@ -241,15 +212,20 @@ html, body {
   color: rgba(0,255,106,0.85);
 }
 /* Désactiver le curseur neon + le curseur normal sur mobile */
-@media (max-width: 768px) {
-    #cursor {
-        display: none !important; /* masque ton rond néon */
-    }
 
-    html, body, * {
-        cursor: none !important; /* masque le curseur normal */
-    }
+@media (max-width: 768px) {
+  html, body {
+    cursor: auto !important; /* réactive le curseur normal */
+  }
 }
+
+@media only screen and (max-width: 900px), (pointer: coarse) {
+  html, body {
+    cursor: default !important; /* force le curseur classique gris */
+  }
+}
+
+
 /* Mobile : supprimer tout curseur */
 @media only screen and (max-width: 900px), (pointer: coarse) {
     #cursor {
@@ -258,44 +234,19 @@ html, body {
         visibility: hidden !important;
     }
 
-    html, body, * {
-        cursor: none !important;
-    }
+   html, body {
+  cursor: default !important; /* force le curseur classique gris */
 }
+
+
   @media (max-width: 768px) {
   html, body {
     cursor: auto !important; /* réactive le curseur normal */
   }
 
-  .neon-cursor,
-  .cursor-halo {
-    display: none !important; /* supprime entièrement les éléments neon */
-  }
-}
-
 
 </style>
-  
-<div class="cursor-halo"></div>
-<div class="neon-cursor"></div>
 
-<script>
-  const cursor = document.querySelector('.neon-cursor');
-  const halo = document.querySelector('.cursor-halo');
-  let visible = false;
-
-  document.addEventListener('mousemove', e => {
-    if (!visible) {
-      cursor.style.opacity = 1;
-      halo.style.opacity = 1;
-      visible = true;
-    }
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    halo.style.left = e.clientX + 'px';
-    halo.style.top = e.clientY + 'px';
-  });
-</script>
 
 
 
@@ -606,7 +557,7 @@ footer {
   font-weight: 600;
   font-family: 'Orbitron', monospace;
   padding-top: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
   margin-top: 18px;   /* réduit l'espace au-dessus du footer */
 }
 footer a {
