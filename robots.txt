@@ -5,7 +5,7 @@
 
 User-agent: *
 # ✅ Autoriser les pages principales
-Allow: /PREDICTOR/index.html
+Allow: /PREDICTOR/
 Allow: /PREDICTOR/about.html
 Allow: /PREDICTOR/blog.html
 Allow: /PREDICTOR/news.html
@@ -33,3 +33,4 @@ Disallow: /tmp/
 # Website: https://betbotx.github.io/PREDICTOR/
 # Author: PREDICTOR by betbotX (ANFAtech)
 # Contact: support@betbotx.ai
+
