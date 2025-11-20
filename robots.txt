@@ -1,10 +1,17 @@
 # ==========================================
 # 🤖 robots.txt for PREDICTOR by betbotX
-# Last updated: 2025-10-27
+# Last updated: 2025-11-20
 # ==========================================
 
 User-agent: *
-Allow: /
+# ✅ Autoriser les pages principales
+Allow: /PREDICTOR/index.html
+Allow: /PREDICTOR/about.html
+Allow: /PREDICTOR/blog.html
+Allow: /PREDICTOR/news.html
+Allow: /PREDICTOR/privacy.html
+Allow: /PREDICTOR/terms.html
+Allow: /PREDICTOR/contact.html
 
 # 📄 Sitemap
 Sitemap: https://betbotx.github.io/PREDICTOR/sitemap.xml
@@ -20,12 +27,9 @@ Disallow: /tmp/
 # 🌍 General info
 # ==========================================
 # This robots.txt file allows all search engines to crawl
-# and index all pages of the site.
-# The sitemap-index.xml helps Google discover all pages
-# and sub-sitemaps efficiently.
+# and index the listed pages of the site.
+# The sitemap helps Google discover all pages efficiently.
 
 # Website: https://betbotx.github.io/PREDICTOR/
 # Author: PREDICTOR by betbotX (ANFAtech)
 # Contact: support@betbotx.ai
-
-
