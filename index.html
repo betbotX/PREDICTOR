@@ -7,8 +7,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
 <link rel="shortcut icon" href="https://betbotx.github.io/PREDICTOR/favicon.ico">
-<!-- 💚 CURSEUR NEON FLUO -->
 <style>
+
 #google_translate_element {
   position: fixed;
   top: 5px; /* tout en haut */
@@ -78,13 +78,7 @@
   max-height: 600px;   /* ou 500, 700… selon ton design */
   overflow-y: auto;    /* ajoute une barre de défilement interne */
 }
-.green-led {
-  width: 10px; height: 10px;
-  background-color: #00ff6a;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
-  animation: pulse 1.5s infinite;
-}
+
 .commentbox {
   max-height: 600px;
   overflow-y: auto;
@@ -141,16 +135,6 @@ html, body { cursor: default !important; }
 }
 
 
-.green-led {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #00ff6a;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #00ff6a, 0 0 15px #00ff6a;
-  margin-right: 6px;
-  animation: pulse 1.5s infinite;
-}
 
 /* --- BARRE VERTICALE FLUO --- */
 .vertical-bar {
@@ -214,18 +198,17 @@ html, body { cursor: default !important; }
 }
 /* Désactiver le curseur neon + le curseur normal sur mobile */
 
-@media (max-width: 768px) {
-  html, body {
-    cursor: auto !important; /* réactive le curseur normal */
-  }
-}
-
 @media only screen and (max-width: 900px), (pointer: coarse) {
-  html, body {
-    cursor: default !important; /* force le curseur classique gris */
-  }
-}
+   html, body {
+     cursor: default !important;
+   }
 
+   @media (max-width: 768px) {
+      html, body {
+         cursor: auto !important;
+      }
+   }
+}
 
 /* Mobile : supprimer tout curseur */
 @media only screen and (max-width: 900px), (pointer: coarse) {
@@ -240,10 +223,6 @@ html, body { cursor: default !important; }
 }
 
 
-  @media (max-width: 768px) {
-  html, body {
-    cursor: auto !important; /* réactive le curseur normal */
-  }
 
 
 </style>
@@ -260,7 +239,6 @@ html, body { cursor: default !important; }
 <meta name="apple-mobile-web-app-title" content="PREDICTOR by betbotX">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#00ff6a">
 <!-- 🌍 META SEO ULTRA OPTIMISÉES PREDICTOR BY BETBOTX 2025/2026 -->
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta property="og:locale" content="en_US" />
@@ -270,11 +248,9 @@ html, body { cursor: default !important; }
 
 <title>Home | PREDICTOR by betbotX - Neural Football Predictor Engine 2025/2026 – AI Match Predictions & Global Insights</title>
 
-<!-- 🧠 DESCRIPTION BILINGUE ULTRA SEO (FR + EN) -->
+<!-- 🧠 DESCRIPTION BILINGUE ULTRA SEO (EN) -->
 <meta name="description" content="
 PREDICTOR by betbotX – the most powerful AI football prediction platform. Get real-time analytics, match forecasts and tactical insights powered by data science. Covers the Champions League, 2026 World Cup (USA, Canada, Mexico), and top leagues from Europe, Africa, Asia & Latin America. Follow elite clubs like Real Madrid, FC Barcelona, PSG, Manchester City, Al Ahly, and players such as Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah, and Vinícius Jr.
-FR : PREDICTOR by betbotX – l’IA la plus avancée pour les pronostics de football. Analysez les matchs avec l’intelligence artificielle, les statistiques en temps réel et des prédictions fiables. Couvre la Ligue des Champions, la Coupe du Monde 2026 (États-Unis, Canada, Mexique), l’Europe, l’Afrique, l’Amérique Latine et l’Asie. Suivez vos clubs préférés comme le Real Madrid, FC Barcelone, PSG, Manchester City, Al Ahly et Raja Casablanca, et les stars mondiales comme Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah et Vinícius Jr.">
-
 <!-- 🔑 Mots-clés ultra complets -->
 <meta name="keywords" content="PREDICTOR, AI football predictions, pronostics IA, football analytics, neural predictor, match analysis, sports data engine, machine learning football, predictive algorithm,
 Champions League 2025, Europa League, World Cup 2026 USA, Coupe du Monde 2026, Euro 2028, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Eredivisie, Super Lig, Primeira Liga, Jupiler Pro League, CAF Champions League, Africa Cup of Nations, Copa Libertadores, Copa América, AFC Asian Cup,
@@ -318,7 +294,6 @@ football AI, predictive football engine, sports data analytics, match insights, 
 
 <!-- 🧭 URL canonique -->
 <link rel="canonical" href="https://betbotx.github.io/PREDICTOR/">
-<link rel="canonical" href="https://betbotx.github.io/PREDICTOR/index.html">
 <link rel="alternate" href="https://betbotx.github.io/PREDICTOR/index.html" hreflang="en" />
 <link rel="alternate" href="https://betbotx.github.io/PREDICTOR/about.html" hreflang="en" />
 <link rel="alternate" href="https://betbotx.github.io/PREDICTOR/blog.html" hreflang="en" />
@@ -396,14 +371,6 @@ nav a:hover {
   color: var(--neon);
   text-shadow: 0 0 10px rgba(0,255,106,0.9);
 }
-.ticker {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  border-top: 1px solid rgba(0,255,106,0.2);
-  border-bottom: 1px solid rgba(0,255,106,0.2);
-  margin-bottom: 15px;
-  }
 .ball {
   font-size: 0.9em;
   color: var(--neon);
@@ -412,18 +379,9 @@ nav a:hover {
   animation: rotateBall 3s linear infinite;
 }
 @keyframes rotateBall { 0%{transform:rotate(0deg);}100%{transform:rotate(360deg);} }
-.ticker-text {
-  display: inline-block;
-  padding-left: 100%;
-  animation: ticker 45s linear infinite;
-  color: var(--neon);
-  text-shadow: 0 0 6px rgba(0,255,106,0.8);
-  font-size: 16px;
-  font-weight: 600;
-}
-@keyframes ticker { 0%{transform:translateX(0);}100%{transform:translateX(-100%);} }
+
 h1 {
-  font-size: 45px;
+  font-size: 48px;
   color: var(--neon);
   text-shadow: 0 0 25px rgba(0,255,106,0.9);
   text-align: center;
@@ -571,9 +529,6 @@ footer a {
   text-align: center;
   margin-top: 20px;
 }
-.commentbox .commentbox-footer { display: none !important; }
-.commentbox { margin-bottom: 0 !important; }
-
 
 
 
@@ -596,10 +551,12 @@ document.addEventListener("click", function () {
 </script>
 
 
-
 <div class="vertical-bar"></div>
 
 <main>
+
+
+
 <nav class="navbar">
   <div class="nav-center">
     <a href="index.html">Home</a> |
@@ -616,11 +573,6 @@ document.addEventListener("click", function () {
   <span class="green-led"></span>Loading...
 </div>
 </nav>
-
-
-<div class="ticker">
-  <div class="ticker-text">Reliable AI football intelligence : Built on verified data sources and advanced analytical engines to ensure accurate, transparent, and data-driven match insights | Global AI coverage - Every major league, every match, everywhere | Our engine has been fully upgraded with the latest data : faster, smarter, and more accurate than ever!</div>
-</div>
 
 
 <!-- ✅ Ajout d’images visibles avec alt -->
@@ -648,7 +600,7 @@ document.addEventListener("click", function () {
 
 
   <p class="info-light" style="margin-bottom: 7px;">Enter the match in the correct format and spelling</p>
-<input id="matchInput" class="match";" placeholder="(e.g. Real Madrid vs Barça)">
+<input id="matchInput" class="match"" placeholder="(e.g. Real Madrid vs Barça)">
 
   <button id="callBtn" class="call">Call Agent</button>
   <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
@@ -711,10 +663,12 @@ FR : PREDICTOR by betbotX est un moteur d'intelligence artificielle de football 
     "https://www.linkedin.com/company/betbotx"
   ],
   "foundingDate": "2025-09-01",
-  "founders": [{
+  "founders": [
+{
     "@type": "Organization",
     "name": "ANFAtech"
-  }],
+  }
+],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "Support client / Customer Service",
@@ -733,32 +687,9 @@ FR : PREDICTOR by betbotX est un moteur d'intelligence artificielle de football 
     "match prediction engine",
     "sports data intelligence",
     "deep learning football AI",
-    "machine learning in football",
-    "football match insights",
-    "football statistics analysis",
-    "predictive sports algorithms",
-    "realistic football forecasts",
-    "tactical analysis AI",
-    "Champions League predictions",
-    "Premier League analysis",
-    "La Liga AI forecasts",
-    "Serie A insights",
-    "Bundesliga predictions",
-    "Ligue 1 analytics",
-    "Africa Cup of Nations predictions",
-    "CAF Champions League AI",
-    "World Cup 2026 predictions",
-    "Euro 2028 AI predictor",
-    "football AI for Africa",
-    "Asian football analytics",
-    "Latin American football data",
-    "coupe d'afrique 2026",
-    "Maroc 2026",
-    "Morocco 2026",
-    "Maroc, algérie, tunisie, égypte",
-    "Morocco, Algeria, Tunisia, Egypt"
-  ]
-}
+    "machine learning in football"
+
+  ],
   "keywords": "AI football predictions, prédictions IA football, football analytics, analyse de match IA, pronostics de football, neural predictor, sports data, match prediction, deep learning, machine learning football, predictive algorithm, Champions League, Europa League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, World Cup 2026, Coupe du Monde 2026, Euro 2028, Africa Cup of Nations, CAF Champions League, Copa América, Copa Libertadores, AFC Asian Cup, Real Madrid, FC Barcelona, PSG, Manchester City, Liverpool, Arsenal, Chelsea, Bayern Munich, Inter Milan, Juventus, Al Ahly, Raja Casablanca, Wydad Casablanca, Mamelodi Sundowns, Espérance Tunis, Lamine Yamal, Kylian Mbappé, Lionel Messi, Cristiano Ronaldo, Erling Haaland, Neymar, Kevin De Bruyne, Luka Modric, Karim Benzema, Mohamed Salah, Sadio Mané, Riyad Mahrez, Vinícius Jr, Jude Bellingham, Hakim Ziyech, Achraf Hakimi, Victor Osimhe, coupe d'afrique 2026, maroc 2026,"
 }
 </script>
@@ -986,4 +917,3 @@ document.addEventListener("DOMContentLoaded", () => {
 <script type='text/javascript' src='//abjectjunctionlatest.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 </body>
 </html>
-
