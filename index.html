@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <!-- 🌟 Favicons -->
-<link rel="icon" type="image/png" href="/PREDICTOR/favicon-32x32.png">
+<link rel="icon" href="https://betbotx.github.io/PREDICTOR/favicon-48x48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
@@ -18,7 +19,6 @@
   border-bottom: 1px solid rgba(0,255,106,0.3);
   box-shadow: 0 0 15px rgba(0,255,106,0.4);
   overflow: hidden;
-  z-index: 10000; /* au-dessus de tout */
   height: 32px;
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@
   margin-left: 40px;
  position: relative;
   left: -14px; /* décale de 2 cm environ vers la gauche */
- transform: translateY(1mm); /* 🔹 la descend de 10 mm */}
+ transform: translateY(4px); /* 🔹 la descend de 10 mm */}
 .commentbox {
   max-height: 600px;   /* ou 500, 700… selon ton design */
   overflow-y: auto;    /* ajoute une barre de défilement interne */
@@ -250,7 +250,7 @@ html, body { cursor: default !important; }
 
 <!-- 🧠 DESCRIPTION BILINGUE ULTRA SEO (EN) -->
 <meta name="description" content="
-PREDICTOR by betbotX – the most powerful AI football prediction platform. Get real-time analytics, match forecasts and tactical insights powered by data science. Covers the Champions League, 2026 World Cup (USA, Canada, Mexico), and top leagues from Europe, Africa, Asia & Latin America. Follow elite clubs like Real Madrid, FC Barcelona, PSG, Manchester City, Al Ahly, and players such as Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah, and Vinícius Jr.
+PREDICTOR by betbotX – the most powerful AI football prediction platform. Get real-time analytics, match forecasts and tactical insights powered by data science. Covers the Champions League, 2026 World Cup (USA, Canada, Mexico), and top leagues from Europe, Africa, Asia & Latin America. Follow elite clubs like Real Madrid, FC Barcelona, PSG, Manchester City, Al Ahly, and players such as Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah, and Vinícius Jr.">
 <!-- 🔑 Mots-clés ultra complets -->
 <meta name="keywords" content="PREDICTOR, AI football predictions, pronostics IA, football analytics, neural predictor, match analysis, sports data engine, machine learning football, predictive algorithm,
 Champions League 2025, Europa League, World Cup 2026 USA, Coupe du Monde 2026, Euro 2028, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Eredivisie, Super Lig, Primeira Liga, Jupiler Pro League, CAF Champions League, Africa Cup of Nations, Copa Libertadores, Copa América, AFC Asian Cup,
@@ -260,7 +260,6 @@ football AI, predictive football engine, sports data analytics, match insights, 
 
 <!-- 👤 Auteur + Robots -->
 <meta name="author" content="PREDICTOR by betbotX">
-<meta name="robots" content="index, follow">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
 <!-- 🌐 Langue + Zone géographique -->
@@ -310,8 +309,6 @@ football AI, predictive football engine, sports data analytics, match insights, 
 <!-- Apple & PWA -->
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
 
-<!-- Couleur de fond mobile -->
-<meta name="theme-color" content="#00ff6a">
 <style>
 .blinking { animation: blink 2.5s infinite; }
 @keyframes blink { 0%,100% {opacity:0.4;} 50%{opacity:1;} }
@@ -433,7 +430,7 @@ h1 {
 }
 .info-light {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
 }
 .match {
   margin-top: 12px;
@@ -490,7 +487,7 @@ h1 {
   text-shadow: 0 0 8px rgba(0,255,106,0.5);
   white-space: pre-line;
 top: 20px; /* descend le texte d’environ 8 mm */
-  transform: translateY(4mm);
+  transform: translateY(16px);
 
 }
 
@@ -589,22 +586,26 @@ document.addEventListener("click", function () {
 
 <img src="https://betbotx.github.io/PREDICTOR/favicon-32x32.png" 
      alt="Predictor AI favicon" 
-     width="2" height="32" style="display:none;">
+     width="32" height="32" style="display:none;">
 
 <!-- ✅ Image Open Graph avec alt -->
-<meta property="og:image" content="https://tonsite.com/assets/predictor-preview.jpg">  
-<h1>PREDICT<span class="ball">⚽</span>R</h1>
+<meta property="og:image" content="https://betbotx.github.io/PREDICTOR/logopredictor.png">  
+<<h1 style="margin:0;">
+  <img src="https://betbotx.github.io/PREDICTOR/logo.png" 
+       alt="PREDICTOR by betbotX logo" 
+       class="site-logo">
+</h1>
 <p class="subtitle">by betbotX</p>
 
 
 <section class="panel">
-  <p class="info-strong" style="margin-bottom: 0px;">TERMINAL ACTIVATED 🟢</p>
+  <p class="info-strong" style="margin-bottom: 6px;">TERMINAL ACTIVATED 🟢</p>
 <p style="color: #00ff6a; font-weight: 700; font-size: 10px; margin: 2px 0 45px; text-shadow: 0 0 8px #00ff6a; text-align: center;">
   PREDICTOR v2.1
 </p>
 
 
-  <p class="info-light" style="margin-bottom: 5px;">Enter the match in the correct format and spelling</p>
+  <p class="info-light" style="margin-bottom: 7px;">Enter the match in the correct format and spelling</p>
 <input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)">
 
   <button id="callBtn" class="call">Call Agent</button>
@@ -658,8 +659,8 @@ document.addEventListener("click", function () {
   "alternateName": "Predictor - betbotX",
   "url": "https://betbotx.github.io/PREDICTOR/",
   "logo": "https://betbotx.github.io/PREDICTOR/favicon-192x192.png",
-  "description": "EN : PREDICTOR by betbotX is an advanced AI football prediction engine that analyzes global matches to deliver accurate forecasts, detailed analytics, and tactical insights powered by machine learning and real-time sports data. The platform covers top leagues such as the UEFA Champions League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, CAF Champions League, and international tournaments including the 2026 World Cup and Euro 2028.
-FR : PREDICTOR by betbotX est un moteur d'intelligence artificielle de football qui analyse les matchs du monde entier pour offrir des prédictions précises, des statistiques avancées et des analyses tactiques basées sur des données en temps réel. ",
+  "inLanguage": "en"
+  "description": "EN : PREDICTOR by betbotX is an advanced AI football prediction engine that analyzes global matches to deliver accurate forecasts, detailed analytics, and tactical insights powered by machine learning and real-time sports data. The platform covers top leagues such as the UEFA Champions League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, CAF Champions League, and international tournaments including the 2026 World Cup and Euro 2028,
   "sameAs": [
     "https://www.instagram.com/betbotx",
     "https://t.me/betbotxvip",
@@ -822,16 +823,7 @@ window.addEventListener("error", function (e) {
   }
 });
 </script>
-<!-- 🔍 SEO Internal Links Block — helps Google index all pages -->
-<section style="display:none;">
-  <h2>Site Map – betbotX Predictor AI</h2>
-  <ul>
-    <li><a href="https://betbotx.github.io/PREDICTOR/">Home – AI Football Predictor</a></li>
-    <li><a href="https://betbotx.github.io/PREDICTOR/about.html">About – Learn about our AI prediction system</a></li>
-    <li><a href="https://betbotx.github.io/PREDICTOR/privacy.html">Privacy Policy – Data and user transparency</a></li>
-    <li><a href="https://betbotx.github.io/PREDICTOR/terms.html">Terms of Use – Platform rules and legal terms</a></li>
-    <li><a href="https://betbotx.github.io/PREDICTOR/contact.html">Contact – Get in touch with betbotX</a></li>
-  </ul>
+
 </section>
 </main>
 <footer>
@@ -922,4 +914,3 @@ document.addEventListener("DOMContentLoaded", () => {
 <script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 </body>
 </html>
-
