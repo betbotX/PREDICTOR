@@ -44,9 +44,9 @@
 }
 img.site-logo {
   display: block;        /* permet de centrer avec margin auto */
-  margin-top: 2px;         /* supprime l’espace au-dessus */
+  margin-top: 2;         /* supprime l’espace au-dessus */
   margin-bottom: 0;      /* supprime l’espace en dessous */
-  padding-top: 0;        /* supprime le padding haut */
+  padding-top: 2;        /* supprime le padding haut */
   padding-bottom: 0;     /* supprime le padding bas */
   margin-left: auto;     /* centre horizontalement */
   margin-right: auto;    /* centre horizontalement */
@@ -85,9 +85,11 @@ img.site-logo {
  position: relative;
   left: -14px; /* décale de 2 cm environ vers la gauche */
  transform: translateY(4px); /* 🔹 la descend de 10 mm */}
+
 .commentbox {
   max-height: 600px;   /* ou 500, 700… selon ton design */
   overflow-y: auto;    /* ajoute une barre de défilement interne */
+
 }
 
 /* --- SCROLLBAR NEON --- */
@@ -525,8 +527,9 @@ footer a {
   text-align: center;
   margin-top: 20px;
 }
-
-
+.comment-box > .header {
+padding: 0px 0px;
+}
 
 </style>
 
@@ -913,6 +916,3 @@ document.addEventListener("DOMContentLoaded", () => {
 <script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 </body>
 </html>
-
-
-
