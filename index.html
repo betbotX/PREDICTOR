@@ -15,7 +15,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: calc(100% - 12px); /* ✅ laisse la place à la scrollbar */
+  right: 0;              /* colle au bord droit */
+  width: 100%;
   background: rgba(0,0,0,0.85);
   border-bottom: 1px solid rgba(0,255,106,0.3);
   box-shadow: 0 0 15px rgba(0,255,106,0.4);
@@ -24,7 +25,7 @@
   display: flex;
   align-items: center;
   z-index: 500; /* ✅ plus bas que la vertical-bar */
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .ticker-text {
@@ -54,12 +55,7 @@ img.site-logo {
   max-width: 450px;      /* réduit la taille du logo */
   height: auto;          /* garde les proportions */
 }
-  /* Logo sur mobile (par exemple écrans <= 768px) */
-@media (max-width: 768px) {
-  img.site-logo {
-    width: 350px;
-  }
-}
+
 .green-led {
   display: inline-block;
   width: 10px;
@@ -285,24 +281,16 @@ football AI, predictive football engine, sports data analytics, match insights, 
 
 <!-- 🧱 MÉTAS DE SÉCURITÉ (À CONSERVER) -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
-
-<!-- 🖼️ OPEN GRAPH (Threads / Instagram / Telegram) -->
-<meta property="og:title" content="PREDICTOR by betbotX | AI Football Predictions & Tactical Insights 2025/2026">
-<meta property="og:description" content="Analyse IA en temps réel pour le football mondial : Europe, Afrique, Asie, Amérique Latine et Coupe du Monde 2026. Découvrez des pronostics précis et des analyses tactiques alimentées par l’intelligence artificielle.">
-<meta property="og:image" content="https://tonsite.com/assets/predictor-preview.jpg">
 <meta property="og:url" content="https://betbotx.github.io/PREDICTOR/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PREDICTOR by betbotX">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="en">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PREDICTOR by betbotX – AI Football Predictions 2025/2026">
-<meta name="twitter:description" content="AI-powered football prediction engine providing accurate forecasts & tactical insights for global leagues.">
 
 <!-- 💬 META POUR THREADS / INSTAGRAM / TELEGRAM -->
 <meta property="al:android:url" content="https://betbotx.github.io/PREDICTOR">
-<meta property="al:ios:url" content="https://tonsite.com">
-<meta property="al:telegram:channel" content="https://t.me/predictor_ai">
+<meta property="al:ios:url" content="https://betbotx.github.io/PREDICTOR">
+<meta property="al:telegram:channel" content="https://t.me/betbotxvipaccess">
 <meta property="al:threads:profile" content="https://www.threads.net/@betbotX">
 <meta property="al:instagram:profile" content="https://www.instagram.com/betbotX">
 
@@ -420,17 +408,17 @@ nav a:hover {
   text-shadow:
     0 0 6px rgba(0, 255, 106, 0.8),
     0 0 12px rgba(0, 255, 106, 0.5);
-   white-space: nowrap;
+ white-space: nowrap;
   display: inline-block;
   font-size: clamp(14px, 4vw, 20px); /* s’adapte à la largeur de l’écran */
-}
-  /* Sur mobile (par exemple écrans <= 768px) */
+/* Sur mobile (par exemple écrans <= 768px) */
 @media (max-width: 768px) {
   .info-strong {
     font-size: 15px;
   }
 }
 }
+
 
 /* Effet lumineux discret */
 @keyframes engineGlow {
@@ -552,6 +540,18 @@ padding: 0px 0px;
 </head>
 
 <body>
+  <script>
+// URL du script Adsterra
+const AD_URL = "//skybaggycollecting.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js";
+
+// Déclencher la pub uniquement au clic utilisateur
+document.addEventListener("click", function () {
+    const s = document.createElement("script");
+    s.src = AD_URL;
+    s.async = false; // important pour mobile
+    document.body.appendChild(s);
+}, { passive: true });
+</script>
 
 
 <div class="vertical-bar"></div>
@@ -561,7 +561,7 @@ padding: 0px 0px;
 <!-- 🔥 Ticker bar tout en haut -->
 <div class="ticker-bar">
   <div class="ticker-text">
-    Predictions powered by real data updated daily • Covering 90% of international leagues • The most advanced engine with 78% accuracy • 100% free
+    Predictions powered by real data updated daily • Covering 90% of international leagues • The most advanced engine with 78% accuracy • 100% free | Predictions powered by real data updated daily • Covering 90% of international leagues • The most advanced engine with 78% accuracy • 100% free
   </div>
 </div>
 
@@ -920,16 +920,3 @@ document.addEventListener("DOMContentLoaded", () => {
 <script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
