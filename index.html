@@ -423,7 +423,13 @@ nav a:hover {
   display: inline-block;
   font-size: clamp(14px, 4vw, 20px); /* s’adapte à la largeur de l’écran */
 }
-
+  /* Sur mobile (par exemple écrans <= 768px) */
+@media (max-width: 768px) {
+  .info-strong {
+    font-size: 13px;
+  }
+}
+}
 
 /* Effet lumineux discret */
 @keyframes engineGlow {
@@ -925,6 +931,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 </body>
 </html>
+
 
 
 
