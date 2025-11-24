@@ -9,6 +9,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
 <style>
+
 /* --- TICKER BAR --- */
 .ticker-bar {
   position: fixed;
@@ -41,7 +42,18 @@
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
+img.site-logo {
+  display: block;        /* permet de centrer avec margin auto */
+  margin-top: 0;         /* supprime l’espace au-dessus */
+  margin-bottom: 0;      /* supprime l’espace en dessous */
+  padding-top: 0;        /* supprime le padding haut */
+  padding-bottom: 0;     /* supprime le padding bas */
+  margin-left: auto;     /* centre horizontalement */
+  margin-right: auto;    /* centre horizontalement */
+  max-width: 450px;      /* réduit la taille du logo */
+  height: auto;          /* garde les proportions */
 
+}
 .green-led {
   display: inline-block;
   width: 10px;
@@ -224,7 +236,6 @@ html, body { cursor: default !important; }
 
 
 
-
 </style>
 
 
@@ -377,14 +388,7 @@ nav a:hover {
 }
 @keyframes rotateBall { 0%{transform:rotate(0deg);}100%{transform:rotate(360deg);} }
 
-h1 {
-  font-size: 45px;
-  color: var(--neon);
-  text-shadow: 0 0 25px rgba(0,255,106,0.9);
-  text-align: center;
-  letter-spacing: 3px;
-  margin: 5px 0 0;
-}
+
 .subtitle {
   color: #00ff88;
   font-size: 15px;
@@ -590,7 +594,7 @@ document.addEventListener("click", function () {
 
 <!-- ✅ Image Open Graph avec alt -->
 <meta property="og:image" content="https://betbotx.github.io/PREDICTOR/logopredictor.png">  
-<<h1 style="margin:0;">
+<h1 style="margin:0;">
   <img src="https://betbotx.github.io/PREDICTOR/logo.png" 
        alt="PREDICTOR by betbotX logo" 
        class="site-logo">
