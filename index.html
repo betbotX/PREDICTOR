@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+
 <!-- 🌟 Favicons -->
 <link rel="icon" href="https://betbotx.github.io/PREDICTOR/favicon-48x48.png" type="image/png" sizes="48x48">
-<link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
@@ -45,9 +45,9 @@
 }
 img.site-logo {
   display: block;        /* permet de centrer avec margin auto */
-  margin-top: 2;         /* supprime l’espace au-dessus */
+  margin-top: 0;         /* supprime l’espace au-dessus */
   margin-bottom: 0;      /* supprime l’espace en dessous */
-  padding-top: 2;        /* supprime le padding haut */
+  padding-top: 0;        /* supprime le padding haut */
   padding-bottom: 0;     /* supprime le padding bas */
   margin-left: auto;     /* centre horizontalement */
   margin-right: auto;    /* centre horizontalement */
@@ -70,10 +70,7 @@ img.site-logo {
   margin-right: 6px;
   animation: pulse 1.5s infinite;
 }
-@keyframes pulse {
-  0%, 100% { opacity: 0.9; }
-  50% { opacity: 0.5; }
-}
+
 
 #liveUsers {
   background: rgba(0, 255, 106, 0.08);
@@ -127,13 +124,7 @@ img.site-logo {
   scrollbar-width: thin;
   scrollbar-color: #00ff6a #000;
 }
-html, body {
-  height: 100%;
-  margin: 0;
-  scroll-behavior: smooth;
-  overflow-y: auto; /* ✅ permet le scroll vertical */
-  overflow-x: hidden;
-}
+
 html, body { cursor: default !important; }
 
  .navbar {
@@ -189,7 +180,7 @@ html, body { cursor: default !important; }
   letter-spacing: 0.5px;
 }
 
-.supported-leagues h3 {
+.supported-leagues h2 {
   font-size: 18px;
   margin-bottom: 15px;
 }
@@ -215,15 +206,10 @@ html, body { cursor: default !important; }
 /* Désactiver le curseur neon + le curseur normal sur mobile */
 
 @media only screen and (max-width: 900px), (pointer: coarse) {
-   html, body {
-     cursor: default !important;
-   }
-
-   @media (max-width: 768px) {
-      html, body {
-         cursor: auto !important;
-      }
-   }
+  html, body { cursor: default !important; }
+}
+@media (max-width: 768px) {
+  html, body { cursor: auto !important; }
 }
 
 /* Mobile : supprimer tout curseur */
@@ -234,9 +220,6 @@ html, body { cursor: default !important; }
         visibility: hidden !important;
     }
 
-   html, body {
-  cursor: default !important; /* force le curseur classique gris */
-}
 
 
 
@@ -258,7 +241,6 @@ html, body { cursor: default !important; }
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="en" />
-<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
 
 
 <title>Home | PREDICTOR by betbotX - Neural Football Predictor Engine 2025/2026 – AI Match Predictions & Global Insights</title>
@@ -268,10 +250,7 @@ html, body { cursor: default !important; }
 PREDICTOR by betbotX – the most powerful AI football prediction platform. Get real-time analytics, match forecasts and tactical insights powered by data science. Covers the Champions League, 2026 World Cup (USA, Canada, Mexico), and top leagues from Europe, Africa, Asia & Latin America. Follow elite clubs like Real Madrid, FC Barcelona, PSG, Manchester City, Al Ahly, and players such as Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah, and Vinícius Jr.">
 <!-- 🔑 Mots-clés ultra complets -->
 <meta name="keywords" content="PREDICTOR, AI football predictions, pronostics IA, football analytics, neural predictor, match analysis, sports data engine, machine learning football, predictive algorithm,
-Champions League 2025, Europa League, World Cup 2026 USA, Coupe du Monde 2026, Euro 2028, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Eredivisie, Super Lig, Primeira Liga, Jupiler Pro League, CAF Champions League, Africa Cup of Nations, Copa Libertadores, Copa América, AFC Asian Cup,
-Real Madrid, FC Barcelona, Manchester City, Manchester United, Liverpool, Arsenal, Chelsea, PSG, Bayern Munich, Borussia Dortmund, Inter Milan, AC Milan, Juventus, Napoli, Ajax, Benfica, Porto, Sporting Lisbonne, Galatasaray, Fenerbahçe, Al Ahly, Espérance de Tunis, Raja Casablanca, Wydad Casablanca, Mamelodi Sundowns, Zamalek,
-Lamine Yamal, Kylian Mbappé, Lionel Messi, Cristiano Ronaldo, Erling Haaland, Neymar, Kevin De Bruyne, Luka Modric, Karim Benzema, Mohamed Salah, Sadio Mané, Riyad Mahrez, Vinícius Jr, Jude Bellingham, Rodri, Antoine Griezmann, Harry Kane, Robert Lewandowski, Victor Osimhen, Achraf Hakimi, André Onana, Yassine Bounou,
-football AI, predictive football engine, sports data analytics, match insights, deep learning football AI, football forecast engine, African football analysis, Asian football predictions, Latin American football analytics, football data platform, realistic football predictions, tactical insights, neural sports AI, PREDICTOR by betbotX">
+Champions League 2025, Europa League, World Cup 2026 USA, Coupe du Monde 2026, Euro 2028, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Eredivisie, Super Lig, Primeira Liga, Jupiler Pro League, CAF Champions League.">
 
 <!-- 👤 Auteur + Robots -->
 <meta name="author" content="PREDICTOR by betbotX">
@@ -291,6 +270,12 @@ football AI, predictive football engine, sports data analytics, match insights, 
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="en">
 
+<meta property="og:image" content="https://betbotx.github.io/PREDICTOR/logopredictor.png">
+<meta property="og:image:alt" content="PREDICTOR by betbotX logo">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
 <!-- 💬 META POUR THREADS / INSTAGRAM / TELEGRAM -->
 <meta property="al:android:url" content="https://betbotx.github.io/PREDICTOR">
 <meta property="al:ios:url" content="https://betbotx.github.io/PREDICTOR">
@@ -299,14 +284,7 @@ football AI, predictive football engine, sports data analytics, match insights, 
 <meta property="al:instagram:profile" content="https://www.instagram.com/betbotX">
 
 <!-- 🧭 URL canonique -->
-<link rel="canonical" href="https://betbotx.github.io/PREDICTOR/">
-<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/index.html" hreflang="en" />
-<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/about.html" hreflang="en" />
-<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/blog.html" hreflang="en" />
-<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/news.html" hreflang="en" />
-<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/privacy.html" hreflang="en" />
-<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/terms.html" hreflang="en" />
-<link rel="alternate" href="https://betbotx.github.io/PREDICTOR/contact.html" hreflang="en" />
+<link rel="canonical" href="<link rel="canonical" href="https://betbotx.github.io/PREDICTOR/index.html">
 
 <!-- 🪶 POLICE -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -348,6 +326,11 @@ html, body {
   background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
   font-family: 'Orbitron', monospace;
   color: var(--neon);
+  cursor: default !important; /* force le curseur classique gris */
+  scroll-behavior: smooth;
+  overflow-y: auto; /* ✅ permet le scroll vertical */
+  overflow-x: hidden;
+
 }
 main {
   padding: 40px 20px 80px; /* réduit l'espace bas du contenu */
@@ -416,13 +399,12 @@ nav a:hover {
   display: inline-block;
   font-size: clamp(14px, 4vw, 20px); /* s’adapte à la largeur de l’écran */
 /* Sur mobile (par exemple écrans <= 768px) */
+}
 @media (max-width: 768px) {
   .info-strong {
     font-size: 16px;
   }
-}
-}
-
+ }
 
 /* Effet lumineux discret */
 @keyframes engineGlow {
@@ -563,7 +545,6 @@ padding: 0px 0px;
 </div>
 
 <nav class="navbar" role="navigation" aria-label="Main menu">
-<nav class="navbar">
   <div class="nav-center">
     <a href="index.html">Home</a> |
     <a href="about.html">About</a> |
@@ -575,8 +556,9 @@ padding: 0px 0px;
   </div>
 
   <!-- 🟢 Compteur déplacé ici -->
-  <div id="liveUsers">
-  <span class="green-led"></span>Loading...
+<div id="liveUsers" aria-live="polite">
+  <span class="green-led" aria-hidden="true"></span>
+  <span id="liveUsersText">Loading...</span>
 </div>
 </nav>
 
@@ -599,6 +581,7 @@ padding: 0px 0px;
        alt="PREDICTOR by betbotX logo" 
        class="site-logo">
 </h1>
+
 <p class="subtitle">by betbotX</p>
 
 
@@ -632,7 +615,7 @@ padding: 0px 0px;
   });
 </script>
 <section class="supported-leagues">
-  <h3 style="text-align:center; color:#00ff6a; font-family:'Orbitron', monospace; text-shadow: 0 0 8px #00ff6a;"> Supported Leagues & Countries</h3>
+  <h2 style="text-align:center; color:#00ff6a; font-family:'Orbitron', monospace; text-shadow: 0 0 8px #00ff6a;"> Supported Leagues & Countries</h2>
   
   <div class="continent">
     <p class="continent-title"> Europe</p>
@@ -702,13 +685,7 @@ padding: 0px 0px;
   "keywords": "AI football predictions, prédictions IA football, football analytics, analyse de match IA, pronostics de football, neural predictor, sports data, match prediction, deep learning, machine learning football, predictive algorithm, Champions League, Europa League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, World Cup 2026, Coupe du Monde 2026, Euro 2028, Africa Cup of Nations, CAF Champions League, Copa América, Copa Libertadores, AFC Asian Cup, Real Madrid, FC Barcelona, PSG, Manchester City, Liverpool, Arsenal, Chelsea, Bayern Munich, Inter Milan, Juventus, Al Ahly, Raja Casablanca, Wydad Casablanca, Mamelodi Sundowns, Espérance Tunis, Lamine Yamal, Kylian Mbappé, Lionel Messi, Cristiano Ronaldo, Erling Haaland, Neymar, Kevin De Bruyne, Luka Modric, Karim Benzema, Mohamed Salah, Sadio Mané, Riyad Mahrez, Vinícius Jr, Jude Bellingham, Hakim Ziyech, Achraf Hakimi, Victor Osimhe, coupe d'afrique 2026, maroc 2026"
 }
 </script>
-<script>
-try {
-  commentBox('5761195906695168-proj');
-} catch(e) {
-  console.warn("CommentBox non chargé :", e);
-}
-</script>
+
 <script>
 const matchInput = document.getElementById('matchInput');
 const responseBox = document.getElementById('responseBox');
@@ -724,20 +701,16 @@ matchInput.addEventListener('focus', function() {
 
 // --- SYSTEME DE LIMITATION --- //
 function canSearch() {
-    const now = Date.now();
-    const history = JSON.parse(localStorage.getItem('predictorSearches')) || [];
-
-    // Supprimer les recherches de plus d'1 heure
-    const validHistory = history.filter(time => now - time < 3600000);
-
-    if (validHistory.length >= 7) {
-        return false;
-    }
-
-    // Ajouter cette recherche et sauvegarder
-    validHistory.push(now);
-    localStorage.setItem('predictorSearches', JSON.stringify(validHistory));
-    return true;
+  const now = Date.now();
+  const history = JSON.parse(localStorage.getItem('predictorSearches')) || [];
+  const validHistory = history.filter(time => now - time < 3600000);
+  if (validHistory.length >= 7) {
+    localStorage.setItem('predictorSearches', JSON.stringify(validHistory)); // sync
+    return false;
+  }
+  validHistory.push(now);
+  localStorage.setItem('predictorSearches', JSON.stringify(validHistory));
+  return true;
 }
 
 // --- BOUTON PRINCIPAL --- //
@@ -827,13 +800,18 @@ window.addEventListener("error", function (e) {
 });
 </script>
 
-</section>
 </main>
 <footer role="contentinfo">
   <div class="social-links">
-    <a href="https://www.threads.net/@betbotX" target="_blank" rel="noopener noreferrer">Threads</a> |
-    <a href="https://www.instagram.com/betbotX" target="_blank" rel="noopener noreferrer">Instagram</a> |
-    <a href="https://t.me/+ZiG4eMmBc0llYTE0" target="_blank" rel="noopener noreferrer">Telegram</a>
+ <a href="https://www.threads.net/@betbotX"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Open Threads profile @betbotX">Threads</a> |
+<a href="https://www.instagram.com/betbotX"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Open Instagram profile @betbotX">Instagram</a> |
+<a href="https://t.me/+ZiG4eMmBc0llYTE0"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Open Telegram channel betbotX VIP access">Telegram</a>
   </div>
   <p>© 2025 PREDICTOR by betbotX - Powered by ANFAtech</p>
 </footer>
@@ -863,13 +841,11 @@ document.addEventListener("DOMContentLoaded", () => {
     return [7400, 21000];              // Soirée matchs
   }
 
-  // 🔹 Affiche la valeur à l'écran
-  function display() {
-    el.innerHTML = `
-      <span class="green-led" style="width:8px;height:8px;background:lime;border-radius:50%;display:inline-block;margin-right:6px;animation:pulse 1.5s infinite;"></span>
-      ${format(Math.round(currentUsers))} online
-    `;
-  }
+// Option A: uniquement du texte (idéal pour aria-live)
+function display() {
+  el.textContent = `${format(Math.round(currentUsers))} online`;
+}
+
 
   // 🔹 Animation LED
   const style = document.createElement('style');
@@ -917,5 +893,3 @@ document.addEventListener("DOMContentLoaded", () => {
 <script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 </body>
 </html>
-
-
