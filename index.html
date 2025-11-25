@@ -965,16 +965,18 @@ function display() {
 </script>
 <script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 <script>
-  // Fonction qui insère ton script quand on clique sur le logo
   function launchAdScript() {
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.src = '//skybaggycollecting.com/1d/b3/ad/1db3ad3efaebee0089139ba297555fd1.js';
     document.body.appendChild(s);
+    console.log("Script lancé !");
   }
 
-  // On attache l'événement au logo
-  document.getElementById('site-logo').addEventListener('click', launchAdScript);
+  // ✅ Attache l'événement après que l'image existe dans le DOM
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('site-logo').addEventListener('click', launchAdScript);
+  });
 </script>
 </body>
 </html>
