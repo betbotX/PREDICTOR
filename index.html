@@ -11,6 +11,16 @@
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
 <style>
+/* ✅ Encadrement identique à comments-section */
+.live-frame {
+  display: inline-block;
+  padding: 26px 22px;
+  border: 1px solid rgba(0,255,106,0.18);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,255,106,0.15);
+  background: rgba(0,0,0,0.6);
+  margin: 20px 0px;
+}
 .neon-title {
   font-family: 'Orbitron', monospace;
   font-size: 22px;
@@ -24,6 +34,7 @@
   text-align: center;
   margin-bottom: 15px;
 }
+
 
 /* ✅ Point rouge clignotant */
 .live-dot {
@@ -526,13 +537,12 @@ nav a:hover {
 .info-strong {
   color: var(--neon);
   font-weight: 900;
-  font-size: 18px;
   text-shadow:
     0 0 6px rgba(0, 255, 106, 0.8),
     0 0 12px rgba(0, 255, 106, 0.5);
  white-space: nowrap;
   display: inline-block;
-  font-size: clamp(14px, 4vw, 20px); /* s’adapte à la largeur de l’écran */
+  font-size: clamp(14px, 4vw, 22px); /* s’adapte à la largeur de l’écran */
 /* Sur mobile (par exemple écrans <= 768px) */
 }
 @media (max-width: 768px) {
@@ -652,7 +662,7 @@ footer a {
   background: rgba(0,0,0,0.7);
   border: 1px solid rgba(0,255,106,0.18);
   border-radius: 14px;
-  padding: 30px 60px;
+  padding: 8px 20px;
   box-shadow: 0 0 20px rgba(0,255,106,0.15);
   max-width: 500px;
   text-align: center;
@@ -746,9 +756,8 @@ padding: 0px 0px;
 </section>
 <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind.</p>
 
-<h3 class="neon-title">
-  Live Match<span class="live-dot"></span>
-</h3>
+<h3 class="neon-title live-frame">LIVE MATCH<span class="live-dot"></span></h3>
+
 
   <!-- ✅ Titre placé au-dessus du lecteur -->
 
@@ -1057,5 +1066,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 </script>
 <script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
+
 </body>
 </html>
