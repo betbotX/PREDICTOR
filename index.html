@@ -442,6 +442,12 @@ nav a:hover {
   color: var(--muted);
   font-size: 12px;
 }
+/* ✅ Sur mobile (écrans <= 768px) */
+@media (max-width: 768px) {
+  .info-light {
+    font-size: 8px;
+  }
+}
 .match {
   margin-top: 2px;
   width: 100%;
@@ -545,10 +551,11 @@ padding: 0px 0px;
 </head>
 
 <body>
+
+
 <div class="vertical-bar"></div>
 
-<main>
-
+<main role="main">
 <!-- 🔥 Ticker bar tout en haut -->
 <div class="ticker-bar">
   <div class="ticker-text">
@@ -556,6 +563,7 @@ padding: 0px 0px;
   </div>
 </div>
 
+<nav class="navbar" role="navigation" aria-label="Main menu">
 <nav class="navbar">
   <div class="nav-center">
     <a href="index.html">Home</a> |
@@ -656,7 +664,7 @@ padding: 0px 0px;
   "alternateName": "Predictor - betbotX",
   "url": "https://betbotx.github.io/PREDICTOR/",
   "logo": "https://betbotx.github.io/PREDICTOR/favicon-192x192.png",
-  "inLanguage": "en"
+  "inLanguage": "en",
   "description": "EN : PREDICTOR by betbotX is an advanced AI football prediction engine that analyzes global matches to deliver accurate forecasts, detailed analytics, and tactical insights powered by machine learning and real-time sports data. The platform covers top leagues such as the UEFA Champions League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, CAF Champions League, and international tournaments including the 2026 World Cup and Euro 2028.",
   "sameAs": [
     "https://www.instagram.com/betbotx",
@@ -691,7 +699,6 @@ padding: 0px 0px;
     "sports data intelligence",
     "deep learning football AI",
     "machine learning in football"
-
   ],
   "keywords": "AI football predictions, prédictions IA football, football analytics, analyse de match IA, pronostics de football, neural predictor, sports data, match prediction, deep learning, machine learning football, predictive algorithm, Champions League, Europa League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, World Cup 2026, Coupe du Monde 2026, Euro 2028, Africa Cup of Nations, CAF Champions League, Copa América, Copa Libertadores, AFC Asian Cup, Real Madrid, FC Barcelona, PSG, Manchester City, Liverpool, Arsenal, Chelsea, Bayern Munich, Inter Milan, Juventus, Al Ahly, Raja Casablanca, Wydad Casablanca, Mamelodi Sundowns, Espérance Tunis, Lamine Yamal, Kylian Mbappé, Lionel Messi, Cristiano Ronaldo, Erling Haaland, Neymar, Kevin De Bruyne, Luka Modric, Karim Benzema, Mohamed Salah, Sadio Mané, Riyad Mahrez, Vinícius Jr, Jude Bellingham, Hakim Ziyech, Achraf Hakimi, Victor Osimhe, coupe d'afrique 2026, maroc 2026"
 }
@@ -823,7 +830,7 @@ window.addEventListener("error", function (e) {
 
 </section>
 </main>
-<footer>
+<footer role="contentinfo">
   <div class="social-links">
     <a href="https://www.threads.net/@betbotX" target="_blank" rel="noopener noreferrer">Threads</a> |
     <a href="https://www.instagram.com/betbotX" target="_blank" rel="noopener noreferrer">Instagram</a> |
@@ -911,11 +918,4 @@ document.addEventListener("DOMContentLoaded", () => {
 <script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 </body>
 </html>
-
-
-
-
-
-
-
 
