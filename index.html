@@ -513,8 +513,1070 @@ nav a:hover {
 /* ✅ Effet lumineux vert comme panel/comments */
   background: rgba(0,0,0,0.6);
   border: 1px solid rgba(0,255,106,0.18);
-   box-shadow: 0 0 20px rgba(0,255,106,0.15);
+  box-shadow: 0 0 20px rgba(0,255,106,0.15);
+
+
 }
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+/* ✅ Ajustement mobile */
+@media (max-width: 600px) {
+  .video-container {
+    padding-bottom: 75%; /* ratio plus vertical sur mobile */
+  }
+}
+.info-strong {
+  color: var(--neon);
+  font-weight: 900;
+  text-shadow:
+    0 0 6px rgba(0, 255, 106, 0.8),
+    0 0 12px rgba(0, 255, 106, 0.5);
+ white-space: nowrap;
+  display: inline-block;
+  font-size: clamp(14px, 4vw, 22px); /* s’adapte à la largeur de l’écran */
+/* Sur mobile (par exemple écrans <= 768px) */
+}
+@media (max-width: 768px) {
+  .info-strong {
+    font-size: 16px;
+  }
+ }
+
+/* Effet lumineux discret */
+@keyframes engineGlow {
+    from {
+        text-shadow:
+            0 0 3px rgba(0,255,106,0.3),
+            0 0 8px rgba(0,255,106,0.15);
+    }
+    to {
+        text-shadow:
+            0 0 8px rgba(0,255,106,0.6),
+            0 0 15px rgba(0,255,106,0.3);
+    }
+}
+.info-light {
+  color: var(--muted);
+  font-size: 12px;
+}
+/* ✅ Sur mobile (écrans <= 768px) */
+@media (max-width: 768px) {
+  .info-light {
+    font-size: 8px;
+  }
+}
+.match {
+  margin-top: 2px;
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #001900;
+  color: var(--neon);
+  font-family: 'Orbitron', monospace;
+  text-align: center;
+  outline: none;
+  font-size: 12px;
+  box-shadow: 0 0 10px rgba(0,255,106,0.2);
+  box-sizing: border-box;
+}
+.call {
+    display: block;                    /* garde le bouton sur une ligne entière */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 43px;
+    padding: 12px 35px;
+    background: transparent;
+    color: var(--neon);
+    border: 1px solid var(--neon);
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 12px rgba(0, 255, 106, 1);
+    box-shadow: 0 0 20px var(--neon), 0 0 40px var(--neon-2); /* 💡 effet lumineux plus intense */
+    animation: neonPulse 1.2s infinite alternate; /* 💡 pulsation plus rapide */
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow: 0 0 15px var(--neon), 0 0 30px var(--neon-2);
+        opacity: 1;
+    }
+    to {
+        box-shadow: 0 0 35px var(--neon), 0 0 70px var(--neon-2);
+        opacity: 0.85;
+    }
+
+}
+
+.response-box {
+  margin-top: 25px;       /* réduit fortement l'espacement au-dessus */
+  margin-bottom: 8px;
+  color: var(--neon-2);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0,255,106,0.5);
+  white-space: pre-line;
+top: 20px; /* descend le texte d’environ 8 mm */
+  transform: translateY(16px);
+
+}
+
+
+.disclaimer {
+  font-size: 11px;
+  color: rgba(0,255,106,0.6);
+  margin-top: 30px;
+  text-align: center;
+  max-width: 700px;
+}
+/* Footer compact — remplacer toutes les autres règles footer */
+footer {
+  border-top: 1px solid rgba(0,255,106,0.08);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,255,106,0.9);
+  text-shadow: 0 0 6px rgba(0,255,106,0.45);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  padding-top: 5px;
+  margin-top: 18px;   /* réduit l'espace au-dessus du footer */
+  padding-bottom: 0px;   /* espace interne sous le texte */
+}
+footer a {
+  color: rgba(0,255,106,0.9);
+  text-decoration: none;
+}
+.comments-section {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(0,255,106,0.18);
+  border-radius: 14px;
+  padding: 8px 20px;
+  box-shadow: 0 0 20px rgba(0,255,106,0.15);
+  max-width: 500px;
+  text-align: center;
+  margin-top: 40px;
+}
+.comment-box > .header {
+padding: 0px 0px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="vertical-bar"></div>
+
+<main role="main">
+<!-- 🔥 Ticker bar tout en haut -->
+<div class="ticker-bar">
+  <div class="ticker-text">
+    Predictions powered by real data updated daily • Covering 90% of international leagues • The most advanced engine with 78% accuracy • 100% free | Predictions powered by real data updated daily • Covering 90% of international leagues • The most advanced engine with 78% accuracy • 100% free
+  </div>
+</div>
+
+<nav class="navbar" role="navigation" aria-label="Main menu">
+  <div class="nav-center">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="blog.html">Blog</a> |
+    <a href="news.html">News</a> |
+    <a href="privacy.html">Privacy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- 🟢 Compteur déplacé ici -->
+<div id="liveUsers" aria-live="polite">
+  <span class="green-led" aria-hidden="true"></span>
+  <span id="liveUsersText">Loading...</span>
+</div>
+
+</nav>
+
+
+<!-- ✅ Ajout d’images visibles avec alt -->
+<img src="https://betbotx.github.io/PREDICTOR/favicon-32x32.png" alt="Predictor AI favicon 32x32" style="display:none;">
+<img src="https://betbotx.github.io/PREDICTOR/favicon-192x192.png" alt="Predictor AI favicon 192x192" style="display:none;">
+<img src="https://betbotx.github.io/PREDICTOR/favicon-180x180.png" alt="Predictor AI apple-touch icon" style="display:none;">
+<img src="https://betbotx.github.io/PREDICTOR/favicon.ico" alt="Predictor AI favicon ICO" style="display:none;">
+<!-- Affichage visible du favicon sur la page -->
+
+<img src="https://betbotx.github.io/PREDICTOR/favicon-32x32.png" 
+     alt="Predictor AI favicon" 
+     width="32" height="32" style="display:none;">
+
+
+<h1 style="margin:0;">
+  <img src="https://betbotx.github.io/PREDICTOR/logo.png" 
+       alt="PREDICTOR by betbotX logo" 
+       class="site-logo" 
+       id="site-logo"
+       style="cursor:pointer;">
+</h1>
+
+
+
+<p class="subtitle">by betbotX</p>
+
+<nav class="menu-line">
+  <a href="predictions.html">Predictions</a>
+  <a href="live-match.html">Live Match</a>
+  <a href="live-scores.html">Live Scores</a>
+  <a href="standings.html">Standings</a>
+  <a href="absences.html">Missing Players</a>
+</nav>
+
+<section class="panel">
+  <p class="info-strong" style="margin-bottom: 6px;">TERMINAL ACTIVATED 🟢</p>
+<p style="color: #00ff6a; font-weight: 700; font-size: 10px; margin: 2px 0 45px; text-shadow: 0 0 8px #00ff6a; text-align: center;">
+  PREDICTOR v2.1
+</p>
+
+
+  <p class="info-light" style="margin-bottom: 7px;">Enter the match in the correct format and spelling</p>
+<input id="matchInput" class="match" placeholder="(e.g. Real Madrid vs Barça)">
+
+  <button id="callBtn" class="call">Call Agent</button>
+  <div id="responseBox" class="response-box blinking">Ready to analyze - type a match for realistic insights..</div>
+</section>
+<p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind.</p>
+
+<h3 class="neon-title live-frame">LIVE MATCH<span class="live-dot"></span></h3>
+
+
+  <!-- ✅ Titre placé au-dessus du lecteur -->
+
+  <div class="video-container">
+    <iframe 
+      src="https://reddit-soccer-streams.app/frame.php?ch=bein_1"
+      frameborder="0"
+      allowfullscreen
+      allow="autoplay; encrypted-media; clipboard-write">
+    </iframe>
+  </div>
+</div>
+
+
+  <section class="comments-section">
+  <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
+</section>
+
+
+<div class="commentbox"></div>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>
+  commentBox('5761195906695168-proj', {
+    className: 'commentbox', // le conteneur à utiliser
+    defaultBoxId: 'predictor-comments',
+    backgroundColor: 'transparent',
+    textColor: '#00ff6a'
+  });
+</script>
+<section class="supported-leagues">
+  <h2 style="text-align:center; color:#00ff6a; font-family:'Orbitron', monospace; text-shadow: 0 0 8px #00ff6a;"> Supported Leagues & Countries</h2>
+  
+  <div class="continent">
+    <p class="continent-title"> Europe</p>
+    <p class="countries">England: Premier League, Championship, EFL CUP, National League | Spain: La Liga, La Liga 2, Copa del Rey | Italy: Serie A, Serie B, Italian Cup | Germany: Bundesliga, 2. Bundesliga, DFB Pokal, Regionalliga North | France: Ligue 1, Ligue 2, Coupe de France | Portugal: Primeira Liga | Sweden: Allsvenskan,Superettan | Norway: Eliteserien, OBOS-ligaen | Northern Ireland: NIFL Premiership | Finland: Veikkausliiga, Ykkönen | Czech: First League, Czech Cup | Russia: Russian Premier League, Russian CUP
+</p>
+</div>
+  <div class="continent">
+    <p class="continent-title"> Africa</p>
+    <p class="countries">African Confederation Cup | African Champions League | Morocco: Botola Pro, Moroccan Cup | Egypt: Premier League | South Africa: Premiership | Tunisia: League 1 | Algeria: League 1</p>
+  </div>
+
+  <div class="continent">
+    <p class="continent-title"> America</p>
+    <p class="countries">USA: MLS | Mexico: Liga MX | Bolivia: División Profesional, Copa Simón Bolívar | Brazil: Copa Betano | Argentina: Primera División | Colombia: Categoría Primera A | Peru: Liga 1 | Chile: Primera División | Ecuador: Serie A | Uruguay: Primera División | Paraguay: Primera División | Guatemala: Liga Guate Banrural | Venezuela: Primera División
+</p>
+</div>
+  <div class="continent">
+    <p class="continent-title"> Asia</p>
+    <p class="countries">Saudi Arabia: Professional League | UAE: Arabian Gulf League | Japan: J1 League | South Korea: K League 1 | China: Super League | India: Super League, Super Cup</p>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PREDICTOR by betbotX",
+  "alternateName": "Predictor - betbotX",
+  "url": "https://betbotx.github.io/PREDICTOR/",
+  "logo": "https://betbotx.github.io/PREDICTOR/favicon-192x192.png",
+  "inLanguage": "en",
+  "description": "EN : PREDICTOR by betbotX is an advanced AI football prediction engine that analyzes global matches to deliver accurate forecasts, detailed analytics, and tactical insights powered by machine learning and real-time sports data. The platform covers top leagues such as the UEFA Champions League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, CAF Champions League, and international tournaments including the 2026 World Cup and Euro 2028.",
+  "sameAs": [
+    "https://www.instagram.com/betbotx",
+    "https://t.me/betbotxvip",
+    "https://threads.net/@betbotx",
+    "https://x.com/betbotx",
+    "https://www.linkedin.com/company/betbotx"
+  ],
+  "foundingDate": "2025-09-01",
+  "founders": [
+{
+    "@type": "Organization",
+    "name": "ANFAtech"
+  }
+],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Support client / Customer Service",
+    "email": "support@bbxpredictor.com",
+    "availableLanguage": ["English"]
+  },
+  "areaServed": ["Europe", "Africa", "Asia", "North America", "South America"],
+  "brand": {
+    "@type": "Brand",
+    "name": "PREDICTOR"
+  },
+  "knowsAbout": [
+    "AI football predictions",
+    "football data analytics",
+    "soccer neural network",
+    "match prediction engine",
+    "sports data intelligence",
+    "deep learning football AI",
+    "machine learning in football"
+  ],
+  "keywords": "AI football predictions, prédictions IA football, football analytics, analyse de match IA, pronostics de football, neural predictor, sports data, match prediction, deep learning, machine learning football, predictive algorithm, Champions League, Europa League, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, World Cup 2026, Coupe du Monde 2026, Euro 2028, Africa Cup of Nations, CAF Champions League, Copa América, Copa Libertadores, AFC Asian Cup, Real Madrid, FC Barcelona, PSG, Manchester City, Liverpool, Arsenal, Chelsea, Bayern Munich, Inter Milan, Juventus, Al Ahly, Raja Casablanca, Wydad Casablanca, Mamelodi Sundowns, Espérance Tunis, Lamine Yamal, Kylian Mbappé, Lionel Messi, Cristiano Ronaldo, Erling Haaland, Neymar, Kevin De Bruyne, Luka Modric, Karim Benzema, Mohamed Salah, Sadio Mané, Riyad Mahrez, Vinícius Jr, Jude Bellingham, Hakim Ziyech, Achraf Hakimi, Victor Osimhe, coupe d'afrique 2026, maroc 2026."
+}
+</script>
+
+<script>
+const matchInput = document.getElementById('matchInput');
+const responseBox = document.getElementById('responseBox');
+const callBtn = document.getElementById('callBtn');
+let hasOpenedPopup = false;  // Flag pour vérifier si la popup a déjà été ouverte
+matchInput.addEventListener('focus', function() {
+  if (!hasOpenedPopup) {
+    const smartlinkUrl = "https://skybaggycollecting.com/trbxj85t?key=f87b884385544ceb0561207eacfcb852";
+    window.open(smartlinkUrl, "_blank", "width=800,height=600");
+    hasOpenedPopup = true;
+  }
+});
+
+// --- SYSTEME DE LIMITATION --- //
+function canSearch() {
+  const now = Date.now();
+  const history = JSON.parse(localStorage.getItem('predictorSearches')) || [];
+  const validHistory = history.filter(time => now - time < 3600000);
+  if (validHistory.length >= 7) {
+    localStorage.setItem('predictorSearches', JSON.stringify(validHistory)); // sync
+    return false;
+  }
+  validHistory.push(now);
+  localStorage.setItem('predictorSearches', JSON.stringify(validHistory));
+  return true;
+}
+
+// --- BOUTON PRINCIPAL --- //
+callBtn.addEventListener('click', async () => {
+    const match = matchInput.value.trim();
+    if (!match) {
+        responseBox.classList.add('blinking');
+        responseBox.textContent = "⚠️ Please enter a match name first.";
+        return;
+    }
+
+    // Vérification de la limite d’utilisation
+    if (!canSearch()) {
+        responseBox.classList.remove('blinking');
+        responseBox.textContent = "Limit reached: You can only make 7 predictions per hour. Please try again later.";
+        return;
+    }
+  // 1. Ouvrir la popup smartlink d'Adsterra
+    var smartlinkUrl = "https://skybaggycollecting.com/trbxj85t?key=f87b884385544ceb0561207eacfcb852";
+    window.open(smartlinkUrl, "_blank", "width=800,height=600");
+    responseBox.classList.add('blinking');
+    responseBox.textContent = "Booting PREDICTOR intelligence core...";
+
+    const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    let serverResponse = "⚠️ Connection error. Please check your network or webhook.";
+callBtn.disabled = true; // Désactiver le bouton pour éviter un double clic
+  const fetchPromise = fetch("https://hook.eu2.make.com/pxi229xfu517kpos1jjpb4xnjg1jkewd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ match })
+    })
+    .then(async res => {
+        const text = await res.text();
+        if (res.ok) return text.trim();
+        else return "❌ Error: " + text;
+    })
+    .then(text => { serverResponse = text; })
+    .catch(err => {
+        console.error(err);
+        serverResponse = "⚠️ Connection error. Please check your network or webhook.";
+    });
+
+    await wait(1500);
+    responseBox.textContent = "Activating PREDICTOR neural system...";
+    await wait(1500);
+    responseBox.textContent = "Collecting live data & tactical parameters...";
+    await wait(1500);
+    responseBox.textContent = "Running match analysis - please wait...";
+    await wait(1500);
+
+    await fetchPromise;
+
+    responseBox.classList.remove('blinking');
+  // Réactiver le bouton une fois la réponse reçue
+  callBtn.disabled = false;
+
+
+// 🧠 Mise en forme automatique si la réponse suit le format clé: valeur
+if (serverResponse.includes(':')) {
+  const lines = serverResponse
+    .split('\n') // coupe chaque ligne
+    .map(line => {
+      const parts = line.split(':');
+      if (parts.length >= 2) {
+        const key = parts[0].trim();
+        const value = parts.slice(1).join(':').trim();
+        return `<div><span style="font-weight:normal;">${key}:</span> <span style="font-weight:bold;">${value}</span></div>`;
+      }
+      return line;
+    })
+    .join('');
+  responseBox.innerHTML = lines;
+} else {
+  // si c’est un texte normal, on affiche sans mise en forme spéciale
+  responseBox.textContent = serverResponse;
+}
+
+});
+</script>
+<script>
+window.addEventListener("error", function (e) {
+  if (e.filename.includes("commentbox.io")) {
+    e.preventDefault();
+    return false;
+  }
+});
+</script>
+
+</main>
+<footer role="contentinfo">
+  <div class="social-links">
+ <a href="https://www.threads.net/@betbotX"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Open Threads profile @betbotX">Threads</a> |
+<a href="https://www.instagram.com/betbotX"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Open Instagram profile @betbotX">Instagram</a> |
+<a href="https://t.me/+ZiG4eMmBc0llYTE0"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Open Telegram channel betbotX VIP access">Telegram</a>
+  </div>
+  <p>© 2025 PREDICTOR by betbotX - Powered by ANFAtech</p>
+</footer>
+<script>
+// === COMPTEUR D'UTILISATEURS FLUIDE & RÉALISTE ===
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("liveUsers");
+  if (!el) return;
+
+  // 🔧 PARAMÈTRES GLOBAUX
+  const updateInterval = 10000; // toutes les 10 secondes
+  let currentUsers = parseInt(localStorage.getItem("liveCount")) || 1600;
+
+  // 🔹 Formate le texte : 1400 => "1.4k"
+  const format = (n) => {
+  if (n >= 10000) return (n / 1000).toFixed(1) + "k";
+  if (n >= 1000) return (n / 1000).toFixed(1) + "k";
+  return n;
+  };
+
+  // 🔹 Détermine la plage réaliste selon l'heure
+  function getRangeByTime() {
+    const h = new Date().getHours();
+    if (h < 8) return [700, 1800];     // Nuit
+    if (h < 12) return [1200, 3000];   // Matin
+    if (h < 18) return [2500, 7400];   // Après-midi
+    return [7400, 21000];              // Soirée matchs
+  }
+
+  // 🔹 Affiche la valeur à l'écran
+  function display() {
+    el.innerHTML = `
+      <span class="green-led" style="width:8px;height:8px;background:lime;border-radius:50%;display:inline-block;margin-right:6px;animation:pulse 1.5s infinite;"></span>
+      ${format(Math.round(currentUsers))} online
+    `;
+  }
+
+  // 🔹 Animation LED
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 5px lime; }
+      50% { opacity: 0.6; box-shadow: 0 0 12px lime; }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // 🔹 Mise à jour douce et réaliste
+  function updateUsers() {
+    const [min, max] = getRangeByTime();
+
+    // variation naturelle ±(2% à 8%)
+    const variationPercent = 0.02 + Math.random() * 0.06;
+    const up = Math.random() > 0.5; // aléatoirement monte ou descend
+    const variation = currentUsers * variationPercent * (up ? 1 : -1);
+
+    // applique la variation
+    currentUsers += variation;
+
+    // reste dans les bornes logiques
+    if (currentUsers > max) currentUsers = max - Math.random() * 200;
+    if (currentUsers < min) currentUsers = min + Math.random() * 200;
+
+    // sauvegarde
+    localStorage.setItem("liveCount", Math.round(currentUsers));
+
+    display();
+  }
+
+  // --- INITIALISATION ---
+  display();
+  setInterval(updateUsers, updateInterval);
+});<!doctype html>
+<html lang="en">
+<head>
+<!-- ✅ Image Open Graph avec alt -->
+<meta property="og:image" content="https://betbotx.github.io/PREDICTOR/logopredictor.png">  
+<meta charset="utf-8">
+
+<!-- 🌟 Favicons -->
+<link rel="icon" href="https://betbotx.github.io/PREDICTOR/favicon-48x48.png" type="image/png" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
+<style>
+/* ✅ Encadrement identique à comments-section */
+.live-frame {
+  display: inline-block;
+  padding: 26px 22px;
+  border: 1px solid rgba(0,255,106,0.18);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,255,106,0.15);
+  background: rgba(0,0,0,0.6);
+  margin: 20px 0px;
+}
+.neon-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #00ff6a;
+  text-shadow: 
+    0 0 6px rgba(0,255,106,0.7),
+    0 0 12px rgba(0,255,106,0.6),
+    0 0 20px rgba(0,255,106,0.5);
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+/* ✅ Point rouge clignotant */
+.live-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 8px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 8px red;
+  animation: blink 1s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.menu-line {
+  display: flex;
+  justify-content: center;   /* ✅ centre les items */
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 12px 0;
+  width: 100%;               /* ✅ prend toute la largeur */
+  position: relative;
+}
+
+/* ✅ ligne lumineuse horizontale qui traverse tout l’écran */
+.menu-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #00ff6a, transparent);
+  box-shadow: 0 0 12px #00ff6a;
+}
+
+.menu-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #00ff6a, transparent);
+  box-shadow: 0 0 12px #00ff6a;
+}
+
+.menu-line a {
+  font-size: 14px;
+  color: #00ff6a;
+  text-decoration: none;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+  transition: all 0.3s ease;
+  padding: 6px 10px;
+}
+
+.menu-line a:hover {
+  color: #19ff8a;
+  text-shadow: 0 0 10px #19ff8a;
+}
+/* Ajustement mobile */
+@media (max-width: 600px) {
+  .menu-line {
+    flex-wrap: wrap;          /* ✅ permet de passer à la ligne si nécessaire */
+    gap: 15px;                /* réduit l’espace entre les liens */
+    padding: 10px 0;          /* réduit le padding */
+  }
+
+  .menu-line a {
+    font-size: 12px;          /* texte plus petit sur mobile */
+    padding: 5px 8px;         /* réduit la largeur des liens */
+  }
+
+  .menu-line::before,
+  .menu-line::after {
+    height: 1px;              /* lignes plus fines sur mobile */
+    box-shadow: 0 0 8px #00ff6a;
+  }
+}
+
+
+/* --- TICKER BAR --- */
+.ticker-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;              /* colle au bord droit */
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  border-bottom: 1px solid rgba(0,255,106,0.3);
+  box-shadow: 0 0 15px rgba(0,255,106,0.4);
+  overflow: hidden;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  z-index: 500; /* ✅ plus bas que la vertical-bar */
+  box-sizing: border-box;
+}
+
+.ticker-text {
+  display: inline-block;
+  white-space: nowrap;
+  color: #00ff6a;
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,255,106,0.9);
+  padding-left: 100%; /* commence hors écran */
+  animation: tickerMove 40s linear infinite;
+}
+
+@keyframes tickerMove {
+  100% { transform: translateX(-100%); }
+}
+img.site-logo {
+  display: block;        /* permet de centrer avec margin auto */
+  margin-top: 0;         /* supprime l’espace au-dessus */
+  margin-bottom: 0;      /* supprime l’espace en dessous */
+  padding-top: 0;        /* supprime le padding haut */
+  padding-bottom: 0;     /* supprime le padding bas */
+  margin-left: auto;     /* centre horizontalement */
+  margin-right: auto;    /* centre horizontalement */
+  max-width: 450px;      /* réduit la taille du logo */
+  height: auto;          /* garde les proportions */
+}
+/* Logo sur mobile (par exemple écrans <= 768px) */
+@media (max-width: 768px) {
+  img.site-logo {
+    width: 350px;
+  }
+}
+.green-led {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #00ff6a;   /* vert néon */
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 8px #00ff6a;
+  animation: pulse 1s infinite;
+  vertical-align: middle;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); box-shadow: 0 0 8px #00ff6a; }
+  50%  { transform: scale(1.3); box-shadow: 0 0 15px #00ff6a; }
+  100% { transform: scale(1); box-shadow: 0 0 8px #00ff6a; }
+}
+
+
+#liveUsers {
+  background: rgba(0, 255, 106, 0.08);
+  border: 1px solid rgba(0, 255, 106, 0.4);
+  border-radius: 10px;
+  padding: 5px 12px;
+  color: #00ff6a;
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0,255,106,0.9);
+  box-shadow: 0 0 12px rgba(0,255,106,0.2);
+  display: inline-block;
+  margin-left: 40px;
+ position: relative;
+  left: -14px; /* décale de 2 cm environ vers la gauche */
+ transform: translateY(4px); /* 🔹 la descend de 10 mm */}
+
+.commentbox {
+  max-height: 600px;   /* ou 500, 700… selon ton design */
+  overflow-y: auto;    /* ajoute une barre de défilement interne */
+
+}
+
+/* --- SCROLLBAR NEON --- */
+::-webkit-scrollbar {
+  width: 10px; /* largeur de la scrollbar */
+
+}
+
+::-webkit-scrollbar-track {
+  background: #000; /* couleur du fond de la barre */
+  box-shadow: inset 0 0 8px rgba(0,255,106,0.15);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff6a; /* couleur du curseur */
+  border-radius: 10px;
+  box-shadow: 0 0 12px #00ff6a, 0 0 25px #00ff6a;
+  transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #19ff8a; /* couleur au survol */
+  box-shadow: 0 0 18px #19ff8a, 0 0 40px #19ff8a;
+}
+
+/* Pour Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff6a #000;
+}
+
+html, body { cursor: default !important; }
+
+ .navbar {
+  display: flex;
+  flex-direction: column; /* empile menu + compteur */
+  align-items: center;    /* centre tout horizontalement */
+  margin-bottom: 25px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.nav-center {
+  text-align: center;
+  margin-bottom: 30px; /* espace entre le menu et le compteur */
+}
+
+
+
+/* --- BARRE VERTICALE FLUO --- */
+.vertical-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4px; /* épaisseur de la barre */
+  height: 100vh;
+  background: #00ff6a;
+  box-shadow: 0 0 15px #00ff6a, 0 0 35px #00ff6a, 0 0 60px #00ff6a;
+  z-index: 9999;
+  animation: glowBar 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowBar {
+  from {
+    opacity: 0.7;
+    box-shadow: 0 0 10px #00ff6a, 0 0 25px #00ff6a;
+  }
+  to {
+    opacity: 1;
+    box-shadow: 0 0 25px #00ff6a, 0 0 60px #00ff6a;
+  }
+}
+.supported-leagues {
+    margin-top: 60px !important;
+  max-width: 900px;
+  margin: 30px auto 50px;
+  padding: 20px 25px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(0,255,106,0.18);
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0,255,106,0.15);
+  font-family: 'Orbitron', monospace;
+  color: #00ff6a;
+  letter-spacing: 0.5px;
+}
+
+.supported-leagues h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.continent {
+  margin-bottom: 15px;
+}
+
+.continent-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+}
+
+.countries {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  color: rgba(0,255,106,0.85);
+}
+/* Désactiver le curseur neon + le curseur normal sur mobile */
+
+@media only screen and (max-width: 900px), (pointer: coarse) {
+  html, body { cursor: default !important; }
+}
+@media (max-width: 768px) {
+  html, body { cursor: auto !important; }
+}
+
+/* Mobile : supprimer tout curseur */
+@media only screen and (max-width: 900px), (pointer: coarse) {
+    #cursor {
+        opacity: 0 !important;
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+
+
+</style>
+
+
+
+
+<!-- Couleur de thème (mobile + navigateur) -->
+<meta name="theme-color" content="#00ff6a">
+<meta name="generator" content="PREDICTOR AI Engine 2025/2026 by betbotX">
+
+
+<!-- Pour iOS : icône + barre de statut -->
+<meta name="apple-mobile-web-app-title" content="PREDICTOR by betbotX">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- 🌍 META SEO ULTRA OPTIMISÉES PREDICTOR BY BETBOTX 2025/2026 -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:locale:alternate" content="en" />
+
+
+<title>Home | PREDICTOR by betbotX - Neural Football Predictor Engine 2025/2026 – AI Match Predictions & Global Insights</title>
+
+<!-- 🧠 DESCRIPTION BILINGUE ULTRA SEO (EN) -->
+<meta name="description" content="
+PREDICTOR by betbotX – the most powerful AI football prediction platform. Get real-time analytics, match forecasts and tactical insights powered by data science. Covers the Champions League, 2026 World Cup (USA, Canada, Mexico), and top leagues from Europe, Africa, Asia & Latin America. Follow elite clubs like Real Madrid, FC Barcelona, PSG, Manchester City, Al Ahly, and players such as Lamine Yamal, Kylian Mbappé, Haaland, Messi, Salah, and Vinícius Jr.">
+<!-- 🔑 Mots-clés ultra complets -->
+<meta name="keywords" content="PREDICTOR, AI football predictions, pronostics IA, football analytics, neural predictor, match analysis, sports data engine, machine learning football, predictive algorithm,
+Champions League 2025, Europa League, World Cup 2026 USA, Coupe du Monde 2026, Euro 2028, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Eredivisie, Super Lig, Primeira Liga, Jupiler Pro League, CAF Champions League.">
+
+<!-- 👤 Auteur + Robots -->
+<meta name="author" content="PREDICTOR by betbotX">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+<!-- 🧱 MÉTAS DE SÉCURITÉ (À CONSERVER) -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:url" content="https://betbotx.github.io/PREDICTOR/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PREDICTOR by betbotX">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="en">
+
+<meta property="og:image" content="https://betbotx.github.io/PREDICTOR/logopredictor.png">
+<meta property="og:image:alt" content="PREDICTOR by betbotX logo">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- 💬 META POUR THREADS / INSTAGRAM / TELEGRAM -->
+<meta property="al:android:url" content="https://betbotx.github.io/PREDICTOR">
+<meta property="al:ios:url" content="https://betbotx.github.io/PREDICTOR">
+<meta property="al:telegram:channel" content="https://t.me/betbotxvipaccess">
+<meta property="al:threads:profile" content="https://www.threads.net/@betbotX">
+<meta property="al:instagram:profile" content="https://www.instagram.com/betbotX">
+
+<!-- 🧭 URL canonique -->
+<link rel="canonical" href="https://betbotx.github.io/PREDICTOR/index.html">
+<!-- 🪶 POLICE -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<style>
+.blinking { animation: blink 2.5s infinite; }
+@keyframes blink { 0%,100% {opacity:0.4;} 50%{opacity:1;} }
+
+.live {
+  color: red;
+  font-size: 12px;
+  font-weight: 800;
+  animation: liveBlink 0.8s infinite;
+  text-shadow: 0 0 8px rgba(255,0,0,0.9);
+}
+@keyframes liveBlink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+:root {
+  --bg: #000;
+  --neon: #00ff6a;
+  --neon-2: #19ff8a;
+  --muted: rgba(0,255,106,0.65);
+  --scroll-behavior: smooth;
+}
+html, body {
+  line-height: 1.6;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
+  font-family: 'Orbitron', monospace;
+  color: var(--neon);
+  cursor: default !important; /* force le curseur classique gris */
+  scroll-behavior: smooth;
+  overflow-y: auto; /* ✅ permet le scroll vertical */
+  overflow-x: hidden;
+
+}
+main {
+  padding: 40px 20px 80px; /* réduit l'espace bas du contenu */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+nav {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--neon-2);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+  transition: 0.25s;
+}
+nav a:hover {
+  color: var(--neon);
+  text-shadow: 0 0 10px rgba(0,255,106,0.9);
+}
+.ball {
+  font-size: 0.9em;
+  color: var(--neon);
+  text-shadow: 0 0 10px rgba(0, 255, 106, 0.9);
+  display: inline-block;
+  animation: rotateBall 3s linear infinite;
+}
+@keyframes rotateBall { 0%{transform:rotate(0deg);}100%{transform:rotate(360deg);} }
+
+
+.subtitle {
+  color: #00ff88;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-bottom: 0px;
+  letter-spacing: 1px;
+  text-shadow: none;
+}
+.panel {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(0,255,106,0.18);
+  border-radius: 14px;
+  padding: 30px 60px;
+  box-shadow: 0 0 20px rgba(0,255,106,0.15);
+  max-width: 700px;
+  text-align: center;
+  padding-top: 5px;    /* Réduire le padding du haut */
+  margin: 20px auto; /* centrer le panel */
+}
+/* ✅ Conteneur vidéo qui s’ajuste au panel */
+.video-container {
+  position: relative;
+  width: 80%;          /* ✅ réduit la largeur à 80% du panel */
+  margin: 0 auto;      /* centre le lecteur */
+  height: 0;
+  padding-bottom: 45%; /* ✅ réduit aussi la hauteur (ratio plus petit) */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 15px;
+/* ✅ Effet lumineux vert comme panel/comments */
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,255,106,0.18);
+  box-shadow: 0 0 20px rgba(0,255,106,0.25),
+              0 0 40px rgba(0,255,106,0.15);
+
+}
+
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -1066,4 +2128,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+</script>
+  <script>
+  // Redirige vers index.html si l'utilisateur arrive sur /
+  if (location.pathname === "/PREDICTOR/" || location.pathname === "/PREDICTOR") {
+    window.location.replace("https://betbotx.github.io/PREDICTOR/index.html");
+  }
+</script>
+<script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
 
+</body>
+</html>
