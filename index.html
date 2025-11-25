@@ -11,39 +11,21 @@
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
 <style>
-.side-menu {
-  position: fixed;
-  top: 40%;              /* centré verticalement */
-  left: 0;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column; /* empile verticalement */
-  gap: 8px;              /* petit espace entre items */
-  background: rgba(0,0,0,0.7);
-  padding: 10px 10px;
+.layout {
+  display: flex;          /* ✅ côte à côte */
+  align-items: flex-start; /* alignés en haut */
+  gap: 20px;              /* espace entre menu et panel */
+  margin-top: 40px;       /* espace sous le ticker bar */
+}
+/* Sidebar */
+.sidebar {
+  flex: 0 0 180px;        /* largeur fixe */
+  background: rgba(0,0,0,0.85);
   border-right: 1px solid rgba(0,255,106,0.3);
-  border-radius: 0 8px 8px 0;
-  box-shadow: 0 0 12px rgba(0,255,106,0.4);
-  z-index: 500;
-  width: 80px;            /* ✅ largeur plus grande */
-  align-items: center;     /* ✅ centre horizontalement MENU et les items */
+  box-shadow: 0 0 15px rgba(0,255,106,0.4);
+  padding: 20px;
+  border-radius: 10px;
 }
-
-.side-menu a {
-  font-size: 11px;       /* petit texte */
-  color: #00ff6a;
-  text-decoration: none;
-  font-family: 'Orbitron', monospace;
-  text-align: center;
-  padding: 4px 2px;
-  transition: 0.2s;
-}
-
-.side-menu a:hover {
-  color: #19ff8a;
-  text-shadow: 0 0 6px #19ff8a;
-}
-
 /* --- TICKER BAR --- */
 .ticker-bar {
   position: fixed;
@@ -273,6 +255,7 @@ html, body { cursor: default !important; }
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <!-- 🌍 META SEO ULTRA OPTIMISÉES PREDICTOR BY BETBOTX 2025/2026 -->
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="en" />
 
 
@@ -289,6 +272,11 @@ Champions League 2025, Europa League, World Cup 2026 USA, Coupe du Monde 2026, E
 <meta name="author" content="PREDICTOR by betbotX">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
+<!-- 🌐 Langue + Zone géographique -->
+<meta name="language" content="en">
+<meta name="geo.region" content="EU,AF,SA,AS,NA">
+<meta name="geo.placename" content="Europe, Africa, South America, Latin America, Asia">
+<meta name="rating" content="general">
 
 <!-- 🧱 MÉTAS DE SÉCURITÉ (À CONSERVER) -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -318,6 +306,8 @@ Champions League 2025, Europa League, World Cup 2026 USA, Coupe du Monde 2026, E
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<!-- Apple & PWA -->
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
 
 <style>
 .blinking { animation: blink 2.5s infinite; }
@@ -561,16 +551,7 @@ padding: 0px 0px;
 
 
 <div class="vertical-bar"></div>
-<!-- MENU VERTICAL À GAUCHE -->
-<div class="side-menu">
-  <div class="menu-title">MENU</div>
-  <a href="#">PREDICTIONS</a>
-  <a href="#">LIVE MATCH</a>
-  <a href="#">LIVE SCORES</a>
-  <a href="#">STANDINGS</a>
-  <a href="#">MISSING PLAYERS</a>
-</div>
->
+
 <main role="main">
 <!-- 🔥 Ticker bar tout en haut -->
 <div class="ticker-bar">
@@ -665,7 +646,7 @@ padding: 0px 0px;
 
   <div class="continent">
     <p class="continent-title"> America</p>
-    <p class="countries">USA: MLS | Mexico: Liga MX | Bolivia: División Profesional, Copa Simón Bolívar | Brazil: Copa Betano | Argentina: Primera División | Colombia: Categoría Primera A | Peru: Liga 1 | Chile: Primera División | Ecuador: Serie A | Uruguay: Primera División | Paraguay: Primera División | Guatemala: Liga Guate Banrural | Venezuela: Primera División
+    <p class="countries">USA: MLS | Mexico: Liga MX | Bolivia: División Profesional, Copa Simón Bolívar | Brazil: Copa Betano | Argentina: Primera División | Colombia: Categoría Primera A | Peru: Liga 1 | Chile: Primera División | Ecuador: Serie A | Uruguay: Primera División | Paraguay: Primera División | Bolivia: División Profesional | Guatemala: Liga Guate Banrural | Venezuela: Primera División
 </p>
 </div>
   <div class="continent">
