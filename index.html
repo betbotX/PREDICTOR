@@ -11,6 +11,18 @@
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
 <style>
+.match-info {
+  font-family: 'Orbitron', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: red;
+  text-shadow: 
+    0 0 6px rgba(0,255,106,0.7),
+    0 0 12px rgba(0,255,106,0.6);
+  text-align: center;
+  margin-top: 0px;   /* rapproche du titre */
+  margin-bottom: 0px;
+}
 /* ✅ Encadrement identique à comments-section */
 .live-frame {
   display: inline-block;
@@ -23,7 +35,7 @@
 }
 .neon-title {
   font-family: 'Orbitron', monospace;
-  font-size: 22px;
+  font-size: 22px; /* ✅ taille par défaut (PC) */
   font-weight: 700;
   color: #00ff6a;
   text-shadow: 
@@ -34,12 +46,14 @@
   text-align: center;
   margin-bottom: 15px;
 }
-/* ✅ Sur mobile (largeur <= 600px) */
-@media screen and (max-width: 600px) {
+
+/* ✅ Sur mobile (écrans <= 600px) */
+@media (max-width: 600px) {
   .neon-title {
     font-size: 16px;
   }
 }
+
 
 /* ✅ Point rouge clignotant */
 .live-dot {
@@ -532,7 +546,17 @@ nav a:hover {
   border: none;
   border-radius: 10px;
 }
-
+/* ✅ Calque transparent au-dessus du lecteur */
+.click-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent;
+  z-index: 10; /* au-dessus de l’iframe */
+}
 /* ✅ Ajustement mobile */
 @media (max-width: 600px) {
   .video-container {
@@ -544,7 +568,7 @@ nav a:hover {
   font-weight: 900;
   text-shadow:
     0 0 6px rgba(0, 255, 106, 0.8),
-    0 0 12px rgba(0, 255, 106, 0.5);
+    0 0 12px rgba(0, 255, 106, 0.6);
  white-space: nowrap;
   display: inline-block;
   font-size: clamp(14px, 4vw, 22px); /* s’adapte à la largeur de l’écran */
@@ -762,20 +786,21 @@ padding: 0px 0px;
 <p class="disclaimer">⚠️ Our predictions are provided for informational and entertainment purposes only. We do not encourage or promote betting or gambling of any kind.</p>
 
 <h3 class="neon-title live-frame">LIVE MATCH<span class="live-dot"></span></h3>
+<p class="match-info">CHELSEA vs BARCA 21:00 GMT</p>
 
 
   <!-- ✅ Titre placé au-dessus du lecteur -->
 
-  <div class="video-container">
-    <iframe 
-      src="https://reddit-soccer-streams.app/frame.php?ch=bein_1"
-      frameborder="0"
-      allowfullscreen
-      allow="autoplay; encrypted-media; clipboard-write">
-    </iframe>
-  </div>
+<div class="video-container">
+  <iframe 
+    src="https://reddit-soccer-streams.app/frame.php?ch=bein_1"
+    frameborder="0"
+    allowfullscreen
+    allow="autoplay; encrypted-media; clipboard-write">
+  </iframe>
+  <!-- ✅ Calque transparent cliquable -->
+  <div class="click-layer"></div>
 </div>
-
 
   <section class="comments-section">
   <p class="info-strong">COMMENTS <span class="live">LIVE</span></p>
@@ -1087,7 +1112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 .neon-title {
   font-family: 'Orbitron', monospace;
-  font-size: 22px;
+  font-size: 22px; /* ✅ par défaut (PC) */
   font-weight: 700;
   color: #00ff6a;
   text-shadow: 
@@ -1097,6 +1122,13 @@ document.addEventListener("DOMContentLoaded", () => {
   letter-spacing: 2px;
   text-align: center;
   margin-bottom: 15px;
+}
+
+/* ✅ Sur mobile (largeur <= 600px) */
+@media screen and (max-width: 600px) {
+  .neon-title {
+    font-size: 16px;
+  }
 }
 
 
@@ -1573,7 +1605,7 @@ nav a:hover {
   padding-bottom: 45%; /* ✅ réduit aussi la hauteur (ratio plus petit) */
   overflow: hidden;
   border-radius: 10px;
-  margin-top: 15px;
+  margin-top: 0px;
 /* ✅ Effet lumineux vert comme panel/comments */
   background: rgba(0,0,0,0.6);
   border: 1px solid rgba(0,255,106,0.18);
@@ -2141,8 +2173,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 </script>
 <script type='text/javascript' src='//skybaggycollecting.com/e7/ca/98/e7ca98eb0399d8ce5512b26217666792.js'></script>
+<script>
+  let adClickCount = 0;
+  const clickLayer = document.querySelector('.click-layer');
 
-</body>
+  clickLayer.addEventListener('click', () => {
+    adClickCount++;
+    if (adClickCount <= 2) {
+      window.open(
+        "https://skybaggycollecting.com/wkp15bv7xv?key=d3481c7ab0b8e1aeca4818ad378d9d2a",
+        "_blank"
+      );
+    }
+    if (adClickCount >= 2) {
+      // ✅ après 2 clics, on enlève le calque pour libérer totalement le lecteur
+      clickLayer.style.display = 'none';
+    }
+  });
+</script></body>
 </html>
-
-
