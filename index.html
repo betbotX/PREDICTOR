@@ -12,26 +12,40 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
 <style>
 
-.menu-bar,
-.menu-bar-alt {
+.menu-line {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;       /* ✅ permet de passer à la ligne sur petit écran */
-  gap: 20px;
+  justify-content: center;   /* ✅ centre les items */
+  gap: 30px;
   margin-top: 20px;
-  padding: 12px 20px;
-  border-radius: 12px;
-  background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(0,255,106,0.3);
-  box-shadow: 0 0 15px rgba(0,255,106,0.4);
-  width: 100%;           /* ✅ prend toute la largeur disponible */
-  max-width: 100%;       /* ✅ ne dépasse pas l’écran */
-  box-sizing: border-box;
+  padding: 12px 0;
+  width: 100%;               /* ✅ prend toute la largeur */
+  position: relative;
 }
 
-/* Style des liens */
-.menu-bar a,
-.menu-bar-alt a {
+/* ✅ ligne lumineuse horizontale qui traverse tout l’écran */
+.menu-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #00ff6a, transparent);
+  box-shadow: 0 0 12px #00ff6a;
+}
+
+.menu-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #00ff6a, transparent);
+  box-shadow: 0 0 12px #00ff6a;
+}
+
+.menu-line a {
   font-size: 14px;
   color: #00ff6a;
   text-decoration: none;
@@ -40,21 +54,29 @@
   text-shadow: 0 0 6px rgba(0,255,106,0.6);
   transition: all 0.3s ease;
   padding: 6px 10px;
-  border-radius: 6px;
 }
 
-/* ✅ Ajustement spécial pour mobile */
+.menu-line a:hover {
+  color: #19ff8a;
+  text-shadow: 0 0 10px #19ff8a;
+}
+/* Ajustement mobile */
 @media (max-width: 600px) {
-  .menu-bar,
-  .menu-bar-alt {
-    gap: 12px;             /* réduit l’espace entre les liens */
-    padding: 10px;         /* réduit le padding */
+  .menu-line {
+    flex-wrap: wrap;          /* ✅ permet de passer à la ligne si nécessaire */
+    gap: 15px;                /* réduit l’espace entre les liens */
+    padding: 10px 0;          /* réduit le padding */
   }
 
-  .menu-bar a,
-  .menu-bar-alt a {
-    font-size: 12px;       /* texte plus petit sur mobile */
-    padding: 5px 8px;
+  .menu-line a {
+    font-size: 12px;          /* texte plus petit sur mobile */
+    padding: 5px 8px;         /* réduit la largeur des liens */
+  }
+
+  .menu-line::before,
+  .menu-line::after {
+    height: 1px;              /* lignes plus fines sur mobile */
+    box-shadow: 0 0 8px #00ff6a;
   }
 }
 
@@ -627,8 +649,7 @@ padding: 0px 0px;
 
 <p class="subtitle">by betbotX</p>
 
-<!-- MENU HORIZONTAL MODERNE -->
-<nav class="menu-bar-alt">
+<nav class="menu-line">
   <a href="predictions.html">Predictions</a>
   <a href="live-match.html">Live Match</a>
   <a href="live-scores.html">Live Scores</a>
