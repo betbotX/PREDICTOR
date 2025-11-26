@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -517,11 +518,11 @@ nav a:hover {
   box-shadow: 0 0 20px rgba(0,255,106,0.15);
   max-width: 480px;
   text-align: center;
-  padding-top: 0px;    /* Réduire le padding du haut */
   margin: 0 auto; /* centrer le panel */
   box-sizing: border-box; /* évite tout débordement */
-
+  padding-top: 0px !important;
 }
+
 /* ✅ Conteneur vidéo qui s’ajuste au panel */
 .video-container {
   position: relative;
@@ -662,7 +663,11 @@ nav a:hover {
   white-space: pre-line;
     font-size: 13px;
   transform: translateY(15px);
-
+@media (max-width: 480px) {
+  .response-box {
+    font-size: 11px;
+  }
+}
 }
 
 
