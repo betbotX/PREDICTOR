@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://betbotx.github.io/PREDICTOR/favicon-16x16.png">
+<link rel="manifest" href="https://betbotx.github.io/PREDICTOR/site.webmanifest">
+<meta name="msapplication-TileColor" content="#00ff6a">
+<meta name="theme-color" content="#000000">
+
+<meta charset="UTF-8">
+<title>Live Scores | PREDICTOR by betbotX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- POLICE -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* --------------------------- GLOBAL STYLE --------------------------- */
+:root {
+  --neon: #00ff6a;
+  --neon2: #19ff8a;
+  --bg: #000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', monospace;
+  background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
+  color: var(--neon);
+  overflow-x: hidden;
+}
+
+/* --------------------------- LEFT NEON BAR --------------------------- */
+.vertical-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100vh;
+  background: var(--neon);
+  box-shadow: 0 0 15px var(--neon), 0 0 45px var(--neon);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
+}
+
+/* --------------------------- LOGO --------------------------- */
+.site-logo {
+  display: block;
+  margin: 40px auto 10px;
+  max-width: 280px;
+}
+
+/* --------------------------- SUBTITLE --------------------------- */
+.subtitle {
+  text-align: center;
+  color: var(--neon2);
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+/* --------------------------- MENU SPORTIF (ENCADREMENT) --------------------------- */
+.menu-line {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 25px 0 45px;
+  padding: 14px 8px; /* espace intérieur pour laisser respirer les lignes */
+  position: relative;
+  width: 100%;
+  z-index: 20; /* assure le texte au-dessus des pseudo-éléments */
+  box-sizing: border-box;
+}
+
+/* Encadrement lumineux horizontal (ligne supérieure et inférieure) */
+.menu-line::before,
+.menu-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon), transparent);
+  box-shadow: 0 0 12px var(--neon);
+  z-index: 10; /* placé sous le texte */
+}
+
+.menu-line::before {
+  top: 0;
+}
+
+.menu-line::after {
+  bottom: 0;
+}
+
+/* Option: léger fond pour le bloc menu (comme encadrement) */
+.menu-line-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* Liens */
+.menu-line a {
+  color: var(--neon);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 0 6px var(--neon);
+  transition: 0.3s;
+  position: relative;
+  z-index: 30; /* garantir la lisibilité */
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.menu-line a:hover {
+  color: var(--neon2);
+  text-shadow: 0 0 10px var(--neon2);
+  background: rgba(0,0,0,0.35);
+}
+
+/* --------------------------- MATCH CARD PREMIUM --------------------------- */
+
+.match-card {
+  width: 92%;
+  max-width: 650px;
+  margin: 25px auto;
+  padding: 22px 25px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(0,255,106,0.2);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,255,106,0.25), 0 0 40px rgba(0,255,106,0.1);
+  text-align: center;
+}
+
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team-block {
+  width: 40%;
+  text-align: center;
+}
+
+.team-block img {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 6px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  padding: 6px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+}
+
+.team-name {
+  font-size: 16px;
+  color: var(--neon2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.score {
+  width: 20%;
+  font-size: 34px;
+  font-weight: 900;
+  color: var(--neon);
+  text-shadow: 0 0 12px var(--neon), 0 0 25px var(--neon2);
+}
+
+.details {
+  margin-top: 14px;
+  font-size: 12px;
+  color: rgba(0,255,106,0.75);
+}
+
+.league-logo {
+  width: 35px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* --------------------------- FOOTER --------------------------- */
+footer {
+  border-top: 1px solid rgba(0,255,106,0.08);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,255,106,0.9);
+  text-shadow: 0 0 6px rgba(0,255,106,0.45);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  padding-top: 5px;
+  margin-top: 18px;   /* réduit l'espace au-dessus du footer */
+  padding-bottom: 0px;   /* espace interne sous le texte */
+}
+footer a {
+  color: rgba(0,255,106,0.9);
+  text-decoration: none;
+}
+
+/* --------------------------- MOBILE --------------------------- */
+@media (max-width: 600px) {
+  .team-block img { width: 58px; height: 58px; }
+  .team-name { font-size: 13px; }
+  .score { font-size: 30px; }
+  .menu-line { gap: 12px; padding: 10px 6px; margin-bottom: 28px; }
+  .menu-line::before, .menu-line::after { height: 1px; box-shadow: 0 0 8px var(--neon); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="vertical-bar"></div>
+
+<img src="https://betbotx.github.io/PREDICTOR/logo.png" class="site-logo" alt="Predictor Logo">
+<p class="subtitle">by betbotX</p>
+
+<!-- --------------------------- MENU SPORTIF (ENCADREMENT) --------------------------- -->
+<div class="menu-line-wrapper">
+  <nav class="menu-line" role="navigation" aria-label="Sport menu">
+    <a href="predictions.html">Predictions</a>
+    <a href="live-match.html">Live Match</a>
+    <a href="livescores.html" style="color: var(--neon2);">Live Scores</a>
+    <a href="standings.html">Standings</a>
+    <a href="absences.html">Missing Players</a>
+  </nav>
+</div>
+
+<!-- --------------------------- MATCHES CONTAINER --------------------------- -->
+<h2 style="text-align:center; color:var(--neon); margin-top:20px; text-shadow:0 0 10px var(--neon);">
+  LIVE SCORES
+</h2>
+
+<div id="matches" style="text-align:center; margin-top:25px; font-size:14px;">
+  Loading live matches...
+</div>
+
+<!-- --------------------------- JAVASCRIPT --------------------------- -->
+<script>
+/* Defensive: fallback data structure if API is unreachable (keeps layout stable) */
+const fallback = {
+  matches: []
+};
+
+fetch('https://reddit-soccer-streams.app/api/matches')
+  .then(res => res.ok ? res.json() : Promise.reject('Network error'))
+  .then(data => {
+    if (!data) data = fallback;
+    const box = document.getElementById("matches");
+    box.innerHTML = "";
+
+    if (!data.matches || data.matches.length === 0) {
+      box.innerHTML = "<p>Aucun match disponible pour le moment.</p>";
+      return;
+    }
+
+    data.matches.forEach(m => {
+      // Safe guards for missing fields
+      const home_logo = m.home_logo || 'https://betbotx.github.io/PREDICTOR/favicon-32x32.png';
+      const away_logo = m.away_logo || 'https://betbotx.github.io/PREDICTOR/favicon-32x32.png';
+      const league_logo = m.league_logo || 'https://betbotx.github.io/PREDICTOR/favicon-32x32.png';
+      const score = (m.score && m.score !== '') ? m.score : '–';
+      const channels = Array.isArray(m.channels) ? m.channels.length : 0;
+      const time = m.time_gmt || m.time || 'TBD';
+      const status = m.status || 'Scheduled';
+
+      const card = document.createElement("div");
+      card.className = "match-card";
+
+      card.innerHTML = `
+        <div class="teams">
+          <div class="team-block">
+            <img src="${home_logo}" alt="${m.home_team || 'Home'}">
+            <div class="team-name">${m.home_team || 'Home'}</div>
+          </div>
+
+          <div class="score">${score}</div>
+
+          <div class="team-block">
+            <img src="${away_logo}" alt="${m.away_team || 'Away'}">
+            <div class="team-name">${m.away_team || 'Away'}</div>
+          </div>
+        </div>
+
+        <div class="details">
+          <img src="${league_logo}" class="league-logo" alt="${m.league || ''}">
+          ${m.league || 'Unknown League'}<br>
+          Heure: ${time} • Statut: ${status}<br>
+          Chaînes disponibles: ${channels}
+        </div>
+      `;
+
+      box.appendChild(card);
+    });
+  })
+  .catch((err) => {
+    console.error('Live scores error:', err);
+    document.getElementById("matches").innerHTML = "<p>Erreur lors du chargement des scores en direct.</p>";
+  });
+</script>
+
+<footer role="contentinfo">
+  <div class="social-links">
+    <a href="https://www.threads.net/@betbotX"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Open Threads profile @betbotX">Threads</a> |
+    <a href="https://www.instagram.com/betbotX"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Open Instagram profile @betbotX">Instagram</a> |
+    <a href="https://t.me/+ZiG4eMmBc0llYTE0"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Open Telegram channel betbotX VIP access">Telegram</a>
+  </div>
+  <p>© 2025 PREDICTOR by betbotX - Powered by ANFAtech</p>
+</footer>
+
+
+</body>
+</html>
