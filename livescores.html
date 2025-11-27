@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
+ .navbar {
+  display: flex;
+  flex-direction: column; /* empile menu + compteur */
+  align-items: center;    /* centre tout horizontalement */
+  margin-bottom: 25px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.nav-center {
+  text-align: center;
+  margin-bottom: 30px; /* espace entre le menu et le compteur */
+  margin-top: 20px; /* <-- AJOUT POUR ESPACE EN HAUT */
+
+
+}
+nav {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--neon-2);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+  transition: 0.25s;
+}
+nav a:hover {
+  color: var(--neon);
+  text-shadow: 0 0 10px rgba(0,255,106,0.9);
+}
 /* --------------------------- GLOBAL STYLE --------------------------- */
 :root {
   --neon: #00ff6a;
@@ -54,6 +90,7 @@ body {
   display: block;
   margin: 40px auto 10px;
   max-width: 280px;
+
 }
 
 /* --------------------------- SUBTITLE --------------------------- */
@@ -62,6 +99,7 @@ body {
   color: var(--neon2);
   margin-top: 5px;
   font-size: 16px;
+margin-bottom: 0px;
 }
 
 /* --------------------------- MENU SPORTIF (ENCADREMENT) --------------------------- */
@@ -69,7 +107,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin: 25px 0 45px;
+  margin: 20px 0 45px;
   padding: 14px 8px; /* espace intérieur pour laisser respirer les lignes */
   position: relative;
   width: 100%;
@@ -215,12 +253,41 @@ footer a {
   .menu-line { gap: 12px; padding: 10px 6px; margin-bottom: 28px; }
   .menu-line::before, .menu-line::after { height: 1px; box-shadow: 0 0 8px var(--neon); }
 }
+img.site-logo {
+  display: block;        
+  margin-top: 0;        
+  margin-bottom: 0;      
+  padding-top: 0;        
+  padding-bottom: 0;     
+  margin-left: auto;     
+  margin-right: auto;    
+  max-width: 450px;      
+  height: auto;          
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  img.site-logo {
+    width: 350px;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="vertical-bar"></div>
+<nav class="navbar" role="navigation" aria-label="Main menu">
+  <div class="nav-center">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="blog.html">Blog</a> |
+    <a href="news.html">News</a> |
+    <a href="privacy.html">Privacy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="contact.html">Contact</a>
+  </div>
 
 <img src="https://betbotx.github.io/PREDICTOR/logo.png" class="site-logo" alt="Predictor Logo">
 <p class="subtitle">by betbotX</p>
