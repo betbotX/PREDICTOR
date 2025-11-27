@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
+
  .navbar {
   display: flex;
   flex-direction: column; /* empile menu + compteur */
@@ -30,7 +31,6 @@
 .nav-center {
   text-align: center;
   margin-bottom: 30px; /* espace entre le menu et le compteur */
-  margin-top: 20px; /* <-- AJOUT POUR ESPACE EN HAUT */
 
 
 }
@@ -62,11 +62,18 @@ nav a:hover {
 
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Orbitron', monospace;
   background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
   color: var(--neon);
   overflow-x: hidden;
+ padding: 40px 20px 80px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+
 }
 /* === SCROLLBAR PREDICTOR (pixel-perfect, identical to indextest) === */
 /* Ensure color variables exist — fallback to hardcoded values if not */
