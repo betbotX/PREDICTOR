@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#000000">
 
 <meta charset="UTF-8">
-<title>Live Scores | PREDICTOR by betbotX</title>
+<title>Live Scores | PREDICTOR by betbotX - Track live scores and key match events in real time from top leagues worldwide.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- POLICE -->
@@ -296,7 +296,7 @@ fetch('https://reddit-soccer-streams.app/api/matches')
           <img src="${league_logo}" class="league-logo" alt="${m.league || ''}">
           ${m.league || 'Unknown League'}<br>
           Heure: ${time} • Statut: ${status}<br>
-          Chaînes disponibles: ${channels}
+
         </div>
       `;
 
@@ -308,7 +308,29 @@ fetch('https://reddit-soccer-streams.app/api/matches')
     document.getElementById("matches").innerHTML = "<p>Erreur lors du chargement des scores en direct.</p>";
   });
 </script>
+<div style="max-width:900px;margin:40px auto 60px;color:var(--neon2);font-size:13px;line-height:1.55;text-align:center;">
+<h3 style="color:var(--neon);text-shadow:0 0 8px var(--neon);font-size:18px;margin-bottom:10px;">Live Scores & Real-Time Sports Updates</h3>
 
+<p>
+Stay updated with the fastest <strong>live scores</strong> and real-time match information across the world. 
+Our platform delivers instant updates on football games, international tournaments, league standings, match results, kick-off times, team performance, and key moments. 
+Whether you're tracking the biggest European leagues, international competitions, or daily fixtures, this page provides ultra-fast score updates designed for accuracy and reliability.
+</p>
+
+<p>
+Access <strong>football live scores</strong>, match status, team stats, and essential game details from hundreds of leagues. 
+With real-time synchronization and constantly refreshed data, this is the ideal tool for fans who want to follow ongoing games, upcoming fixtures, and full-time results with no delay.
+</p>
+
+<p>
+From high-intensity derbies to international matchups, our live scoring system ensures you never miss a goal, score change, or important update. 
+Browse through matches happening today, filter competitions, and stay connected to global sports in the most efficient way possible.
+</p>
+
+<p>
+Whether you're a passionate supporter, a fantasy football player, or simply curious about today’s fixtures, our <strong>live scores platform</strong> gives you the speed and clarity you need — all in one place, 24/7.
+</p>
+</div>
 <footer role="contentinfo">
   <div class="social-links">
     <a href="https://www.threads.net/@betbotX"
@@ -323,7 +345,5 @@ fetch('https://reddit-soccer-streams.app/api/matches')
   </div>
   <p>© 2025 PREDICTOR by betbotX - Powered by ANFAtech</p>
 </footer>
-
-
 </body>
 </html>
