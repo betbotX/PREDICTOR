@@ -84,13 +84,12 @@ h1 {
     nav a {
       display: inline-block;
     color: #19FF8A;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 700;
-      transition: all 0.25s ease;
-      text-shadow: 0 0 6px rgba(0,255,106,0.6);
-    }
-
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+    text-shadow: 0 0 6px rgba(0, 255, 106, 0.6);
+}
     nav a:hover {
       color: var(--neon);
       text-shadow: 0 0 10px rgba(0,255,106,0.9);
@@ -473,8 +472,11 @@ async function loadMatches(){
       m.channels.forEach(ch => {
         const link = document.createElement("a");
         link.className = "channel-btn";
-        link.href = ch.iframe;
-        link.target = "_blank";
+       link.href = "#";
+link.onclick = (e) => {
+  e.preventDefault();
+  handleClick(ch.iframe);
+};
         link.textContent = ch.name;
         card.appendChild(link);
       });
@@ -489,9 +491,23 @@ async function loadMatches(){
 
 loadMatches();
 setInterval(loadMatches, 60000); // refresh every 60 seconds
-</script>
+const SMARTLINK = "https://skybaggycollecting.com/wkp15bv7xv?key=d3481c7ab0b8e1aeca4818ad378d9d2a";
 
+// stocke l'état du clic pour chaque URL
+const clickState = {};
+
+function handleClick(streamUrl) {
+  // si premier clic → ouvrir Smartlink
+  if (!clickState[streamUrl]) {
+    clickState[streamUrl] = true;  // Marque comme “déjà cliqué”
+    window.open(SMARTLINK, "_blank");
+  } 
+  // si deuxième clic → ouvrir stream
+  else {
+    window.open(streamUrl, "_blank");
+    clickState[streamUrl] = false; // reset pour permettre à nouveau le cycle
+  }
+}
+</script>
 </body>
 </html>
-
-
