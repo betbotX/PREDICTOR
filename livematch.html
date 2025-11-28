@@ -55,6 +55,14 @@
   transform: scale(1.15);
   text-shadow: 0 0 18px rgba(0,255,106,1);
 }
+/* ----- MOBILE RESPONSIVE ----- */
+@media (max-width: 768px) {
+  .back-arrow {
+    top: 12px;
+    left: 12px;
+    font-size: 24px;
+  }
+}
 /* --- CLEAN UI THEME --- */
 h1 {
     text-align: center;
@@ -297,6 +305,92 @@ body, p, span, h1, h2, h3, h4, h5, h6, li {
 * {
   scrollbar-width: thin;
   scrollbar-color: #00ff6a #000;
+}
+/* ==== MOBILE FIX COMPLET POUR LIVEMATCH (sans changer ton design) ==== */
+@media(max-width: 768px){
+
+  body {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  /* Card plus compacte mais même design */
+  .match-card {
+    padding: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Le row devient vertical mais reste centré */
+  .team-row {
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .team {
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .team img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .team span {
+    font-size: 15px;
+  }
+
+  /* Statut centré, pas trop grand */
+  .status {
+    font-size: 13px;
+    margin-top: 12px;
+    line-height: 1.4;
+    padding: 0 4px;
+  }
+
+  /* Score un peu réduit mais bien visible */
+  .score {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  h4 {
+    font-size: 15px !important;
+    margin: 12px 0 8px;
+  }
+
+  /* Boutons stream — largeur parfaite mobile */
+  .channel-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Fix overflow éventuel du container */
+  #liveMatches {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  nav {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
 }
 
 </style>
