@@ -215,7 +215,9 @@ body {
 /* RESPONSIVE */
 @media(max-width: 768px){
   .team-row {
-    flex-direction: column;
+     flex-direction: row;   /* équipes restent l'une à côté de l'autre */
+    justify-content: space-between;
+    gap: 10px;              /* espace réduit */
   }
   .team {
     width: 100%;
@@ -313,73 +315,65 @@ body, p, span, h1, h2, h3, h4, h5, h6, li {
     padding-right: 8px;
   }
 
-  /* Card plus compacte mais même design */
   .match-card {
-    padding: 16px;
-    margin-bottom: 16px;
+    padding: 12px;
+    margin-bottom: 14px;
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Le row devient vertical mais reste centré */
+  /* Les équipes restent côte à côte */
   .team-row {
-    flex-direction: column;
-    gap: 14px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
     width: 100%;
     text-align: center;
   }
 
   .team {
     justify-content: center;
-    width: 100%;
-    gap: 8px;
+    width: auto;
+    gap: 6px;
   }
 
   .team img {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
   }
 
   .team span {
-    font-size: 15px;
-  }
-
-  /* Statut centré, pas trop grand */
-  .status {
     font-size: 13px;
-    margin-top: 12px;
-    line-height: 1.4;
-    padding: 0 4px;
   }
 
-  /* Score un peu réduit mais bien visible */
-  .score {
-    font-size: 24px;
+  .status {
+    font-size: 12px;
     margin-top: 10px;
+    line-height: 1.4;
+  }
+
+  .score {
+    font-size: 20px;
+    margin-top: 6px;
   }
 
   h4 {
-    font-size: 15px !important;
-    margin: 12px 0 8px;
+    font-size: 14px !important;
+    margin: 10px 0 8px;
   }
 
-  /* Boutons stream — largeur parfaite mobile */
   .channel-btn {
     width: 100%;
-    padding: 12px;
-    font-size: 15px;
-    margin-top: 10px;
-    border-radius: 10px;
-    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 8px;
+    border-radius: 8px;
   }
 
-  /* Fix overflow éventuel du container */
   #liveMatches {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    padding-left: 0;
-    padding-right: 0;
   }
 
   nav {
@@ -391,7 +385,6 @@ body, p, span, h1, h2, h3, h4, h5, h6, li {
     font-size: 32px;
   }
 }
-
 </style>
 </head>
 
