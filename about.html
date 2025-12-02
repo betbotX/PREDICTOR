@@ -91,9 +91,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px 20px 80px;
+padding-top: 20px;
+padding-right: 10px;
+padding-bottom: 80px;
+padding-left: 10px;
       line-height: 1.6;
     }
+@media (max-width: 768px) {
+  body {
+    padding-top: 10px;
+  }
+}
 
     /* ---- NAV ---- */
     nav {
@@ -183,11 +191,7 @@
         font-size: 30px;
       }
     }
-@media (max-width: 768px) {
-  body {
-    margin-top: 10px;
-  }
-}
+
     /* --- SCROLLBAR NEON --- */
     ::-webkit-scrollbar { width: 10px; }
     ::-webkit-scrollbar-track {
@@ -315,6 +319,7 @@ document.addEventListener('mousemove', e => {
 </script>
 </body>
 </html>
+
 
 
 
