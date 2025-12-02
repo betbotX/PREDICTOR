@@ -14,6 +14,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
+/* ==== SEO TEXT AREA STYLING ==== */
+#seo-text {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 12px;
+  text-align: center;
+  font-family: 'Orbitron', monospace;
+  color: var(--neon);
+  line-height: 1.8;
+  font-size: 16px;
+  text-shadow: 0 0 12px rgba(0,255,106,0.6);
+}
+
+/* Style du titre */
+#seo-text h2 {
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--neon);
+  text-shadow: 0 0 20px rgba(0,255,106,0.9);
+}
+
+/* Style des paragraphes */
+#seo-text p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: var(--neon);
+  line-height: 1.8;
+  text-shadow: 0 0 10px rgba(0,255,106,0.5);
+}
+
+/* Responsive mobile */
+@media(max-width: 768px) {
+  #seo-text {
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 0 10px;
+  }
+
+  #seo-text h2 {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+}
 
 .vertical-bar {
   position: fixed;
@@ -390,6 +436,49 @@ body, p, span, h1, h2, h3, h4, h5, h6, li {
     font-size: 32px;
   }
 }
+.match-description {
+  max-width: 900px;
+  margin: 0px auto;
+  padding: 0 12px;
+  text-align: center;
+  font-family: 'Orbitron', monospace;
+  color: var(--neon);
+  line-height: 1.8;
+  font-size: 16px;
+  text-shadow: 0 0 12px rgba(0,255,106,0.6);
+}
+
+.match-description h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--neon);
+  text-shadow: 0 0 20px rgba(0,255,106,0.9);
+}
+
+.match-description p {
+  margin-bottom: 15px;
+  color: var(--neon);
+  font-size: 16px;
+  line-height: 1.8;
+  text-shadow: 0 0 10px rgba(0,255,106,0.5);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .match-description {
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 0 10px;
+  }
+
+  .match-description h2 {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+}
 </style>
 </head>
 
@@ -409,11 +498,29 @@ body, p, span, h1, h2, h3, h4, h5, h6, li {
     <a href="contact.html">Contact</a>
   </nav>
 
-<h1>Live Match- Real-Time Football Tracking</h1>
+<h1>Live Match: Real-Time Football Scores & Updates</h1>
 
 <div class="container" id="liveMatches">
   <p style="text-align:center;color:var(--muted);">Loading live match streams...</p>
 </div>
+<!-- 🔥 SEO TEXT BLOCK AT THE END OF THE PAGE -->
+<div class="match-description" style="max-width:900px;text-align:center; color:var(--neon); line-height:1.7; font-size:15px; padding:0 10px;">
+
+  <!-- 🔥 END SEO TEXT BLOCK -->
+<div id="seo-text">
+
+  <h2>Real-Time Football Experience</h2>
+
+  <p>Welcome to the Live Match section, your gateway to instant football coverage delivered through a sleek and futuristic interface. Our platform showcases live matches with continuously updated scores, essential match details, and a smooth user experience optimized for speed and clarity. With a modern neon-glow design and intuitive card-based layout, you can follow ongoing games effortlessly and stay informed throughout the action.</p>
+
+  <p>Every live match is displayed in real time, ensuring you always see the most accurate information: team line-ups, competition details, match status, updated scores, and access points for available streams. The dynamic refresh system keeps the page up-to-date without interrupting your browsing experience, offering a seamless and fluid navigation environment.</p>
+
+  <p>Whether you're checking today’s fixtures, tracking ongoing games, or simply exploring current football action, the Live Match page is built to deliver precision, efficiency, and visual appeal. Designed to complement the dark tech-theme of your website, the interface uses neon highlights, crisp typography, and clear spacing to ensure a premium user experience across all devices.</p>
+
+  <p>Stay connected, stay informed, and enjoy a cutting-edge environment crafted for football fans who want real-time updates, strong visual clarity, and a fast, futuristic browsing experience.</p>
+
+</div>
+
   <footer>
     <div class="social-links" style="margin-bottom: 8px;">
       <a href="https://www.threads.net/@betbotx" target="_blank" rel="noopener noreferrer">Threads</a> |
@@ -509,9 +616,3 @@ function handleClick(streamUrl) {
 </script>
 </body>
 </html>
-
-
-
-
-
-
