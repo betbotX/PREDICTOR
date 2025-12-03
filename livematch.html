@@ -14,6 +14,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
+  /* ==== RÉDUCTION DES MATCH CARDS SUR ORDI ==== */
+@media (min-width: 1024px) {
+  .match-card {
+    padding: 14px;        /* moins de padding */
+    max-width: 650px;     /* largeur max réduite */
+    margin: 15px auto;    /* centrage + moins de marge */
+    transform: scale(0.90);   /* réduction visuelle globale */
+  }
+
+  .team img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .team span {
+    font-size: 14px;
+  }
+
+  .score {
+    font-size: 22px;
+  }
+
+  .status {
+    font-size: 12px;
+  }
+}
 /* ==== SEO TEXT AREA STYLING ==== */
 #seo-text {
   max-width: 900px;
@@ -626,6 +652,7 @@ function handleClick(streamUrl) {
 </script>
 </body>
 </html>
+
 
 
 
