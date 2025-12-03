@@ -431,7 +431,7 @@ body, p, span, h1, h2, h3, h4, h5, h6, li {
   }
 
   .status {
-    font-size: 12px;
+    font-size: 13px;
     margin-top: 10px;
     line-height: 1.4;
   }
@@ -509,6 +509,58 @@ body, p, span, h1, h2, h3, h4, h5, h6, li {
   .match-description h2 {
     font-size: 22px;
     letter-spacing: 2px;
+  }
+}
+  /* ==== FIX MOBILE : empêcher tout débordement ==== */
+@media(max-width: 768px){
+
+  .match-card {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .team-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .team {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    max-width: 45%;      /* ← empêche les textes de dépasser */
+    overflow: hidden;
+  }
+
+  .team img {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+  }
+
+  .team span {
+    font-size: 12px;
+    white-space: nowrap;      /* évite de sauter à la ligne */
+    overflow: hidden;         /* coupe proprement */
+    text-overflow: ellipsis;  /* ajoute "…" si trop long */
+    display: block;
+    max-width: 100%;
+  }
+
+  .score {
+    font-size: 20px;
+    min-width: 45px;
+  }
+
+  .status {
+    font-size: 11px;
+    line-height: 1.3;
+    white-space: normal;
   }
 }
 </style>
@@ -652,6 +704,7 @@ function handleClick(streamUrl) {
 </script>
 </body>
 </html>
+
 
 
 
