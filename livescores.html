@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- 🌟 Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
+<link rel="shortcut icon" href="https://betbotx.github.io/PREDICTOR/favicon.ico">
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>Live Scores | PREDICTOR by betbotX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==== TOUT LE DESIGN IDENTIQUE À LIVEMATCH ==== */
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: var(--neon);
+  margin-top: -10px;
+  margin-bottom: 25px;
+  text-shadow: 0 0 12px rgba(0, 255, 106, 0.5);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.vertical-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100vh;
+  background: #00ff6a;
+  box-shadow: 0 0 15px #00ff6a, 0 0 35px #00ff6a, 0 0 60px #00ff6a;
+  z-index: 9999;
+  animation: glowBar 2s ease-in-out infinite alternate;
+}
+@keyframes glowBar {
+  from { opacity: 0.7; box-shadow: 0 0 10px #00ff6a, 0 0 25px #00ff6a; }
+  to { opacity: 1; box-shadow: 0 0 25px #00ff6a, 0 0 60px #00ff6a; }
+}
+
+.back-arrow {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  color: var(--neon);
+  cursor: pointer;
+  z-index: 999999;
+  text-shadow: 0 0 12px rgba(0,255,106,0.8);
+  transition: 0.25s ease;
+}
+.back-arrow:hover { color: var(--neon-2); transform: scale(1.15); }
+
+body {
+  font-family: 'Orbitron', monospace !important;
+  background: #000;
+  color: var(--neon) !important;
+  margin: 0;
+  padding: 20px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  font-size: 45px;
+  margin: 0 0 35px;
+  color: var(--neon);
+  text-shadow: 0 0 20px rgba(0, 255, 106, 0.9);
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+
+nav {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+nav a {
+  color: #19FF8A;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 700;
+  transition: 0.25s ease;
+  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+}
+nav a:hover { color: var(--neon); }
+
+.match-card {
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(0,255,106,0.25);
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 
+      0 0 10px rgba(0,255,106,0.25),
+      0 0 25px rgba(0,255,106,0.20),
+      inset 0 0 12px rgba(0,255,106,0.15);
+  transition: 0.15s;
+}
+.match-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+      0 0 12px rgba(0,255,106,0.45),
+      0 0 30px rgba(0,255,106,0.35),
+      inset 0 0 20px rgba(0,255,106,0.25);
+}
+
+.team-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.team img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+.team span { font-size: 16px; font-weight: 600; }
+
+.status {
+  text-align: center;
+  font-size: 14px;
+  margin: 10px 0 6px;
+  color: #00FF00;
+}
+
+.score {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+ /* ---- FOOTER ---- */
+    footer {
+      margin-top: 60px;
+      border-top: 1px solid rgba(0,255,106,0.1);
+      padding-top: 5px;
+      padding-bottom: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(0,255,106,0.9);
+      text-shadow: 0 0 6px rgba(0,255,106,0.5);
+      font-weight: 600;
+      font-family: 'Orbitron', monospace;
+      width: 100%;
+    }
+
+    footer a {
+      color: rgba(0,255,106,0.9);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #00ff6a;
+      text-shadow: 0 0 8px rgba(0,255,106,0.7);
+    }
+:root {
+  --neon: #00ff6a;      /* vert néon principal */
+  --neon-2: #00e65c;    /* vert néon clair */
+  --bg-dark: #0d0d0d;   /* ton fond général */
+  --text-muted: #9affc9; /* vert doux pour le texte secondaire */
+
+/* MOBILE */
+@media(max-width:768px){
+  h1 { font-size: 32px; }
+  .match-card { padding: 12px; }
+  .team img { width: 30px; height: 30px; }
+  .team span { font-size: 13px; }
+  .score { font-size: 20px; }
+  .status { font-size: 12px; }
+}
+@media(max-width:768px){
+body {
+  padding-top: 10px;     /* top */
+  padding-bottom: 0px;   /* bottom */
+  padding-left: 15px;    /* left */
+  padding-right: 15px;   /* right */
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="back-arrow" onclick="window.location.href='index.html'">⟵</div>
+<div class="vertical-bar"></div>
+
+<nav>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About</a> |
+  <a href="blog.html">Blog</a> |
+  <a href="news.html">News</a> |
+  <a href="privacy.html">Privacy</a> |
+  <a href="terms.html">Terms</a> |
+  <a href="contact.html">Contact</a>
+</nav>
+
+<h1>Live Scores</h1>
+<h2 class="subtitle">
+  Football Live Scores Today: Real-Time Results, Fixtures & Match Status
+</h2>
+
+<div class="container" id="liveMatches">
+  <p style="text-align:center;color:var(--text-muted);">Loading live scores...</p>
+</div>
+
+<footer>
+    <div class="social-links" style="margin-bottom: 8px;">
+      <a href="https://www.threads.net/@betbotx" target="_blank" rel="noopener noreferrer">Threads</a> |
+      <a href="https://www.instagram.com/betbotx" target="_blank" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://t.me/+ZiG4eMmBc0llYTE0" target="_blank" rel="noopener noreferrer">Telegram</a>
+    </div>
+    <div style="text-align:center; font-size:13px; color:rgba(0,255,106,0.9); text-shadow:0 0 6px rgba(0,255,106,0.5); font-weight:600; font-family:'Orbitron', monospace;">
+      © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+    </div>
+  </footer>
+
+<script>
+// LOAD SCORES ONLY
+async function loadScores(){
+  const box = document.getElementById("liveMatches");
+
+  try {
+    const res = await fetch("https://reddit-soccer-streams.app/api/matches");
+    const data = await res.json();
+
+    box.innerHTML = "";
+
+    data.matches.forEach(m => {
+      const card = document.createElement("div");
+      card.className = "match-card";
+
+      card.innerHTML = `
+        <div class="team-row">
+          <div class="team">
+            <img src="${m.home_logo}">
+            <span>${m.home_team}</span>
+          </div>
+          <div class="team">
+            <img src="${m.away_logo}">
+            <span>${m.away_team}</span>
+          </div>
+        </div>
+
+        <div class="status">
+          ${m.league} • ${m.time_gmt} GMT • <strong>${m.status.toUpperCase()}</strong>
+        </div>
+
+        <div class="score">
+          ${m.score}
+        </div>
+      `;
+
+      box.appendChild(card);
+    });
+
+  } catch (err){
+    box.innerHTML = "<p style='color:red;text-align:center;'>ERROR LOADING SCORES</p>";
+  }
+}
+
+loadScores();
+setInterval(loadScores, 60000); // refresh every 60 sec
+</script>
+
+</body>
+</html>
