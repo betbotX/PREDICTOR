@@ -207,6 +207,16 @@ body {
   padding-right: 15px;   /* right */
 }
 }
+<style>
+@media(max-width: 768px) {
+  .match-description {
+    font-size: 13px !important;
+  }
+
+  .match-description h2 {
+    font-size: 18px !important;
+  }
+}
 </style>
 </head>
 
@@ -235,14 +245,31 @@ body {
   <p style="text-align:center;color:var(--muted);">Loading live match streams...</p>
 </div>
 
-<!-- 🔥 SEO TEXT BLOCK AT THE END OF THE PAGE -->
-<div class="match-description" style="max-width:900px;text-align:center; color:var(--neon); line-height:1.7; font-size:15px; padding:0 10px;">
+<div class="match-description" 
+     style="
+        font-family: 'Orbitron', monospace !important;
+        max-width:900px;
+        text-align:center;
+        color:var(--neon);
+        line-height:1.7;
+        font-size:15px;
+        padding:0 10px;
+        margin-top:40px;
+        border-top:1px solid rgba(0,255,106,0.15);
+        padding-top:25px;
+        text-shadow:0 0 6px rgba(0,255,106,0.35);
+     ">
 
-  <!-- 🔥 END SEO TEXT BLOCK -->
-<div id="seo-text">
-
-  <h2>Real-Time Football Experience</h2>
-
+    <div id="seo-text">
+        <h2 style="
+            color:var(--neon);
+            font-size:22px;
+            text-shadow:0 0 12px rgba(0,255,106,0.65);
+            margin-bottom:15px;
+        font-family: 'Orbitron', monospace !important;
+        ">
+            Real-Time Football Experience
+        </h2>
   <p>Welcome to the Live Match section, your gateway to instant football coverage delivered through a sleek and futuristic interface. Our platform showcases live matches with continuously updated scores, essential match details, and a smooth user experience optimized for speed and clarity. With a modern neon-glow design and intuitive card-based layout, you can follow ongoing games effortlessly and stay informed throughout the action.</p>
 
   <p>Every live match is displayed in real time, ensuring you always see the most accurate information: team line-ups, competition details, match status, updated scores, and access points for available streams. The dynamic refresh system keeps the page up-to-date without interrupting your browsing experience, offering a seamless and fluid navigation environment.</p>
@@ -250,7 +277,7 @@ body {
   <p>Whether you're checking today’s fixtures, tracking ongoing games, or simply exploring current football action, the Live Match page is built to deliver precision, efficiency, and visual appeal. Designed to complement the dark tech-theme of your website, the interface uses neon highlights, crisp typography, and clear spacing to ensure a premium user experience across all devices.</p>
 
   <p>Stay connected, stay informed, and enjoy a cutting-edge environment crafted for football fans who want real-time updates, strong visual clarity, and a fast, futuristic browsing experience.</p>
-<p>In addition to football, the platform also streams live basketball games with the same level of precision and fluidity.</p>
+
 </div>
 
  <footer>
@@ -263,7 +290,7 @@ body {
       © 2025 PREDICTOR by betbotX — Powered by ANFAtech
     </div>
   </footer>
-  
+
 <script>
 // LOAD MATCHES FROM API
 async function loadMatches(){
@@ -348,4 +375,3 @@ function handleClick(streamUrl) {
 </script>
 </body>
 </html>
-
