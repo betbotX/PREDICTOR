@@ -15,7 +15,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
+@media(max-width: 768px) {
+  .match-description {
+    font-size: 13px !important;
+  }
 
+  .match-description h2 {
+    font-size: 18px !important;
+  }
+}
 /* ==== TOUT LE DESIGN IDENTIQUE À LIVEMATCH ==== */
 .subtitle {
   text-align: center;
@@ -222,12 +230,32 @@ body {
   <p style="text-align:center;color:var(--text-muted);">Loading live scores...</p>
 </div>
 
-  <!-- 🔥 SEO TEXT BLOCK AT THE END OF THE PAGE -->
-<div class="match-description" style="max-width:900px;text-align:center; color:var(--neon); line-height:1.7; font-size:15px; padding:0 10px;">
-  <!-- 🔥 END SEO TEXT BLOCK -->
-<div id="seo-text">
+<div class="match-description" 
+     style="
+        max-width:900px;
+        text-align:center;
+        color:var(--neon);
+        line-height:1.7;
+        font-size:15px;
+        padding:0 10px;
+        margin-top:40px;
+        border-top:1px solid rgba(0,255,106,0.15);
+        padding-top:25px;
+        text-shadow:0 0 6px rgba(0,255,106,0.35);
+        font-family: 'Orbitron', monospace !important;
+align-items:center;
+        justify-content:center;
+     ">
 
-  <h2>Live Football & Basketball Scores – Real-Time Results & Match Updates</h2>
+    <div id="seo-text">
+        <h2 style="
+            color:var(--neon);
+            font-size:22px;
+            text-shadow:0 0 12px rgba(0,255,106,0.65);
+            margin-bottom:15px;
+            font-family: 'Orbitron', monospace !important;
+        ">
+Live Football & Basketball Scores – Real-Time Results & Match Updates        </h2>
 
 
 <p>Live Football & Basketball Scores – Real-Time Updates & Free Match Streams
@@ -296,10 +324,5 @@ async function loadScores(){
 loadScores();
 setInterval(loadScores, 60000); // refresh every 60 sec
 </script>
-
 </body>
 </html>
-
-
-
-
