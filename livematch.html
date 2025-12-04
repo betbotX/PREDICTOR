@@ -14,268 +14,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-  /* ==== RÉDUCTION DES MATCH CARDS SUR ORDI ==== */
-@media (min-width: 1024px) {
-  .match-card {
-    padding: 14px;        /* moins de padding */
-    max-width: 650px;     /* largeur max réduite */
-    margin: 15px auto;    /* centrage + moins de marge */
-    transform: scale(0.90);   /* réduction visuelle globale */
-  }
-
-  .team img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .team span {
-    font-size: 14px;
-  }
-
-  .score {
-    font-size: 22px;
-  }
-
-  .status {
-    font-size: 13px;
-  }
-}
-/* ==== SEO TEXT AREA STYLING ==== */
-#seo-text {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 12px;
-  text-align: center;
-  font-family: 'Orbitron', monospace;
-  color: var(--neon);
-  line-height: 1.8;
-  font-size: 16px;
-  text-shadow: 0 0 12px rgba(0,255,106,0.6);
-}
-
-/* Style du titre */
-#seo-text h2 {
-  margin-top: 25px;
-  margin-bottom: 20px;
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  color: var(--neon);
-  text-shadow: 0 0 20px rgba(0,255,106,0.9);
-}
-
-/* Style des paragraphes */
-#seo-text p {
-  margin-bottom: 15px;
-  font-size: 16px;
-  color: var(--neon);
-  line-height: 1.8;
-  text-shadow: 0 0 10px rgba(0,255,106,0.5);
-}
-@media(max-width: 768px) {
-  #seo-text p {
-  font-size: 13px !important;
-    line-height: 1.6;
-    padding: 0 10px;
-  }
-
-  #seo-text h2 {
-    font-size: 22px;
-    letter-spacing: 2px;
-  }
-}
-
-.vertical-bar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100vh;
-  background: #00ff6a;
-  box-shadow: 0 0 15px #00ff6a, 0 0 35px #00ff6a, 0 0 60px #00ff6a;
-  z-index: 9999;
-  animation: glowBar 2s ease-in-out infinite alternate;
-}
-
-@keyframes glowBar {
-  from {
-    opacity: 0.7;
-    box-shadow: 0 0 10px #00ff6a, 0 0 25px #00ff6a;
-  }
-  to {
-    opacity: 1;
-    box-shadow: 0 0 25px #00ff6a, 0 0 60px #00ff6a;
-  }
-}
-/* ===== BACK ARROW TOP-LEFT ===== */
-.back-arrow {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 28px;
-  color: var(--neon);
-  cursor: pointer;
-  z-index: 999999;
-  text-shadow: 0 0 12px rgba(0,255,106,0.8);
-  transition: 0.25s ease;
-  user-select: none;
-}
-
-.back-arrow:hover {
-  color: var(--neon-2);
-  transform: scale(1.15);
-  text-shadow: 0 0 18px rgba(0,255,106,1);
-}
-/* ----- MOBILE RESPONSIVE ----- */
-@media (max-width: 768px) {
-  .back-arrow {
-    top: 12px;
-    left: 12px;
-    font-size: 24px;
-  }
-}
-/* --- CLEAN UI THEME --- */
-h1 {
-    text-align: center;
-    font-size: 35px;
-    margin-top: 0;
-    margin-bottom: 30px;
-    color: var(--neon);
-    text-shadow: 0 0 20px rgba(0, 255, 106, 0.9);
-    letter-spacing: 3px;
-    font-weight: 900;
-}
-  @media (max-width: 768px) {
-    h1 span:first-child {
-        font-size: 28px !important;
-    }
-    h1 span:last-child {
-        font-size: 20px !important;
-    }
-}
- nav {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 18px;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      display: inline-block;
-    color: #19FF8A;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: 700;
-    transition: all 0.25s ease;
-    text-shadow: 0 0 6px rgba(0, 255, 106, 0.6);
-      font-size: 18px;
-}
-    nav a:hover {
-      color: var(--neon);
-      text-shadow: 0 0 10px rgba(0,255,106,0.9);
-    }
-
- 
-body {
-  font-family: 'Orbitron', monospace !important;
- background: #000;
-  color: #e6e6e6;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;     /* top */
-  padding-bottom: 0px;   /* bottom */
-  padding-left: 10px;    /* left */
-  padding-right: 10px;   /* right */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-    line-height: 1.6;
-}
-.logo {
-  font-size: 26px;
-  font-weight: bold;
-  color: var(--neon); 
-  text-decoration: none;
-}
- 
-
-
-/* Match Card */
-.match-card {
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(0, 255, 106, 0.25);
-  padding: 20px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-
-  /* Glow neon identique à ABOUT */
-  box-shadow: 
-      0 0 10px rgba(0, 255, 106, 0.25),
-      0 0 25px rgba(0, 255, 106, 0.20),
-      inset 0 0 12px rgba(0, 255, 106, 0.15);
-
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.match-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 
-      0 0 12px rgba(0, 255, 106, 0.45),
-      0 0 30px rgba(0, 255, 106, 0.35),
-      inset 0 0 20px rgba(0, 255, 106, 0.25);
-}
-
-
-/* Match Layout */
-.team-row {
-  display: flex;
-  justify-content: center;     /* centre tout le bloc */
-  align-items: center;
-  gap: 25px;                   /* espace entre les équipes et le score */
-  width: 100%;
-  text-align: center;
-}
-
-
-.team {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-
-.team img {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-}
-
-
-.team span {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-/* Time & League */
-.status {
-  text-align: center;
-  font-size: 14px;
-  margin: 10px 0 6px;
-  color: #00FF00;
-}
-
-/* Score */
-.score {
-  font-size: 28px;
-  font-weight: bold;
-  min-width: 70px;           /* pour un centrage parfait */
-  text-align: center;
-}
-
-
-/* Buttons */
 .channel-btn {
   display: block;
   background: #00c853;
@@ -292,325 +30,211 @@ body {
 .channel-btn:hover {
   background: #00e063;
 }
+/* ==== TOUT LE DESIGN IDENTIQUE À LIVEMATCH ==== */
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: var(--neon);
+  margin-top: -10px;
+  margin-bottom: 25px;
+  text-shadow: 0 0 12px rgba(0, 255, 106, 0.5);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
 
-/* RESPONSIVE */
-@media(max-width: 768px){
-  .team-row {
-     flex-direction: row;   /* équipes restent l'une à côté de l'autre */
-    justify-content: space-between;
-    gap: 10px;              /* espace réduit */
-  }
-  .team {
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-  .team img {
-    width: 36px;
-    height: 36px;
-  }
-  .score {
-    font-size: 22px;
-  }
+.vertical-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100vh;
+  background: #00ff6a;
+  box-shadow: 0 0 15px #00ff6a, 0 0 35px #00ff6a, 0 0 60px #00ff6a;
+  z-index: 9999;
+  animation: glowBar 2s ease-in-out infinite alternate;
 }
-/* NAV MOBILE */
-@media(max-width: 780px){
-  .nav-links {
-    gap: 20px;
-  }
-  .logo {
-    font-size: 22px;
-  }
+@keyframes glowBar {
+  from { opacity: 0.7; box-shadow: 0 0 10px #00ff6a, 0 0 25px #00ff6a; }
+  to { opacity: 1; box-shadow: 0 0 25px #00ff6a, 0 0 60px #00ff6a; }
 }
-  /* ---- FOOTER ---- */
+
+.back-arrow {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  color: var(--neon);
+  cursor: pointer;
+  z-index: 999999;
+  text-shadow: 0 0 12px rgba(0,255,106,0.8);
+  transition: 0.25s ease;
+}
+.back-arrow:hover { color: var(--neon-2); transform: scale(1.15); }
+
+body {
+  font-family: 'Orbitron', monospace !important;
+  background: #000;
+  color: var(--neon) !important;
+  margin: 0;
+  padding: 20px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  font-size: 45px;
+  margin: 0 0 35px;
+  color: var(--neon);
+  text-shadow: 0 0 20px rgba(0, 255, 106, 0.9);
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+
+nav {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+nav a {
+  color: #19FF8A;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 700;
+  transition: 0.25s ease;
+  text-shadow: 0 0 6px rgba(0,255,106,0.6);
+}
+nav a:hover { color: var(--neon); }
+
+.match-card {
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(0,255,106,0.25);
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 
+      0 0 10px rgba(0,255,106,0.25),
+      0 0 25px rgba(0,255,106,0.20),
+      inset 0 0 12px rgba(0,255,106,0.15);
+  transition: 0.15s;
+}
+.match-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+      0 0 12px rgba(0,255,106,0.45),
+      0 0 30px rgba(0,255,106,0.35),
+      inset 0 0 20px rgba(0,255,106,0.25);
+}
+
+.team-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.team img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+.team span { font-size: 16px; font-weight: 600; }
+
+.status {
+  text-align: center;
+  font-size: 14px;
+  margin: 10px 0 6px;
+  color: #00FF00;
+}
+
+.score {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+ /* ---- FOOTER ---- */
     footer {
-    margin-top: 60px;
-    border-top: 1px solid rgba(0,255,106,0.1);
-    padding-top: 5px;
-    text-align: center;
-    padding-bottom: 10px; /* augmente de 1px pour créer l'espace */
-    font-size: 13px;
-     color: rgba(0,255,106,0.85); /* texte un peu plus lumineux */
-    text-shadow: 0 0 8px rgba(0,255,106,0.5); /* glow léger pour tout le texte */
-    font-weight: 600;
-    font-family: 'Orbitron', monospace;
-    width: 100%;
-}
-footer div:last-child {
-    margin-bottom: 1px; /* espace de 1px sous le texte copyright */
-}
-/* FOOTER SOCIAL LINKS - keep neon green */
-footer a {
-   color: rgba(0,255,106,0.85); /* liens sociaux légèrement plus lumineux */    
-text-decoration: none;
-    font-weight: 700;
-    text-shadow: 0 0 6px rgba(0,255,106,0.6);
-}
-
-footer a:hover {
-    color: var(--neon-2);
-    text-shadow: 0 0 10px rgba(0,255,106,0.9);
-}
-
-/* Prevent browser default link colors */
-footer a:visited,
-footer a:active {
-    color: var(--neon);
-}
-
-
-    @media (max-width:768px) {
-      h1 {
-        font-size: 35px;
-      }
-      
+      margin-top: 60px;
+      border-top: 1px solid rgba(0,255,106,0.1);
+      padding-top: 5px;
+      padding-bottom: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(0,255,106,0.9);
+      text-shadow: 0 0 6px rgba(0,255,106,0.5);
+      font-weight: 600;
+      font-family: 'Orbitron', monospace;
+      width: 100%;
     }
-   
+
+    footer a {
+      color: rgba(0,255,106,0.9);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #00ff6a;
+      text-shadow: 0 0 8px rgba(0,255,106,0.7);
+    }
 :root {
   --neon: #00ff6a;      /* vert néon principal */
   --neon-2: #00e65c;    /* vert néon clair */
   --bg-dark: #0d0d0d;   /* ton fond général */
   --text-muted: #9affc9; /* vert doux pour le texte secondaire */
+
+/* MOBILE */
+@media(max-width:768px){
+  h1 { font-size: 32px; }
+  .match-card { padding: 12px; }
+  .team img { width: 30px; height: 30px; }
+  .team span { font-size: 13px; }
+  .score { font-size: 20px; }
+  .status { font-size: 12px; }
 }
-/* Texte principal en vert néon */
-body, p, span, h1, h2, h3, h4, h5, h6, li {
-  color: var(--neon) !important;
+@media(max-width:768px){
+body {
+  padding-top: 10px;     /* top */
+  padding-bottom: 0px;   /* bottom */
+  padding-left: 15px;    /* left */
+  padding-right: 15px;   /* right */
 }
-/* --- SCROLLBAR NEON (from about.html) --- */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #000;
-  box-shadow: inset 0 0 8px rgba(0,255,106,0.15);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #00ff6a;
-  border-radius: 10px;
-  box-shadow:
-    0 0 12px #00ff6a,
-    0 0 25px #00ff6a;
-  transition: all 0.3s ease-in-out;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #19ff8a;
-  box-shadow:
-    0 0 18px #19ff8a,
-    0 0 40px #19ff8a;
-}
-
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #00ff6a #000;
-}
-/* ==== MOBILE FIX COMPLET POUR LIVEMATCH (sans changer ton design) ==== */
-@media(max-width: 768px){
-
-  body {
-    padding-left: 8px;
-    padding-right: 8px;
-    line-height: 1.6;
-      padding-top: 10px;     /* top */
-
-  }
-
-  .match-card {
-    padding: 12px;
-    margin-bottom: 14px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Les équipes restent côte à côte */
-  .team-row {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .team {
-    justify-content: center;
-    width: auto;
-    gap: 6px;
-  }
-
-  .team img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .team span {
-    font-size: 13px;
-  }
-
-  .status {
-    font-size: 13px;
-    margin-top: 10px;
-    line-height: 1.4;
-  }
-
-  .score {
-    font-size: 20px;
-    margin-top: 6px;
-  }
-
-  h4 {
-    font-size: 14px !important;
-    margin: 10px 0 8px;
-  }
-
-  .channel-btn {
-    padding: 10px;
-    font-size: 14px;
-    margin-top: 8px;
-    border-radius: 8px;
-  }
-
-  #liveMatches {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  nav {
-    font-size: 16px;
-    margin-bottom: 25px;
-  }
-
-  h1 {
-    font-size: 23px;
-  }
-}
-.match-description {
-  max-width: 900px;
-  margin: 0px auto;
-  padding: 0 12px;
-  text-align: center;
-  font-family: 'Orbitron', monospace;
-  color: var(--neon);
-  line-height: 1.8;
-  font-size: 16px;
-  text-shadow: 0 0 12px rgba(0,255,106,0.6);
-}
-
-.match-description h2 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  color: var(--neon);
-  text-shadow: 0 0 20px rgba(0,255,106,0.9);
-}
-
-.match-description p {
-  margin-bottom: 15px;
-  color: var(--neon);
-  font-size: 16px;
-  line-height: 1.8;
-  text-shadow: 0 0 10px rgba(0,255,106,0.5);
-}
-
-/* Responsive */
-@media(max-width: 768px) {
-  .match-description {
-    font-size: 14px;
-    line-height: 1.7;
-    padding: 0 10px;
-  }
-
-  .match-description h2 {
-    font-size: 22px;
-    letter-spacing: 2px;
-  }
-}
-  /* ==== FIX MOBILE : empêcher tout débordement ==== */
-@media(max-width: 768px){
-
-  .match-card {
-    width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  .team-row {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 6px;
-    width: 100%;
-  }
-
-  .team {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    max-width: 45%;      /* ← empêche les textes de dépasser */
-    overflow: hidden;
-  }
-
-  .team img {
-    width: 26px;
-    height: 26px;
-    flex-shrink: 0;
-  }
-
-  .team span {
-    font-size: 12px;
-    white-space: nowrap;      /* évite de sauter à la ligne */
-    overflow: hidden;         /* coupe proprement */
-    text-overflow: ellipsis;  /* ajoute "…" si trop long */
-    display: block;
-    max-width: 100%;
-  }
-
-  .score {
-    font-size: 20px;
-    min-width: 45px;
-  }
-
-  .status {
-    font-size: 11px;
-    line-height: 1.3;
-    white-space: normal;
-  }
 }
 </style>
 </head>
 
 
 <body>
+
 <div class="back-arrow" onclick="window.location.href='index.html'">⟵</div>
 <div class="vertical-bar"></div>
 
+<nav>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About</a> |
+  <a href="blog.html">Blog</a> |
+  <a href="news.html">News</a> |
+  <a href="privacy.html">Privacy</a> |
+  <a href="terms.html">Terms</a> |
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="blog.html">Blog</a> |
-<a href="news.html">News</a> |
-    <a href="privacy.html">Privacy</a> |
-    <a href="terms.html">Terms</a> |
-    <a href="contact.html">Contact</a>
-  </nav>
-
-<h1 style="text-align:center; max-width:90%; line-height:1.2;">
-    <span style="font-size:40px; display:block;">
-        Live Match:
-    </span>
-   <span style="font-size:24px; color:#19FF8A !important; display:block;margin-bottom: 30px;"> Real-Time Football Scores & Updates </span>
+<h1>Live Match</h1>
+<h2 class="subtitle">
+  Real-Time Football Scores & Updates
+</h2>
   
 <div class="container" id="liveMatches">
   <p style="text-align:center;color:var(--muted);">Loading live match streams...</p>
 </div>
+
 <!-- 🔥 SEO TEXT BLOCK AT THE END OF THE PAGE -->
 <div class="match-description" style="max-width:900px;text-align:center; color:var(--neon); line-height:1.7; font-size:15px; padding:0 10px;">
 
@@ -629,7 +253,7 @@ body, p, span, h1, h2, h3, h4, h5, h6, li {
 
 </div>
 
-<footer>
+ <footer>
     <div class="social-links" style="margin-bottom: 8px;">
       <a href="https://www.threads.net/@betbotx" target="_blank" rel="noopener noreferrer">Threads</a> |
       <a href="https://www.instagram.com/betbotx" target="_blank" rel="noopener noreferrer">Instagram</a> |
@@ -724,22 +348,3 @@ function handleClick(streamUrl) {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
