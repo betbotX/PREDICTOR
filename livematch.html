@@ -346,16 +346,35 @@ body {
       color: #00ff6a;
       text-shadow: 0 0 8px rgba(0,255,106,0.7);
     }
+@media(max-width: 768px) {
 
+  footer {
+    margin-top: 35px;         /* footer plus rapproché */
+    padding-top: 8px;
+    padding-bottom: 12px;
+    font-size: 11px;          /* plus petit sur mobile */
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  footer a {
+    font-size: 12px;          /* liens plus petits */
+    display: inline-block;    /* évite les débordements */
+    margin: 2px 4px;          /* espace propre entre les liens */
+  }
+
+  footer a:hover {
+    color: #00ff6a;
+    text-shadow: 0 0 6px rgba(0,255,106,0.6);
+  }
+}
     @media (max-width:768px) {
       h1 {
         font-size: 35px;
       }
+      
     }
-    footer a:hover {
-      color: #00ff6a;
-      text-shadow: 0 0 8px rgba(0,255,106,0.7);
-    }
+   
 :root {
   --neon: #00ff6a;      /* vert néon principal */
   --neon-2: #00e65c;    /* vert néon clair */
@@ -714,6 +733,7 @@ function handleClick(streamUrl) {
 </script>
 </body>
 </html>
+
 
 
 
