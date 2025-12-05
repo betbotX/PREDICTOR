@@ -20,21 +20,16 @@
     </style>
 </head>
 <body>
-    
-<script>
+
 <h2>Réponse RAW de l'API SportRadar :</h2>
 <pre id="raw">Chargement...</pre>
 
-fetch("proxy.php")
-  .then(r => r.text())
-  .then(t => document.getElementById("raw").textContent = t)
-  .catch(e => document.getElementById("raw").textContent = "Erreur : " + e);
- 
+<script>
 async function loadData() {
     try {
-        const response = await fetch("proxy.php"); // Appelle ton serveur
-        const text = await response.text();
-        document.getElementById("raw").textContent = text;
+        const response = await fetch("proxy.php");  // appel du fichier PHP
+        const text = await response.text();         // récupérer le RAW
+        document.getElementById("raw").textContent = text;  // affichage
     } catch (e) {
         document.getElementById("raw").textContent = "Erreur : " + e;
     }
@@ -42,7 +37,6 @@ async function loadData() {
 
 loadData();
 </script>
+
 </body>
 </html>
-
-
