@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<!-- 🌟 Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
+<link rel="shortcut icon" href="https://betbotx.github.io/PREDICTOR/favicon.ico">
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>Missing Players | PREDICTOR by betbotX - Unavailable Players: Injuries & Suspensions 2025/2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+ /* --- SCROLLBAR NEON --- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #000; box-shadow: inset 0 0 8px rgba(0,255,106,0.15); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: #00ff6a; border-radius: 10px; box-shadow: 0 0 12px #00ff6a, 0 0 25px #00ff6a; transition: all 0.3s ease-in-out; }
+::-webkit-scrollbar-thumb:hover { background: #19ff8a; box-shadow: 0 0 18px #19ff8a, 0 0 40px #19ff8a; }
+* { scrollbar-width: thin; scrollbar-color: #00ff6a #000; }
+
+:root { --neon: #00ff6a; --neon-2: #00e65c; --bg-dark: #0d0d0d; --text-muted: #9affc9; }
+
+body { font-family: 'Orbitron', monospace !important; background: #000; color: var(--neon) !important; margin: 0; padding: 20px 10px 0 10px; display: flex; flex-direction: column; align-items: center; line-height: 1.6; }
+
+.vertical-bar { position: fixed; left: 0; top: 0; width: 4px; height: 100vh; background: #00ff6a; box-shadow: 0 0 15px #00ff6a, 0 0 35px #00ff6a, 0 0 60px #00ff6a; z-index: 9999; animation: glowBar 2s ease-in-out infinite alternate; }
+@keyframes glowBar { from { opacity: 0.7; } to { opacity: 1; } }
+
+.back-arrow { position: fixed; top: 15px; left: 15px; font-size: 28px; color: var(--neon); cursor: pointer; z-index: 999999; text-shadow: 0 0 12px rgba(0,255,106,0.8); transition: 0.25s ease; }
+.back-arrow:hover { color: var(--neon-2); transform: scale(1.15); }
+
+h1 { text-align: center; font-size: 40px; margin: 6px 0 14px; color: var(--neon); text-shadow: 0 0 20px rgba(0,255,106,0.9); letter-spacing: 2px; font-weight: 900; }
+.subtitle { text-align: center; font-size: 16px; color: var(--neon); margin-top: -6px; margin-bottom: 18px; text-shadow: 0 0 12px rgba(0,255,106,0.5); letter-spacing: 1px; font-weight: 700; }
+
+nav { text-align: center; margin-bottom: 18px; font-size: 16px; }
+nav a { color: #19FF8A; text-decoration: none; margin: 0 8px;letter-spacing: 1px; font-weight: 700; text-shadow: 0 0 6px rgba(0,255,106,0.6); }
+nav a:hover { color: var(--neon); }
+
+.container { width: 100%; max-width: 1000px; }
+
+#missingTable { width:100%; border-collapse: collapse; color: var(--neon); font-size:15px; }
+#missingTable thead th { padding: 10px 8px; text-align: left; border-bottom: 1px solid rgba(0,255,106,0.15); font-weight:700; }
+#missingTable tbody td { padding: 12px 8px; vertical-align: middle; }
+#missingTable tbody tr:hover { background: rgba(0,255,106,0.02); }
+
+.team-name { text-align:center; font-size:20px; margin:20px 0 10px; color:var(--neon); }
+
+.match-description { text-align:center; color:var(--neon); line-height:1.7; font-size:15px; padding:0 10px; margin-top:30px; border-top:1px solid rgba(0,255,106,0.15); padding-top:20px; text-shadow:0 0 6px rgba(0,255,106,0.35); }
+
+/* ---- FOOTER ---- */
+    footer {
+      margin-top: 60px;
+      border-top: 1px solid rgba(0,255,106,0.1);
+      padding-top: 5px;
+      padding-bottom: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(0,255,106,0.9);
+      text-shadow: 0 0 6px rgba(0,255,106,0.5);
+      font-weight: 600;
+      font-family: 'Orbitron', monospace;
+      width: 100%;
+    }
+
+    footer a {
+      color: rgba(0,255,106,0.9);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #00ff6a;
+      text-shadow: 0 0 8px rgba(0,255,106,0.7);
+    }
+
+@media(max-width:768px){ h1 { font-size: 28px; } #missingTable thead { display:none; } #missingTable tbody td { display:block; width:100%; box-sizing:border-box; } #missingTable tbody tr { margin-bottom:12px; display:block; border-bottom:1px solid rgba(0,255,106,0.06); } }
+/* MOBILE FULL OPTIMIZATION */
+@media(max-width: 768px) {
+
+    body {
+        padding: 10px 6px !important;
+        overflow-x: hidden !important;
+        text-align: center;
+    }
+
+    .vertical-bar {
+        width: 2px;
+        box-shadow: 0 0 10px #00ff6a;
+    }
+
+    nav {
+        font-size: 12px !important;
+        line-height: 20px;
+    }
+    nav a {
+        margin: 0 4px;
+        font-size: 12px !important;
+    }
+
+    h1 {
+        font-size: 24px !important;
+        margin-top: 25px;
+    }
+    .subtitle {
+        font-size: 13px !important;
+    }
+
+    /* TABLE → MODE CARDS VERTICALES */
+    #missingTable {
+        font-size: 12px !important;
+        width: 100%;
+    }
+
+    #missingTable thead {
+        display: none; /* hide header */
+    }
+
+    #missingTable tbody tr {
+        display: block;
+        background: rgba(0, 255, 106, 0.05);
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid rgba(0,255,106,0.2);
+    }
+
+    #missingTable tbody td {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 6px 2px;
+        font-size: 12px !important;
+    }
+
+    #missingTable tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--neon);
+        margin-right: 10px;
+    }
+
+    /* SEO TEXT */
+    #seo-text p {
+        font-size: 13px !important;
+        padding: 4px;
+    }
+    #seo-text h2 {
+        font-size: 16px !important;
+    }
+
+    footer {
+        font-size: 11px !important;
+        padding: 5px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="back-arrow" onclick="window.location.href='index.html'">⟵</div>
+<div class="vertical-bar"></div>
+
+<nav>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About</a> |
+  <a href="blog.html">Blog</a> |
+  <a href="news.html">News</a> |
+  <a href="privacy.html">Privacy</a> |
+  <a href="terms.html">Terms</a> |
+  <a href="contact.html">Contact</a>
+</nav>
+
+<h1>Missing Players</h1>
+<h2 class="subtitle">Premier League: Absence Report 25/26</h2>
+
+<div class="container" id="missingPlayers">
+  <table id="missingTable">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Team</th>
+        <th>Status</th>
+        <th>Reason</th>
+        <th>Since</th>
+      </tr>
+    </thead>
+    <tbody id="missingBody">
+      <tr><td colspan="5" style="text-align:center;">Loading...</td></tr>
+    </tbody>
+  </table>
+</div>
+
+  <div id="seo-text">
+    <h2 style="font-size:18px;margin-bottom:8px;color:var(--neon);">
+        Premier League Missing Players — Injuries, Suspensions & Squad Impact
+    </h2>
+
+    <p style="max-width:820px;margin:0 auto;">
+        Stay updated with all Premier League missing players, including injury lists, suspension updates 
+        and last-minute squad withdrawals. Player absences can significantly influence match results, 
+        team performance and betting predictions. Understanding how key injuries impact defensive stability, 
+        attacking efficiency or overall squad depth is essential for accurate match analysis.
+    </p>
+
+    <p style="max-width:820px;margin:15px auto 0;">
+        This Premier League absence report helps you evaluate match scenarios, predict momentum shifts 
+        and identify potential value opportunities. Whether it’s a missing striker affecting goal 
+        probability, or an absent defender changing tactical balance, every detail matters in forecasting 
+        match outcomes. Data sourced via Make (Sportradar).
+    </p>
+</div>
+
+
+  
+  <footer>
+    <div class="social-links" style="margin-bottom: 8px;">
+      <a href="https://www.threads.net/@betbotx" target="_blank" rel="noopener noreferrer">Threads</a> |
+      <a href="https://www.instagram.com/betbotx" target="_blank" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://t.me/+ZiG4eMmBc0llYTE0" target="_blank" rel="noopener noreferrer">Telegram</a>
+    </div>
+    <div style="text-align:center; font-size:13px; color:rgba(0,255,106,0.9); text-shadow:0 0 6px rgba(0,255,106,0.5); font-weight:600; font-family:'Orbitron', monospace;">
+      © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+    </div>
+  </footer>
+
+<script>
+// LOAD MISSING PLAYERS — WEBHOOK MAKE
+async function loadPlayers(){
+  const body = document.getElementById('missingBody');
+  // show loading row
+  body.innerHTML = "<tr><td colspan='5' style='text-align:center;'>Chargement...</td></tr>";
+
+  try {
+    const res = await fetch('https://hook.eu2.make.com/1pas5x36ch7tzhsay5zbhandfc6pgzyf');
+    if(!res.ok) throw new Error('Network response was not ok');
+    const data = await res.json();
+
+    if(!data.competitors || data.competitors.length === 0){
+      body.innerHTML = "<tr><td colspan='5' style='text-align:center;'>No missing players.</td></tr>";
+      return;
+    }
+
+    // clear
+    body.innerHTML = '';
+
+    // The API returns only Premier League teams — flatten into table rows
+    data.competitors.forEach(team => {
+      const teamName = team.name || '';
+      (team.players || []).forEach(p => {
+        const tr = document.createElement('tr');
+        tr.style.borderBottom = '1px solid rgba(0,255,106,0.08)';
+
+        const nameTd = document.createElement('td'); 
+nameTd.textContent = p.name || '-';
+nameTd.setAttribute("data-label", "Player");
+
+const teamTd = document.createElement('td'); 
+teamTd.textContent = teamName;
+teamTd.setAttribute("data-label", "Team");
+
+const statusTd = document.createElement('td'); 
+statusTd.textContent = p.status || '-';
+statusTd.setAttribute("data-label", "Status");
+
+const reasonTd = document.createElement('td'); 
+reasonTd.textContent = p.reason || '-';
+reasonTd.setAttribute("data-label", "Reason");
+
+const sinceTd = document.createElement('td'); 
+sinceTd.textContent = formatDate(p.start_date) || '-';
+sinceTd.setAttribute("data-label", "Since");
+
+
+
+        tr.appendChild(nameTd);
+        tr.appendChild(teamTd);
+        tr.appendChild(statusTd);
+        tr.appendChild(reasonTd);
+        tr.appendChild(sinceTd);
+
+        body.appendChild(tr);
+      });
+    });
+
+  } catch(err){
+    console.error('Erreur loadPlayers:', err);
+    body.innerHTML = "<tr><td colspan='5' style='text-align:center;color:#ff6b6b;'>Erreur lors du chargement.</td></tr>";
+  }
+}
+
+// initial load + periodic refresh
+loadPlayers();
+</script>
+<script>
+// Génère automatiquement la date du jour en format JJ-MM-AAAA
+function updateDate(){
+    const dateElement = document.getElementById("autoDate");
+
+    const now = new Date();
+    const day   = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth()+1).padStart(2, '0');
+    const year  = now.getFullYear();
+
+    dateElement.textContent = `${day}-${month}-${year}`;
+}
+
+// Remplace le texte au chargement
+updateDate();
+
+function formatDate(input) {
+    const date = new Date(input);
+    const day   = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year  = date.getFullYear();
+    return `${day}/${month}/${year}`;
+}
+
+</script>
+
+</body>
+</html>
