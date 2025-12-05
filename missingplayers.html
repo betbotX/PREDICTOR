@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Missing Players</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+    h1 { text-align: center; }
+    .player-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 12px;
+      margin: 10px auto;
+      max-width: 500px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .player-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .reason {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Missing Players</h1>
+  <div id="missingPlayers">Loading...</div>
+
+  <script>
+    async function loadMissingPlayers(){
+      const box = document.getElementById("missingPlayers");
+
+      try {
+        // ⚠️ IMPORTANT : ici tu appelles ton backend proxy
+        // Exemple : http://localhost:3000/api/missing-players
+        const res = await fetch("/api/missing-players");
+        const data = await res.json();
+
+        box.innerHTML = "";
+
+        if(data.players && data.players.length > 0){
+          data.players.forEach(p => {
+            const card = document.createElement("div");
+            card.className = "player-card";
+
+            card.innerHTML = `
+              <div class="player-row">
+                <span><strong>${p.name}</strong></span>
+                <span>${p.team?.name || "Unknown Team"}</span>
+              </div>
+              <div class="reason">
+                Reason: ${p.reason || "Not specified"}
+              </div>
+            `;
+
+            box.appendChild(card);
+          });
+        } else {
+          box.innerHTML = "<p>No missing players found</p>";
+        }
+
+      } catch (err){
+        box.innerHTML = "<p style='color:red;text-align:center;'>ERROR LOADING PLAYERS</p>";
+        console.error(err);
+      }
+    }
+
+    loadMissingPlayers();
+    setInterval(loadMissingPlayers, 60000); // refresh every 60 sec
+  </script>
+</body>
+</html>
