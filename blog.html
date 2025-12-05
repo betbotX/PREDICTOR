@@ -6,12 +6,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
+
 <style>
 .vertical-bar {
   position: fixed;
   left: 0;
   top: 0;
-  width: 4px; /* épaisseur de la barre */
+  width: 4px;
   height: 100vh;
   background: #00ff6a;
   box-shadow: 0 0 15px #00ff6a, 0 0 35px #00ff6a, 0 0 60px #00ff6a;
@@ -30,54 +31,19 @@
 }
 </style>
 
-    <title>Blog | Football AI Education - Learn Match Prediction & xG Analytics</title>
-    <meta name="description" content="Educational articles about how AI analyzes football, how xG and data collection work, and how models can outperform human experts. Practical, step-by-step explanations for learners." />
-    <link rel="canonical" href="https://betbotx.github.io/PREDICTOR/blog.html">
+<title>Blog | Football AI Education - Learn Match Prediction & xG Analytics</title>
+<meta name="description" content="Educational articles about how AI analyzes football, how xG and data collection work, and how models can outperform human experts." />
+<link rel="canonical" href="https://betbotx.github.io/PREDICTOR/blog.html">
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="betbotX - ANFAtech" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="betbotX - ANFAtech" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://betbotx.github.io/PREDICTOR/favicon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
-    <style>
-      :root {
-        --bg: #000;
-        --neon: #00ff6a;
-        --neon-2: #19ff8a;
-        --muted: rgba(0,255,106,0.65);
-      }
-
-      html, body {
-        height: 100%;
-        margin: 0;
-        scroll-behavior: smooth;
-      }
-
-      body {
-        background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
-        color: var(--neon);
-        font-family: 'Orbitron', monospace;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    padding-top: 20px;
-    padding-right: 15px;
-    padding-bottom: 10px;
-    padding-left: 20px;        line-height: 1.6;
-        overflow-y: auto;
-      }
-      @media (max-width: 768px) {
-    body {
-        padding-top: 10px;
-    }
-}
-
-      /* --- SCROLLBAR NEON --- */
+<style>
+ /* --- SCROLLBAR NEON --- */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -106,99 +72,106 @@
   scrollbar-color: #00ff6a #000;
 }
 
+:root {
+  --bg: #000;
+  --neon: #00ff6a;
+  --neon-2: #19ff8a;
+  --muted: rgba(0,255,106,0.65);
+}
 
-      /* ---- NAV ---- */
-      nav {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 18px;
-        letter-spacing: 1px;
-      }
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
 
-      nav a {
-        display: inline-block;
-        color: var(--neon-2);
-        text-decoration: none;
-        margin: 0 12px;
-        font-weight: 700;
-        transition: all 0.25s ease;
-        text-shadow: 0 0 6px rgba(0,255,106,0.6);
-      }
+body {
+  background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
+  color: var(--neon);
+  font-family: 'Orbitron', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  line-height: 1.6;
+  overflow-y: auto;
+padding-left: 15px;
+padding-right: 15px;
+}
 
-      nav a:hover {
-        color: var(--neon);
-        text-shadow: 0 0 10px rgba(0,255,106,0.9);
-      }
+@media (max-width:768px) {
+body {
+  padding-top: 10px;
+}
+}
+nav {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+nav a {
+  color: var(--neon-2);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 700;
+}
+nav a:hover {
+  color: var(--neon);
+}
 
-      /* ---- TITLE ---- */
-      h1 {
-        text-align: center;
-        font-size: 35px;
-        margin-top: 0;
-        margin-bottom: 10px;
-        color: var(--neon);
-        text-shadow: 0 0 20px rgba(0,255,106,0.9);
-        letter-spacing: 1px;
-        font-weight: 900;
-      }
-@media (max-width: 768px) {
 h1 {
-font-size: 26px !important;
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
+  color: var(--neon);
+  text-shadow: 0 0 20px rgba(0,255,106,0.9);
 }
+@media (max-width: 768px) {
+    h1 {
+        font-size: 27px;
+    }
 }
-      /* ---- CONTAINER ---- */
-      .container {
-        max-width: 880px;
-        background: rgba(0,0,0,0.7);
-        border: 1px solid rgba(0,255,106,0.18);
-        border-radius: 12px;
-        padding: 30px;
-        box-shadow: 0 0 20px rgba(0,255,106,0.15);
-      }
 
-      .post {
-        margin-bottom: 35px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid rgba(0,255,106,0.15);
-      }
+.container {
+  max-width: 880px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(0,255,106,0.18);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0,255,106,0.15);
+  padding-bottom: 30px; /* 🟢 Added to separate container from footer */
+}
 
-      .post:last-child {
-        border-bottom: none;
-      }
+.post {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid rgba(0,255,106,0.15);
+}
+.post:last-child {
+  border-bottom: none;
+}
 
-      .post h2 {
-        color: var(--neon-2);
-        font-size: 22px;
-        margin-bottom: 8px;
-        text-shadow: 0 0 10px rgba(0,255,106,0.5);
-      }
+.post h2 {
+  color: var(--neon-2);
+  font-size: 22px;
+  margin-bottom: 8px;
+}
 
-      .date {
-        color: rgba(0,255,106,0.5);
-        font-size: 14px;
-        margin-bottom: 12px;
-      }
+.date {
+  color: rgba(0,255,106,0.5);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
 
-      .post p, .post ul {
-        color: var(--muted);
-        line-height: 1.7;
-        font-size: 16px;
-        text-align: justify;
-      }
-
-      .post ul {
-        padding-left: 18px;
-      }
-
-      .post strong { color: var(--neon-2); }
-
-      /* long content area: make paragraphs comfortable and add neon link style */
-      .post a { color: var(--neon); text-decoration: none; }
-      .post a:hover { color: var(--neon-2); text-shadow: 0 0 8px rgba(0,255,106,0.6); }
-
-      /* ---- FOOTER (same as About) ---- */
+.post p, .post ul {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 16px;
+  text-align: justify;
+}
+   /* ---- FOOTER (same as About) ---- */
      footer {
-  margin-top: 250px;
+  margin-top: 50px;
   border-top: 1px solid rgba(0,255,100,0.1);
   padding-top: 5px;
   padding-bottom: 0; /* ✅ remplace 10px par 0 pour supprimer l’espace */
@@ -225,35 +198,37 @@ font-size: 26px !important;
  footer p {
      margin-bottom: 5px;
       }
+@media (max-width: 768px) {
+  h1 div {
+    font-size: 20px !important;
+  }
+}
+</style>
+</head>
 
-      @media (max-width:768px) {
-        h1 { font-size: 34px; }
-      }
-    </style>
-  </head>
-
-  <body>
+<body>
 <div class="vertical-bar"></div>
 
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="blog.html">Blog</a> |
-<a href="news.html">News</a> |
-      <a href="privacy.html">Privacy</a> |
-      <a href="terms.html">Terms</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
+<nav>
+  <a href="index.html">Home</a> |
+  <a href="about.html">About</a> |
+  <a href="blog.html">Blog</a> |
+  <a href="news.html">News</a> |
+  <a href="privacy.html">Privacy</a> |
+  <a href="terms.html">Terms</a> |
+  <a href="contact.html">Contact</a>
+</nav>
 
-<h1 style="font-size:35px; line-height:1.2; text-align:center; max-width:90%;">
+<h1>
 AI-Powered Football & Soccer Predictions:
-<div style="font-size:28px; margin-top:8px;margin-bottom:30px; color:var(--neon-2); line-height:1.2;">
-The New Era of Match Intelligence
+<div style="font-size:23px; margin-top:8px; color:var(--neon-2);">
+Advanced Analytics for Smarter Football Predictions
 </div>
 </h1>
+
 <div class="container">
 
-<!-- New Article 1 -->
+<!-- New Article -->
 <div class="post">
 <h2>Understanding AI Football Prediction: How Modern Models Read the Game</h2>
 <div class="date">Updated 2025</div>
@@ -269,8 +244,7 @@ The New Era of Match Intelligence
 <p>The new generation of AI football prediction models provides clear signals about match tendencies, making them valuable for analysts, coaches, and enthusiasts.</p>
 </div>
 
-
-<!-- New Article 2 -->
+<!-- New Article-->
 <div class="post">
 <h2>Soccer Prediction Using Machine Learning: Turning Data Into Results</h2>
 <div class="date">Updated 2025</div>
@@ -286,8 +260,7 @@ The New Era of Match Intelligence
 <p>By merging these techniques, AI generates realistic probabilities for each match outcome, reflecting the true tactical and statistical profile of both teams.</p>
 </div>
 
-
-<!-- New Article 3 -->
+<!-- New Article-->
 <div class="post">
 <h2>The Future of AI in Football: Predicting Matches With Precision</h2>
 <div class="date">Updated 2025</div>
@@ -303,9 +276,50 @@ The New Era of Match Intelligence
 <p>The more data AI receives, the more it learns to anticipate movements, intentions, and match outcomes — bringing football prediction into a truly intelligent era.</p>
 </div>
 
+<!-- New Article-->
+<div class="post">
+  <h2>The Future of Football Predictions: Data, AI, and Your Own Forecasts</h2>
+  <div class="date">Updated 2025</div>
 
+  <p>Football has always been a game of passion, unpredictability, and debate. Fans argue over tactics, pundits share their opinions, and bookmakers set the odds. But in today’s digital era, predictions are no longer just based on intuition — they are powered by data and artificial intelligence.</p>
+
+  <h3>📊 Why Football Predictions Matter</h3>
+  <ul>
+    <li><strong>Engagement:</strong> Fans love discussing possible outcomes before kick-off.</li>
+    <li><strong>Strategy:</strong> Bettors and fantasy players rely on accurate forecasts to gain an edge.</li>
+    <li><strong>Insight:</strong> Clubs and analysts use predictive models to understand performance trends.</li>
+  </ul>
+  <p>Predictions have become an essential part of the football experience, adding depth and excitement to every match.</p>
+
+  <h3>🤖 How AI Transforms Football Forecasting</h3>
+  <p>Unlike traditional punditry, AI prediction models analyze huge amounts of real-time data to identify meaningful patterns:</p>
+  <ul>
+    <li>Player statistics and fitness levels.</li>
+    <li>Team form and tactical structures.</li>
+    <li>Advanced metrics such as expected goals (xG).</li>
+    <li>Historical match records and contextual trends.</li>
+  </ul>
+  <p>This approach provides higher accuracy and adapts instantly to new information, making predictions more reliable than ever.</p>
+
+  <h3>🌐 Get Your Own Predictions Instantly</h3>
+  <p>On our platform, you don’t just read forecasts — you generate them yourself with real-time global data. You can:</p>
+  <ul>
+    <li>Access correct score predictions for any match.</li>
+    <li>Compare probabilities across leagues and competitions.</li>
+    <li>Watch games while checking predictions in real time.</li>
+    <li>Enjoy all features completely free.</li>
+  </ul>
+
+  <h3>🚀 Final Thoughts</h3>
+  <p>Football will always surprise us, but with the right tools, you can stay ahead of the game. Data-driven predictions bring clarity to the chaos, and our AI-powered platform ensures you're never left guessing.</p>
+
+  <p><strong>👉 Don’t just follow predictions — create your own with free, live, and accurate insights.</strong></p>
 </div>
-    <footer>
+
+
+</div> <!-- 🟢 CONTAINER CLOSES HERE -->
+
+  <footer>
   <div class="social-links">
     <a href="https://www.threads.net/@betbotX" target="_blank" rel="noopener noreferrer">Threads</a> |
     <a href="https://www.instagram.com/betbotX" target="_blank" rel="noopener noreferrer">Instagram</a> |
@@ -313,69 +327,5 @@ The New Era of Match Intelligence
   </div>
   <p>© 2025 PREDICTOR by betbotX - Powered by ANFAtech</p>
 </footer>
-<!-- 💚 CURSEUR NEON FLUO VISIBLE -->
-<style>
-  html, body {
-    cursor: none !important;
-  }
-
-  /* Curseur vert fluo brillant */
-  .neon-cursor {
-    position: fixed;
-    width: 18px;
-    height: 18px;
-    background: #00ff6a;
-    border-radius: 50%;
-    box-shadow:
-      0 0 8px #00ff6a,
-      0 0 20px #00ff6a,
-      0 0 40px #00ff6a;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999999;
-    transition: transform 0.07s ease-out;
-    opacity: 0; /* 🔥 caché au départ */
-  }
-
-  /* Halo lumineux */
-  .cursor-halo {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background: radial-gradient(circle, rgba(0,255,106,0.25) 0%, rgba(0,255,106,0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999998;
-    transition: transform 0.12s ease-out;
-    opacity: 0; /* 🔥 caché au départ */
-  }
-</style>
-
-<div class="cursor-halo"></div>
-<div class="neon-cursor"></div>
-
-<script>
-  const cursor = document.querySelector('.neon-cursor');
-  const halo = document.querySelector('.cursor-halo');
-  let cursorVisible = false;
-
-  document.addEventListener('mousemove', e => {
-    // Affiche le curseur dès le premier mouvement
-    if (!cursorVisible) {
-      cursor.style.opacity = 1;
-      halo.style.opacity = 1;
-      cursorVisible = true;
-    }
-
-    // Met à jour la position
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    halo.style.left = e.clientX + 'px';
-    halo.style.top = e.clientY + 'px';
-  });
-</script>
-  </body>
+</body>
 </html>
-
-
