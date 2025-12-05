@@ -24,7 +24,12 @@
 <h2>Réponse RAW de l'API SportRadar :</h2>
 <pre id="raw">Chargement...</pre>
 
-<script>
+fetch("proxy.php")
+  .then(r => r.text())
+  .then(t => document.getElementById("raw").textContent = t)
+  .catch(e => document.getElementById("raw").textContent = "Erreur : " + e);
+</script>
+ 
 async function loadData() {
     try {
         const response = await fetch("proxy.php"); // Appelle ton serveur
@@ -39,3 +44,4 @@ loadData();
 </script>
 </body>
 </html>
+
