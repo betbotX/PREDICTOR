@@ -31,22 +31,23 @@ html, body {
     cursor: none !important;
 }
 
-body {
-    background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
-    color: var(--neon);
-    font-family: 'Orbitron', monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    padding-right: 15px;
-    padding-bottom: 20px;
-    padding-left: 20px;    line-height: 1.6;
-}
-    @media (max-width: 768px) {
-    body {
-        padding-top: 10px;
+  body {
+      background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
+      color: var(--neon);
+      font-family: 'Orbitron', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+padding-top: 20px;
+padding-right: 10px;
+padding-bottom: 80px;
+padding-left: 10px;
+      line-height: 1.6;
     }
+@media (max-width: 768px) {
+  body {
+    padding-top: 10px;
+  }
 }
 .vertical-bar {
   position: fixed;     /* position fixe par rapport à l'écran */
@@ -362,6 +363,7 @@ loadRSS();
 </script>
 </body>
 </html>
+
 
 
 
