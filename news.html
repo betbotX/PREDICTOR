@@ -39,12 +39,18 @@ html, body {
       display: flex;
       flex-direction: column;
       align-items: center;
-padding-top: 20px;
-padding-right: 15px;
-padding-bottom: 80px;
-padding-left: 15px;
-      line-height: 1.6;
-    }
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 80px;
+  padding-left: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 786px) {
+  body {
+    padding-top: 10px !important;
+  }
+}
 
 .vertical-bar {
   position: fixed;     /* position fixe par rapport à l'écran */
@@ -282,11 +288,7 @@ footer a:active {
     transition: transform 0.12s ease-out;
     opacity: 0;
 }
-@media (max-width: 786px;) {
-  body {
-    padding-top: 10px !important;
-  }
-}
+
 </style>
 
 </head>
@@ -388,6 +390,7 @@ loadRSS();
 </script>
 </body>
 </html>
+
 
 
 
