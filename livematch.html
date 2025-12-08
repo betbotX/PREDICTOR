@@ -182,12 +182,6 @@ nav a:hover { color: var(--neon); }
   color: #00FF00;
 }
 
-.score {
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-}
-
  /* ---- FOOTER ---- */
     footer {
       margin-top: 60px;
@@ -363,11 +357,7 @@ async function loadMatches(){
           ${m.league} • ${m.time_gmt} GMT • Status: <strong>${m.status.toUpperCase()}</strong>
         </div>
 
-        <div class="score">
-          ${m.score}
-        </div>
-
-        <h4 style="text-align:center;margin:10px 0;">Available Streams</h4>
+               <h4 style="text-align:center;margin:10px 0;">Available Streams</h4>
       `;
 
       /* Add channels */
@@ -413,3 +403,4 @@ function handleClick(streamUrl) {
 </script>
 </body>
 </html>
+
