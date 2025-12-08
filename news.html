@@ -29,6 +29,7 @@ html, body {
   height: 100%;
   margin: 0;
   scroll-behavior: smooth;
+    
 }
 
   body {
@@ -179,6 +180,7 @@ h1 {
     transition: 0.25s;
     width: 90%;                 /* largeur fluide par défaut */
     max-width: 800px;           /* limite sur PC pour éviter le flou */
+    
 }
 
 .news-card:hover {
@@ -206,11 +208,13 @@ h1 {
 
 /* 📱 Mobile */
 @media (max-width: 768px) {
-  .news-card {
-    width: 95%;          /* prend presque toute la largeur */
-    max-width: none;     /* enlève la limite pour s’adapter */
-    padding: 14px;       /* un peu moins de padding */
-  }
+ .news-card {
+    box-sizing: border-box;   /* évite que padding + border dépassent */
+    width: 100%;              /* occupe toute la largeur dispo */
+    max-width: 100%;          /* supprime toute limite */
+    margin: 12px auto;        /* centre sans débordement */
+    padding: 14px;            
+     
   .news-card h3 {
     font-size: 18px;     /* texte légèrement réduit */
   }
@@ -385,3 +389,4 @@ loadRSS();
 </script>
 </body>
 </html>
+
