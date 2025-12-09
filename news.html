@@ -293,7 +293,7 @@ footer a:active {
 
 </head>
 <body>
-
+<div id="google_translate_element" style="text-align:center;margin:10px 0;"></div>
 <div class="vertical-bar"></div>
 <div class="scroll-bar"></div>    <!-- nouvelle barre droite -->
 
@@ -388,8 +388,24 @@ async function loadRSS() {
 
 loadRSS();
 </script>
+    <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+</script>
+
+<script type="text/javascript" 
+src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
+
 
 
 
