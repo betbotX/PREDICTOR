@@ -226,40 +226,35 @@ h1 {
 
 
 /* FOOTER */
-footer {
-    margin-top: 60px;
-    border-top: 1px solid rgba(0,255,106,0.1);
-    padding-top: 5px;
-    text-align: center;
-    padding-bottom: 10px; /* augmente de 1px pour créer l'espace */
-    font-size: 13px;
-     color: rgba(0,255,106,0.85); /* texte un peu plus lumineux */
-    text-shadow: 0 0 8px rgba(0,255,106,0.5); /* glow léger pour tout le texte */
-    font-weight: 600;
-    font-family: 'Orbitron', monospace;
-    width: 100%;
+ footer {
+  margin-top: 50px;
+  border-top: 1px solid rgba(0,255,100,0.1);
+  padding-top: 5px;
+  padding-bottom: 0; /* ✅ remplace 10px par 0 pour supprimer l’espace */
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,255,106,0.9);
+  text-shadow: 0 0 6px rgba(0,255,106,0.5);
+  font-weight: 600;
+  font-family: 'Orbitron', monospace;
+  width: 100%;
+  margin-bottom: 0;
 }
-footer div:last-child {
-    margin-bottom: 1px; /* espace de 1px sous le texte copyright */
-}
-/* FOOTER SOCIAL LINKS - keep neon green */
-footer a {
-   color: rgba(0,255,106,0.85); /* liens sociaux légèrement plus lumineux */    
-text-decoration: none;
-    font-weight: 700;
-    text-shadow: 0 0 6px rgba(0,255,106,0.6);
-}
+      footer a {
+        color: rgba(0,255,106,0.9);
+        text-decoration: none;
+        text-shadow: 0 0 6px rgba(0,255,106,0.5);
+        transition: all 0.25s ease;
+      }
 
-footer a:hover {
-    color: var(--neon-2);
-    text-shadow: 0 0 10px rgba(0,255,106,0.9);
-}
+      footer a:hover {
+        color: #00ff6a;
+        text-shadow: 0 0 10px rgba(0,255,106,0.9);
+      }
+ footer p {
+     margin-bottom: 5px;
+      }
 
-/* Prevent browser default link colors */
-footer a:visited,
-footer a:active {
-    color: var(--neon);
-}
 
 
 /* CURSOR */
@@ -312,12 +307,12 @@ footer a:active {
     <div id="news">Loading news...</div>
 
 <footer>
-    <div style="margin-bottom:8px;">
-        <a href="https://www.threads.net/@betbotx" target="_blank">Threads</a> |
-        <a href="https://www.instagram.com/betbotx" target="_blank">Instagram</a> |
-        <a href="https://t.me/+ZiG4eMmBc0llYTE0" target="_blank">Telegram</a>
-    </div>
-    © 2025 PREDICTOR by betbotX — Powered by ANFAtech
+  <div class="social-links">
+    <a href="https://www.threads.net/@betbotX" target="_blank" rel="noopener noreferrer">Threads</a> |
+    <a href="https://www.instagram.com/betbotX" target="_blank" rel="noopener noreferrer">Instagram</a> |
+    <a href="https://t.me/+ZiG4eMmBc0llYTE0" target="_blank" rel="noopener noreferrer">Telegram</a>
+  </div>
+  <p>© 2025 PREDICTOR by betbotX - Powered by ANFAtech</p>
 </footer>
 
 <script>
@@ -403,6 +398,7 @@ function googleTranslateElementInit() {
 
 </body>
 </html>
+
 
 
 
