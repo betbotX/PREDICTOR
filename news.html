@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Language" content="en">
-<html lang="en">
+
 <!-- 🌟 Favicons -->
 <link rel="icon" type="image/png" sizes="32x32" href="https://betbotx.github.io/PREDICTOR/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="https://betbotx.github.io/PREDICTOR/favicon-192x192.png">
@@ -30,10 +29,9 @@ html, body {
   height: 100%;
   margin: 0;
   scroll-behavior: smooth;
-    
 }
 
- body {
+  body {
       background: radial-gradient(ellipse at center, #001100 0%, #000 60%);
       color: var(--neon);
       font-family: 'Orbitron', monospace;
@@ -46,9 +44,9 @@ padding-bottom: 80px;
 padding-left: 10px;
       line-height: 1.6;
     }
-@media (max-width: 768px) {
+@media (max-width: 786px) {
   body {
-    padding-top: 10px;
+    padding-top: 10px !important;
   }
 }
 
@@ -215,7 +213,7 @@ h1 {
     max-width: 100%;          /* supprime toute limite */
     margin: 0px auto;        /* centre sans débordement */
     padding: 14px;            
-     
+      }
   .news-card h3 {
     font-size: 18px;     /* texte légèrement réduit */
   }
@@ -225,7 +223,9 @@ h1 {
 }
 
 
-/* FOOTER */
+
+
+
  footer {
   margin-top: 50px;
   border-top: 1px solid rgba(0,255,100,0.1);
@@ -255,39 +255,11 @@ h1 {
      margin-bottom: 5px;
       }
 
-
-
-/* CURSOR */
-.neon-cursor {
-    position: fixed;
-    width: 18px;
-    height: 18px;
-    background: #00ff6a;
-    border-radius: 50%;
-    box-shadow: 0 0 8px #00ff6a, 0 0 20px #00ff6a, 0 0 40px #00ff6a;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999999;
-    transition: transform 0.07s ease-out;
-    opacity: 0;
-}
-.cursor-halo {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background: radial-gradient(circle, rgba(0,255,106,0.25) 0%, rgba(0,255,106,0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999998;
-    transition: transform 0.12s ease-out;
-    opacity: 0;
-}
-
 </style>
 
 </head>
 <body>
+
 <div class="vertical-bar"></div>
 <div class="scroll-bar"></div>    <!-- nouvelle barre droite -->
 
@@ -306,7 +278,7 @@ h1 {
 
     <div id="news">Loading news...</div>
 
-<footer>
+  <footer>
   <div class="social-links">
     <a href="https://www.threads.net/@betbotX" target="_blank" rel="noopener noreferrer">Threads</a> |
     <a href="https://www.instagram.com/betbotX" target="_blank" rel="noopener noreferrer">Instagram</a> |
@@ -316,22 +288,6 @@ h1 {
 </footer>
 
 <script>
-const cursor = document.querySelector('.neon-cursor');
-const halo = document.querySelector('.cursor-halo');
-let cursorVisible = false;
-
-document.addEventListener('mousemove', e => {
-    if (!cursorVisible) {
-        cursor.style.opacity = 1;
-        halo.style.opacity = 1;
-        cursorVisible = true;
-    }
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    halo.style.left = e.clientX + 'px';
-    halo.style.top = e.clientY + 'px';
-});
-
 // SCROLL BAR DROITE
 const scrollBar = document.querySelector('.scroll-bar');
 
@@ -382,29 +338,5 @@ async function loadRSS() {
 
 loadRSS();
 </script>
-    <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    },
-    'google_translate_element'
-  );
-}
-</script>
-
-
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
